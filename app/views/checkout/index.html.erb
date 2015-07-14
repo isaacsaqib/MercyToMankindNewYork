@@ -1,0 +1,68 @@
+<html>
+<head>
+  <title>Mercy To Mankind</title>
+
+</head>
+<body>
+Checkout Page 
+		<table>
+<%
+if session[:cart].count > 0 %>
+
+	<tr><th>Product Name</th><th>Price</th><th></th></tr>
+
+<% @total = 0
+@product_number = ''
+@count_products =  ''
+
+	session[:cart].each do |person|
+		person.each do |person1|
+			if person1[2]!=nil
+			@total = @total+person1[1].to_i
+			@product_number = @product_number+" "+person1[2]
+			
+			%>
+	
+	<tr><td><%= person1[0] %></td><td><%= person1[1] %></td><td><a href="checkout?remove=<%=person1[2]%>">Remove</a></td></tr>
+			<%
+end
+end
+end 
+%>
+	<tr><td>Total = $<%=@total%></td><td><%= form_tag charges_path do %>
+ 
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Product Number <%=@product_number%>"
+          data-amount="<%=@total%>00"></script>
+          <input type="hidden" name="final_amount" value="<%=@total%>00" />
+          <% end %>
+</td><td><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="admin@parulkalra.com">
+<input type="hidden" name="lc" value="IN">
+<input type="hidden" name="item_name" value="Product Number <%=@product_number%>">
+<input type="hidden" name="amount" value="<%=@total%>">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="button_subtype" value="services">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="return" value="http://127.0.0.1:3000/charges/create">
+    <input type="hidden" name="rm" value="2">
+    <input type="hidden" name="cbt" value="Return to The Store">
+    <input type="hidden" name="cancel_return" value="http://127.0.0.1:3000/checkout">
+<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest">
+<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_buynow_SM.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+</form>
+</td></tr>
+
+<%
+else %>
+	<tr><td>No product in the cart</td></tr>
+<%
+end
+ %>
+</table>
+</body>
+</html>

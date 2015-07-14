@@ -1,0 +1,15 @@
+<% @listings.each do |listing| %>
+		<%=listing.name %><br>
+		<%=listing.price %> <br>
+		<%=link_to 'Edit', edit_listing_path(listing) %>
+		<%=link_to "Delete", listing_path(listing), :method => :delete %>
+		<a href="?id=<%=listing.id%>">Add to cart</a>
+		<br>
+<br>
+		
+
+
+<% end %>
+
+<a href="/checkout">Checkout</a>
+

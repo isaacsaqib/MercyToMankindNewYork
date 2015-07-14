@@ -1,0 +1,33 @@
+<%= @listing.name %><br>
+<%= @listing.price %>
+
+<%= form_tag charges_path do %>
+ <!--  <article>
+    <label class="amount">
+      <span>Amount: <%=@listing.price %></span>
+    </label>
+  </article> -->
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="<%= @amount %>"></script> 
+<% end %>
+
+
+
+
+<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<table>
+<tr><td><input type="hidden" name="on0" value="Sizes">Sizes</td></tr><tr><td><select name="os0">
+	<option value="Small">Small</option>
+	<option value="Medium">Medium</option>
+	<option value="Large">Large</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<input type="image" src="http://zeus.cooltext.com/rendered/cooltext118866102441741.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
