@@ -12,10 +12,6 @@
  *
  *= require_tree .
  *= require_self
+ *= require 'style.css'
  */
 
-
-body {
-	color: black;
-
-}
