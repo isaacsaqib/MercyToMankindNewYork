@@ -1,9 +1,10 @@
-<%= form_for @listing do |f| %>
+<%= form_for @listing, :url => listings_path, :html => { :multipart => true } do |f| %>
 	<%= f.label(:name) %>
 	<%=f.text_field :name %>
 	<%= f.label :price %>
 	<%= f.number_field :price %>
-	<%= f.label :image_url %>
-	<%= f.text_field :image_url %>
+  	<%= f.file_field :avatar %>
 	<%=f.submit %>
+
 	<% end %>
+

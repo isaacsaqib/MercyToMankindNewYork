@@ -26,7 +26,12 @@ class ListingsController < ApplicationController
 
 	def show
 
+
+		if params[:id]
+			session[:cart] ||= {}
 		@listing = Listing.find(params[:id])
+			session[:cart][params[:id]] = [@listing.name,@listing.price,params[:id]]
+		end	
 	  # Amount in cents
 	  	
 	  	@amount = @listing.price
@@ -58,7 +63,7 @@ class ListingsController < ApplicationController
 	private
 
 	def listing_params
-		params.require(:listing).permit(:name, :price, :image_url)
+		params.require(:listing).permit(:name, :price, :image_url, :avatar)
 
 	end
 

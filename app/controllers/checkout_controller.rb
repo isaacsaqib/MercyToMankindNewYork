@@ -4,6 +4,7 @@ class CheckoutController < ApplicationController
     if params[:remove]
     session[:cart].delete(params[:remove])
     end
+
 	end
 
 end

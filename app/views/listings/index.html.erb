@@ -1,5 +1,5 @@
 <% @listings.each do |listing| %>
-		<%=listing.name %><br>
+		<a href="<%=listing_path(listing)%>"><%=listing.name %></a><br> 
 		<%=listing.price %> <br>
 		<%=link_to 'Edit', edit_listing_path(listing) %>
 		<%=link_to "Delete", listing_path(listing), :method => :delete %>
