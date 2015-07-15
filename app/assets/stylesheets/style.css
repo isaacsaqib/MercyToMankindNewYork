@@ -1,5 +1,5 @@
 body {
-	margin: 0px;
+	margin: 10px;
 }
 
 header p {
@@ -8,8 +8,6 @@ header p {
 	color: black;
 }
 	
-
-
 header p:nth-child(1) {
 	font-size: 40px;
 	text-decoration: overline;
@@ -30,6 +28,16 @@ header p:nth-child(3) {
 	letter-spacing: 5px;
 	word-spacing: 3px;
 	line-height: 30px;
+}
+
+header a {
+	text-align: left;
+	color: black;
+	text-decoration: bold;
+	font-family: 'AdelleSans-Thin';
+
+	margin: 10px;
+
 }
 
 #nav {
