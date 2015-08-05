@@ -9,6 +9,12 @@ Rails.application.configure do
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
   }
+
+ENV['PUBLISHABLE_KEY']='pk_test_85dgBVCarVWNxR6rCOEovf2p'
+ENV['SECRET_KEY']='sk_test_CtY58gVmXdha8d24wKMoRZCI'
+
+
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
