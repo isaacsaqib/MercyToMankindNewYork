@@ -7,4 +7,5 @@ class CheckoutController < ApplicationController
 
 	end
 
+
 end

@@ -4,8 +4,13 @@ class ListingsController < ApplicationController
 		if params[:id]
 			session[:cart] ||= {}
 		@listing = Listing.find(params[:id])
-			session[:cart][params[:id]] = [@listing.name,@listing.price,params[:id]]
+		@count_cart = session[:cart].count + 2
+			session[:cart][@count_cart] = [@listing.name,@listing.price,params[:id],params[:size],@count_cart]
 		end	
+
+		if params[:remove]
+			Listing.delete(params[:remove])
+		end
 		@listings = Listing.all
 	end
 
@@ -13,6 +18,8 @@ class ListingsController < ApplicationController
 	def new
 		@listing = Listing.new
 	end
+
+
 
 	def create
 		@listing = Listing.create(listing_params)
@@ -63,9 +70,10 @@ class ListingsController < ApplicationController
 	private
 
 	def listing_params
-		params.require(:listing).permit(:name, :price, :image_url, :avatar)
+		params.require(:listing).permit(:name, :price, :image_url, :avatar,:size)
 
 	end
+	
 
 
 end

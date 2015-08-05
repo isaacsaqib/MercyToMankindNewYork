@@ -4,6 +4,8 @@
 	<%= f.label :price %>
 	<%= f.number_field :price %>
   	<%= f.file_field :avatar %>
+  	<%=f.label :size %>
+  	<input type="text" name="listing[size]" />
 	<%=f.submit %>
 
 	<% end %>

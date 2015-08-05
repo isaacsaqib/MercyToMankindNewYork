@@ -1,15 +1,29 @@
 <% @listings.each do |listing| %>
+<form method="get">
+<input type="hidden" name="id" value="<%=listing.id%>">
 		<a href="<%=listing_path(listing)%>"><%=listing.name %></a><br> 
 		<%=listing.price %> <br>
+		<select name="size">
+		<% @size = listing.size.split(",")
+@size.each do |s|
+	%>
+	<option value="<%= s %>"><%= s %></option>
+	<%
+end 
+
+		 %>
+		 </select>
+		 <br/>
 		<%=link_to 'Edit', edit_listing_path(listing) %>
-		<%=link_to "Delete", listing_path(listing), :method => :delete %>
-		<a href="?id=<%=listing.id%>">Add to cart</a>
+		<!-- <%=link_to "Delete", listing_path(listing), :method => :delete %> -->
+		<a href="?remove=<%=listing.id%>">Delete</a>
+		<input type="submit" value="Add to cart">
 		<br>
 <br>
-		
+	</form>	
 
 
 <% end %>
 
-<a href="/checkout">Checkout</a>
+<a href="/cart">Cart</a>
 

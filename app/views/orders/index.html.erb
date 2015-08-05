@@ -1,0 +1,17 @@
+<% @users.each do |user| %>
+<table>
+<tr><td>First Name</td><td><%=user.firstname%></td><td></td><td></td></tr>
+<tr><td>Last Name</td><td><%=user.lastname%></td><td></td><td></td></tr>
+<tr><td>Email</td><td><%=user.email%></td><td></td><td></td></tr>
+<tr><td>Address</td><td><%=user.address%></td><td></td><td></td></tr>
+<tr><td>City</td><td><%=user.city%></td><td></td><td></td></tr>
+<tr><td>State</td><td><%=user.state%></td><td></td><td></td></tr>
+<tr><td>Zip</td><td><%=user.zip%></td><td></td><td></td></tr>
+<tr><td>Country</td><td><%=user.country%></td><td></td><td></td></tr>
+<tr><td>Shipping</td><td><%=user.shipping%></td><td></td><td></td></tr>
+<tr><td>Products</td><td><%=user.products%></td><td></td><td></td></tr>
+<tr><td>Amount</td><td>$<%=user.amount%></td><td></td><td></td></tr>
+</table>
+<br/><br/>
+<% end %>
+
