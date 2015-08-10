@@ -1,13 +1,12 @@
-<html>
-<head>
-  <title>Mercy To Mankind</title>
 
-</head>
-<body>
-Checkout Page 
-		<table>
-<%
-if session[:cart] && session[:cart].count > 0 %>
+
+
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
+<a href="/">Home </a>
+		<table id="cart-table">
+
+<% if session[:cart] && session[:cart].count > 0 %>
 
 	<tr><th>Product Name</th><th>Price</th><th>Size</th><th></th></tr>
 
@@ -23,49 +22,18 @@ if session[:cart] && session[:cart].count > 0 %>
 session[:product_names] = @product_names;
 			%>
 	
-	<tr><td><%= person1[0] %></td><td><%= person1[1] %></td><td><%= person1[3] %></td><td><a href="cart?remove=<%=person1[4]%>">Remove</a></td></tr>
-			<%
-end
-end
-end 
-%>
-<% if session[:firstnameee] %>
-<tr><td>First Name</td><td><%=session[:firstname]%></td><td></td><td><a href="/shipping">Edit Details</a></td></tr>
-<tr><td>Last Name</td><td><%=session[:lastname]%></td><td></td><td></td></tr>
-<tr><td>Email</td><td><%=session[:email]%></td><td></td><td></td></tr>
-<tr><td>Address</td><td><%=session[:address]%></td><td></td><td></td></tr>
-<tr><td>City</td><td><%=session[:city]%></td><td></td><td></td></tr>
-<tr><td>State</td><td><%=session[:state]%></td><td></td><td></td></tr>
-<tr><td>Zip</td><td><%=session[:zip]%></td><td></td><td></td></tr>
-<tr><td>Country</td><td><%=session[:country]%></td><td></td><td></td></tr>
-<tr><td>Shipping</td><td><%=session[:shipping]%></td><td></td><td></td></tr>
-<%
-if session[:shipping] == 'Free Shipping'
-	@shipping_charges = 0
-end
+	<tr><td><%= person1[0] %></td><td><%= person1[1] %></td><td><%= person1[3] %></td><td><a href="cart?remove=<%=person1[4]%>">X</a></td></tr>
+		<%end 
+	end
+end %>
 
-if session[:shipping] == 'International Shipping'
-	@shipping_charges = 10
-end
-
-if session[:shipping] == 'Express Shipping'
-	@shipping_charges = 20
-end
-@total = @total+@shipping_charges
-session[:total] = @total
-end
-session[:total] = @total
- %>
-	<tr><td><a href="/shipping">Shipping</a></td><td>
+	<tr><td><a href="/shipping">Continue</a></td><td>
 </td><td>
 </td></tr>
 
-<%
-else %>
+<%else %>
 	<tr><td>No product in the cart</td></tr>
 <%
 end
  %>
 </table>
-</body>
-</html>

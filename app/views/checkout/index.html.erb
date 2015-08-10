@@ -1,10 +1,5 @@
-<html>
-<head>
-  <title>Mercy To Mankind</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
-</head>
-<body>
-Checkout Page 
 		<table>
 <%
 if session[:cart] && session[:cart].count > 0 %>
@@ -19,7 +14,7 @@ if session[:cart] && session[:cart].count > 0 %>
 		person.each do |person1|
 			if person1[2]!=nil
 			@total = @total+person1[1].to_i
-			@product_names = @product_names+", "+person1[0]+" "+person1[3]
+			@product_names = @product_names+", "+person1[0]+" "+person1[3].to_s
 session[:product_names] = @product_names;
 			%>
 	
@@ -85,13 +80,8 @@ session[:total] = @total
 <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
 </form>
 </td></tr>
-
-<%
-else %>
-	<tr><td>No product in the cart</td></tr>
-<%
-end
- %>
 </table>
-</body>
-</html>
+
+
+<% end %>
+

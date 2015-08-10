@@ -1,9 +1,13 @@
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+ <% javascript_include_tag "application", media: 'all', 'data-turbolinks-track' => true %>
+
 <% @listings.each do |listing| %>
 <form method="get">
 <input type="hidden" name="id" value="<%=listing.id%>">
 		<a href="<%=listing_path(listing)%>"><%=listing.name %></a><br> 
+		<%= image_tag listing.avatar.url(:medium) %><br>
 		<%=listing.price %> <br>
-		<select name="size">
+		<select name="size"><br>
 		<% @size = listing.size.split(",")
 @size.each do |s|
 	%>
@@ -16,8 +20,8 @@ end
 		 <br/>
 		<%=link_to 'Edit', edit_listing_path(listing) %>
 		<!-- <%=link_to "Delete", listing_path(listing), :method => :delete %> -->
-		<a href="?remove=<%=listing.id%>">Delete</a>
-		<input type="submit" value="Add to cart">
+		<a href="?remove=<%=listing.id%>">Delete</a><br>
+		<input id="add-to-cart-btn" type="submit" value="Add to cart">
 		<br>
 <br>
 	</form>	
