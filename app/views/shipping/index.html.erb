@@ -58,8 +58,65 @@ end
 	<tr><td>Email</td><td><input type="text" name="email" value="<%= @email%>"/></td></tr>
 	<tr><td>Address</td><td><input type="text" name="address" value="<%= @address%>"/></td></tr>
 	<tr><td>City</td><td><input type="text" name="city" value="<%= @city%>"/></td></tr>
-	<tr><td>State</td><td><input type="text" name="state" value="<%= @state%>"/></td></tr>
+	<!-- <tr><td>State</td><td><input type="text" name="state" value="<%= @state%>"/></td></tr> -->
+	<tr><td>State</td><td>
+
+	<select name="select_state" id="select_state" style="width:50px;" value="<%= @state%>">
+		<option value="Select State"></option>
+		<option value="AK">AK</option>
+		<option value="AZ">AZ</option>
+		<option value="AR">AR</option>
+		<option value="CA">CA</option>
+		<option value="CO">CO</option>
+		<option value="CT">CT</option>
+		<option value="DE">DE</option>
+		<option value="FL">FL</option>
+		<option value="GA">GA</option>
+		<option value="HI">HI</option>
+		<option value="ID">ID</option>
+		<option value="IL">IL</option>
+		<option value="IN">IN</option>
+		<option value="IA">IA</option>
+		<option value="KS">KS</option>
+		<option value="KY">KY</option>
+		<option value="LA">LA</option>
+		<option value="ME">ME</option>
+		<option value="MD">MD</option>
+		<option value="MA">MA</option>
+		<option value="MI">MI</option>
+		<option value="MN">MN</option>
+		<option value="MS">MS</option>
+		<option value="MO">MO</option>
+		<option value="MT">MT</option>
+		<option value="NE">NE</option>
+		<option value="NV">NV</option>
+		<option value="NH">NH</option>
+		<option value="NJ">NJ</option>
+		<option value="NM">NM</option>
+		<option value="NY">NY</option>
+		<option value="NC">NC</option>
+		<option value="ND">ND</option>
+		<option value="OH">OH</option>
+		<option value="OK">OK</option>
+		<option value="OR">OR</option>
+		<option value="PA">PA</option>
+		<option value="RI">RI</option>
+		<option value="SC">SC</option>
+		<option value="SD">SD</option>
+		<option value="TN">TN</option>
+		<option value="TX">TX</option>
+		<option value="UT">UT</option>
+		<option value="VT">VT</option>
+		<option value="VA">VA</option>
+		<option value="WA">WA</option>
+		<option value="WV">WV</option>
+		<option value="WI">WI</option>
+		<option value="WY">WY</option>
+	</select>
+	</td></tr>
+
 	<tr><td>Zip</td><td><input type="text" name="zip" value="<%= @zip%>"/></td></tr>
+	</td></tr>
 	<tr><td>Country</td><td><select name="country" id="country" onchange="checkCountry(this)">
 <option value="">Country...</option>
 <option value="Afganistan">Afghanistan</option>
@@ -324,9 +381,14 @@ end
 if(country.value=="" || country.value=="United States of America"){
 document.getElementById("free_ship").style.opacity="1";
 document.getElementById("inter_ship").style.opacity='0';
+document.getElementById("city").style.opacity="0";
+document.getElementById("city").value="";
+document.getElementById("select_state").style.opacity="1";
 }else{
 document.getElementById("free_ship").style.opacity="0";
 document.getElementById("inter_ship").style.opacity='1';
+document.getElementById("city").style.opacity="1";
+document.getElementById("select_state").style.opacity="0";
 }
 </script>
 <script type="text/javascript">
@@ -335,35 +397,18 @@ document.getElementById("inter_ship").style.opacity='1';
 if(country.value=="United States of America"){
 document.getElementById("free_ship").style.opacity="1";
 document.getElementById("inter_ship").style.opacity='0';
+// document.getElementById("city").style.opacity="0";
+// document.getElementById("city").value="";
+document.getElementById("select_state").style.opacity="1";
+
+
 }else{
 document.getElementById("free_ship").style.opacity="0";
 document.getElementById("inter_ship").style.opacity='1';
+// document.getElementById("city").style.opacity="1";
+document.getElementById("select_state").style.opacity="0";
 }
 
-	}
-
-	function setFinalAmount(ship){
-if(ship.checked && ship.value=="International Shipping"){
-	//var price1 = parseInt(document.getElementById("paypal_amount").value)+10;
-//document.getElementById("paypal_amount").value=price1;
-//jQuery('script[class="stripe-button active"]').attr("data-amount",price1+"00");
-window.location = "/shipping?ship=international";
-}else{
-//document.getElementById("paypal_amount").value = document.getElementById("total").value;
-//jQuery('script[class="stripe-button active"]').attr("data-amount",document.getElementById("total").value+"00");
-window.location = "/shipping?ship=free";
-}
-	}
-
-	function saveData(){
-
-		jQuery.ajax({
-  method: "GET",
-  url: "/shipping",
-  data: jQuery("#form1").serialize()
-}).done(function( msg ) {
-    
-  });
 	}
 </script>
 </body>

@@ -1,5 +1,10 @@
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<html>
+<head>
+  <title>Mercy To Mankind</title>
 
+</head>
+<body>
+Checkout Page 
 		<table>
 <%
 if session[:cart] && session[:cart].count > 0 %>
@@ -14,7 +19,7 @@ if session[:cart] && session[:cart].count > 0 %>
 		person.each do |person1|
 			if person1[2]!=nil
 			@total = @total+person1[1].to_i
-			@product_names = @product_names+", "+person1[0]+" "+person1[3].to_s
+			@product_names = @product_names+", "+person1[0]+" "+person1[3]
 session[:product_names] = @product_names;
 			%>
 	
@@ -44,25 +49,36 @@ if session[:shipping] == 'International Shipping'
 end
 
 @total = @total+@shipping_charges
+@stripe_amount = @total
 session[:total] = @total
+if session[:tax]!='null'
+	@temp = @total*session[:tax]
+	@total = @total+@temp
+
+@stripe_amount = (@total/100)*100;
+@stripe_amount = @stripe_amount.to_s.gsub('.', '')
+	session[:total] = @total
 end
-session[:total] = @total
+
+end
+
  %>
-	<tr><td>Total = $<%=@total%></td><td>
+ 
+	<tr><td>Total = $<%=session[:total]%></td><td>
 	<%= form_tag charges_path do %>
  
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="Thanks For Your Purchase"
-          data-amount="<%=session[:total]%>00"></script>
-          <input type="hidden" name="final_amount" value="<%=session[:total]%>00" />
+          data-amount="<%=@stripe_amount%>"></script>
+          <input type="hidden" name="final_amount" value="<%=session[:total]%>" />
           <% end %>
 
 </td><td>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_xclick">
-<input type="hidden" name="business" value="mercytomankindco@gmail.com">
+<input type="hidden" name="business" value="admin@parulkalra.com">
 <input type="hidden" name="lc" value="IN">
 <input type="hidden" name="item_name" value="<%=@product_names%>">
 <input type="hidden" name="amount" id="paypal_amount" value="<%=session[:total]%>">
@@ -80,8 +96,13 @@ session[:total] = @total
 <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
 </form>
 </td></tr>
+
+<%
+else %>
+	<tr><td>No product in the cart</td></tr>
+<%
+end
+ %>
 </table>
-
-
-<% end %>
-
+</body>
+</html>
