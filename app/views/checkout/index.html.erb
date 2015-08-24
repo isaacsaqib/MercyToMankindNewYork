@@ -1,10 +1,6 @@
-<html>
-<head>
-  <title>Mercy To Mankind</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
-</head>
-<body>
-Checkout Page 
+
 		<table>
 <%
 if session[:cart] && session[:cart].count > 0 %>
@@ -104,5 +100,3 @@ else %>
 end
  %>
 </table>
-</body>
-</html>

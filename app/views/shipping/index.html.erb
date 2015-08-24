@@ -59,7 +59,7 @@ end
 	<tr><td>Address</td><td><input type="text" name="address" value="<%= @address%>"/></td></tr>
 	<tr><td>City</td><td><input type="text" name="city" value="<%= @city%>"/></td></tr>
 	<!-- <tr><td>State</td><td><input type="text" name="state" value="<%= @state%>"/></td></tr> -->
-	<tr><td>State</td><td>
+	<tr><td id="state-label">State</td><td>
 
 	<select name="select_state" id="select_state" style="width:50px;" value="<%= @state%>">
 		<option value="Select State"></option>
@@ -397,16 +397,15 @@ document.getElementById("select_state").style.opacity="0";
 if(country.value=="United States of America"){
 document.getElementById("free_ship").style.opacity="1";
 document.getElementById("inter_ship").style.opacity='0';
-// document.getElementById("city").style.opacity="0";
-// document.getElementById("city").value="";
 document.getElementById("select_state").style.opacity="1";
 
 
 }else{
 document.getElementById("free_ship").style.opacity="0";
 document.getElementById("inter_ship").style.opacity='1';
-// document.getElementById("city").style.opacity="1";
-document.getElementById("select_state").style.opacity="0";
+document.getElementById("select_state").style.display="none";
+document.getElementById("state-label").style.display="none";
+
 }
 
 	}
