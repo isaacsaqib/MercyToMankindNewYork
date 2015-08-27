@@ -47,7 +47,7 @@ end
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
-gem 'paperclip', github: 'thoughtbot/paperclip'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 gem 'aws-sdk', '< 2.0'
 
