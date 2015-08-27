@@ -35,6 +35,13 @@ end
 <tr><td>Zip</td><td><%=session[:zip]%></td><td></td><td></td></tr>
 <tr><td>Country</td><td><%=session[:country]%></td><td></td><td></td></tr>
 <tr><td>Shipping</td><td><%=session[:shipping]%></td><td></td><td></td></tr>
+	<% if session[:state]=='NY' %>
+	<tr><td>Tax</td><td>8.75%</td><td></td><td></td></tr>
+	<% else %>
+	<tr><td>Tax</td><td>None</td><td></td><td></td></tr>
+
+ 	<%end %>
+
 <%
 if session[:shipping] == 'Free Shipping'
 	@shipping_charges = 0
