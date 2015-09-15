@@ -1,9 +1,27 @@
-<%= @listing.name %><br>
-<%= @listing.price %><br>
-<%= image_tag @listing.avatar.url(:medium) %>
-<a href="?id=<%=@listing.id%>">Add to cart</a>
-<a href="/checkout">Checkout</a>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
 
 
 
+
+
+<form method="get">
+			<input type="hidden" name="product_id" value="<%=@listing.id%>">
+			<a href="<%=listing_path(@listing)%>"><%=@listing.name %></a><br> 
+			<%= image_tag @listing.avatar.url(:medium) %><br>
+			<%=@listing.price %> <br>
+			<select name="size"><br>
+			<% @size = @listing.size.split(",") %>
+
+				<% @size.each do |s| %>
+					<option value="<%= s %>"><%= s %></option>
+				<% end %>
+
+			 </select>
+			 <br/>
+			<%=link_to 'Edit', edit_listing_path(@listing) %>
+			<a href="?remove=<%=@listing.id%>">Delete</a><br>
+			<input id="add-to-cart-btn" type="submit" value="Add to cart">
+			<br>
+			<br>
+	</form>	

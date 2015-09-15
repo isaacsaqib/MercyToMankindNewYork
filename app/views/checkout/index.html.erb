@@ -11,15 +11,18 @@ if session[:cart] && session[:cart].count > 0 %>
 @product_names = ''
 @count_products =  ''
 @shipping_charges = 0
-	session[:cart].each do |person|
-		person.each do |person1|
-			if person1[2]!=nil
-			@total = @total+person1[1].to_i
-			@product_names = @product_names+", "+person1[0]+" "+person1[3]
+	session[:cart].each do |cart|
+		cart.each do |product|
+			if product[2]!=nil
+			@total = @total+product[1].to_i
+			@product_names = @product_names+", "+product[0]
+			if product[3]!=nil
+				@product_names = @product_names+", "+product[3]
+				end
 session[:product_names] = @product_names;
 			%>
 	
-	<tr><td><%= person1[0] %></td><td><%= person1[1] %></td><td><%= person1[3] %></td><td><a href="checkout?remove=<%=person1[4]%>">Remove</a></td></tr>
+	<tr><td><%= product[0] %></td><td><%= product[1] %></td><td><%= product[3] %></td><td><a href="checkout?remove=<%=product[4]%>">Remove</a></td></tr>
 			<%
 end
 end

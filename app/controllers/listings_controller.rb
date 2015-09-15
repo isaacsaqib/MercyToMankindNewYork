@@ -1,12 +1,7 @@
 class ListingsController < ApplicationController
 	
 	def index
-		if params[:id]
-			session[:cart] ||= {}
-		@listing = Listing.find(params[:id])
-		@count_cart = session[:cart].count + 2
-			session[:cart][@count_cart] = [@listing.name,@listing.price,params[:id],params[:size],@count_cart]
-		end	
+		
 
 		if params[:remove]
 			Listing.delete(params[:remove])
@@ -32,13 +27,18 @@ class ListingsController < ApplicationController
 	end
 
 	def show
-
-
 		if params[:id]
 			session[:cart] ||= {}
 		@listing = Listing.find(params[:id])
-			session[:cart][params[:id]] = [@listing.name,@listing.price,params[:id]]
+		@count_cart = session[:cart].count + 2
+			session[:cart][@count_cart] = [@listing.name,@listing.price,params[:product_id],params[:size],@count_cart]
+		
 		end	
+
+		if params[:remove]
+			Listing.delete(params[:remove])
+		end
+		@listings = Listing.all
 	  # Amount in cents
 	  	
 	  	@amount = @listing.price

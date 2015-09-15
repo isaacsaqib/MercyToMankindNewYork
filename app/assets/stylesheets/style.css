@@ -178,12 +178,12 @@ th {
  
 .css-slideshow{
    position: relative;
-   /*height: 270px;*/
+   width: 100%;
    /*margin-bottom: 690px;*/
 }
 .css-slideshow figure{
    margin: 0;
-   /*position: absolute;*/
+   position: absolute;
 }
 .css-slideshow figcaption{
    position: absolute;
@@ -206,6 +206,10 @@ th {
 
 figure:nth-child(1) {
    -webkit-animation: xfade 10s 1s infinite;
+}
+
+figure:nth-child(2) {
+   -webkit-animation: xfade 10s 3s infinite;
 }
 
 

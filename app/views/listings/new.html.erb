@@ -1,3 +1,6 @@
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+
 <%= form_for @listing, :url => listings_path, :html => { :multipart => true } do |f| %>
 	<%= f.label(:name) %>
 	<%=f.text_field :name %>
