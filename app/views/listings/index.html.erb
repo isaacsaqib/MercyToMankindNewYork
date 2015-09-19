@@ -1,23 +1,30 @@
 
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-<% javascript_include_tag "application", media: 'all', 'data-turbolinks-track' => true %>
 
-<% @listings.each do |listing| %>
-	<form method="get">
-			<input type="hidden" name="id" value="<%=listing.id%>">
-			<a href="<%=listing_path(listing)%>"><%=listing.name %></a><br> 
-			<%= image_tag listing.avatar.url(:medium) %><br>
-			<%=listing.price %> <br>
-			
-			 <br/>
-			 <% if logged_in? %>
-			<%=link_to 'Edit', edit_listing_path(listing) %>
-			<a href="?remove=<%=listing.id%>">Delete</a><br>
-			<% end %>
-			<br>
-			<br>
-	</form>	
-<% end %>
 
-<a href="/cart">Cart</a>
 
+<table id="products">
+	<tr>
+		<td class="col">
+			<ul>
+				<% @listings.each do |listing| %>
+				<li>
+				<form method="get">
+				<input type="hidden" name="id" value="<%=listing.id%>">
+				<a href="<%=listing_path(listing)%>"><%=listing.name %></a><br> 
+				<%= image_tag listing.avatar.url(:medium) %><br>
+							<%=listing.price %> <br>
+							
+							 <br/>
+							 <% if logged_in? %>
+							<%=link_to 'Edit', edit_listing_path(listing) %>
+							<a href="?remove=<%=listing.id%>">Delete</a><br>
+							<% end %>
+							<br>
+							<br>
+					</form>	
+				</li>
+				<% end %>
+			</ul>
+		</td>
+	</tr>
+</table>
