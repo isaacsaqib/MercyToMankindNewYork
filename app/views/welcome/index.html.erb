@@ -4,10 +4,17 @@
 	  <title>MERCYXMANKINDNEWYORK</title>
 
 	</head>
-		<body>
-	<!-- 		<header>
-			
-			<a href="/cart">Cart</a>
+	<div class="wrapper">
+		<body style="background-image: url('assets/back.jpg'); background-size:100%; background-repeat:no-repeat;  ">
+	
+		<header>
+		<ul id="top-nav">
+			<li><a href="/cart">Cart</a></li>
+			<span>
+			<li><a href="/checkout">Checkout</a></li>
+			</span>
+
+		</ul>
 
 				<p>MERCY X MANKIND</p>
 				<p>"MERCY FOR ALL"</p>
@@ -15,54 +22,32 @@
 			</header>
 
 		<ul id="nav">
-			<li><a href="#">HOME</a></li>
+			<li><a href="/">HOME</a></li>
 			<li><a href="/listings">SHOP</a></li>
-			<li><a href="#">LOOKBOOKS</a></li>
+			<li><a href="#">COLLECTION</a></li>
 			<li><a href="#">BLOG</a></li>
-			<li><a href="#">CONTACT</a></li>
-		</ul> -->
 
-<div class="css-slideshow"> 
-  <figure> 
-    <%= image_tag '5.jpg', :class => "slideshow-pic" %>
-  </figure> 
+		</ul>
 
-   <figure> 
-  <%= image_tag '2.jpg', :class => "slideshow-pic" %>
-  </figure> 
-
-</div>
-
-		 
-	<!-- 	<ul id="front-page-picture-list">
-			<li><%= image_tag '2.jpg' %></li>
-			<li><%= image_tag '1.jpg' %></li>
-			<li><%= image_tag '3.jpg' %></li>
-			</ul>
- -->
-<!-- 
-		<footer>
-			<div id="footer">
-				<ul>
-					<li><p>DETAILS</p></p></li>
-					<li><p>WHOLESALE</p></li>
-					<li><p>STOCKISTS</p></li>
-					<li><p>CONTACT</p></li>
-					<li><p>FAQ</p></li>
-					<li><p>TERMS</p></li>
-					<li><p>SHIPPING INFO</p></li>
-
-				</ul>
-
-			</div>
-
-		</footer>
- -->
-
-
-
-
+		<div class="push"></div>
 		</body>
+
+	</div>
+
+		<div class='footer'>
+			<ul>
+				<li><p>CONTACT</p></li>
+				<li><p>CUSTOMER CARE</p></li>
+				<span>
+				<li><%=image_tag 'fb.png', :class => 'icons' %></li>	
+				<li><%=image_tag 'ig.png', :class => 'icons' %></li>	
+				<li><%=image_tag 'twitter.png', :class => 'icons' %></li>	
+
+				</span>
+			</ul>
+	
+		</div>
+
 
 </html>
 

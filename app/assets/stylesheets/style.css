@@ -1,3 +1,38 @@
+* {
+    margin: 0;
+}
+
+.icons {
+	height: 18px;;
+	width: 18px;
+
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -52px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 52px; /* .push must be the same height as .footer */
+}
+
+span {
+	float: right;
+	margin-right: 10px;	
+
+}
+/*
+
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+
+*/
+
+
 body {
 	margin: 0px;
 
@@ -11,7 +46,7 @@ ul {
 header p {
 	text-align: center;
 	font-family: 'AdelleSans-Thin';
-	color: black;
+	color: white;
 }
 	
 header p:nth-child(2) {
@@ -19,6 +54,7 @@ header p:nth-child(2) {
 	text-decoration: overline;
 	margin-top: 120px;
 	letter-spacing: 25px;
+
 }
 
 header p:nth-child(3) {
@@ -53,11 +89,15 @@ header a {
 
 #nav a {
 	text-decoration: none;
-	color: gray;
+	color: white;
+	font-size: 25px;
+
 }
 
 #nav a:hover {
-	color:black;
+	color:red;
+	/*font-size: 19px;*/
+	
 
 	/*transition:.2s;*/
 	cursor: pointer;
@@ -65,16 +105,16 @@ header a {
 }
 
 #nav li  {
-	display: inline-block;
+	/*display: inline-block;*/
 	margin-left: 40px;
 	margin-right: 40px;
 	font-family: 'AdelleSans-Thin';
-
+	color: white;
 	list-style: none;
 }
 
 #nav li:hover {
-	text-shadow: 8px 12px 2.5px black;
+	text-shadow: 18px 22px 1.3px white;
 	cursor: pointer;
 }
 
@@ -94,6 +134,11 @@ header a {
 
 #top-nav li {
 	display: inline-block;
+	float: left;
+}
+
+#top-nav a:hover {
+	color: red;
 }
 
 
@@ -115,34 +160,37 @@ header a {
 }
 
 
-#footer {
-	height: 300px;
+.footer {
+	/*height: 100px;*/
 	width:100%;
 	background-color: black;
 	margin: 0px;
+	/*position: fixed;*/
 
 }
 
-#footer p {
+.footer p {
 	text-align: left;
 	color: white;
-	padding-left: 40px;
+	/*padding-left: 40px;*/
 	font-family: 'AdelleSans-Thin';
 	margin: 0px;
 }
 
 
-#footer li:nth-child(1) {
-	font-size: 25px;
-	margin-bottom: 20px;
+.footer li {
+	display: inline-block;
+	font-size: 15px;
 	padding-top: 20px;
+	padding-left: 10px;
+	margin: 0px;
 }
 
-#footer li:not(:first-child) {
+/*.footer li:not(:first-child) {
 	font-size: 12px;
 
 }
-
+*/
 
 #cart-table {
 	width: 100%;
@@ -171,21 +219,20 @@ th {
 /*slideshow code*/
 .slideshow-pic{
 	width: 100%;
-
-
 }
 
  
 .css-slideshow{
-   position: relative;
+   /*position: relative;*/
    width: 100%;
    /*margin-bottom: 690px;*/
 }
 .css-slideshow figure{
    margin: 0;
    position: absolute;
+   width: 100%;
 }
-.css-slideshow figcaption{
+/*.css-slideshow figcaption{
    position: absolute;
    top: 0;
    color: #fff;
@@ -194,11 +241,11 @@ th {
    padding: 8px 12px;
    opacity: 0;
    transition: opacity .5s;
-}
-.css-slideshow:hover figure figcaption{
+}*/
+/*.css-slideshow:hover figure figcaption{
    transition: opacity .5s;
    opacity: 1;
-}
+}*/
 .css-slideshow figure{
    opacity:0;
 }
