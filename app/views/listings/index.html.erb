@@ -10,9 +10,10 @@
 			<%=listing.price %> <br>
 			
 			 <br/>
+			 <% if logged_in? %>
 			<%=link_to 'Edit', edit_listing_path(listing) %>
 			<a href="?remove=<%=listing.id%>">Delete</a><br>
-			
+			<% end %>
 			<br>
 			<br>
 	</form>	

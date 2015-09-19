@@ -9,9 +9,12 @@
 	
 		<header>
 		<ul id="top-nav">
-			<li><a href="/cart">Cart</a></li>
+			<li><a href="/cart">CART</a></li>
 			<span>
-			<li><a href="/checkout">Checkout</a></li>
+			<li><a href="/checkout">CHECKOUT</a></li>
+			<% if logged_in? %>
+				<a href="/logout">LOGOUT</a>	
+			<% end %>
 			</span>
 
 		</ul>

@@ -8,6 +8,11 @@ resources :checkout
 resources :shipping
 resources :orders
 resources :cart
+resources :admins
+ get  "/admin"  => "session#new"
+  post "/session"      => "session#create"
+  #logout route
+  get  "/logout"       => "session#destroy"
 root 'welcome#index'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
