@@ -1,3 +1,4 @@
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
 <!DOCTYPE html>
 <html>
@@ -5,7 +6,18 @@
   <title>MERCYXMANKIND</title>
   
 </head>
+<div class="wrapper">
 <body>
+<ul id="top-nav">
+			<li><a href="/cart">CART</a></li>
+			<span>
+			<li><a href="/checkout">CHECKOUT</a></li>
+			<% if logged_in? %>
+				<a href="/logout">LOGOUT</a>	
+			<% end %>
+			</span>
+
+		</ul>
 
 
 
@@ -17,5 +29,22 @@
 
 
 
+		<div class="push"></div>
 </body>
+</div>
+
+	<div class='footer'>
+			<ul>
+				<li><p>CONTACT</p></li>
+				<li><p>CUSTOMER CARE</p></li>
+				<span>
+				<li><%=image_tag 'fb.png', :class => 'icons' %></li>	
+				<li><%=image_tag 'ig.png', :class => 'icons' %></li>	
+				<li><%=image_tag 'twitter.png', :class => 'icons' %></li>	
+
+				</span>
+			</ul>
+	
+		</div>
+
 </html>
