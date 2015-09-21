@@ -1,0 +1,21 @@
+<%- model_class = @picture.class -%>
+
+
+  <%= model_class.human_attribute_name(:description) %>:
+  <%= @picture.description %>
+  <%= model_class.human_attribute_name(:image) %>:
+  <%= image_tag @picture.image %>
+  <%= model_class.human_attribute_name(:listing_id) %>:
+  <%= @picture.listing_id %>
+
+
+
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              pictures_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_picture_path(@picture), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              picture_path(@picture),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>

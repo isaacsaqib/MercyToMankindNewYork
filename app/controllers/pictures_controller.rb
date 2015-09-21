@@ -41,6 +41,7 @@
     #@gallery = Gallery.find(params[:gallery_id])
 
     @picture = Picture.find(params[:id])
+    @listing = Listing.find(params[:id])
     # @picture = Picture.find(params[:id])
   end
 
