@@ -10,7 +10,6 @@
 				<li>
 				<form method="get">
 				<input type="hidden" name="id" value="<%=listing.id%>">
-				<%= image_tag listing.avatar.url(:medium) %><br>
 				<a href="<%=listing_path(listing)%>"><%=listing.name %></a><br> 
 							<p>$<%=listing.price %>.00</p> <br>
 							<div class="line-separator"></div>

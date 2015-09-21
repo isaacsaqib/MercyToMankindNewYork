@@ -7,24 +7,48 @@ class ListingsController < ApplicationController
 			Listing.delete(params[:remove])
 		end
 		@listings = Listing.all
+
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @listings }
+    end
+
 	end
 
 
 	def new
 		@listing = Listing.new
+		respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @listing }
+    end
 	end
 
 
 
 	def create
-		@listing = Listing.create(listing_params)
-		if @listing.save
-			redirect_to "/listings"
-		else
-			render :new
-		end
+		@listing = Listing.new(listing_params)
 
-	end
+		respond_to do |format|
+			if @listing.save
+				if params[:images]
+					params[:images].each {|image|
+						@listing.pictures.create(image: image)
+					}
+
+				end
+
+		format.html { redirect_to @listing, notice: 'listing was successfully created.' }
+      format.json { render json: @listing, status: :created, location: @listing }
+    else
+      format.html { render action: "new" }
+      format.json { render json: @listing.errors, status: :unprocessable_entity }
+    end
+  end
+end
+
+	
 
 	def show
 		if params[:id]
@@ -38,10 +62,18 @@ class ListingsController < ApplicationController
 		if params[:remove]
 			Listing.delete(params[:remove])
 		end
-		@listings = Listing.all
+
 	  # Amount in cents
 	  	
 	  	@amount = @listing.price
+
+	  	 @listing  = Listing.find(params[:id])
+    	@pictures = @listing.pictures
+
+    	respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @listing }
+    end
 	end
 
 	def edit 
@@ -70,7 +102,7 @@ class ListingsController < ApplicationController
 	private
 
 	def listing_params
-		params.require(:listing).permit(:name, :price, :image_url, :avatar, :size)
+		params.require(:listing).permit(:name, :price, :images, :avatar, :size, :pictures)
 
 	end
 	

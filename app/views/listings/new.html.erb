@@ -6,8 +6,8 @@
 	<%=f.text_field :name %>
 	<%= f.label :price %>
 	<%= f.number_field :price %>
-  	<%= f.file_field :avatar %>
-  	<%=f.label :size %>
+ <%= file_field_tag "images[]", type: :file, multiple: true %>
+   	<%=f.label :size %>
   	<input type="text" name="listing[size]" />
 	<%=f.submit %>
 

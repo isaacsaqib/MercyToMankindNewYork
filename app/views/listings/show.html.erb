@@ -8,7 +8,6 @@
 <form method="get">
 			<input type="hidden" name="product_id" value="<%=@listing.id%>">
 			<a href="<%=listing_path(@listing)%>"><%=@listing.name %></a><br> 
-			<%= image_tag @listing.avatar.url(:medium) %><br>
 			<%=@listing.price %> <br>
 			<select name="size"><br>
 			<% @size = @listing.size.split(",") %>
@@ -24,4 +23,36 @@
 			<input id="add-to-cart-btn" type="submit" value="Add to cart">
 			<br>
 			<br>
+
 	</form>	
+
+
+  <h1>Gallery</h1>
+
+  <input type="hidden" id="listingID" value="<%= @listing.id %>">
+
+
+
+<h2>Pictures</h2>
+
+  <% @pictures.each do |pic| %>
+    
+      <%= image_tag pic.image.url %>
+      
+        <%= link_to "Edit picture", picture_path(pic) %>
+
+        <%=
+          link_to "Delete picture", pic,
+            :data => { :confirm => "Are you sure?" },
+            :method => :delete
+          %>
+
+     
+<% end %>
+
+
+
+
+
+
+

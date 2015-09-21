@@ -9,6 +9,7 @@ resources :shipping
 resources :orders
 resources :cart
 resources :admins
+resources :pictures
  get  "/admin"  => "session#new"
   post "/session"      => "session#create"
   #logout route
