@@ -5,39 +5,9 @@
 
 
 
-<form method="get">
-			<input type="hidden" name="product_id" value="<%=@listing.id%>">
-			<a href="<%=listing_path(@listing)%>"><%=@listing.name %></a><br> 
-			<%=@listing.price %> <br>
-			<select name="size"><br>
-			<% @size = @listing.size.split(",") %>
+   <% @pictures.each do |pic| %>
 
-				<% @size.each do |s| %>
-					<option value="<%= s %>"><%= s %></option>
-				<% end %>
-
-			 </select>
-			 <br/>
-			<%=link_to 'Edit', edit_listing_path(@listing) %>
-			<a href="?remove=<%=@listing.id%>">Delete</a><br>
-			<input id="add-to-cart-btn" type="submit" value="Add to cart">
-			<br>
-			<br>
-
-	</form>	
-
-
-  <h1>Gallery</h1>
-
-  <input type="hidden" id="listingID" value="<%= @listing.id %>">
-
-
-
-<h2>Pictures</h2>
-
-  <% @pictures.each do |pic| %>
-    
-      <%= image_tag pic.image.url %>
+      <%= image_tag pic.image.url, :class => "listings-show" %>
       
         <%= link_to "Edit picture", picture_path(pic) %>
 
@@ -47,9 +17,47 @@
             :method => :delete
           %>
 
-     
-<% end %>
 
+     
+<% end %> 
+
+
+
+
+
+
+
+
+
+
+<div id="listings-details">
+	<form method="get">
+				<input type="hidden" name="product_id" value="<%=@listing.id%>">
+				<a style="text-decoration:none;" href="<%=listing_path(@listing)%>"></a>
+				<h1><%= @listing.name %></h1><br>
+				<p><%= @listing.description %></p>
+				<p><%= @listing.price %></p> <br>
+				<select name="size"><br>
+				<% @size = @listing.size.split(",") %>
+
+					<% @size.each do |s| %>
+						<option value="<%= s %>"><%= s %></option>
+					<% end %>
+
+				 </select>
+				 <br/>
+				<%=link_to 'Edit', edit_listing_path(@listing) %>
+				<a href="?remove=<%=@listing.id%>">Delete</a><br>
+				<input id="add-to-cart-btn" type="submit" value="Add to cart">
+				<br>
+				<br>
+
+	</form>	
+</div>
+
+
+
+  <input type="hidden" id="listingID" value="<%= @listing.id %>">
 
 
 
