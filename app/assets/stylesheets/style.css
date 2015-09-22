@@ -1,17 +1,48 @@
-.listings-show {
-	width: 551;
-	height: 826;
-	/*margin-left: 200px;*/
-	margin-bottom: 100px;
-	margin-top: 100px;
+#add-to-cart-btn {
+	background-color: black;
+	color: white;
+	font-family: 'AdelleSans-Thin';
+	border-radius: 0px;
+    width: 540px;
+    height: 40px;
+}
+
+
+
+#listings-show-pictures li > img {
+
+	height: 600;
+	width: 302px;
+	margin-left: 10px;
 
 }
 
+
+#listings-show-pictures li > img:hover {
+	opacity: .8;
+
+}
+
+#listings-show-pictures li {
+	display: inline-block;
+
+
+
+}
+
+#listings-show-pictures {
+
+	margin: 0 auto;
+	margin-left: 100px;
+}
+
+
 #listings-details {
-	float: right;
-	width: 300px;
-	margin-right: 210px;
-	margin-top: 80px;
+	margin: 0 auto;
+	width: 40%;
+	font-family: 'AdelleSans-Thin';
+	/*margin-right: 210px;*/
+	/*margin-top: 80px;*/
 }
 
 
@@ -212,7 +243,7 @@ header a {
 	background-color: black;
 	padding-bottom: 40px;
 	margin: 0px;
-	/*margin-bottom: 100px;*/
+	margin-bottom: 100px;
 	text-align: center;
 	font-size: 15px;
 	font-family: 'AdelleSans-Thin';

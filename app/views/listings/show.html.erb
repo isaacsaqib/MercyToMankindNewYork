@@ -5,13 +5,12 @@
 
 
 
+   <ul id="listings-show-pictures">
    <% @pictures.each do |pic| %>
+      <li><%= image_tag pic.image.url %></li>
+        <%# link_to "Edit picture", picture_path(pic) %>
 
-      <%= image_tag pic.image.url, :class => "listings-show" %>
-      
-        <%= link_to "Edit picture", picture_path(pic) %>
-
-        <%=
+        <%#
           link_to "Delete picture", pic,
             :data => { :confirm => "Are you sure?" },
             :method => :delete
@@ -20,6 +19,7 @@
 
      
 <% end %> 
+    </ul>  
 
 
 
@@ -36,7 +36,7 @@
 				<a style="text-decoration:none;" href="<%=listing_path(@listing)%>"></a>
 				<h1><%= @listing.name %></h1><br>
 				<p><%= @listing.description %></p>
-				<p><%= @listing.price %></p> <br>
+				<p>$<%= @listing.price %></p> <br>
 				<select name="size"><br>
 				<% @size = @listing.size.split(",") %>
 
@@ -46,8 +46,12 @@
 
 				 </select>
 				 <br/>
+
+				 <% if logged_in? %>
 				<%=link_to 'Edit', edit_listing_path(@listing) %>
 				<a href="?remove=<%=@listing.id%>">Delete</a><br>
+				<% end %>
+				<br>
 				<input id="add-to-cart-btn" type="submit" value="Add to cart">
 				<br>
 				<br>
