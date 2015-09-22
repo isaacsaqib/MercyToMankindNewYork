@@ -1,25 +1,21 @@
-* {
-    margin: 0;
-}
-
-
-#products {
-
-	
-}
-
 .line-separator{
 
-height:1px;
+padding:1px;
 
-background:#717171;
+background:#E8E8E8;
 
-border-bottom:.5px solid gray;
+border-bottom:.5px solid #E8E8E8;
+
+}
+
+ul {
+	padding: 0px;
 }
 
 
 table {
   margin:0 auto;
+  width: 100%;
 }
 
 .col ul {
@@ -47,8 +43,26 @@ table {
 #products li a {
 	font-size:14px;
 	text-decoration: none;
-	color: red;
+	color: black;
 	text-align: left;
+	padding-top: 10px;
+}
+
+#products li a:hover {
+	text-decoration: underline;
+
+}
+
+#products li img {
+	height: 454;
+	width: 302;
+	margin-bottom: 15px;
+
+}
+
+#products li img:hover {
+	opacity: .8;
+
 }
 
 
@@ -68,6 +82,15 @@ html, body {
 }
 .footer, .push {
     height: 52px; /* .push must be the same height as .footer */
+}
+
+.footer li > a {
+	text-decoration: none;
+
+}
+
+.footer li > a:hover {
+	color: red;
 }
 
 span {
@@ -170,11 +193,11 @@ header a {
 
 #top-nav {
 	background-color: black;
-	padding: 18px;
+	padding-bottom: 40px;
 	margin: 0px;
 	text-align: center;
 	font-size: 15px;
-		font-family: 'AdelleSans-Thin';
+	font-family: 'AdelleSans-Thin';
 
 
 }
@@ -188,6 +211,7 @@ header a {
 #top-nav li {
 	display: inline-block;
 	float: left;
+	padding: 14px;
 }
 
 #top-nav a:hover {

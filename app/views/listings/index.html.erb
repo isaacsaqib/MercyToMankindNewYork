@@ -9,29 +9,33 @@
 			<% @listings.each do |listing| %>
 
 				<% if listing.pictures.first %>
+            	<li>
+            	<!-- listing image pictures -->
             	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
             	<% else %>
               		N/A
             	<% end %>
 				
-				<li>
+				<!-- Name, price and buttons -->
 				<form method="get">
 				<input type="hidden" name="id" value="<%=listing.id%>">
 				<a href="<%=listing_path(listing)%>"><%=listing.name %></a><br> 
-							<p>$<%=listing.price %>.00</p> <br>
-							<div class="line-separator"></div>
-							
-							 <br/>
+				<p>$<%=listing.price %>.00</p><br>
+				<div class="line-separator"></div>
+				
+				 <br/>
 							 <% if logged_in? %>
-							<%=link_to 'Edit', edit_listing_path(listing) %>
-							<a href="?remove=<%=listing.id%>">Delete</a><br>
+							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
+							<p><a href="?remove=<%=listing.id%>">Delete</a></p><br>
 							<% end %>
 							<br>
 							<br>
-					</form>	
+				</form>	
+
 				</li>
 				<% end %>
 			</ul>
 		</td>
 	</tr>
 </table>
+
