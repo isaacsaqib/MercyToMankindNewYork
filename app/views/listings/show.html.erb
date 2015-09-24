@@ -34,7 +34,7 @@
 	<form method="get">
 				<input type="hidden" name="product_id" value="<%=@listing.id%>">
 				<a style="text-decoration:none;" href="<%=listing_path(@listing)%>"></a>
-				<h1><%= @listing.name %></h1><br>
+				<p><%= @listing.name %></p><br>
 				<p><%= @listing.description %></p>
 				<p>$<%= @listing.price %></p> <br>
 				<select name="size"><br>

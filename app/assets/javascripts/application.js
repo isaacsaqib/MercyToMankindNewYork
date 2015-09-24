@@ -14,4 +14,37 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require 'new.js'
+
+
+
+$(document).ready(function(){
+
+	$("#shop-sub-nav").hide();
+	$("#tops").hide();
+	$("#bottoms").hide();
+
+	$("#shop-button").on("click", function(){
+		event.preventDefault();
+		$("#shop-sub-nav").slideDown();
+
+
+	})
+
+	
+
+	$("#shop-sub-nav li:nth-child(2) > a").on("click", function(){
+		$(".products").show();
+
+	});
+
+
+	
+
+});
+window.onload = function() {
+  	$("#shop-sub-nav li:nth-child(1)").on("click", function(){
+		$("#tops").show();
+
+
+	});
+	};

@@ -8,6 +8,9 @@ class ListingsController < ApplicationController
 		end
 		@listings = Listing.all
 
+		@listings_tops = Listing.where(:section => "Tops")
+		@listings_bottoms = Listing.where(:section => "Bottoms")
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -102,7 +105,7 @@ end
 	private
 
 	def listing_params
-		params.require(:listing).permit(:name, :price, :images, :avatar, :size, :pictures, :description)
+		params.require(:listing).permit(:name, :price, :images, :avatar, :size, :pictures, :description, :section)
 
 	end
 	

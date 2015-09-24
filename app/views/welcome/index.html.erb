@@ -1,6 +1,8 @@
 	<html>
 	<head>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<script type="text/javascript" src="assets/application.js"></script>
+
 	  <title>MERCYXMANKINDNEWYORK</title>
 
 	</head>
@@ -26,7 +28,13 @@
 
 		<ul id="nav">
 			<li><a href="/">HOME</a></li>
-			<li><a href="/listings">SHOP</a></li>
+			<li><a id="shop-button" href="/listings">SHOP</a></li>
+				<ul id="shop-sub-nav">
+					<li><a href="/listings">TOPS</a></li>
+					<li><a href="/listings">BOTTOMS</a></li>
+					<li><a href="/listings">HEADWEAR</a></li>
+					<li><a href="/listings">WRISTWEAR</a></li>
+				</ul>
 			<li><a href="#">COLLECTION</a></li>
 			<li><a href="#">BLOG</a></li>
 

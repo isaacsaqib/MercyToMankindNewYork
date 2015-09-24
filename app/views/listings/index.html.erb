@@ -1,12 +1,24 @@
 
+	<script type="text/javascript" src="assets/application.js"></script>
+
+
+<ul id="listings-index-nav">
+	<li>TOPS •</li>
+	<li>BOTTOMS •</li>
+	<li>HEADWEAR •</li>
+	<li>WRISTWEAR </li>
+
+</ul>
 
 
 
-<table id="products">
+
+
+<table class="products" id="tops">
 	<tr>
 		<td class="col">
 			<ul>
-			<% @listings.each do |listing| %>
+			<% @listings_tops.each do |listing| %>
 
 				<% if listing.pictures.first %>
             	<li>
@@ -38,4 +50,43 @@
 		</td>
 	</tr>
 </table>
+
+<table class="products" id="bottoms">
+	<tr>
+		<td class="col">
+			<ul>
+			<% @listings_bottoms.each do |listing| %>
+
+				<% if listing.pictures.first %>
+            	<li>
+            	<!-- listing image pictures -->
+            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
+            	<% else %>
+              		N/A
+            	<% end %>
+				
+				<!-- Name, price and buttons -->
+				<form method="get">
+				<input type="hidden" name="id" value="<%=listing.id%>">
+				<a href="<%=listing_path(listing)%>"><%=listing.name %></a><br> 
+				<p>$<%=listing.price %>.00</p><br>
+				<div class="line-separator"></div>
+				
+				 <br/>
+							 <% if logged_in? %>
+							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
+							<p><a href="?remove=<%=listing.id%>">Delete</a></p><br>
+							<% end %>
+							<br>
+							<br>
+				</form>	
+
+				</li>
+				<% end %>
+			</ul>
+		</td>
+	</tr>
+</table>
+
+
 

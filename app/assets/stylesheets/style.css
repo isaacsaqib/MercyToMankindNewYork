@@ -1,3 +1,19 @@
+#shop-sub-nav li a {
+	font-size: 14px;
+
+}
+
+#listings-index-nav li {
+	display: inline-block;
+	font-family: 'AdelleSans-Thin';
+	font-size: 10px;
+}
+
+#listings-index-nav {
+	text-align: center;
+
+}
+
 #add-to-cart-btn {
 	background-color: black;
 	color: white;
@@ -7,11 +23,31 @@
     height: 40px;
 }
 
+#listings-details > form > p:nth-child(3) {
+	font-size: 20px;
+	margin-bottom: 0px;
+
+}
+
+#listings-details > form > p:nth-child(5) {
+
+	margin-top: 0px;
+
+}
+
+#listings-details > form > p:nth-child(6) {
+	margin-bottom: 0px;
+}
+
+
+
+
+
 
 
 #listings-show-pictures li > img {
 
-	height: 600;
+	height: 500;
 	width: 302px;
 	margin-left: 10px;
 
@@ -23,7 +59,7 @@
 
 }
 
-#listings-show-pictures li {
+#listings-show-pictures  li {
 	display: inline-block;
 
 
@@ -71,24 +107,24 @@ table {
 
 }
 
-#products > tbody > tr > td > ul {
+.products > tbody > tr > td > ul {
 	list-style: none;
 
 }
 
-#products li {
+.products li {
 	display: inline-block;
 	margin: 30px;
 	text-align: left;
 }
 
-#products li p {
+.products li p {
 	margin: 0px;
 	font-size: 10px;
 	text-align: left;
 }
 
-#products li a {
+.products li a {
 	font-size:14px;
 	text-decoration: none;
 	color: black;
@@ -96,19 +132,19 @@ table {
 	padding-top: 10px;
 }
 
-#products li a:hover {
+.products li a:hover {
 	text-decoration: underline;
 
 }
 
-#products li img {
+.products li img {
 	height: 454;
 	width: 302;
 	margin-bottom: 15px;
 
 }
 
-#products li img:hover {
+.products li img:hover {
 	opacity: .8;
 
 }
