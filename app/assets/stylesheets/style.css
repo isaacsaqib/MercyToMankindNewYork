@@ -1,3 +1,11 @@
+#size {
+	border: black;
+	font-family: 'AdelleSans-Thin';
+	font-size: 15px;
+	width: 87px;
+    height: 21px;
+}
+
 #shop-sub-nav li a {
 	font-size: 14px;
 
@@ -7,6 +15,11 @@
 	display: inline-block;
 	font-family: 'AdelleSans-Thin';
 	font-size: 10px;
+}
+
+#listings-index-nav li:hover {
+	cursor: pointer;
+	color: red;
 }
 
 #listings-index-nav {
@@ -21,6 +34,13 @@
 	border-radius: 0px;
     width: 540px;
     height: 40px;
+}
+
+#add-to-cart-btn:hover {
+	background-color: white;
+	color: black;
+	cursor: pointer;
+
 }
 
 #listings-details > form > p:nth-child(3) {
@@ -355,7 +375,7 @@ header a {
 */
 
 #cart-table {
-	width: 100%;
+	width: 85%;
 	height: 130px;
 	/*color: blue;*/
 	background: transparent;

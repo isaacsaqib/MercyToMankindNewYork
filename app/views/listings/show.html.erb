@@ -1,4 +1,5 @@
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<script type="text/javascript" src="/assets/application.js"></script>
 
 
 
@@ -34,10 +35,12 @@
 	<form method="get">
 				<input type="hidden" name="product_id" value="<%=@listing.id%>">
 				<a style="text-decoration:none;" href="<%=listing_path(@listing)%>"></a>
-				<p><%= @listing.name %></p><br>
-				<p><%= @listing.description %></p>
-				<p>$<%= @listing.price %></p> <br>
-				<select name="size"><br>
+				<p style="font-size:30px;"><%= @listing.name %></p><br>
+				<p style="color:gray; margin:0px;">$<%= @listing.price %></p> <br>
+				<p style="margin:0px;"><%= @listing.description %></p>
+				<br>
+				<p style="color:gray;">Size</p>
+				<select id="size" name="size"><br>
 				<% @size = @listing.size.split(",") %>
 
 					<% @size.each do |s| %>
@@ -53,11 +56,14 @@
 				<% end %>
 				<br>
 				<input id="add-to-cart-btn" type="submit" value="Add to cart">
+				<p id="added">Added to cart</p>
 				<br>
 				<br>
 
 	</form>	
 </div>
+
+
 
 
 

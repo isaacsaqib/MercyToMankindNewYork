@@ -3,12 +3,12 @@
 
 	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 
-<a href="/">Home </a>
-		<table id="cart-table">
+
+<table id="cart-table">
 
 <% if session[:cart] && session[:cart].count > 0 %>
 
-	<tr><th>Product Name</th><th>Price</th><th>Size</th><th></th></tr>
+	<tr><th>ITEM</th><th>PRICE</th><th>SIZE</th><th>REMOVE</th></tr>
 
 <% session[:cart].delete('') 
 @total = 0
@@ -25,8 +25,7 @@
 				end
 session[:product_names] = @product_names;
 			%>
-	
-	<tr><td><%= product[0] %></td><td><%= product[1] %></td><td><%= product[3] %></td><td><a href="cart?remove=<%=product[4]%>">X</a></td></tr>
+	<tr><td><%= product[0] %></td><td><%= product[1] %></td><td><%= product[3] %></td><td><a href="cart?remove=<%=product[4]%>">X</a></td></tr> 
 		<%end 
 	end
 end %>
