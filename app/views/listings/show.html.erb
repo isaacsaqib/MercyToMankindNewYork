@@ -37,7 +37,7 @@
 				<a style="text-decoration:none;" href="<%=listing_path(@listing)%>"></a>
 				<p style="font-size:30px;"><%= @listing.name %></p><br>
 				<p style="color:gray; margin:0px;">$<%= @listing.price %></p> <br>
-				<p style="margin:0px;"><%= @listing.description %></p>
+				<p style="margin:0px;"><%= @listing.description.upcase %></p>
 				<br>
 				<p style="color:gray;">Size</p>
 				<select id="size" name="size"><br>

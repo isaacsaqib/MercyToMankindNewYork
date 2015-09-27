@@ -1,0 +1,16 @@
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+
+
+
+
+
+   <ul id="collections-show-pictures">
+    <% @pictures.each do |pic| %>
+      <li><%= image_tag pic.image.url %></li>
+
+
+     
+  <% end %> 
+    </ul>  

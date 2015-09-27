@@ -10,11 +10,16 @@ resources :orders
 resources :cart
 resources :admins
 resources :pictures
- get  "/admin"  => "session#new"
-  post "/session"      => "session#create"
+
+get  "/admin"  => "session#new"
+post "/session"      => "session#create"
   #logout route
-  get  "/logout"       => "session#destroy"
+get  "/logout"       => "session#destroy"
 root 'welcome#index'
+
+resources :collections
+
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

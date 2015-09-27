@@ -13,6 +13,7 @@ class ListingsController < ApplicationController
 		@listings_bottoms = Listing.where(:section => "Bottoms")
 		@listings_headwear = Listing.where(:section => "Headwear")
 		@listings_wristwear = Listing.where(:section => "Wristwear")
+		@listings_collection = Listing.where(:section => "Collection")
 
 
     respond_to do |format|
