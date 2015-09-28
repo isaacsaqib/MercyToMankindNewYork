@@ -38,21 +38,16 @@ end
 
 end
  %>
-<html>
-<head>
-  <title>Mercy To Mankind</title>
 
-<style type="text/css">
-	td{
-		width: 200px;
-	}
-</style>
+
+
+
+
 <%= javascript_include_tag "jquery", "data-turbolinks-track" => true  %>
-</head>
-<body>
-<h1>Enter Shipping Details</h1>
+
+<h1 class="h1-headers"> SHIPPING </h1>
 <form method="get" action="" id="form1">
-<table>
+<table id="shipping-table">
 	<tr><td>First Name</td><td><input type="text" name="firstname" onkeyup="saveData()" value="<%= @firstname%>" /></td></tr>
 	<tr><td>Last Name</td><td><input type="text" name="lastname" value="<%= @lastname%>"/></td></tr>
 	<tr><td>Email</td><td><input type="text" name="email" value="<%= @email%>"/></td></tr>
@@ -410,5 +405,4 @@ document.getElementById("state-label").style.display="none";
 
 	}
 </script>
-</body>
-</html>
+

@@ -25,6 +25,7 @@ $(document).ready(function(){
 	$("#headwear").hide();
 	$("#wristwear").hide();
 	$("#added").hide();
+	$("#contact-hide").hide();
 
 
 	$("#add-to-cart-btn").on("click", function(){
@@ -32,12 +33,12 @@ $(document).ready(function(){
 
 	})
 
-	// $("#shop-button").on("click", function(){ /* shop button */
-	// 	event.preventDefault();
-	// 	$("#shop-sub-nav").slideDown();
+	$("#nav li:nth-child(3)").on("click", function(){ /* shop button */
+		event.preventDefault();
+		$("#contact-hide").slideDown();
 
 
-	// })
+	})
 
 
 	$("#listings-index-nav li:nth-child(1)").on("click", function(){  /* New */

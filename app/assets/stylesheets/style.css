@@ -1,3 +1,15 @@
+.h1-headers {
+	text-align: center;
+	font-family: 'AdelleSans-Thin';
+}
+
+
+#shipping-table input {
+	font-size: 20px;
+}
+
+
+
 #size {
 	border: black;
 	font-family: 'AdelleSans-Thin';
@@ -63,10 +75,11 @@
 	text-align: center;
 }
 
-#collections-show-pictures li {
+#collections-show-pictures li > img {
 	display: inline-block;
-	margin: 20px;
-	/*width: 100%;*/
+	margin: 20px;	
+
+	width: 50%;
 	/*height: 200px;*/
 }
 
@@ -242,7 +255,7 @@ header p {
 header p:nth-child(1) {
 	font-size: 40px;
 	text-decoration: overline;
-	margin-top: 120px;
+	margin-top: -80px;
 	letter-spacing: 25px;
 
 }
@@ -260,6 +273,7 @@ header p:nth-child(3) {
 	letter-spacing: 5px;
 	word-spacing: 3px;
 	line-height: 30px;
+	/*margin-bottom: 150px;*/
 }
 
 header a {
@@ -274,18 +288,20 @@ header a {
 	margin-top: 70px;
 	padding: 0px;
 	text-align: center;
+	/*background-color: rgba(0, 0, 0, .8);*/
 
 }
 
 #nav a {
 	text-decoration: none;
-	color: white;
-	font-size: 25px;
+	color: red;
+	font-size: 15px;
+
 
 }
 
 #nav a:hover {
-	color:red;
+	color:white;
 	/*font-size: 19px;*/
 	
 
@@ -296,11 +312,14 @@ header a {
 
 #nav li  {
 	/*display: inline-block;*/
-	margin-left: 40px;
-	margin-right: 40px;
+	/*background-color: rgba(0, 0, 0, .8);*/
+	padding: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
 	font-family: 'AdelleSans-Thin';
-	color: white;
+
 	list-style: none;
+	/*margin-top: 250px;*/
 }
 
 #nav li:hover {
@@ -407,7 +426,8 @@ td {
 
 th {
  	/*font-family: 'AdelleSans-Thin';*/
- 	font-weight: 600;
+ 	/*font-weight: 600;*/
+ 	font-size: 12px;
 
 }
 
