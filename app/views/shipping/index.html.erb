@@ -363,9 +363,11 @@ end
 <option value="Zimbabwe">Zimbabwe</option>
 </select></td></tr>
 	<tr id="free_ship"><td><input type="radio" name="shipping" value="Free Shipping" <%=@free_shipping%> />US Shipping</td><td>3-6 Days Free</td></tr>
-	<tr id="inter_ship"><td><input type="hidden" id="total" name="total" value="<%= session[:final_total]%>" /><input type="radio" name="shipping" value="International Shipping" <%=@premium_shipping%> />International Shipping </td><td>2-3 Days $6</td></tr>
-	<tr><td><input type="submit" value="Checkout" /></td><td></td></tr>
+	<tr id="inter_ship"><td><input type="hidden" id="total" name="total" value="<%= session[:final_total]%>" /><input type="radio" name="shipping" value="International Shipping" <%=@premium_shipping%> />International Shipping </td><td>7-10 Business Days: $6</td></tr>
+	
 </table>
+
+<input id="checkout-btn" type="submit" value="Checkout" />
 </form>
 
 

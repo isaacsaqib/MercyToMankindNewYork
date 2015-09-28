@@ -18,6 +18,7 @@ get  "/logout"       => "session#destroy"
 root 'welcome#index'
 
 resources :collections
+get "/customercare" => "customers#index"
 
 
   # You can have the root of your site routed with "root"
