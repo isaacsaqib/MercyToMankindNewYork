@@ -1,3 +1,15 @@
+html, body {
+    height: 100%;
+    margin:0px;
+}
+
+span {
+	float: right;
+	margin-right: 10px;	
+}
+
+
+
 #checkout-btn {
 	display: block;
 	margin: 0 auto;
@@ -188,6 +200,7 @@ table {
 
 }
 
+
 .products > tbody > tr > td > ul {
 	list-style: none;
 
@@ -236,9 +249,6 @@ table {
 	width: 18px;
 
 }
-html, body {
-    height: 100%;
-}
 .wrapper {
     min-height: 100%;
     height: auto !important;
@@ -258,11 +268,10 @@ html, body {
 	color: red;
 }
 
-span {
-	float: right;
-	margin-right: 10px;	
 
-}
+
+
+
 /*
 
 Sticky Footer by Ryan Fait
@@ -271,11 +280,6 @@ http://ryanfait.com/
 */
 
 
-body {
-	margin: 0px;
-
-
-}
 
 ul {
 	padding: 0px;
@@ -364,7 +368,7 @@ header a {
 
 #top-nav {
 	background-color: black;
-	padding-bottom: 40px;
+	padding-bottom:0px;
 	margin: 0px;
 	margin-bottom: 100px;
 	text-align: center;
@@ -381,9 +385,26 @@ header a {
 }
 
 #top-nav li {
+	padding: 12px;
+}
+
+
+
+#top-nav > li:nth-child(1) {
 	display: inline-block;
 	float: left;
-	padding: 14px;
+
+}
+
+#top-nav > li:nth-child(2) {
+	display: inline-block;
+	float: none;
+}
+
+
+#top-nav > li:nth-child(3) {
+	display: inline-block;
+	float: right;
 }
 
 #top-nav a:hover {
@@ -433,6 +454,10 @@ header a {
 	padding-top: 20px;
 	padding-left: 10px;
 	margin: 0px;
+}
+
+.footer ul {
+	margin:0px;
 }
 
 /*.footer li:not(:first-child) {
