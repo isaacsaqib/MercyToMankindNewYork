@@ -1,4 +1,4 @@
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
 <h1 class="h1-headers">REVIEW ORDER</h1>
 
@@ -51,25 +51,24 @@ end
 if session[:shipping] == 'Free Shipping'
 	@shipping_charges = 0
 end
-
 if session[:shipping] == 'International Shipping'
 	@shipping_charges = 6
 end
 
 @total = @total+@shipping_charges
-@stripe_amount = @total
-session[:total] = @total
+@stripe_amount = @total*100;
+
+
 if session[:tax]!='null'
 	@temp = @total*session[:tax]
 	@total = @total+@temp
-
-@stripe_amount = (@total/100)*100;
-@stripe_amount = @stripe_amount.to_s.gsub('.', '')
-	session[:total] = @total
+@stripe_amount = @total*100;
+/ @stripe_amount = @stripe_amount.to_s.gsub('.', '') /
+	
 end
 
+session[:total] = sprintf("%.2f", @total.to_f)
 end
-
  %>
  
 	<tr><td>Total = $<%=session[:total]%></td><td>

@@ -74,7 +74,7 @@ end
 	  	
 	  	@amount = @listing.price
 
-	  	 @listing  = Listing.find(params[:id])
+	  	@listing  = Listing.find(params[:id])
     	@pictures = @listing.pictures
 
     	respond_to do |format|
