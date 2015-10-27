@@ -1,9 +1,11 @@
   class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
+    skip_before_filter  :verify_authenticity_token
+
   def index
 
-    @listing = Listing.find(params[:listing_id])
+    @listing = Listing.find(params[:id])
 
     @pictures = @listing.pictures
     debugger
@@ -41,7 +43,7 @@
     #@gallery = Gallery.find(params[:gallery_id])
 
     @picture = Picture.find(params[:id])
-    @listing = Listing.find(params[:id])
+    # @listing = Listing.find(params[:id])
     # @picture = Picture.find(params[:id])
   end
 
@@ -70,21 +72,17 @@
   # PUT /pictures/1.json
   def update
 
-    @listing = Listing.find(params[:listing_id])
+    # @listing = Listing.find(params[:listing_id])
 
-    @picture = @listing.pictures.find(params[:id])
-
-    respond_to do |format|
-      if @picture.update_attributes(picture_params)
-        format.html { redirect_to listing_path(@listing), notice: 'Picture was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @picture.errors, status: :unprocessable_entity }
-      end
+    @picture = Picture.find(params[:id])
+    if @picture.update(picture_params)
+      redirect_to "/"
+    else
+      render :edit
     end
+    
+     
   end
-
   # DELETE /pictures/1
   # DELETE /pictures/1.json
   def destroy
@@ -114,6 +112,6 @@
   private
 
   def picture_params
-    params.require(:picture).permit(:description, :listing_id, :images)
+    params.require(:picture).permit(:description, :listing_id, :image)
   end
 end

@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
-	
+		skip_before_filter  :verify_authenticity_token
+
 	def index
 		
 
@@ -26,10 +27,7 @@ class ListingsController < ApplicationController
 
 	def new
 		@listing = Listing.new
-		respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @listing }
-    end
+
 	end
 
 
@@ -77,10 +75,7 @@ end
 	  	@listing  = Listing.find(params[:id])
     	@pictures = @listing.pictures
 
-    	respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @listing }
-    end
+ 
 	end
 
 	def edit 
@@ -88,15 +83,26 @@ end
 	end
 
 
-	def update
-		@listing = Listing.find(params[:id])
+	
+	 def update
+    @listing = Listing.find(params[:id])
 
-			if @listing.update(listing_params)
-				redirect_to "/"
-			else
-				render 'edit'
-			end
-	end
+    respond_to do |format|
+      if @listing.update_attributes(listing_params)
+        if params[:images]
+          # The magic is here ;)
+          params[:images].each { |image|
+            @listing.pictures.create(image: image)
+          }
+        end
+        format.html { redirect_to @listing, notice: 'listing was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @listing.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
 
 	def destroy
@@ -109,7 +115,7 @@ end
 	private
 
 	def listing_params
-		params.require(:listing).permit(:name, :price, :images, :avatar, :size, :pictures, :description, :section)
+		params.require(:listing).permit(:name, :price, :images, :size, :pictures, :description, :section)
 
 	end
 	

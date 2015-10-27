@@ -9,13 +9,12 @@
    <ul id="listings-show-pictures">
    <% @pictures.each do |pic| %>
       <li><%= image_tag pic.image.url %></li>
+      <%= pic.description %>
+      <%= link_to "Edit picture", picture_path(pic) %>
         <%# link_to "Edit picture", picture_path(pic) %>
 
-        <%#
-          link_to "Delete picture", pic,
-            :data => { :confirm => "Are you sure?" },
-            :method => :delete
-          %>
+     <%= link_to "Delete picture", @picture, :method => :delete,
+                                      data: { confirm: "You sure?" } %>
 
 
      

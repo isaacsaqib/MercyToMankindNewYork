@@ -10,6 +10,11 @@ span {
 
 
 
+.picture-edit {
+	height: 200px;
+	width: 200px;
+}
+
 #checkout-btn {
 	display: block;
 	margin: 0 auto;
@@ -139,8 +144,8 @@ span {
 
 #listings-show-pictures li > img {
 
-	height: 500;
-	width: 302px;
+	height: 600;
+	width: 802px;
 	margin-left: 10px;
 
 }
