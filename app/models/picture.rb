@@ -5,7 +5,7 @@ class Picture < ActiveRecord::Base
     :bucket => ENV['AZ_BUCKET'],
     :access_key_id => ENV['AZ_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AZ_SECRET_ACCESS_KEY']
-  }
+  },
     :path => ":rails_root/public/images/:id/:filename",
     :url  => "/images/:id/:filename"
 
