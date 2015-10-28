@@ -1,6 +1,5 @@
 class Picture < ActiveRecord::Base
  has_attached_file :image,
-    config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
       :bucket => ENV['AWS_BUCKET'],
