@@ -1,15 +1,14 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  Paperclip::Attachment.default_options.merge!({
-    storage: :s3,
-    s3_credentials: {
-        access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-        secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-        bucket: "#{ENV['AWS_BUCKET']}-#{Rails.env}"
-        },
-    url: ":s3_domain_url",
-    path: "/:class/:attachment/:id_partition/:style/:filename"
-    })
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => 'mymny',
+    :access_key_id => 'AKIAJZG2MFC64VXKUDEQ',
+    :secret_access_key => '76BGsySPT52my+6po94wHcgprX4iJ81+EMePjwUQ'
+  }
+}
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
