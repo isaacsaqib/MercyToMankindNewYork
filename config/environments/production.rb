@@ -1,21 +1,25 @@
 Rails.application.configure do
 
   
-
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => ENV['AWS_BUCKET'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    }
-  }
-
+  Paperclip::Attachment.default_options.merge!({
+    storage: :s3,
+    s3_credentials: {
+        access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+        secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+        bucket: "#{ENV['AWS_BUCKET']}-#{Rails.env}"
+        },
+    url: ":s3_domain_url",
+    path: "/:class/:attachment/:id_partition/:style/:filename"
+    })
 
 ENV['PUBLISHABLE_KEY']='pk_test_85dgBVCarVWNxR6rCOEovf2p'
 ENV['SECRET_KEY']='sk_test_CtY58gVmXdha8d24wKMoRZCI'
 
 
+
+ENV['AWS_BUCKET']='mxmny'
+ENV['AWS_ACCESS_KEY_ID'] = "AKIAIXJB7QC2V22PN5UQ"
+ENV['AWS_SECRET_ACCESS_KEY'] = "kmk2k8GvMTdM78kHbrPPf79RPQejphyiLUHBINNy/hzdEuQFjf4gA6IycOR+bOY"
 
   # Settings specified here will take precedence over those in config/application.rb.
 
