@@ -2,9 +2,9 @@ class Picture < ActiveRecord::Base
   has_attached_file :image,
   :storage => :s3,
   :s3_credentials => {
-    :bucket => ENV['AZ_BUCKET'],
-    :access_key_id => ENV['AZ_ACCESS_KEY_ID'],
-    :secret_access_key => ENV['AZ_SECRET_ACCESS_KEY']
+    :bucket => ENV['AWS_BUCKET'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   },
     :path => ":rails_root/public/images/:id/:filename",
     :url  => "/images/:id/:filename"
