@@ -10,12 +10,14 @@
    <% @pictures.each do |pic| %>
       <li><%= image_tag pic.image.url %></li>
       <%= pic.description %>
+
+      <% if logged_in? %>
       <%= link_to "Edit picture", picture_path(pic) %>
         <%# link_to "Edit picture", picture_path(pic) %>
 
      <%= link_to "Delete picture", @picture, :method => :delete,
                                       data: { confirm: "You sure?" } %>
-
+      <% end %>
 
      
 <% end %> 
