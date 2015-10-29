@@ -78,8 +78,8 @@ end
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="Thanks For Your Purchase"
-          data-amount="<%=@stripe_amount * 100%>"></script>
-          <input type="hidden" name="final_amount" value="<%=session[:total]%>" />
+          data-amount="<%=@stripe_amount%>"></script>
+          <input type="hidden" name="final_amount" value="<%=session[:total] * 100%>" />
           <% end %>
 
 </td><td>
