@@ -67,7 +67,7 @@ if session[:tax]!='null'
 	
 end
 
-session[:total] = sprintf("%.2f", @total.to_f)
+session[:total] = sprintf("%.2f", @total.to_f/100)
 end
  %>
  
@@ -79,7 +79,7 @@ end
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="Thanks For Your Purchase"
           data-amount="<%=@stripe_amount%>"></script>
-          <input type="hidden" name="final_amount" value="<%=session[:total]/100%>" />
+          <input type="hidden" name="final_amount" value="<%=session[:total]%>" />
           <% end %>
 
 </td><td>
