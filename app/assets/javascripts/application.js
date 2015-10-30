@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require style.js
+//= require application.js
 //= require_tree .
 
 
