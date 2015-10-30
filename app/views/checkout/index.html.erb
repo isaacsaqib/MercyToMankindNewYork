@@ -62,7 +62,8 @@ end
 if session[:tax]!='null'
 	@temp = @total*session[:tax]
 	@total = @total+@temp
-@stripe_amount = @total*100;
+@stripe_amount = (@total*100).to_i;
+
 # / @stripe_amount = @stripe_amount.to_s.gsub('.', '') /
 	
 end
