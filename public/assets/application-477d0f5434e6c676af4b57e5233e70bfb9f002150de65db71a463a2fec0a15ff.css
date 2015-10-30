@@ -1,0 +1,591 @@
+html, body {
+    height: 100%;
+    margin:0px;
+}
+
+span {
+	float: right;
+	margin-right: 10px;	
+}
+
+
+
+.picture-edit {
+	height: 200px;
+	width: 200px;
+}
+
+#checkout-btn {
+	display: block;
+	margin: 0 auto;
+	background-color: black;
+	color: white;
+	font-family: 'AdelleSans-Thin';
+	border-radius: 0px;
+    width: 50%;
+    height: 40px;
+}
+
+#checkout-btn:hover {
+	background-color: white;
+	color: black;
+	cursor: pointer;
+}
+
+
+#customer-care li > p {
+	font-size: 12px;
+	font-family: 'AdelleSans-Thin';
+	text-align: center;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+
+.h1-headers {
+	text-align: center;
+	font-family: 'AdelleSans-Thin';
+}
+
+.h1-headers:hover {
+	color: #911910;
+}
+
+
+
+#shipping-table input {
+	font-size: 20px;
+	font-family: 'AdelleSans-Thin';
+}
+
+
+
+
+
+#size {
+	border: black;
+	font-family: 'AdelleSans-Thin';
+	font-size: 15px;
+	width: 87px;
+    height: 21px;
+}
+
+#shop-sub-nav li a {
+	font-size: 14px;
+
+}
+
+#listings-index-nav li {
+	display: inline-block;
+	font-family: 'AdelleSans-Thin';
+	font-size: 10px;
+}
+
+#listings-index-nav li:hover {
+	cursor: pointer;
+	color: red;
+}
+
+#listings-index-nav {
+	text-align: center;
+
+}
+
+#add-to-cart-btn {
+	background-color: black;
+	color: white;
+	font-family: 'AdelleSans-Thin';
+	border-radius: 0px;
+    width: 100%;
+    height: 40px;
+}
+
+#add-to-cart-btn:hover {
+	background-color: white;
+	color: black;
+	cursor: pointer;
+
+}
+
+#listings-details > form > p:nth-child(3) {
+	font-size: 20px;
+	margin-bottom: 0px;
+
+}
+
+#listings-details > form > p:nth-child(5) {
+
+	margin-top: 0px;
+
+}
+
+#listings-details > form > p:nth-child(6) {
+	margin-bottom: 0px;
+}
+
+#collections-show-pictures {
+	text-align: center;
+}
+
+#collections-show-pictures li > img {
+	display: inline-block;
+	margin: 20px;	
+
+	width: 50%;
+	/*height: 200px;*/
+}
+
+
+
+
+
+
+
+
+#listings-show-pictures li > img {
+
+	height: 600;
+	width: 802px;
+	margin-left: 10px;
+
+}
+
+
+#listings-show-pictures li > img:hover {
+	opacity: .8;
+
+}
+
+#listings-show-pictures  li {
+	/*display: inline-block;*/
+
+
+
+}
+
+#listings-show-pictures {
+
+	/*margin: 0 auto;*/
+	/*margin-left: 100px;*/
+	text-align: center;
+}
+
+
+#listings-details {
+	margin: 0 auto;
+	width: 40%;
+	font-family: 'AdelleSans-Thin';
+	/*margin-right: 210px;*/
+	/*margin-top: 80px;*/
+}
+
+
+.line-separator{
+
+padding:1px;
+
+background:#E8E8E8;
+
+border-bottom:.5px solid #E8E8E8;
+
+}
+
+ul {
+	padding: 0px;
+}
+
+
+table {
+  margin:0 auto;
+  width: 100%;
+}
+
+.col ul {
+  text-align: center;
+
+}
+
+
+.products > tbody > tr > td > ul {
+	list-style: none;
+
+}
+
+.products li {
+	display: inline-block;
+	margin: 30px;
+	text-align: left;
+}
+
+.products li p {
+	margin: 0px;
+	font-size: 10px;
+	text-align: left;
+}
+
+.products li a {
+	font-size:14px;
+	text-decoration: none;
+	color: black;
+	text-align: left;
+	padding-top: 10px;
+}
+
+.products li a:hover {
+	text-decoration: underline;
+
+}
+
+.products li img {
+	height: 500;
+	width: 650;
+	margin-bottom: 15px;
+
+}
+
+.products li img:hover {
+	opacity: .8;
+
+}
+
+
+.icons {
+	height: 18px;;
+	width: 18px;
+
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -52px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 52px; /* .push must be the same height as .footer */
+}
+
+.footer li > a {
+	text-decoration: none;
+
+}
+
+.footer li > a:hover {
+	color: red;
+}
+
+
+
+
+
+/*
+
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+
+*/
+
+
+
+ul {
+	padding: 0px;
+}
+
+header p {
+	text-align: center;
+	font-family: 'AdelleSans-Thin';
+	color: white;
+}
+	
+header p:nth-child(1) {
+	font-size: 40px;
+	text-decoration: overline;
+	margin-top: -80px;
+	letter-spacing: 25px;
+
+}
+
+header p:nth-child(2) {
+	font-size: 15px;
+	letter-spacing: 18px;
+	margin-bottom: 36px;
+}
+
+header p:nth-child(3) {
+	font-size: 10px;
+	margin-left: 150px;
+	margin-right:150px;
+	letter-spacing: 5px;
+	word-spacing: 3px;
+	line-height: 30px;
+	/*margin-bottom: 150px;*/
+}
+
+header a {
+	text-align: left;
+	color: black;
+	text-decoration: bold;
+	font-family: 'AdelleSans-Thin';
+	margin: 10px;
+}
+
+#nav {
+	margin-top: 70px;
+	padding: 0px;
+	text-align: center;
+	/*background-color: rgba(0, 0, 0, .8);*/
+
+}
+
+#nav a {
+	text-decoration: none;
+	color: red;
+	font-size: 15px;
+
+
+}
+
+#nav a:hover {
+	color:white;
+	/*font-size: 19px;*/
+	
+
+	/*transition:.2s;*/
+	cursor: pointer;
+
+}
+
+#nav li  {
+	/*display: inline-block;*/
+	/*background-color: rgba(0, 0, 0, .8);*/
+	padding: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-family: 'AdelleSans-Thin';
+
+	list-style: none;
+	/*margin-top: 250px;*/
+}
+
+#nav li:hover {
+	text-shadow: 18px 22px 1.3px white;
+	cursor: pointer;
+}
+
+#top-nav {
+	background-color: black;
+	padding-bottom:0px;
+	margin: 0px;
+	margin-bottom: 100px;
+	text-align: center;
+	font-size: 15px;
+	font-family: 'AdelleSans-Thin';
+
+
+}
+
+#top-nav a {
+	color: white;
+	padding: 0px;
+	text-decoration: none;
+}
+
+#top-nav li {
+	padding: 12px;
+}
+
+
+
+#top-nav > li:nth-child(1) {
+	display: inline-block;
+	float: left;
+
+}
+
+#top-nav > li:nth-child(2) {
+	display: inline-block;
+	float: none;
+}
+
+
+#top-nav > li:nth-child(3) {
+	display: inline-block;
+	float: right;
+}
+
+#top-nav a:hover {
+	color: red;
+}
+
+
+#front-page-picture-list {
+	text-align: center;
+	margin-top:40px;
+	padding: 0px;
+}
+
+#front-page-picture-list li {
+	display: inline-block;
+}
+
+#front-page-picture-list img {
+	text-align: center;
+	 width: 400px;
+	 margin: 0 auto;
+	 display:block;
+}
+
+
+.footer {
+	/*height: 100px;*/
+	width:100%;
+	background-color: black;
+	margin: 0px;
+	/*position: fixed;*/
+
+}
+
+.footer p {
+	text-align: left;
+	color: white;
+	/*padding-left: 40px;*/
+	font-family: 'AdelleSans-Thin';
+	margin: 0px;
+}
+
+
+.footer li {
+	display: inline-block;
+	font-size: 15px;
+	padding-top: 20px;
+	padding-left: 10px;
+	margin: 0px;
+}
+
+.footer ul {
+	margin:0px;
+}
+
+/*.footer li:not(:first-child) {
+	font-size: 12px;
+
+}
+*/
+
+#cart-table {
+	width: 85%;
+	height: 130px;
+	/*color: blue;*/
+	background: transparent;
+    border: solid 1px #ebebeb;
+ 	font-family: 'AdelleSans-Thin';
+ 	margin-top: 100px;
+ 	margin-bottom: 100px;
+   
+}
+
+td {
+	text-align: center;
+	 	font-family: 'AdelleSans-Thin';
+
+}
+
+th {
+ 	/*font-family: 'AdelleSans-Thin';*/
+ 	/*font-weight: 600;*/
+ 	font-size: 12px;
+
+}
+
+/*slideshow code*/
+.slideshow-pic{
+	width: 100%;
+}
+
+ 
+.css-slideshow{
+   /*position: relative;*/
+   width: 100%;
+   /*margin-bottom: 690px;*/
+}
+.css-slideshow figure{
+   margin: 0;
+   position: absolute;
+   width: 100%;
+}
+/*.css-slideshow figcaption{
+   position: absolute;
+   top: 0;
+   color: #fff;
+   background: rgba(0,0,0, .3);
+   font-size: .8em;
+   padding: 8px 12px;
+   opacity: 0;
+   transition: opacity .5s;
+}*/
+/*.css-slideshow:hover figure figcaption{
+   transition: opacity .5s;
+   opacity: 1;
+}*/
+.css-slideshow figure{
+   opacity:0;
+}
+
+
+figure:nth-child(1) {
+   -webkit-animation: xfade 10s 1s infinite;
+}
+
+figure:nth-child(2) {
+   -webkit-animation: xfade 10s 3s infinite;
+}
+
+
+
+ 
+@-webkit-keyframes xfade{
+   0%{
+      opacity: 1;
+   }
+   25% {
+      opacity:1;
+   }
+   50%{
+      opacity: 0;
+   }
+   75% {
+      opacity:0;
+   }
+   100% {
+      opacity:1;
+   }
+}
+
+/*slideshow*/
+
+
+ 
+#headwear img {
+	height: 400px;
+	width: 600px;
+
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+ */
+
+
+ 
+
