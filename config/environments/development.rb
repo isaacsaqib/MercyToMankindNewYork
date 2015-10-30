@@ -1,5 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+# AWS Keys
+
 config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
@@ -8,6 +10,13 @@ config.paperclip_defaults = {
     :secret_access_key => '76BGsySPT52my+6po94wHcgprX4iJ81+EMePjwUQ'
   }
 }
+
+# Stripe Test Keys 
+puts "setting publishable key"
+ENV['PUBLISHABLE_KEY']='pk_test_85dgBVCarVWNxR6rCOEovf2p'
+ENV['SECRET_KEY']='sk_test_CtY58gVmXdha8d24wKMoRZCI'
+
+
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
