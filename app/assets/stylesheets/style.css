@@ -3,6 +3,12 @@ html, body {
     margin:0px;
 }
 
+body {
+	background-image: url("bluehoodieback.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
 span {
 	float: right;
 	margin-right: 10px;	
