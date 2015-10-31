@@ -29,14 +29,15 @@ $(document).ready(function(){
 	$("#contact-hide").hide();
 
 
-	// $("#add-to-cart-btn").on("click", function(){
-	// 	alert("Added to cart");
+	$("#add-to-cart-btn").on("click", function(){
+		alert("Added to cart");
 
-	// })
+	})
 
-	$("#nav li:nth-child(3)").on("click", function(){ /* shop button */
+	$("#nav li:nth-child(3)").on("click", function(){ /* contact button */
 		event.preventDefault();
 		$("#contact-hide").slideDown();
+
 
 
 	})
