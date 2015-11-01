@@ -9,17 +9,16 @@
 </head>
 <div class="wrapper">
 <body>
-<ul id="top-nav">
-			<li><a href="/cart">CART</a></li>
-			<li><a href="/">MXM</a></li>
-			<!-- <span id="span-right"> -->
-			<li><a href="/checkout">CHECKOUT</a></li>
-			<% if logged_in? %>
-				<a href="/logout">LOGOUT</a>	
-			<% end %>
-			<!-- </span> -->
+	<ul id="top-nav">
+		<li><a id="open"><%=image_tag 'nav-image.png', :id => "nav-image" %></a></li>
+			<ul id="hidden-nav">
+				<li><a href="/">HOME</a></li>
+				<li><a href="/listings">SHOP</a></li>
+				<li><a href="/collections">COLLECTION</a></li>
+				<li><a href="/cart">CART</a></li>
 
-		</ul>
+			</ul>
+	</ul>
 
 
 

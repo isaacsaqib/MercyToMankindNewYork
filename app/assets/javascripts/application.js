@@ -27,6 +27,18 @@ $(document).ready(function(){
 	$("#wristwear").hide();
 	$("#added").hide();
 	$("#contact-hide").hide();
+	$("#hidden-nav").hide();
+
+	$("#open").on("click", function(){
+		event.preventDefault();
+		$("#hidden-nav").slideDown();
+	})
+
+
+
+
+
+
 
 	if (window.innerHeight > window.innerWidth){
     	alert("Please rotate your mobile device to view this page!");
@@ -37,6 +49,7 @@ $(document).ready(function(){
 		alert("Added to cart");
 
 	})
+
 
 	$("#nav li:nth-child(3)").on("click", function(){ /* contact button */
 		event.preventDefault();
