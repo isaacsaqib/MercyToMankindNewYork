@@ -9,5 +9,11 @@ class CollectionsController < ApplicationController
     	@pictures = @listing.pictures
 	end
 
+	def destroy
+	@listing = Listing.find(params[:id])
+	@listing.destroy
+	
+	end
+
 
 end
