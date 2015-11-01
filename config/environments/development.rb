@@ -13,8 +13,8 @@ config.paperclip_defaults = {
 
 # Stripe Test Keys 
 puts "setting publishable key"
-ENV['PUBLISHABLE_KEY']='pk_test_85dgBVCarVWNxR6rCOEovf2p'
-ENV['SECRET_KEY']='sk_test_CtY58gVmXdha8d24wKMoRZCI'
+ENV['PUBLISHABLE_KEY']='pk_live_qQtQHJtmcR1SI16gQlcAStly'
+ENV['SECRET_KEY']='sk_live_Zo6Tcaeyh7EADgohnxy58TqE'
 
 
 
