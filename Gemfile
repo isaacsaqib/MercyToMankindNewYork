@@ -55,4 +55,3 @@ gem 'aws-sdk', '< 2.0'
 
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
-gem 'heroku'
