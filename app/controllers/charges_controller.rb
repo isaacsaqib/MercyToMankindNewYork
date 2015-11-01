@@ -9,7 +9,6 @@ def create
 
   customer = Stripe::Customer.create(
     :email => session[:email],
-byebug
     :card  => params[:stripeToken]
   )
 
