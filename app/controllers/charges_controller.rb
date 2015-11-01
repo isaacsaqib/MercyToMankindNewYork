@@ -8,7 +8,7 @@ def create
   @amount = (params[:final_amount].to_f*100).to_i
 
   customer = Stripe::Customer.create(
-    :email => 'example@stripe.com',
+    :email => session[:email],
     :card  => params[:stripeToken]
   )
 
