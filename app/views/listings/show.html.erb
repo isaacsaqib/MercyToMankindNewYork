@@ -9,6 +9,7 @@
 
 
    <ul id="listings-show-pictures">
+   <a href="/listings"> ←    BACK </a>
    <% @pictures.each do |pic| %>
       <li><%= image_tag pic.image.url %></li>
       <%= pic.description %>
