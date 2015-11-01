@@ -11599,7 +11599,7 @@ return jQuery;
 $(document).ready(function(){
 	$("#shop-sub-nav").hide();
 	// $("#new").hide();
-	$("#tops").hide();
+	// $("#tops").hide();
 	$("#bottoms").hide();
 	$("#headwear").hide();
 	$("#wristwear").hide();
@@ -11689,7 +11689,7 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$("#shop-sub-nav").hide();
 	// $("#new").hide();
-	$("#tops").hide();
+	// $("#tops").hide();
 	$("#bottoms").hide();
 	$("#headwear").hide();
 	$("#wristwear").hide();
