@@ -56,7 +56,7 @@ end
 	<tr><td>Address</td><td><input type="text" name="address" value="<%= @address%>"/></td></tr>
 	<tr><td>City</td><td><input type="text" name="city" value="<%= @city%>"/></td></tr>
 	<!-- <tr><td>State</td><td><input type="text" name="state" value="<%= @state%>"/></td></tr> -->
-	<tr><td id="state-label">State</td><td>
+	<tr><td id="state-label">State</td><td> 
 
 	<select name="select_state" id="select_state" style="width:50px;" value="<%= @state%>">
 		<option value="Select State"></option>
@@ -109,7 +109,7 @@ end
 		<option value="WV">WV</option>
 		<option value="WI">WI</option>
 		<option value="WY">WY</option>
-	</select>
+	</select><span>  (USA ONLY)</span>
 	</td></tr>
 
 	<tr><td>Zip</td><td><input type="text" name="zip" value="<%= @zip%>"/></td></tr>
@@ -368,6 +368,7 @@ end
 	<tr id="inter_ship"><td><input type="hidden" id="total" name="total" value="<%= session[:final_total]%>" /><input type="radio" name="shipping" value="International Shipping" <%=@premium_shipping%> />International Shipping </td><td>7-10 Business Days: $6</td></tr>
 	
 </table>
+<p style="font-family: 'Raleway', sans-serif; text-align:center;">Please fill out all fields completely and accurately before proceeding</p>
 
 <input id="checkout-btn" type="submit" value="Checkout" />
 </form>
