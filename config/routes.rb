@@ -17,6 +17,8 @@ post "/session"      => "session#create"
 get  "/logout"       => "session#destroy"
 root 'welcome#index'
 
+
+get "/orders/complete" => "orders#complete"
 resources :collections
 get "/customercare" => "customers#index"
 

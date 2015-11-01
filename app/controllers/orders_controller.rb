@@ -61,6 +61,9 @@ if session[:firstname]
 
 
 
+
+
+
 	private
 
 	def listing_params

@@ -1,3 +1,8 @@
+
+
+<body style="background-image:none;">
+
+<% if logged_in? %>
 <% @users.each do |user| %>
 <table>
 <tr><td>First Name</td><td><%=user.firstname%></td><td></td><td></td></tr>
@@ -15,3 +20,10 @@
 <br/><br/>
 <% end %>
 
+<%else%>
+
+<p>You need to log in to view this page</p>
+
+<% end %>
+
+</body>
