@@ -9,7 +9,7 @@ ul {
 
 header p {
 	text-align: center;
-	font-family: 'AdelleSans-Thin';
+	font-family: 'Raleway', sans-serif;
 	color: black;
 }
 	
@@ -39,7 +39,7 @@ header a {
 	text-align: left;
 	color: black;
 	text-decoration: bold;
-	font-family: 'AdelleSans-Thin';
+	font-family: 'Raleway', sans-serif;
 	margin: 10px;
 }
 
@@ -66,7 +66,7 @@ header a {
 	display: inline-block;
 	margin-left: 40px;
 	margin-right: 40px;
-	font-family: 'AdelleSans-Thin';
+	font-family: 'Raleway', sans-serif;
 	text-decoration: underline;
 }
 
@@ -112,7 +112,7 @@ header a {
 	text-align: left;
 	color: white;
 	padding-left: 40px;
-	font-family: 'AdelleSans-Thin';
+	font-family: 'Raleway', sans-serif;
 	margin: 0px;
 }
 
@@ -135,7 +135,7 @@ header a {
 	/*color: blue;*/
 	background: transparent;
     border: solid 1px #ebebeb;
- 	font-family: 'AdelleSans-Thin';
+ 	font-family: 'Raleway', sans-serif;
  	margin-top: 100px;
  	margin-bottom: 100px;
    
@@ -143,12 +143,12 @@ header a {
 
 td {
 	text-align: center;
-	 	font-family: 'AdelleSans-Thin';
+	 	font-family: 'Raleway', sans-serif;
 
 }
 
 th {
- 	/*font-family: 'AdelleSans-Thin';*/
+ 	/*font-family: 'Raleway', sans-serif;*/
  	font-weight: 600;
 
 }
