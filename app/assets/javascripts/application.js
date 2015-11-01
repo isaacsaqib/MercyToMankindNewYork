@@ -60,22 +60,22 @@ $(document).ready(function(){
 	})
 
 
-	$("#listings-index-nav li:nth-child(1)").on("click", function(){  /* New */
-		$(".products").hide();
-		$("#new").show();
+	// $("#listings-index-nav li:nth-child(1)").on("click", function(){  /* New */
+	// 	$(".products").hide();
+	// 	$("#new").show();
 
-	})
+	// })
 
 
 
-	$("#listings-index-nav li:nth-child(2)").on("click", function(){  /* Tops */
+	$("#listings-index-nav li:nth-child(1)").on("click", function(){  /* Tops */
 		$(".products").hide();
 		$("#tops").show();
 
 	})
 
 
-	$("#listings-index-nav li:nth-child(3)").on("click", function(){ /* Bottoms */
+	$("#listings-index-nav li:nth-child(2)").on("click", function(){ /* Bottoms */
 		$(".products").hide();
 		$("#bottoms").show();
 
@@ -83,7 +83,7 @@ $(document).ready(function(){
 
 
 
-	$("#listings-index-nav li:nth-child(4)").on("click", function(){ /* Headwear */
+	$("#listings-index-nav li:nth-child(3)").on("click", function(){ /* Headwear */
 		$(".products").hide();
 		$("#headwear").show();
 
@@ -91,7 +91,7 @@ $(document).ready(function(){
 
 
 
-	$("#listings-index-nav li:nth-child(5)").on("click", function(){ /* Wristwear */
+	$("#listings-index-nav li:nth-child(4)").on("click", function(){ /* Wristwear */
 		$(".products").hide();
 		$("#wristwear").show();
 
