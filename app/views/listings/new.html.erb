@@ -1,21 +1,26 @@
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
-
+<div style="background-color:white; width:100%;text-align:center;height:400px;padding-top:50px;">
 <%= form_for @listing, :url => listings_path, :html => { :multipart => true } do |f| %>
 	<%= f.label(:name) %>
-	<%=f.text_field :name %>
+	<%=f.text_field :name %><br><br>
 	<%= f.label :price %>
-	<%= f.number_field :price %>
- <%= file_field_tag "images[]", type: :file, multiple: true %>
+	<%= f.number_field :price %><br><br>
+	<%= f.label("Fabric/Material") %>
+	<%= f.text_field :fabric %><br><br>
+	<%= f.label :fit %>
+	<%= f.text_field :fit %><br><br>
    	<%=f.label :size %>
-
-
-  	<input type="text" name="listing[size]" />
+  	<input type="text" name="listing[size]" /><br><br>
   	   	 <%=f.label :description %>
-	 <%=f.text_field :description %>
+	 <%=f.text_field :description %><br><br>
 	<%=f.label :section %>
-<%= f.select :section, options_for_select([["Select Type", ""], "Tops", "Bottoms", "Headwear", "Wristwear"]) %>	
+<%= f.select :section, options_for_select([["Select Type", ""], "Tops", "Bottoms", "Headwear", "Wristwear"]) %>	<br><br>
+
+ <%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+
 	<%=f.submit %>
 
 	<% end %>
 
+</div>
