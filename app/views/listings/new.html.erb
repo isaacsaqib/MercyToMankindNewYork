@@ -18,7 +18,7 @@
   	   	<%=f.label :description %>
 	 <%=f.text_field :description %><br><br>
 	<%=f.label :section %>
-<%= f.select :section, options_for_select([["Select Type", ""], "Tops", "Bottoms", "Headwear", "Wristwear"]) %>	<br><br>
+<%= f.select :section, options_for_select([["Select Type", ""], "Tops", "Bottoms", "Headwear", "Wristwear", "Collection"]) %>	<br><br>
 
  <%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
 
