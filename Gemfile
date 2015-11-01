@@ -28,7 +28,7 @@ gem 'rails_12factor', group: :production
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'jquery-rails'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -54,3 +54,5 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk', '< 2.0'
 
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+
+gem 'heroku'
