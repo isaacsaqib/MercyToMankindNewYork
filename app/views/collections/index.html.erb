@@ -25,7 +25,8 @@
 				 <br/>
 							 <% if logged_in? %>
 							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
-							<p><a href="?remove=<%=listing.id%>">Delete</a></p><br>
+  							<%= link_to "Delete picture", listing, :method => :delete,
+                                      data: { confirm: "You sure?" } %>
 							<% end %>
 							<br>
 							<br>
