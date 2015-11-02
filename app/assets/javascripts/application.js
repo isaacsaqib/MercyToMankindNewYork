@@ -37,14 +37,6 @@ $(document).ready(function(){
 
 
 
-
-
-
-	if (window.innerHeight > window.innerWidth){
-    	alert("Please rotate your mobile device to view this page!");
-  };
-
-
 	$("#add-to-cart-btn").on("click", function(){
 		alert("Added to cart");
 
