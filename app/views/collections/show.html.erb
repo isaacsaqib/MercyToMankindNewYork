@@ -1,12 +1,14 @@
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <script type="text/javascript" src="/assets/application.js"></script>
 
+<body style="background-image:none;">
 
 
 
-
-
-   <ul id="collections-show-pictures">
+<table id="collections-show-pictures">
+	<tr>
+		<td class="col">
+   <ul>
     <% @pictures.each do |pic| %>
       <li><%= image_tag pic.image.url %></li>
 
@@ -14,3 +16,9 @@
      
   <% end %> 
     </ul>  
+    </td>
+   </tr>
+  </table>
+
+</table>
+</body>
