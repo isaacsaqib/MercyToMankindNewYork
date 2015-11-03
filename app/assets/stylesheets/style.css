@@ -24,7 +24,7 @@ body {
 }
 
 #nav-image {
-	height: 40px;
+	height: 30px;
 }
 
 #nav-image:hover {
@@ -107,10 +107,21 @@ body {
 }
 
 #listings-index-nav li {
-	display: inline-block;
+	/*display: inline-block;*/
 	font-family: 'Raleway', sans-serif;
-	font-size: 20px;
+	font-size: 10px;
+	padding-left: 30px;
+	transition:1s;
 }
+
+#listings-index-div {
+    height: 85%;
+    position: fixed;
+
+    width: 8%;
+}
+
+
 
 #listings-index-nav li:hover {
 	cursor: pointer;
@@ -118,7 +129,7 @@ body {
 }
 
 #listings-index-nav {
-	text-align: center;
+	text-align: left;
 
 }
 
@@ -260,12 +271,13 @@ table {
 
 .products > tbody > tr > td > ul {
 	list-style: none;
+	padding-left: 120px;
 
 }
 
 .products li {
 	display: inline-block;
-	margin: 30px;
+
 	text-align: left;
 }
 
@@ -313,7 +325,7 @@ table {
     margin: 0 auto -52px; /* the bottom margin is the negative value of the footer's height */
 }
 .footer, .push {
-    height: 52px; /* .push must be the same height as .footer */
+    height: 50px; /* .push must be the same height as .footer */
 }
 
 .footer li > a {
@@ -351,9 +363,11 @@ header p {
 header p:nth-child(1) {
 	font-size: 40px;
 	/*text-decoration: overline;*/
-	margin-top: -80px;
+	margin-top: 10px;
 	letter-spacing: 25px;
 	margin-bottom: 4px;
+	text-shadow:10px 30px 10px black;
+
 
 }
 
@@ -362,6 +376,8 @@ header p:nth-child(2) {
 
 	letter-spacing: 18px;
 	margin-top: 10px;
+		text-shadow:10px 30px 10px black;
+
 }
 
 header p:nth-child(3) {
@@ -415,6 +431,7 @@ header a {
 	margin-left: 10px;
 	margin-right: 10px;
 	font-family: 'Raleway', sans-serif;
+	text-shadow: 10px 10px 10px black;
 
 	list-style: none;
 	/*margin-top: 250px;*/
@@ -430,7 +447,7 @@ header a {
 	text-align:center;
 	padding-top:20px;
 	padding-bottom:0px;
-	margin-bottom: 100px;
+	margin-bottom: 15px;
 	font-size: 15px;
 	font-family: 'Raleway', sans-serif;
 	border-bottom: 2px solid black;

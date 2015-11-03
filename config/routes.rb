@@ -23,6 +23,7 @@ resources :collections
 get "/customercare" => "customers#index"
 
 
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
