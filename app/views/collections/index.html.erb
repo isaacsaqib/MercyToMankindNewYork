@@ -1,46 +1,9 @@
 
 <body style="background-image:none;">
 
-<table class="products" id="collection">
-	<tr>
-		<td class="col">
-			<ul>
-			<% @listings_collection.each do |listing| %>
 
-				<% if listing.pictures.first %>
-            	<li>
-            	<!-- listing image pictures -->
-            	<%= link_to image_tag(listing.pictures.first.image.url), collection_path(listing) %>
-            	<% else %>
-              		N/A
-            	<% end %>
-				
-				<!-- Name, price and buttons -->
-				<form method="get">
-				<input type="hidden" name="id" value="<%=listing.id%>">
-				<a href="<%=listing_path(listing)%>"><%=listing.name %></a><br> 
-				<!-- <p>$<%=listing.price %>.00</p><br> -->
-				<div class="line-separator"></div>
-				
-				 <br/>
-							 <% if logged_in? %>
-							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
-  							<%= link_to "Delete", @listing, :method => :delete,
-                                      data: { confirm: "You sure?" } %>
-							<% end %>
-							<br>
-							<br>
-				</form>	
 
-				</li>
-				<% end %>
-			</ul>
-		</td>
-	</tr>
-</table>
-
-<!-- 
 <h1 style="text-align:center;	font-family: 'Raleway', sans-serif;
-"> Please check back later. </h1> -->
+"> Please check back later. </h1>
 
 </body>
