@@ -628,7 +628,7 @@ th {
 }
 
 
-@media (max-width: 590px) {
+@media (max-width: 300px) {
 	#welcome-pic {
 			padding-top: 200px;
 	}
