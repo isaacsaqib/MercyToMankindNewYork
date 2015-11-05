@@ -36,8 +36,6 @@ $(document).ready(function(){
 		$("#nav-image-opened").on("click", function(){
 		event.preventDefault();
 		$("#hidden-nav").slideUp();
-
-
 	})
 
 	})
