@@ -1,3 +1,4 @@
+<title>Collections | MXMNY</title>
 
 <body style="background-image:none;">
 
@@ -5,5 +6,28 @@
 
 <h1 style="text-align:center;	font-family: 'Raleway', sans-serif;
 "> Please check back later. </h1>
+
+
+
+<table class="products" id="collections">
+	<tr>
+		<td class="col">
+			<ul>
+			<% @listings_collection.each do |listing| %>
+
+				<% if listing.pictures.first %>
+            	<li>
+            	<!-- listing image pictures -->
+            	<%= link_to image_tag(listing.pictures.first.image.url), collection_path(listing) %>
+            	<% else %>
+              		N/A
+            	<% end %>
+		
+				</li>
+				<% end %>
+			</ul>
+		</td>
+	</tr>
+</table>
 
 </body>
