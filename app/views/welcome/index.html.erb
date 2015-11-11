@@ -2,18 +2,60 @@
 	<head>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	
-	<%= javascript_include_tag "application.js" %>
 
 
 	<script type="text/javascript" src="assets/application.js"></script>
+	<script type="text/javascript" src="assets/jquery.slides.js"></script>
+	<script type="text/javascript" src="assets/jquery.slides.min.js"></script>
 
 	<script>
+	    $(function(){
+	      $("#slides").slidesjs({
+	        width: 940,
+	        height: 528,
+	        navigation: {
+		      active: false,
+		        // [boolean] Generates next and previous buttons.
+		        // You can set to false and use your own buttons.
+		        // User defined buttons must have the following:
+		        // previous button: class="slidesjs-previous slidesjs-navigation"
+		        // next button: class="slidesjs-next slidesjs-navigation"
+		      effect: "fade"
+		        // [string] Can be either "slide" or "fade".
+		    },
+		   play: {
+		      active: false,
+		        // [boolean] Generate the play and stop buttons.
+		        // You cannot use your own buttons. Sorry.
+		      effect: "fade",
+		        // [string] Can be either "slide" or "fade".
+		      interval: 2500,
+		        // [number] Time spent on each slide in milliseconds.
+		      auto: true,
+		        // [boolean] Start playing the slideshow on load.
+		      swap: true,
+		        // [boolean] show/hide stop and play buttons
+		      pauseOnHover: false,
+		        // [boolean] pause a playing slideshow on hover
+		      restartDelay: 2500
+		        // [number] restart delay on inactive slideshow
+		    },
+		   pagination: {
+		      active: false,
+		        // [boolean] Create pagination items.
+		        // You cannot use your own pagination. Sorry.
+		      effect: "slide"
+		        // [string] Can be either "slide" or "fade".
+		    }
+
+	      });
+	    });
+	  </script>
 	
-	if (window.innerHeight > window.innerWidth){
+<!-- 	if (window.innerHeight > window.innerWidth){
     	alert("Please rotate your mobile device to view this page!");
   };
-
-	</script>
+ -->
 
 	<title> MERCY X MANKIND NY </title>
 
@@ -42,7 +84,7 @@
 			<h1>MERCY X MANKIND</h1>
 			<h3>NEW YORK</h3>
 		<!-- 	<a href="/listings"><img src="assets/welcome-pic-2fda93a3a360be1e9f71e54a3ca0761ab54155c9458deeab552fb2bc63d74993.jpg" id="front-page-pic"></a> -->
-				<ul id="welcome-pics">
+			<!-- 	<ul id="welcome-pics">
 
 				<li>
 
@@ -77,7 +119,7 @@
 				<li><a href="/listings"><img src="assets/welcome-pic-8-5f1af7120e220f19d1f0576cd8f8111878dec9d853195055cc757a5a68c64451.jpg"></a>
 				</li>
 
-				</ul>
+				</ul> -->
 			<p>
 			
 			<a href="http://www.instagram.com/mercytomankind.ny"><%=image_tag 'ig.png', :class => 'icons'%>mercytomankind.ny</a> | <a href="/listings">FALL/WINTER CAPSULE AVAILABLE NOW.</a>
@@ -102,6 +144,14 @@
 
 		</ul>
  -->
+
+
+   <div id="slides">
+    <img src="assets/welcome-pic-1-b34083d0e662442ae7d1740897e7909b1412d59641f5ee98a1f0e5a46d09eb59.jpg">
+    <img src="assets/welcome-pic-2-795c878f47c87467825a78954eee5a951284a0eab6b845d8c772daf4fb2abf2d.jpg">
+    <img src="assets/welcome-pic-3-217d1d8f727ddac3a95c82d3bc7b14d4e981237f01627ff8e3501beaeab7eace.jpg">
+
+  </div>
 
 		<div class="push"></div>
 		</body>
