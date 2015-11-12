@@ -10,6 +10,7 @@ resources :orders
 resources :cart
 resources :admins
 resources :pictures
+resources :users
 
 get  "/admin"  => "session#new"
 post "/session"      => "session#create"

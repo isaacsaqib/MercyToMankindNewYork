@@ -1,22 +1,22 @@
 class OrdersController < ApplicationController
 	
 	def index
-if session[:firstname]
- 	@user_c = Orders.create(:firstname=>session[:firstname],:lastname=>session[:lastname],:email=>session[:email],:address=>session[:address],:city=>session[:city],:state=>session[:state],:zip=>session[:zip],:country=>session[:country],:shipping=>session[:shipping],:products=>session[:product_names],:amount=>session[:total])
-		@user_c.save
-		session.delete(:firstname)
-		session.delete(:lastname)
-		session.delete(:email)
-		session.delete(:address)
-		session.delete(:city)
-		session.delete(:state)
-		session.delete(:zip)
-		session.delete(:country)
-		session.delete(:shipping)
-		session.delete(:product_names)
-		session.delete(:total)
-		session.delete(:cart)
- end
+		if session[:firstname]
+		 	@user_c = Orders.create(:firstname=>session[:firstname],:lastname=>session[:lastname],:email=>session[:email],:address=>session[:address],:city=>session[:city],:state=>session[:state],:zip=>session[:zip],:country=>session[:country],:shipping=>session[:shipping],:products=>session[:product_names],:amount=>session[:total])
+				@user_c.save
+				session.delete(:firstname)
+				session.delete(:lastname)
+				session.delete(:email)
+				session.delete(:address)
+				session.delete(:city)
+				session.delete(:state)
+				session.delete(:zip)
+				session.delete(:country)
+				session.delete(:shipping)
+				session.delete(:product_names)
+				session.delete(:total)
+				session.delete(:cart)
+		 end
  		
 		@users = Orders.all
 	end
