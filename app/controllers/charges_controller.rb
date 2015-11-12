@@ -16,7 +16,7 @@ def create
     :customer    => customer.id,
     :amount      => @amount,
     :description => 'Payment For Item',
-    :currency    => 'usd'
+    :currency    => 'usd',
     :metadata => {'product_name' => session[:product_names]}
 
   )
