@@ -10,44 +10,9 @@ body {
 }
 
 #slides {
-	padding-top: 170px;
+	/*padding-top: 170px;*/
 }
 
-#front-page-pic {
-	height: 400px;
-	width: 600px;
-	box-shadow: 1px 7px 12px black;
-}
-
-#welcome-pics > li:nth-child(1) > a > img {
-	height: 400px;
-}
-
-#welcome-pics > li:nth-child(2) > a > img {
-	height: 400px
-
-}
-
-#welcome-pics > li:nth-child(4) > a > img {
-	height: 400px
-}
-
-#welcome-pics > li:nth-child(6) > a > img {
-	height: 300px
-}
-#welcome-pics > li:nth-child(7) > a > img {
-	height: 300px
-}
-#welcome-pics > li:nth-child(8) > a > img {
-	height: 300px
-}
-
-
-
-#welcome-pics li {
-		display: inline-block;
-
-}
 
 
 
@@ -676,6 +641,23 @@ th {
 
 }
 
+#below-slideshow-ul {
+
+
+}
+
+#below-slideshow-ul li {
+	display: inline-block;
+	/*padding: 10px;*/
+
+}
+
+#below-slideshow-ul img {
+
+	height: 300px;
+	display: inline-block;
+}
+
 
 
 #collection > tbody > tr > td > ul > li > a > img {
@@ -689,6 +671,4 @@ th {
 	text-align: center;
 	padding: 20px;
 }
-
-
 
