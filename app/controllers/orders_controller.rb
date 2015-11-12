@@ -17,6 +17,7 @@ if session[:firstname]
 		session.delete(:total)
 		session.delete(:cart)
  end
+ 		
 		@users = Orders.all
 	end
 
