@@ -17,7 +17,18 @@ def create
     :amount      => @amount,
     :description => 'Payment For Item',
     :currency    => 'usd',
-    :metadata => {'product_name' => session[:product_names]}
+    :metadata => {
+    
+    'product_name' => session[:product_names],
+    'first_name' => session[:firstname], 
+    'last_name' => session[:lastname],
+    'address' => session[:address],
+    'city' => session[:city], 
+    'state' => session[:state],
+    'zipcode' => session[:zip],
+    'country' => session[:country],
+    'email' => session[:email]
+  }
     # :source => { :address_city => session[:city] }
   )
 
