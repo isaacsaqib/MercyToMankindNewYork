@@ -215,6 +215,7 @@ body > div.wrapper > div.wrapper > h3 {
 
 #collections-show-pictures > tbody > tr > td > ul > li > img {
 	display: inline-block;
+	height: 400px;
 
 	
 }
