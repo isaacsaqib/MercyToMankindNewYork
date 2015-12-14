@@ -715,9 +715,19 @@ body {
 
 }
 
+
+
 body {
 		background-color: #FFFFFF;
 
+}
+
+#mobile-nav-button {
+	text-align: left;
+}
+
+#top-nav a {
+font-size: 40px;
 }
 
 }
