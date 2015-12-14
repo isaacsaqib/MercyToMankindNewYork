@@ -10,7 +10,8 @@ class ListingsController < ApplicationController
 		@listings = Listing.all
 
 		@listings_new = Listing.where(:section => "New")
-		@listings_tops = Listing.where(:section => "Tops")
+		@listings_tops= Listing.where(:section => "Tops").order(:price)
+
 		@listings_bottoms = Listing.where(:section => "Bottoms")
 		@listings_headwear = Listing.where(:section => "Headwear")
 		@listings_wristwear = Listing.where(:section => "Wristwear")
