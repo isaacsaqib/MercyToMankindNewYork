@@ -690,6 +690,14 @@ body {
 
 }
 
+#mobile-nav-button {
+	text-align: left;
+}
+
+#top-nav a {
+font-size: 40px;
+}
+
 }
 
 @media screen and (max-width: 1135px) {
@@ -703,6 +711,14 @@ body {
 body {
 		background-color: #FFFFFF;
 
+}
+
+#mobile-nav-button {
+	text-align: left;
+}
+
+#top-nav a {
+font-size: 40px;
 }
 
 }
