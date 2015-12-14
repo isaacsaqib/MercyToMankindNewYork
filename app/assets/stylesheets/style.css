@@ -685,6 +685,11 @@ th {
 
 }
 
+body {
+		background-color: #FFFFFF;
+
+}
+
 }
 
 @media screen and (max-width: 1135px) {
@@ -695,6 +700,11 @@ th {
 
 }
 
+body {
+		background-color: #FFFFFF;
+
+}
+
 }
 
 @media screen and (max-width: 908px) {
@@ -702,6 +712,11 @@ th {
 #below-slideshow-ul img {
 
 	height: 100px;
+
+}
+
+body {
+		background-color: #FFFFFF;
 
 }
 
