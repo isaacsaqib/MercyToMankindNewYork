@@ -16,7 +16,11 @@ get  "/admin"  => "session#new"
 post "/session"      => "session#create"
   #logout route
 get  "/logout"       => "session#destroy"
-root 'welcome#index'
+
+root "welcome#home"
+
+get "/index" => "welcome#index"
+get "/home" => "welcome#home"
 
 
 get "/orders/complete" => "orders#complete"
