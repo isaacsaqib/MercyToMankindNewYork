@@ -17,10 +17,11 @@ post "/session"      => "session#create"
   #logout route
 get  "/logout"       => "session#destroy"
 
-root "welcome#home"
+root "welcome#index"
 
 get "/index" => "welcome#index"
-get "/home" => "welcome#home"
+get "/media" => "welcome#media"
+
 
 
 get "/orders/complete" => "orders#complete"

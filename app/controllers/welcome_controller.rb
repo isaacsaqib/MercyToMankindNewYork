@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
 	session[:cart][params[:id]] = [params[:id], params[:name], params[:desc],params[:price]]
   end
 
-  def home
+  def media
   end
   
 
