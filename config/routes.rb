@@ -17,9 +17,12 @@ post "/session"      => "session#create"
   #logout route
 get  "/logout"       => "session#destroy"
 
-root "welcome#index"
+root "welcome#springsummersixteen"
+# root "welcome#index"
+
 
 get "/index" => "welcome#index"
+get "/springsummersixteen" => "welcome#springsummersixteen"
 get "/media" => "welcome#media"
 
 

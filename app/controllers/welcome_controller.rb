@@ -7,6 +7,10 @@ class WelcomeController < ApplicationController
 
   def media
   end
+
+  def springsummersixteen
+  end
+  
   
 
 end
