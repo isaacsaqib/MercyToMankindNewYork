@@ -147,7 +147,7 @@ body > div.wrapper > div.wrapper > h3 {
 	font-family: 'Raleway', sans-serif;
 	font-size: 10px;
 	padding-left: 30px;
-	transition:1s;
+	transition:.1s;
 }
 
 #listings-index-div {
