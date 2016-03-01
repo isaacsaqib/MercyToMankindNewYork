@@ -10,7 +10,7 @@ class ListingsController < ApplicationController
 		@listings = Listing.all
 
 		@listings_new = Listing.where(:section => "New")
-		@listings_tops= Listing.where(:section => "Tops")
+		@listings_tops= Listing.where(:section => "Tops").order(position: :desc)
 
 		@listings_bottoms = Listing.where(:section => "Bottoms").order(price: :desc)
 		@listings_headwear = Listing.where(:section => "Headwear").order(price: :desc)
@@ -116,7 +116,7 @@ end
 	private
 
 	def listing_params
-		params.require(:listing).permit(:name, :price, :images, :size, :pictures, :description, :section, :fabric, :fit, :care)
+		params.require(:listing).permit(:name, :price, :images, :size, :pictures, :description, :section, :fabric, :fit, :care, :position)
 
 	end
 	
