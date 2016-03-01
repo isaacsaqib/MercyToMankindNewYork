@@ -17,7 +17,7 @@ post "/session"      => "session#create"
   #logout route
 get  "/logout"       => "session#destroy"
 
-root "welcome#media"
+root "welcome#index"
 # root "welcome#index"
 
 
