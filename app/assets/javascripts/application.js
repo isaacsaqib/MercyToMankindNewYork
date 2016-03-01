@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require application.js
+//= require listing.js
 //= require_tree .
 
 
