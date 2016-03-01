@@ -40,6 +40,16 @@ $(document).ready(function(){
 
 	})
 
+
+
+	 if 
+	 	( $("img[alt*='M2mk']") )
+	 {
+	 	// console.log('hello')
+	 	$( "img[alt*='M2mk']").css("width", "40%");
+
+	 }
+
 	
 
 
@@ -97,12 +107,7 @@ $(document).ready(function(){
 
 	})
 
-	 if 
-	 	( $("img").attr("alt").includes("M2mk") )
-	 {
-	 	$(this).css("width", "40%");
 
-	 }
 
 	
 
