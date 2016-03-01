@@ -97,4 +97,13 @@ $(document).ready(function(){
 
 	})
 
+	 if 
+	 	( $("img").attr("alt").includes("M2mk") )
+	 {
+	 	console.log("hello")
+
+	 }
+
+	
+
 })
