@@ -3,8 +3,17 @@
 <script type="text/javascript" src="/assets/application.js"></script>
 <%= javascript_include_tag "application.js" %>
 
-<script type="text/javascript" src="/assets/listing.js"></script>
-<%= javascript_include_tag "listing.js" %>
+<script>
+
+ if 
+	 	( $("img[alt*='M2mk']") )
+	 {
+
+	 	$( "img[alt*='M2mk']").css("width", "40%");
+
+	 };
+
+</script>
 
 
 <title><%= @listing.name %> | MXMNY</title>
