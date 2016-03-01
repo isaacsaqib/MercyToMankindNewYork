@@ -7,4 +7,4 @@ $(document).ready(function(){
 	 	$( "img[alt*='M2mk']").css("width", "40%");
 
 	 }
-}
+)}
