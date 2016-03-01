@@ -58,7 +58,6 @@ $(document).ready(function(){
 		$("#contact-hide").slideDown();
 
 
-
 	})
 
 
@@ -103,4 +102,4 @@ $(document).ready(function(){
 
 	
 
-})
+)}
