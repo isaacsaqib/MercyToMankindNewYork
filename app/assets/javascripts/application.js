@@ -100,7 +100,7 @@ $(document).ready(function(){
 	 if 
 	 	( $("img").attr("alt").includes("M2mk") )
 	 {
-	 	$(this).css("width:40%;");
+	 	$(this).css("width", "40%");
 
 	 }
 
