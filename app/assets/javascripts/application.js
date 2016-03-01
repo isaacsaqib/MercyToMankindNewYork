@@ -51,6 +51,14 @@ $(document).ready(function(){
 
 	 };
 
+ if 
+	 	( $("img[alt='M2mk final 16 copy']") )
+	 {
+
+	 	$( "img[alt='M2mk final 16 copy']").css("width", "100%");
+
+	 };
+
 	
 
 
