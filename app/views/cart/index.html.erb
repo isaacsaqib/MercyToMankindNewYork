@@ -11,7 +11,7 @@
 
 <% if session[:cart] && session[:cart].count > 0 %>
 
-	<tr><th>ITEM</th><th>PRICE</th><th>SIZE</th><th>REMOVE</th></tr>
+	<tr><th></th><th>ITEM</th><th>PRICE</th><th>SIZE</th><th>REMOVE</th></tr>
 
 <% session[:cart].delete('') 
 @total = 0
@@ -28,11 +28,10 @@
 				end
 session[:product_names] = @product_names;
 			%>
-	<tr><td><%= product[0] %></td><td><%= product[1] %></td><td><%= product[3] %></td><td><a href="cart?remove=<%=product[4]%>">X</a></td></tr> 
+	<tr><td style="width:10%;"><img style="width:100%;" src="<%= product[5] %>"></td><td><%= product[0] %></td><td><%= product[1] %></td><td><%= product[3] %></td><td><a href="cart?remove=<%=product[4]%>">X</a></td></tr> 
 		<%end 
 	end
 end %>
-
 	<tr><td><a href="/shipping">Continue</a></td><td>
 </td><td>
 </td></tr>
