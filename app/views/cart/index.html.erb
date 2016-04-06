@@ -28,7 +28,7 @@
 				end
 session[:product_names] = @product_names;
 			%>
-	<tr><td style="width:10%;"><img style="width:100%;" src="<%= product[5] %>"></td><td><%= product[0] %></td><td><%= product[1] %></td><td><%= product[3] %></td><td><a href="cart?remove=<%=product[4]%>">X</a></td></tr> 
+	<tr><td style="width:30%;"><a href="/listings/<%= product[2] %>"><img style="width:100%;" src="<%= product[5] %>"></a></td><td><a style="text-decoration:none;" href="/listings/<%=product[2]%>"><%= product[0] %></a></td><td><%= product[1] %></td><td><%= product[3] %></td><td><a href="cart?remove=<%=product[4]%>">X</a></td></tr> 
 		<%end 
 	end
 end %>
