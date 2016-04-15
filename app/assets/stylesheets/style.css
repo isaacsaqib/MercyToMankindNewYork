@@ -34,6 +34,8 @@ body {
 
 #slides {
 height: 1202px;
+width: 100%;
+
 	/*padding-top: 170px;*/
 }
 
