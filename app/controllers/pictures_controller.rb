@@ -20,6 +20,7 @@
   def show
     @picture = Picture.find(params[:id])
 
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @picture }
@@ -43,7 +44,7 @@
     #@gallery = Gallery.find(params[:gallery_id])
 
     @picture = Picture.find(params[:id])
-    # @listing = Listing.find(params[:id])
+
     # @picture = Picture.find(params[:id])
   end
 
