@@ -6,10 +6,23 @@ config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
     :bucket => 'mymny',
-    :access_key_id => 'AKIAJZG2MFC64VXKUDEQ',
-    :secret_access_key => '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'
+    :access_key_id => 'AKIAJ7ORJEY33V2EDTJQ',
+    :secret_access_key => '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'
   }
 }
+
+#  config.paperclip_defaults = {
+#   :storage => :s3,
+#   :s3_region => 'us-east-1',
+#     :s3_credentials => {
+#       :bucket => 'azstore',
+#       :access_key_id => 'AKIAJ7ORJEY33V2EDTJQ',
+#       :secret_access_key => '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',
+#     },
+#    :url =>':s3_domain_url',
+#     :path => '/:class/:attachment/:id_partition/:style/:filename'
+# }
+
 
 # Stripe Test Keys 
 

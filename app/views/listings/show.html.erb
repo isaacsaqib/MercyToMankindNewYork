@@ -2,6 +2,8 @@
 	
 <script type="text/javascript" src="/assets/application.js"></script>
 <%= javascript_include_tag "application.js" %>
+<%= javascript_include_tag "magnifier.js" %>
+<%= javascript_include_tag "event.js" %>
 
 <script>
 
@@ -22,11 +24,21 @@
 
 
 
+<!-- <div>
+    <a class="magnifier-thumb-wrapper" href="http://en.wikipedia.org/wiki/File:Starry_Night_Over_the_Rhone.jpg">
+        <img id="thumb" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/200px-Starry_Night_Over_the_Rhone.jpg">
+    </a>
+    <div class="magnifier-preview" id="preview" style="width: 400px; height: 333px">Starry Night Over The Rhone<br>by Vincent van Gogh</div>
+</div> -->
 
    <ul id="listings-show-pictures">
    <a href="/listings"> ←    BACK </a>
    <% @pictures.each do |pic| %>
-      <li><%= image_tag pic.image.url %></li>
+      <li><a><%= image_tag pic.image.url, :class => "thumb" %></a>
+      	 <div class="magnifier-preview" id="preview" style="width: 400px; height: 333px"></div>
+      </li>
+     
+   
       <%= pic.description %>
 
 

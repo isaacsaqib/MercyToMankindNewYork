@@ -4,10 +4,11 @@ config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
     :bucket => 'mymny',
-    :access_key_id => 'AKIAJZG2MFC64VXKUDEQ',
-    :secret_access_key => '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'
+    :access_key_id => 'AKIAJ7ORJEY33V2EDTJQ',
+    :secret_access_key => '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'
   }
 }
+
 
 
 # Test
@@ -22,8 +23,8 @@ ENV['SECRET_KEY']='sk_live_Zo6Tcaeyh7EADgohnxy58TqE'
 
 
 ENV['S3_BUCKET_NAME']='mxmny'
-ENV['AWS_ACCESS_KEY_ID'] = "AKIAJZG2MFC64VXKUDEQ"
-ENV['AWS_SECRET_ACCESS_KEY'] = "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"
+ENV['AWS_ACCESS_KEY_ID'] = "AKIAJ7ORJEY33V2EDTJQ"
+ENV['AWS_SECRET_ACCESS_KEY'] = "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"
 
   # Settings specified here will take precedence over those in config/application.rb.
 

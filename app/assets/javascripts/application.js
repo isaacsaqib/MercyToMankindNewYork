@@ -133,6 +133,17 @@ if
 	})
 
 
+		var evt = new Event(),
+    	m = new Magnifier(evt);
+
+    	m.attach({
+	    thumb: '.thumb',
+	    // large: 'http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/400px-Starry_Night_Over_the_Rhone.jpg',
+	    largeWrapper: 'preview',
+	    zoom: 3
+		});
+
+
 
 	
 
