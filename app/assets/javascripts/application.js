@@ -45,29 +45,29 @@ $(document).ready(function(){
 
 
 
-//  if 
-// 	 	( $("img[alt*='M2mk']") )
-// 	 {
+ if 
+	 	( $("img[alt*='M2mk']") )
+	 {
 
-// 	 	$( "img[alt*='M2mk']").css("width", "80%");
+	 	$( "img[alt*='M2mk']").css("width", "80%");
 
-// 	 };
+	 };
 
-//  if 
-// 	 	( $("img[alt='M2mk final 16 copy']") )
-// 	 {
+ if 
+	 	( $("img[alt='M2mk final 16 copy']") )
+	 {
 
-// 	 	$( "img[alt='M2mk final 16 copy']").css("width", "100%");
+	 	$( "img[alt='M2mk final 16 copy']").css("width", "100%");
 
-// 	 };
+	 };
 
-// if 
-// 	 	( $("img[alt='M2mk final 29 copy']") )
-// 	 {
+if 
+	 	( $("img[alt='M2mk final 29 copy']") )
+	 {
 
-// 	 	$( "img[alt='M2mk final 29 copy']").css("width", "100%");
+	 	$( "img[alt='M2mk final 29 copy']").css("width", "100%");
 
-// 	 };
+	 };
 
 // if 
 // 	 	( $("img[alt='M2mk final 23 copy']") )
