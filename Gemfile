@@ -59,3 +59,6 @@ gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
 gem 'newrelic_rpm'
 
+
+
+
