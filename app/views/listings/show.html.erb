@@ -2,6 +2,7 @@
 	
 <script type="text/javascript" src="/assets/application.js"></script>
 <%= javascript_include_tag "application.js" %>
+<%= javascript_include_tag "jquery.elevatezoom.js" %>
 
 <!-- <script>
 
@@ -32,7 +33,7 @@
    <ul id="listings-show-pictures">
    <a href="/listings"> ←    BACK </a>
    <% @pictures.each do |pic| %>
-      <li><a href="/pictures/<%=pic.id%>"><%= image_tag pic.image.url%></a></li>
+      <li><a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a></li>
       <%= pic.description %>
 
 
