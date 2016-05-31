@@ -33,12 +33,17 @@ $(document).ready(function(){
 		event.preventDefault();
 		$("#hidden-nav").slideDown();
 		$(this).attr("id", "nav-image-opened")
-		$("#nav-image-opened").on("click", function(){
-		event.preventDefault();
-		$("#hidden-nav").slideUp();
-	})
+			$("#nav-image-opened").on("click", function(){
+			event.preventDefault();
+			$("#hidden-nav").slideUp();
+		})
 
 	})
+
+	if (screen.width < 960) {
+   		$('img').removeClass("elevatezoom");
+	};
+	
 
 
 	$("#add-to-cart-btn").on("click", function(){
