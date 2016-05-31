@@ -8,7 +8,7 @@ class SessionController < ApplicationController
     admin = Admin.find_by(username: params[:username])
     # if we found the admin and they gave us the right password
     if admin && admin.authenticate(params[:password])
-      # store admin id in session
+      # store admin id in sessions
       session[:admin_id] = admin.id
       redirect_to("/")
     else
@@ -18,7 +18,7 @@ class SessionController < ApplicationController
   end
 
   def destroy
-    # we can set the session user_id to nil
+    # we can set the sessions user_id to nil
     session[:admin_id] = nil
     redirect_to(root_path)
   end

@@ -61,6 +61,8 @@ end
 		@listing = Listing.find(params[:id])
 		@count_cart = session[:cart].count + 2
 			session[:cart][@count_cart] = [@listing.name, @listing.price, params[:product_id], params[:size], @count_cart, @listing.pictures.first.image.url]
+
+
 		
 		end	
 
