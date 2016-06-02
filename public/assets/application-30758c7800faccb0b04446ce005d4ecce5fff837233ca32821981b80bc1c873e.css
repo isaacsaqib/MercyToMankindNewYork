@@ -9,24 +9,6 @@ body {
 	background-color: #FCFCFC;
 }
 
-@font-face {
-    font-family: 'Helvetica';
-    src: url('/assets/Helvetica-c993eb9a2b56753cb35f253ebf53bb61e2abd6ef63a509611252ca934f83ab96.dfont');
-}
-
-#edit-details-button {
-	background-color: black;
-	color: white;
-	font-family: 'Helvetica';
-	font-weight: 500;
-	border-radius: 0px;
-    width: 40%;
-    height: 40px;
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   	appearance: none; 
-}
-
 .continue-button {
 	background-color: black;
 	color: white;
@@ -387,7 +369,7 @@ table {
 
 .products li {
 	display: inline-block;
-	width: 30%;
+	width: 40%;
 }
 
 .products li p {
@@ -844,10 +826,6 @@ margin-bottom: 50px
     display: none
 }
 
-
-
-
-
 /*end*/
 
 @media screen and (max-width: 1360px) {
@@ -957,4 +935,24 @@ margin-bottom: 50px
 }
 
 
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+ */
+
+
+ 
 

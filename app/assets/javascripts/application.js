@@ -47,7 +47,14 @@ $(document).ready(function(){
 
 
 	$("#add-to-cart-btn").on("click", function(){
-		alert("Added to cart");
+		swal({
+			title: "Added to cart", 
+			type: "success",
+			timer: 6000
+
+
+
+		})
 
 	})
 

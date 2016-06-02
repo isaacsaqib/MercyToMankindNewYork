@@ -7,8 +7,10 @@ Rails.application.config.assets.precompile += %w( jquery.js )
 Rails.application.config.assets.precompile += %w( jquery.slides.js )
 Rails.application.config.assets.precompile += %w( jquery.slides.min.js )
 Rails.application.config.assets.precompile += %w( event.js )
-Rails.application.config.assets.precompile += %w( magnifier.js )
 Rails.application.config.assets.precompile += %w( jquery.elevatezoom.js )
+Rails.application.config.assets.precompile += %w( jquery.elevatezoom.js )
+Rails.application.config.assets.precompile += %w( sweetalert.css )
+Rails.application.config.assets.precompile += %w( sweetalert.min.js )
 
 
 # Add additional assets to the asset load path
