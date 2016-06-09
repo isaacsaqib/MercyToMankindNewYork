@@ -6,8 +6,8 @@ config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
     :bucket => 'mymny',
-    :access_key_id => 'AKIAJ7ORJEY33V2EDTJQ',
-    :secret_access_key => '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'
+    :access_key_id => 'AKIAIX6IOZ3F5647G7MQ',
+    :secret_access_key => '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'
   }
 }
 
