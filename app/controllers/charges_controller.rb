@@ -19,15 +19,15 @@ def create
     :currency    => 'usd',
     :metadata => {
     
-    'product_names' => session[:product_names],
-    'first_name' => session[:firstname], 
-    'last_name' => session[:lastname],
-    'address' => session[:address],
-    'city' => session[:city], 
-    'state' => session[:state],
-    'zipcode' => session[:zip],
-    'country' => session[:country],
-    'email' => session[:email]
+    'Product_Details' => session[:product_details],
+    'First_Name' => session[:firstname], 
+    'Last_Name' => session[:lastname],
+    'Address' => session[:address],
+    'City' => session[:city], 
+    'State' => session[:state],
+    'Zipcode' => session[:zip],
+    'Country' => session[:country],
+    'Email' => session[:email]
   }
     # :source => { :address_city => session[:city] }
   )

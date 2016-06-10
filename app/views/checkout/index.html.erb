@@ -17,11 +17,11 @@
 			:count => count
 		} }
 		@total = @products.sum{ |product| product[:listing].try(:price) || 0 }
-		@product_names = @products.map do |product| 
+		@product_details = @products.map do |product| 
 			[product[:listing].try(:name), product[:size]].join(' - ') 
 		end
 
-		session[:product_names] = @product_names.join(", ")
+		session[:product_details] = @product_details.join(", ")
 	%>
 
 
@@ -100,7 +100,7 @@ session[:total] = sprintf("%.2f", @total)
 <input type="hidden" name="cmd" value="_xclick">
 <input type="hidden" name="business" value="n00747874@students.ncc.edu">
 <input type="hidden" name="lc" value="US">
-<input type="hidden" name="item_name" value="<%=@product_names%>">
+<input type="hidden" name="item_name" value="<%=@product_details%>">
 <input type="hidden" name="amount" id="paypal_amount" value="<%=session[:total]%>">
 <input type="hidden" name="currency_code" value="USD">
 <input type="hidden" name="button_subtype" value="services">
