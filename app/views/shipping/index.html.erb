@@ -28,6 +28,7 @@ if session[:firstname]
 @zip = session[:zip]
 @country = session[:country]
 
+
 if session[:shipping] == 'Free Shipping'
 	@free_shipping = 'checked'
 end
@@ -52,15 +53,14 @@ end
 <h1 class="h1-headers"> SHIPPING INFORMATION</h1>
 <form method="get" action="" id="form1">
 <table id="shipping-table">
-	<input class="shipping-input" type="text" name="email" value="<%= @email%>" placeholder="EMAIL ADDRESS"><br><br>
-<input class="shipping-input" type="text" name="firstname" onkeyup="saveData()" value="<%= @firstname%>" placeholder="FIRST NAME"><br><br>
-	<input class="shipping-input" type="text" name="lastname" value="<%= @lastname%>" placeholder="LAST NAME"><br><br>
-	<input class="shipping-input" type="text" name="address" value="<%= @address%>" placeholder="STREET ADDRESS"><br><br>
-	<input class="shipping-input" type="text" name="city" value="<%= @city%>" placeholder="CITY"><br><br>
-	<!-- <tr><td>State</td><td><input type="text" name="state" value="<%= @state%>"/></td></tr> -->
+	<input required class="shipping-input" type="text" name="email" value="<%= @email%>" placeholder="EMAIL ADDRESS"><br><br>
+<input required class="shipping-input" type="text" name="firstname" onkeyup="saveData()" value="<%= @firstname%>" placeholder="FIRST NAME"><br><br>
+	<input required class="shipping-input" type="text" name="lastname" value="<%= @lastname%>" placeholder="LAST NAME"><br><br>
+	<input required class="shipping-input" type="text" name="address" value="<%= @address%>" placeholder="STREET ADDRESS"><br><br>
+	<input required class="shipping-input" type="text" name="city" value="<%= @city%>" placeholder="CITY"><br><br>
 
 
-	<select name="select_state" class="shipping-select"> value="<%= @state%>">
+	<select required name="select_state" class="shipping-select"> value="<%= @state%>">
 		<option value="">STATE</option>
 		<option value="AK">AK</option>
 		<option value="AZ">AZ</option>
@@ -113,8 +113,8 @@ end
 		<option value="WY">WY</option>
 </select><br><br>
 
-	<input class="shipping-input" type="text" name="zip" value="<%= @zip%>" placeholder="ZIP"><br><br>
-	<select class="shipping-select" name="country" id="country" onchange="checkCountry(this)">
+	<input required class="shipping-input" type="text" name="zip" value="<%= @zip%>" placeholder="ZIP"><br><br>
+	<select required class="shipping-select" name="country" id="country" onchange="checkCountry(this)">
 <option value="">COUNTRY</option>
 <option value="Afganistan">Afghanistan</option>
 <option value="Albania">Albania</option>
@@ -364,8 +364,8 @@ end
 <option value="Zambia">Zambia</option>
 <option value="Zimbabwe">Zimbabwe</option>
 </select></td></tr><br><br>
-	<tr id="free_ship"><td><input type="radio" name="shipping" value="Free Shipping" <%=@free_shipping%> />US Shipping</td><td>3-6 Days Free</td></tr>
-	<tr id="inter_ship"><td><input type="hidden" id="total" name="total" value="<%= session[:final_total]%>" /><input type="radio" name="shipping" value="International Shipping" <%=@premium_shipping%> />International Shipping </td><td>7-10 Business Days: $6</td></tr>
+	<tr id="free_ship"><td><input required type="radio" name="shipping" value="Free Shipping" <%=@free_shipping%> />US Shipping</td><td>3-6 Days Free</td></tr>
+	<tr id="inter_ship"><td><input required type="hidden" id="total" name="total" value="<%= session[:final_total]%>" /><input type="radio" name="shipping" value="International Shipping" <%=@premium_shipping%> />International Shipping </td><td>7-10 Business Days: $6</td></tr>
 	
 </table>
 <p style="font-family: 'Raleway', sans-serif; text-align:center;">Please fill out all fields completely and accurately before proceeding</p>

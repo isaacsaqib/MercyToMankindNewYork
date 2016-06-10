@@ -19,7 +19,7 @@ def create
     :currency    => 'usd',
     :metadata => {
     
-    'product_name' => session[:product_names],
+    'product_names' => session[:product_names],
     'first_name' => session[:firstname], 
     'last_name' => session[:lastname],
     'address' => session[:address],

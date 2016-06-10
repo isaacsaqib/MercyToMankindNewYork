@@ -60,15 +60,12 @@ end
 			session[:cart] ||= {}
 		@listing = Listing.find(params[:id])
 		@count_cart = session[:cart].count + 2
-			session[:cart][@count_cart] = [@listing.name, @listing.price, params[:product_id], params[:size], @count_cart, @listing.pictures.first.image.url]
+			# session[:cart][@count_cart] = [@listing.name, @listing.price, params[:product_id], params[:size], @count_cart, @listing.pictures.first.image.url]
 
 
 		
 		end	
 
-		if params[:remove]
-			Listing.delete(params[:remove])
-		end
 
 	  # Amount in cents
 	  	
@@ -110,8 +107,20 @@ end
 	def destroy
 		@listing = Listing.find(params[:id])
 		@listing.destroy
+
 	end
 
+	def add_to_cart
+		session[:cart] ||= {}
+		key = [params[:id], params[:size]].join('-')
+		session[:cart][key] = (session[:cart][key] || 0) + 1
+		redirect_to :cart
+	end
+
+	def remove_from_cart
+		session[:cart].delete(params[:id])
+		redirect_to :cart
+	end
 
 
 	private

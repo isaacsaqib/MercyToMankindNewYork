@@ -14,6 +14,15 @@ body {
     src: url('/assets/Helvetica-c993eb9a2b56753cb35f253ebf53bb61e2abd6ef63a509611252ca934f83ab96.dfont');
 }
 
+#cart-table > tbody > tr > td > a > img { /* PRODUCT IMAGE SIZE IN CART */
+	width: 80%;
+
+}
+
+#cart-table > tbody > tr > td {
+	width: 40%;
+}
+
 #edit-details-button {
 	background-color: black;
 	color: white;

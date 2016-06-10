@@ -2,12 +2,17 @@ Rails.application.routes.draw do
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
- resources :listings
+  resources :listings do
+    member do
+      post :add_to_cart
+      delete :remove_from_cart
+    end
+  end
 resources :charges
 resources :checkout
 resources :shipping
 resources :orders
-resources :cart
+resource :cart
 resources :admins
 resources :pictures
 resources :users
