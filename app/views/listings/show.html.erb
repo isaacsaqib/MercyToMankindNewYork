@@ -38,11 +38,12 @@
 
 
       <% if logged_in? %>
-      <%= link_to "Edit picture", picture_path(pic) %>
+      <br>
+      <%= link_to "Edit picture", picture_path(pic) %><br>
         <%# link_to "Edit picture", picture_path(pic) %>
 
      <%= link_to "Delete picture", @picture, :method => :delete,
-                                      data: { confirm: "You sure?" } %>
+                                      data: { confirm: "You sure?" } %><br>
       <% end %>
 
      

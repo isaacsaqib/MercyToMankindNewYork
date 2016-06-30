@@ -11,12 +11,12 @@
 		<th>Price</th>
 	</tr>
 	<% 
-		@products = @cart.map{ |key, count| {
-			:listing => Listing.find_by_id(key.split('-').first),
-			:size => key.split('-').last,
-			:count => count
+		@products = @cart.map{ |key, count| { #iterate over @cart to pull out keys
+			:listing => Listing.find_by_id(key.split('-').first), #splitting the key to find the first text which is going to be the listing id
+			:size => key.split('-').last, #splitting the key to find the last object which is going to be the size
+			:count => count #quantity in cart
 		} }
-		@total = @products.sum{ |product| product[:listing].try(:price) || 0 }
+		@total = @products.sum{ |product| product[:listing].try(:price) || 0 } #sum of the products price
 		@product_details = @products.map do |product| 
 			[product[:listing].try(:name), product[:size]].join(' - ') 
 		end
@@ -117,8 +117,8 @@ session[:total] = sprintf("%.2f", @total)
 </form>
 </td></tr>
 
-<%
-else %>
+
+<% else %>
 	<tr><td>No product to purchase</td></tr>
 <%
 end

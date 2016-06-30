@@ -9,12 +9,12 @@
 <table id="cart-table">
 
 	<tr><th></th><th>ITEM</th><th>PRICE</th><th>SIZE</th><th>REMOVE</th></tr>
-<% if !@cart.blank? %>
-	<% @cart.each do |key, count| %>
+<% if !@cart.blank? %> <!-- If the cart is NOT empty -->
+	<% @cart.each do |key, count| %> <!-- iterate over each key in the cart -->
 		<% 
-			id, size = key.split('-') 
-			listing = Listing.find_by_id(id)
-			next if listing.blank?
+			id, size = key.split('-') #split the object at "-" making "listing.id, size"
+			listing = Listing.find_by_id(id) #find the listing by its id
+			next if listing.blank? #proceed if there is no listing present
 		%>
 		<tr>
 			<td><a href="/listings/<%= listing.id %>"><%= image_tag(listing.pictures.first.image.url) %></td>
@@ -31,3 +31,6 @@
 </table>
 	<a href="/shipping"><button class="continue-button">Continue</button></a>
 </body>
+
+
+

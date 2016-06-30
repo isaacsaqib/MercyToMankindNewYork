@@ -60,10 +60,6 @@ end
 			session[:cart] ||= {}
 		@listing = Listing.find(params[:id])
 		@count_cart = session[:cart].count + 2
-			# session[:cart][@count_cart] = [@listing.name, @listing.price, params[:product_id], params[:size], @count_cart, @listing.pictures.first.image.url]
-
-
-		
 		end	
 
 
@@ -74,7 +70,6 @@ end
 	  	@listing  = Listing.find(params[:id])
     	@pictures = @listing.pictures
 
- 
 	end
 
 	def edit 
@@ -111,10 +106,10 @@ end
 	end
 
 	def add_to_cart
-		session[:cart] ||= {}
-		key = [params[:id], params[:size]].join('-')
-		session[:cart][key] = (session[:cart][key] || 0) + 1
-		redirect_to :cart
+		session[:cart] ||= {} # Creating an empty hash
+		key = [params[:id], params[:size]].join('-') # creating a key = to the listing, size joined with a "-"
+		session[:cart][key] = (session[:cart][key] || 0) + 1 #setting the key inside of the session hash to the listing object or 0, every time a key is set, it increments by 1
+		redirect_to :cart 
 	end
 
 	def remove_from_cart

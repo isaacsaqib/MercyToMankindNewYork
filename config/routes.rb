@@ -16,6 +16,7 @@ resource :cart
 resources :admins
 resources :pictures
 resources :users
+resources :collections
 
 get  "/admin"  => "session#new"
 post "/session"      => "session#create"
@@ -33,7 +34,6 @@ get "/media" => "welcome#media"
 
 
 get "/orders/complete" => "orders#complete"
-resources :collections
 get "/customercare" => "customers#index"
 
 
