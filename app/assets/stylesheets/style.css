@@ -69,6 +69,15 @@ body {
 	width: 100% 
 }
 
+#collection-slides {
+	height: 1202px;
+	width: 100%;
+}
+
+#collection-slides > img {
+	width: 100% 
+}
+
 .shipping-select {
 	width: 50%;
     padding:20px;
