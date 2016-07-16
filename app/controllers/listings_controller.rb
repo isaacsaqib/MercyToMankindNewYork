@@ -15,6 +15,7 @@ class ListingsController < ApplicationController
 		@listings_headwear = Listing.where(:section => "Headwear").order(price: :desc)
 		@listings_wristwear = Listing.where(:section => "Wristwear").order(price: :desc)
 		@listings_collection = Listing.where(:section => "Collection")
+		@listings_ss16capsule = Listing.where(:section => "SS16 Capsule").order(price: :desc)
 
 
     respond_to do |format|

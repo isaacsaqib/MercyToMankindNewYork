@@ -20,7 +20,6 @@
 
 $(document).ready(function(){
 	$("#shop-sub-nav").hide();
-	$("#new").hide();
 	 // $("#tops").hide();
 	$("#bottoms").hide();
 	$("#headwear").hide();
@@ -28,6 +27,8 @@ $(document).ready(function(){
 	$("#added").hide();
 	$("#contact-hide").hide();
 	$("#hidden-nav").hide();
+	$("#tops").hide();
+
 
 	$("#nav-image").on("click", function(){
 		event.preventDefault();
@@ -82,9 +83,9 @@ $(document).ready(function(){
 	})
 
 
-	$("#listings-index-nav li:nth-child(2)").on("click", function(){ /* Bottoms */
+	$("#listings-index-nav li:nth-child(3)").on("click", function(){ /* SS 16 CAPSULE */
 		$(".products").hide();
-		$("#bottoms").fadeIn();
+		$("#ss16capsule").fadeIn();
 
 	})
 
