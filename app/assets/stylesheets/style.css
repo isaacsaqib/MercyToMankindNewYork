@@ -14,6 +14,14 @@ body {
     src: url('/assets/Helvetica-c993eb9a2b56753cb35f253ebf53bb61e2abd6ef63a509611252ca934f83ab96.dfont');
 }
 
+h1 {
+	font-family: 'Helvetica';
+}
+
+h3 {
+	font-family: 'Helvetica';
+}
+
 #cart-table > tbody > tr > td > a > img { /* PRODUCT IMAGE SIZE IN CART */
 	width: 80%;
 
@@ -759,11 +767,6 @@ th {
 
 
  
-#headwear img {
-	height: 400px;
-	width: 600px;
-
-}
 
 #below-slideshow-ul {
 margin-bottom: 50px
@@ -778,7 +781,7 @@ margin-bottom: 50px
 
 #below-slideshow-ul img {
 
-	height: 300px;
+	height: 400px;
 	display: inline-block;
 }
 
@@ -915,7 +918,7 @@ margin-bottom: 50px
 	}
 
 	#listings-index-nav li {
-		font-size:25px;
+		font-size:15px;
 	}
 
 		#add-to-cart-btn {

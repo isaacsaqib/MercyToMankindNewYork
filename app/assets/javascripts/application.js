@@ -28,6 +28,7 @@ $(document).ready(function(){
 	$("#contact-hide").hide();
 	$("#hidden-nav").hide();
 	$("#tops").hide();
+	$("#jackets").hide();
 
 
 	$("#nav-image").on("click", function(){
@@ -74,26 +75,46 @@ $(document).ready(function(){
 
 	// })
 
+	$("#listings-index-nav li:nth-child(1)").on("click", function(){  /* JACKETS */
+		$(".products").hide();
+		$("#jackets").fadeIn();
+		$(".headers-hide").hide();
 
 
-	$("#listings-index-nav li:nth-child(1)").on("click", function(){  /* Tops */
+	})
+
+
+	$("#listings-index-nav li:nth-child(2)").on("click", function(){  /* TOPS */
 		$(".products").hide();
 		$("#tops").fadeIn();
+		$(".headers-hide").hide();
+
 
 	})
 
 
-	$("#listings-index-nav li:nth-child(3)").on("click", function(){ /* SS 16 CAPSULE */
+	$("#listings-index-nav li:nth-child(6)").on("click", function(){ /* SS 16 CAPSULE */
 		$(".products").hide();
 		$("#ss16capsule").fadeIn();
+		$(".headers-hide").fadeIn();
 
 	})
 
 
 
-	$("#listings-index-nav li:nth-child(3)").on("click", function(){ /* Headwear */
+	$("#listings-index-nav li:nth-child(4)").on("click", function(){ /* Headwear */
 		$(".products").hide();
 		$("#headwear").fadeIn();
+				$(".headers-hide").hide();
+
+
+	})
+
+	$("#listings-index-nav li:nth-child(3)").on("click", function(){ /* Bottoms */
+		$(".products").hide();
+		$("#bottoms").fadeIn();
+				$(".headers-hide").hide();
+
 
 	})
 
