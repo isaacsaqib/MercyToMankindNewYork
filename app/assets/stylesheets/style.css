@@ -121,15 +121,14 @@ h3 {
 	border:2px solid black;
 }
 
-
-body > div.wrapper > div.wrapper > h1 {
+.logo-text-h1 {
 	padding-top: 40px;	
 	font-family: 'Helvetica';
 	font-weight: 500;
 	letter-spacing: 7px;
 }
 
-body > div.wrapper > div.wrapper > h3 {
+.logo-text-h3 {
 	font-family: 'Helvetica';
 	font-weight: 500;
 	margin-bottom: 50px;
@@ -222,6 +221,7 @@ body > div.wrapper > div.wrapper > h3 {
 
 
 #size {
+	padding-left: 20px;
 	border: black;
 	font-family: 'Helvetica';
 	font-weight: 500;
@@ -247,7 +247,7 @@ body > div.wrapper > div.wrapper > h3 {
 
 #listings-index-div {
     height: 85%;
-    position: fixed;
+    /*position: fixed;*/
     width: 8%;
 }
 
@@ -644,8 +644,8 @@ header a {
 
 #bottom-nav li {
 	display: inline-block;
-	padding-left:70px; 
-	padding-right: 70px;
+	padding-left:40px; 
+	padding-right: 40px;
 
 }
 

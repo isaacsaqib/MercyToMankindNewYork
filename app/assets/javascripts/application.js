@@ -105,7 +105,7 @@ $(document).ready(function(){
 	$("#listings-index-nav li:nth-child(4)").on("click", function(){ /* Headwear */
 		$(".products").hide();
 		$("#headwear").fadeIn();
-				$(".headers-hide").hide();
+		$(".headers-hide").hide();
 
 
 	})
