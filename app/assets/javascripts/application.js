@@ -20,7 +20,7 @@
 
 $(document).ready(function(){
 	$("#shop-sub-nav").hide();
-	 // $("#tops").hide();
+
 	$("#bottoms").hide();
 	$("#headwear").hide();
 	$("#wristwear").hide();
@@ -75,7 +75,7 @@ $(document).ready(function(){
 
 	// })
 
-	$("#listings-index-nav li:nth-child(1)").on("click", function(){  /* JACKETS */
+	$("#listings-index-nav > li:nth-child(1)").on("click", function(){  /* JACKETS */
 		$(".products").hide();
 		$("#jackets").fadeIn();
 		$(".headers-hide").hide();
@@ -84,7 +84,7 @@ $(document).ready(function(){
 	})
 
 
-	$("#listings-index-nav li:nth-child(2)").on("click", function(){  /* TOPS */
+	$("#listings-index-nav > li:nth-child(2)").on("click", function(){  /* TOPS */
 		$(".products").hide();
 		$("#tops").fadeIn();
 		$(".headers-hide").hide();
@@ -93,7 +93,7 @@ $(document).ready(function(){
 	})
 
 
-	$("#listings-index-nav li:nth-child(6)").on("click", function(){ /* SS 16 CAPSULE */
+	$("#listings-index-nav > li:nth-child(6)").on("click", function(){ /* SS 16 CAPSULE */
 		$(".products").hide();
 		$("#ss16capsule").fadeIn();
 		$(".headers-hide").fadeIn();
@@ -102,15 +102,15 @@ $(document).ready(function(){
 
 
 
-	$("#listings-index-nav li:nth-child(4)").on("click", function(){ /* Headwear */
+	$("#listings-index-nav > li:nth-child(4)").on("click", function(){ /* Headwear */
 		$(".products").hide();
-		$("#headwear").fadeIn();
+		$("#head").fadeIn();
 		$(".headers-hide").hide();
 
 
 	})
 
-	$("#listings-index-nav li:nth-child(3)").on("click", function(){ /* Bottoms */
+	$("#listings-index-nav > li:nth-child(3)").on("click", function(){ /* Bottoms */
 		$(".products").hide();
 		$("#bottoms").fadeIn();
 				$(".headers-hide").hide();
@@ -120,7 +120,7 @@ $(document).ready(function(){
 
 
 
-	$("#listings-index-nav li:nth-child(4)").on("click", function(){ /* Wristwear */
+	$("#listings-index-nav > li:nth-child(4)").on("click", function(){ /* Wristwear */
 		$(".products").hide();
 		$("#wristwear").fadeIn();
 
