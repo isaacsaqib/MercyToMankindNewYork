@@ -20,15 +20,14 @@
 
 $(document).ready(function(){
 	$("#shop-sub-nav").hide();
-
+	$("#jackets").hide();
+	$("#tops").hide();
 	$("#bottoms").hide();
-	$("#headwear").hide();
-	$("#wristwear").hide();
+	$("#head").hide();
+	// $("#wristwear").hide();
 	$("#added").hide();
 	$("#contact-hide").hide();
 	$("#hidden-nav").hide();
-	$("#tops").hide();
-	$("#jackets").hide();
 
 
 	$("#nav-image").on("click", function(){
@@ -38,9 +37,9 @@ $(document).ready(function(){
 			$("#nav-image-opened").on("click", function(){
 			event.preventDefault();
 			$("#hidden-nav").slideUp();
-		})
+		});
 
-	})
+	});
 
 	if (screen.width < 960) {
    		$('img').removeClass("elevatezoom");
@@ -56,9 +55,9 @@ $(document).ready(function(){
 
 
 
-		})
+		});
 
-	})
+	});
 
 
 	$("#nav li:nth-child(3)").on("click", function(){ /* contact button */
@@ -66,7 +65,7 @@ $(document).ready(function(){
 		$("#contact-hide").slideDown();
 
 
-	})
+	});
 
 
 	// $("#listings-index-nav li:nth-child(1)").on("click", function(){  /* New */
@@ -81,7 +80,7 @@ $(document).ready(function(){
 		$(".headers-hide").hide();
 
 
-	})
+	});
 
 
 	$("#listings-index-nav > li:nth-child(2)").on("click", function(){  /* TOPS */
@@ -90,7 +89,25 @@ $(document).ready(function(){
 		$(".headers-hide").hide();
 
 
-	})
+	});
+
+
+	$("#listings-index-nav > li:nth-child(3)").on("click", function(){ /* BOTTOMS */
+		$(".products").hide();
+		$("#bottoms").fadeIn();
+		$(".headers-hide").hide();
+
+
+	});
+
+	$("#listings-index-nav > li:nth-child(4)").on("click", function(){ /* HEADWEAR */
+		$(".products").hide();
+		$("#head").fadeIn();
+		$(".headers-hide").hide();
+
+
+	});
+
 
 
 	$("#listings-index-nav > li:nth-child(6)").on("click", function(){ /* SS 16 CAPSULE */
@@ -98,32 +115,18 @@ $(document).ready(function(){
 		$("#ss16capsule").fadeIn();
 		$(".headers-hide").fadeIn();
 
-	})
+	});
 
 
 
-	$("#listings-index-nav > li:nth-child(4)").on("click", function(){ /* Headwear */
-		// alert("hi")
-		$("#head").fadeIn();
 
+	// $("#listings-index-nav > li:nth-child(4)").on("click", function(){ 
+	// 	$(".products").hide();
+	// 	$("#wristwear").fadeIn();
 
-	})
+	// })
 
-	$("#listings-index-nav > li:nth-child(3)").on("click", function(){ /* Bottoms */
-		$(".products").hide();
-		$("#bottoms").fadeIn();
-				$(".headers-hide").hide();
-
-
-	})
-
-
-
-	$("#listings-index-nav > li:nth-child(4)").on("click", function(){ /* Wristwear */
-		$(".products").hide();
-		$("#wristwear").fadeIn();
-
-	})
+	/* Wristwear */
 
       $(".elevatezoom").elevateZoom();
 

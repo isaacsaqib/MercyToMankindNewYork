@@ -11,12 +11,13 @@ class ListingsController < ApplicationController
 
 		@listings_new = Listing.where(:section => "New")
 		@listings_tops= Listing.where(:section => "Tops").order(price: :desc)
+		@listings_jackets = Listing.where(:section => "Jackets").order(price: :desc)
 		@listings_bottoms = Listing.where(:section => "Bottoms").order(price: :desc)
 		@listings_head = Listing.where(:section => "Headwear").order(price: :desc)
 		@listings_wristwear = Listing.where(:section => "Wristwear").order(price: :desc)
-		@listings_jackets = Listing.where(:section => "Jackets").order(price: :desc)
-		@listings_collection = Listing.where(:section => "Collection")
 		@listings_ss16capsule = Listing.where(:section => "SS16 Capsule").order(price: :desc)
+		
+		@listings_collection = Listing.where(:section => "Collection")
 
 
     respond_to do |format|

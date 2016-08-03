@@ -97,13 +97,11 @@ if
 	</tr>
 </table>
 
-<table class="products hide" id="ss16capsule">
-	<h1 class="headers-hide">SPRING/SUMMER 16</h1>
-	<h3 class="headers-hide">'JUDGEMENT DAY' CAPSULE</h3>
+<table class="products" id="jackets">
 	<tr>
 		<td class="col">
 			<ul>
-			<% @listings_ss16capsule.each do |listing| %>
+			<% @listings_jackets.each do |listing| %>
 
 				<% if listing.pictures.first %>
             	<li>
@@ -135,8 +133,6 @@ if
 		</td>
 	</tr>
 </table>
-
-
 
 <table class="products" id="tops">
 	<tr>
@@ -174,6 +170,7 @@ if
 		</td>
 	</tr>
 </table>
+
 
 
 <table class="products" id="bottoms">
@@ -251,6 +248,50 @@ if
 	</tr>
 </table>
 
+
+<table class="products hide" id="ss16capsule">
+	<h1 class="headers-hide">SPRING/SUMMER 16</h1>
+	<h3 class="headers-hide">'JUDGEMENT DAY' CAPSULE</h3>
+	<tr>
+		<td class="col">
+			<ul>
+			<% @listings_ss16capsule.each do |listing| %>
+
+				<% if listing.pictures.first %>
+            	<li>
+            	<!-- listing image pictures -->
+            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
+            	<% else %>
+              		N/A
+            	<% end %>
+				
+				<!-- Name, price and buttons -->
+				<form method="get">
+				<input type="hidden" name="id" value="<%=listing.id%>">
+				<a href="<%=listing_path(listing)%>"><%=listing.name %></a><br> 
+				<p>$<%=listing.price %>.00</p><br>
+				<div class="line-separator"></div>
+				
+				 <br/>
+							 <% if logged_in? %>
+							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
+							<p><a href="?remove=<%=listing.id%>">Delete</a></p><br>
+							<% end %>
+							<br>
+							<br>
+				</form>	
+
+				</li>
+				<% end %>
+			</ul>
+		</td>
+	</tr>
+</table>
+
+
+
+
+
 <table class="products" id="wristwear">
 	<tr>
 		<td class="col">
@@ -288,43 +329,6 @@ if
 	</tr>
 </table>
 
-
-<table class="products" id="jackets">
-	<tr>
-		<td class="col">
-			<ul>
-			<% @listings_jackets.each do |listing| %>
-
-				<% if listing.pictures.first %>
-            	<li>
-            	<!-- listing image pictures -->
-            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
-            	<% else %>
-              		N/A
-            	<% end %>
-				
-				<!-- Name, price and buttons -->
-				<form method="get">
-				<input type="hidden" name="id" value="<%=listing.id%>">
-				<a href="<%=listing_path(listing)%>"><%=listing.name %></a><br> 
-				<p>$<%=listing.price %>.00</p><br>
-				<div class="line-separator"></div>
-				
-				 <br/>
-							 <% if logged_in? %>
-							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
-							<p><a href="?remove=<%=listing.id%>">Delete</a></p><br>
-							<% end %>
-							<br>
-							<br>
-				</form>	
-
-				</li>
-				<% end %>
-			</ul>
-		</td>
-	</tr>
-</table>
 
 <!-- use this table to delete collections -->
 
