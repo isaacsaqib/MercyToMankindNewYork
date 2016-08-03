@@ -103,7 +103,7 @@ $(document).ready(function(){
 
 
 	$("#listings-index-nav > li:nth-child(4)").on("click", function(){ /* Headwear */
-		alert("hi")
+		// alert("hi")
 		$("#head").fadeIn();
 
 
