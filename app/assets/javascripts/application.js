@@ -21,7 +21,7 @@
 $(document).ready(function(){
 	$("#shop-sub-nav").hide();
 	$("#jackets").hide();
-	$("#tops").hide();
+	// $("#tops").hide();
 	$("#bottoms").hide();
 	$("#head").hide();
 	// $("#wristwear").hide();
