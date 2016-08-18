@@ -1,3 +1,4 @@
+
 class ShippingController < ApplicationController
 	
 	def index

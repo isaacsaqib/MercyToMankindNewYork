@@ -18,7 +18,6 @@
 @premium_shipping = ''
 @express_shipping = ''
 if session[:firstname]
-
 @firstname = session[:firstname]
 @lastname = session[:lastname]
 @email = session[:email]
@@ -27,20 +26,15 @@ if session[:firstname]
 @state = session[:state]
 @zip = session[:zip]
 @country = session[:country]
-
-
 if session[:shipping] == 'Free Shipping'
 	@free_shipping = 'checked'
 end
-
 if session[:shipping] == 'International Shipping'
 	@premium_shipping = 'checked'
 end
-
 if session[:shipping] == 'Express Shipping'
 	@express_shipping = 'checked'
 end
-
 end
  %>
 
@@ -57,11 +51,12 @@ end
 		<input required class="shipping-input" type="text" name="firstname" onkeyup="saveData()" value="<%= @firstname%>" placeholder="FIRST NAME"><br><br>
 		<input required class="shipping-input" type="text" name="lastname" value="<%= @lastname%>" placeholder="LAST NAME"><br><br>
 		<input required class="shipping-input" type="text" name="address" value="<%= @address%>" placeholder="STREET ADDRESS"><br><br>
-		<input required class="shipping-input" type="text" name="city" value="<%= @city%>" placeholder="CITY"><br><br>
+		<input required class="shipping-input" type="text" name="city" value="<%= @city%>" placeholder="CITY AND/OR PROVINCE"><br><br>
 
 
-		<select required name="select_state" class="shipping-select"> value="<%= @state%>">
+		<select name="select_state" class="shipping-select"> value="<%= @state%>">
 			<option value="">STATE</option>
+			<option value="">NONE</option>
 			<option value="AK">AK</option>
 			<option value="AZ">AZ</option>
 			<option value="AR">AR</option>
@@ -113,7 +108,7 @@ end
 			<option value="WY">WY</option>
 	</select><br><br>
 
-		<input required class="shipping-input" type="text" name="zip" value="<%= @zip%>" placeholder="ZIP"><br><br>
+		<input required class="shipping-input" type="text" name="zip" value="<%= @zip%>" placeholder="ZIP/POSTAL CODE"><br><br>
 		<select required class="shipping-select" name="country" id="country" onchange="checkCountry(this)">
 	<option value="">COUNTRY</option>
 	<option value="Afganistan">Afghanistan</option>
@@ -365,7 +360,7 @@ end
 	<option value="Zimbabwe">Zimbabwe</option>
 	</select></td></tr><br><br>
 		<tr id="free_ship"><td><input required type="radio" name="shipping" value="Free Shipping" <%=@free_shipping%> />US Shipping</td><td>3-6 Days Free</td></tr>
-		<tr id="inter_ship"><td><input type="hidden" id="total" name="total" value="<%= session[:final_total]%>" /><input type="radio" name="shipping" value="International Shipping" <%=@premium_shipping%> />International Shipping </td><td>7-10 Business Days: $6</td></tr>
+		<tr id="inter_ship"><td><input type="hidden" id="total" name="total" value="<%= session[:final_total]%>" /><input type="radio" name="shipping" value="International Shipping" <%=@premium_shipping%> />International Shipping </td><td>7-10 Business Days: $12</td></tr>
 		
 	</table>
 	<p style="font-family: 'Raleway', sans-serif; text-align:center;">Please fill out all fields completely and accurately before proceeding</p>
@@ -380,7 +375,6 @@ end
 <script type="text/javascript">
 	var country = document.getElementById('country');
 	country.value="<%=@country%>";
-
 if(country.value=="" || country.value=="United States of America"){
 document.getElementById("free_ship").style.opacity="1";
 document.getElementById("inter_ship").style.opacity='0';
@@ -396,21 +390,15 @@ document.getElementById("select_state").style.opacity="0";
 </script>
 <script type="text/javascript">
 	function checkCountry(country){
-
 if(country.value=="United States of America"){
 document.getElementById("free_ship").style.opacity="1";
 document.getElementById("inter_ship").style.opacity='0';
 document.getElementById("select_state").style.opacity="1";
-
-
 }else{
 document.getElementById("free_ship").style.opacity="0";
 document.getElementById("inter_ship").style.opacity='1';
 document.getElementById("select_state").style.display="none";
-
-
 }
-
 	}
 </script>
 
