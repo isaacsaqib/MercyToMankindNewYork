@@ -54,9 +54,9 @@ end
 		<input required class="shipping-input" type="text" name="city" value="<%= @city%>" placeholder="CITY AND/OR PROVINCE"><br><br>
 
 
-		<select name="select_state" class="shipping-select"> value="<%= @state%>">
+		<select required name="select_state" class="shipping-select"> value="<%= @state%>">
 			<option value="">STATE</option>
-			<option value="">NONE</option>
+			<option value="">NON-USA</option>
 			<option value="AK">AK</option>
 			<option value="AZ">AZ</option>
 			<option value="AR">AR</option>
