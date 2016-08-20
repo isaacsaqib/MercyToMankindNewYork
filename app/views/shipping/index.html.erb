@@ -47,14 +47,14 @@ end
 <h1 class="h1-headers"> SHIPPING INFORMATION</h1>
 <form method="get" id="form1">
 	<table id="shipping-table">
-		<input required class="shipping-input" type="text" name="email" value="<%= @email%>" placeholder="EMAIL ADDRESS"><br><br>
+		<input required class="shipping-input" type="email" name="email" value="<%= @email%>" placeholder="EMAIL ADDRESS"><br><br>
 		<input required class="shipping-input" type="text" name="firstname" onkeyup="saveData()" value="<%= @firstname%>" placeholder="FIRST NAME"><br><br>
 		<input required class="shipping-input" type="text" name="lastname" value="<%= @lastname%>" placeholder="LAST NAME"><br><br>
 		<input required class="shipping-input" type="text" name="address" value="<%= @address%>" placeholder="STREET ADDRESS"><br><br>
 		<input required class="shipping-input" type="text" name="city" value="<%= @city%>" placeholder="CITY AND/OR PROVINCE"><br><br>
 
 
-		<select required name="select_state" class="shipping-select"> value="<%= @state%>">
+		<select required name="select_state" class="shipping-select" value="<%= @state %>">
 			<option value="">STATE</option>
 			<option value="">NON-USA</option>
 			<option value="AK">AK</option>
@@ -108,7 +108,7 @@ end
 			<option value="WY">WY</option>
 	</select><br><br>
 
-		<input required class="shipping-input" type="text" name="zip" value="<%= @zip%>" placeholder="ZIP/POSTAL CODE"><br><br>
+		<input required class="shipping-input" type="number" name="zip" value="<%= @zip%>" placeholder="ZIP/POSTAL CODE"><br><br>
 		<select required class="shipping-select" name="country" id="country" onchange="checkCountry(this)">
 	<option value="">COUNTRY</option>
 	<option value="Afganistan">Afghanistan</option>
