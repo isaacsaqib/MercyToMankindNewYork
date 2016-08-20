@@ -23,7 +23,7 @@ def create
     'First_Name' => session[:firstname], 
     'Last_Name' => session[:lastname],
     'Address' => session[:address],
-    'City' => session[:city], 
+    'City_or_Province' => session[:city], 
     'State' => session[:state],
     'Zipcode' => session[:zip],
     'Country' => session[:country],
