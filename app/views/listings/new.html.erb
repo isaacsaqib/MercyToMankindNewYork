@@ -1,5 +1,5 @@
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-
+<% if logged_in? %>
 <div style="background-color:white; width:100%;text-align:center;height:400px;padding-top:50px;">
 <%= form_for @listing, :url => listings_path, :html => { :multipart => true } do |f| %>
 	<%= f.label(:name) %>
@@ -20,7 +20,7 @@
   	   	<%=f.label :description %>
 	 <%=f.text_area :description %><br><br>
 	<%=f.label :section %>
-<%= f.select :section, options_for_select([["Select Type", ""], "Tops", "Bottoms", "Head", "Wristwear","Jackets", "Collection", "SS16 Capsule"]) %>	<br><br>
+<%= f.select :section, options_for_select([["Select Type", ""], "Hoodies", "Long Sleeves", "Short Sleeves", "Tanks",  "Bottoms", "Head", "Wristwear","Jackets", "Collection", "SS16 Capsule"]) %>	<br><br>
 
  <%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
 
@@ -29,3 +29,9 @@
 	<% end %>
 
 </div>
+
+<% else %>
+
+<p>You must be logged in to view this page</p>
+
+<% end %>

@@ -21,13 +21,22 @@
 $(document).ready(function(){
 	$("#shop-sub-nav").hide();
 	$("#jackets").hide();
-	// $("#tops").hide();
+	// $("#hoodies").hide();
+	// $("#long_sleeves").hide();
+	// $("#short_sleeves").hide();
+	// $("#tanks").hide();
 	$("#bottoms").hide();
 	$("#head").hide();
-	// $("#wristwear").hide();
+	$("#ss16capsule").hide();
+	$(".headers-hide").hide();
 	$("#added").hide();
 	$("#contact-hide").hide();
 	$("#hidden-nav").hide();
+	$("#listings-outerwear-nav-hidden").hide();
+	$("#listings-apparel-nav-hidden").hide();
+	$("#listings-accessories-nav-hidden").hide();
+
+
 
 
 	$("#nav-image").on("click", function(){
@@ -40,6 +49,7 @@ $(document).ready(function(){
 		});
 
 	});
+
 
 	if (screen.width < 960) {
    		$('img').removeClass("elevatezoom");
@@ -74,7 +84,7 @@ $(document).ready(function(){
 
 	// })
 
-	$("#listings-index-nav > li:nth-child(1)").on("click", function(){  /* JACKETS */
+	$("#listings-outerwear-nav-hidden > li").on("click", function(){  /* JACKETS */
 		$(".products").hide();
 		$("#jackets").fadeIn();
 		$(".headers-hide").hide();
@@ -83,48 +93,56 @@ $(document).ready(function(){
 	});
 
 
-	$("#listings-index-nav > li:nth-child(2)").on("click", function(){  /* TOPS */
+	$("#listings-apparel-nav-hidden > li:nth-child(1)").on("click", function(){  /* APPAREL */
 		$(".products").hide();
-		$("#tops").fadeIn();
+		$("#intro-listings-picture").fadeOut();
+		$("#hoodies").fadeIn();
+		$("#long_sleeves").fadeIn();
+		$("#short_sleeves").fadeIn();
+		$("#tanks").fadeIn();
 		$(".headers-hide").hide();
-
-
 	});
 
-
-	$("#listings-index-nav > li:nth-child(3)").on("click", function(){ /* BOTTOMS */
-		$(".products").hide();
-		$("#bottoms").fadeIn();
-		$(".headers-hide").hide();
-
-
-	});
-
-	$("#listings-index-nav > li:nth-child(4)").on("click", function(){ /* HEADWEAR */
-		$(".products").hide();
-		$("#head").fadeIn();
-		$(".headers-hide").hide();
-
-
-	});
-
-
-
-	$("#listings-index-nav > li:nth-child(6)").on("click", function(){ /* SS 16 CAPSULE */
+	$("#listings-apparel-nav-hidden > li:nth-child(3)").on("click", function(){ /* SS 16 CAPSULE */
 		$(".products").hide();
 		$("#ss16capsule").fadeIn();
 		$(".headers-hide").fadeIn();
-
 	});
 
 
+	$("#listings-apparel-nav-hidden > li:nth-child(2)").on("click", function(){ /* BOTTOMS */
+		$(".products").hide();
+		$("#bottoms").fadeIn();
+		$(".headers-hide").hide();
+	});
+
+	$("#listings-accessories-nav-hidden > li:nth-child(1)").on("click", function(){ /* HEADWEAR */
+		$(".products").hide();
+		$("#head").fadeIn();
+		$(".headers-hide").hide();
+	});
+
+	$("#listings-accessories-nav-hidden > li:nth-child(2)").on("click", function(){ /* ACCESSORIES */
+		$(".products").hide();
+		$("#Wristwear").fadeIn();
+		$(".headers-hide").hide();
+	});
 
 
-	// $("#listings-index-nav > li:nth-child(4)").on("click", function(){ 
-	// 	$(".products").hide();
-	// 	$("#wristwear").fadeIn();
+	// START LISTINGS NAVIGATION TOGGLE FUNCTIONS
 
-	// })
+	function HiddenListingNavSlideDown(li_id, hidden_list) { 
+		$("#listings-index-nav > li:nth-child(" + li_id + ")").on("click", function(){
+			$("#listings-" + hidden_list + "-nav-hidden").slideToggle("slow");
+			$("#intro-listings-picture").hide();
+
+		});
+	};
+
+	HiddenListingNavSlideDown(1, "outerwear");
+	HiddenListingNavSlideDown(3, "apparel");
+	HiddenListingNavSlideDown(5, "accessories");
+
 
 	/* Wristwear */
 
