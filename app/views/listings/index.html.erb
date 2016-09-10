@@ -137,7 +137,7 @@
 		            	<figcaption> 
 
 		            		<p> 
-		            			<%= listing.name.upcase %> <br><br><br> 
+		            			<a href="<%=listing_path(listing)%>"><%= listing.name.upcase %></a> <br><br><br> 
 		            			<%=	listing.description.upcase%> <br><br>
 		            			$<%= listing.price %>.00
 		            		</p> 
