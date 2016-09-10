@@ -12,7 +12,6 @@ class ListingsController < ApplicationController
 		@listings_new = Listing.where(:section => "New")
 		@listings_hoodies= Listing.where(:section => "Hoodies").order(price: :desc)
 		@listings_long_sleeves= Listing.where(:section => "Long Sleeves").order(price: :desc)
-		@listings_tops= Listing.where(:section => "Tops").order(price: :desc)
 		@listings_short_sleeves= Listing.where(:section => "Short Sleeves").order(price: :desc)
 		@listings_tanks= Listing.where(:section => "Tanks").order(price: :desc)
 		@listings_jackets = Listing.where(:section => "Jackets").order(price: :desc)
