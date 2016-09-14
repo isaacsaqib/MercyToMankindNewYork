@@ -1231,6 +1231,11 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 	}
 
+	#below-slideshow-ul > li > figure > a > figcaption {
+		height: 64%;
+		width:461px;
+	}
+
 
 
 }
