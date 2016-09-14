@@ -8,19 +8,20 @@
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= favicon_link_tag 'favicon.ico' %>
 </head>
+
+
 <div class="wrapper">
 <body>
 	<ul id="top-nav">
-			<li style="float:right;padding-right:19px;padding-top:3px;"><a href="/cart"><%=image_tag 'cart-symbol.png', :id => "cart-symbol" %></a></li>
-		<li id="mobile-nav-button"><a id="open"><%=image_tag 'nav-image.png', :id => "nav-image" %></a></li>
+			
+		<li><a><%=image_tag 'nav-image.png', :id => "nav-image" %></a></li>
+			
 			<ul id="hidden-nav">
 				<li><a href="/index">HOME</a></li>
 				<li><a href="/listings">SHOP</a></li>
-				<li><a href="/collections">LOOKBOOKS</a></li>
 				<li><a href="/media">MEDIA</a></li>
 				<li><a href="/customercare">CONTACT</a></li>
 				<li><a href="/cart">CART</a></li>
-
 			</ul>
 		
 
@@ -38,6 +39,7 @@
 
 
 		<div class="push"></div>
+		<div id="bottom-nav-div">
 			<ul id="bottom-nav">
 
 
@@ -49,8 +51,9 @@
 				<li><a href="/cart">CART</a></li>
 
 			</ul>
+		</div>
 
-		<p style="padding-bottom: 40px;font-size: 10px;">MERCY X MANKIND NEW YORK ©. ALL RIGHTS RESERVED. EST 2014</p>
+		<p style="padding-bottom: 40px;font-size: 8px;">MERCY X MANKIND NEW YORK ©. ALL RIGHTS RESERVED. EST 2014</p>
 		
 </body>
 </div>

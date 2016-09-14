@@ -22,7 +22,7 @@
 					<li>HEADWEAR</li>
 					<!-- <li>WRISTWEAR</li> -->
 				</ul>
-
+			<li><a href="/collections">LOOKBOOKS</a></li>
 			<br>
 
 		</ul>
@@ -80,11 +80,12 @@
 
 				<% if listing.pictures.first %>
             	<li>
-            	<figure> 	
-		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
+            	<figure class="listings-figure"> 	
+		            	
+		        <%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
 		            	
             	<a href="<%=listing_path(listing)%>">
-		            	<figcaption> 
+		            	<figcaption class="listings-figcaption"> 
 
 		            		<p> 
 								<%= listing.name.upcase %><br><br><br> 
@@ -137,10 +138,10 @@
 				<% if listing.pictures.first %>
             	<li>
             	<!-- listing image pictures -->
-		           <figure> 	
+		           <figure class="listings-figure"> 	
 		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
 		           <a href="<%=listing_path(listing)%>">
-		            	<figcaption> 
+		            	<figcaption class="listings-figcaption"> 
 
 		            		<p> 
 		            			<%= listing.name.upcase %><br><br><br> 
@@ -187,10 +188,10 @@
 				<% if listing.pictures.first %>
             	<li>
             	<!-- listing image pictures -->
-		           <figure> 	
+		           <figure class="listings-figure"> 	
 		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
 		           	<a href="<%=listing_path(listing)%>">
-		            	<figcaption> 
+		            	<figcaption class="listings-figcaption"> 
 
 		            		<p> 
 							<%= listing.name.upcase %><br><br><br> 
@@ -238,10 +239,10 @@
 				<% if listing.pictures.first %>
             	<li>
             	<!-- listing image pictures -->
-		           <figure> 	
+		           <figure class="listings-figure"> 	
 		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
 		           <a href="<%=listing_path(listing)%>">
-		            	<figcaption> 
+		            	<figcaption class="listings-figcaption"> 
 
 		            		<p> 
 		            		<%= listing.name.upcase %> <br><br><br> 
@@ -289,10 +290,10 @@
 				<% if listing.pictures.first %>
             	<li>
             	<!-- listing image pictures -->
-		           <figure> 	
+		           <figure class="listings-figure"> 	
 		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
 		            <a href="<%=listing_path(listing)%>">
-		            	<figcaption> 
+		            	<figcaption class="listings-figcaption"> 
 
 		            		<p> 
 		            			<%= listing.name.upcase %> <br><br><br> 
@@ -341,10 +342,10 @@
 
 				<% if listing.pictures.first %>
             	<li>
-            	<figure> 	
+            	<figure class="listings-figure"> 	
 		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
 		            <a href="<%=listing_path(listing)%>">
-		            	<figcaption> 
+		            	<figcaption class="listings-figcaption"> 
 
 		            		<p> 
 		            			<%= listing.name.upcase %> <br><br><br> 
@@ -390,10 +391,10 @@
 
 				<% if listing.pictures.first %>
             	<li>
-            	<figure> 	
+            	<figure class="listings-figure"> 	
 		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
 		            <a href="<%=listing_path(listing)%>">
-		            	<figcaption> 
+		            	<figcaption class="listings-figcaption"> 
 
 		            		<p> 
 		            			<%= listing.name.upcase %><br><br><br> 
@@ -441,10 +442,10 @@
 
 				<% if listing.pictures.first %>
             	<li>
-				<figure> 	
+				<figure class="listings-figure"> 	
 		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
 		            <a href="<%=listing_path(listing)%>">
-		            	<figcaption> 
+		            	<figcaption class="listings-figcaption"> 
 
 		            		<p> 
 		            			<%= listing.name.upcase %> <br><br><br> 

@@ -1,9 +1,18 @@
 <title>Cart | MXMNY</title>
+<%= javascript_include_tag "application.js" %>
 
 
 <body style="background-image:none;">
 
-<%= javascript_include_tag "application.js" %>
+
+<ul class="checkout-nav" id="shipping-checkout-nav">
+	<li>CART<span> > </span></li>
+	<li>SHIPPING INFORMATION<span> > </span></li>
+	<li>PAYMENT</li>
+</ul>
+<h1 class="h1-headers">CART</h1>
+<div class="line-separator"></div>
+
 
 
 <table id="cart-table">
@@ -29,7 +38,7 @@
 <% end %>
 
 </table>
-	<a href="/shipping"><button class="continue-button">Continue</button></a>
+	<a href="/shipping"><button class="continue-button">Shipping -></button></a>
 </body>
 
 

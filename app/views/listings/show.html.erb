@@ -29,79 +29,83 @@
     <div class="magnifier-preview" id="preview" style="width: 400px; height: 333px">Starry Night Over The Rhone<br>by Vincent van Gogh</div>
 </div> -->
 
-   <ul id="listings-show-pictures">
-   <a href="/listings"> ←    BACK </a>
-   <% @pictures.each do |pic| %>
-      <li><a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a></li>
+
+		   <a class="listings-back-link" href="/listings"> MENS \ </a> 
+		   <a class="listings-back-link" href="/listings"> <%=@listing.section.upcase%>
+
+	<div id="listings-show-div">
+	   <ul id="listings-show-pictures">
+		   
+		   <% @pictures.each do |pic| %>
+
+		      <li>
+			      <a href="/pictures/<%=pic.id%>">
+			      	<img class="" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'>
+			      	<%= pic.description %>
+			      </a>
+		      </li>
+
+		      <% if logged_in? %>
+			      <br>
+			      	<%= link_to "Edit picture", picture_path(pic) %> <br>
+			     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %> <br>
+			  <% end %>
+
+			<% end %> 
+	    </ul>
+	</div>
+</li>
 
 
 
-      <% if logged_in? %>
-      <br>
-      <%= link_to "Edit picture", picture_path(pic) %><br>
-        <%# link_to "Edit picture", picture_path(pic) %>
-
-     <%= link_to "Delete picture", @picture, :method => :delete,
-                                      data: { confirm: "You sure?" } %><br>
-      <% end %>
-
-     
-<% end %> 
-    </ul>  
 
 
 
 
 
 
+	<div id="listings-details">
+		<%= form_tag add_to_cart_listing_path(@listing) do %>
+					<a style="text-decoration:none;" href="<%=listing_path(@listing)%>"></a>
+					<p style="font-size:20px;"><%= @listing.name %></p><br>
+					<p style="color:gray; margin:0px;">$<%= @listing.price %></p> <br>
+					<p style="margin:0px 100px 0px 100px;"><%= @listing.description.upcase.html_safe %></p>
+					<p style="font-size:12px;text-decoration:underline;color:gray;"> Fabric/Material </p>
+					<p><%= @listing.fabric %></p>
+					<p style="font-size:12px;text-decoration:underline;color:gray;"> Fit </p>
 
+					<p><%= @listing.fit %></p>
+					<p style="font-size:12px;text-decoration:underline;color:gray;"> Care </p>
 
+					<p><%= @listing.care %></p>
+					<div class="line-separator"></div>
 
+					<p style="color:gray;text-decoration:underline;">Size</p>
+					<select id="size" name="size"><br>
+					<% @size = @listing.size.split(",") %>
 
-<div id="listings-details">
-	<%= form_tag add_to_cart_listing_path(@listing) do %>
-				<a style="text-decoration:none;" href="<%=listing_path(@listing)%>"></a>
-				<p style="font-size:30px;text-decoration:underline;"><%= @listing.name %></p><br>
-				<p style="color:gray; margin:0px;">$<%= @listing.price %></p> <br>
-				<p style="margin:0px 100px 0px 100px;"><%= @listing.description.upcase.html_safe %></p>
-				<p style="font-size:17px;text-decoration:underline;color:gray;"> Fabric/Material </p>
-				<p><%= @listing.fabric %></p>
-				<p style="font-size:17px;text-decoration:underline;color:gray;"> Fit </p>
+						<% @size.each do |s| %>
+							<option value="<%= s %>"><%= s %></option>
+						<% end %>
 
-				<p><%= @listing.fit %></p>
-				<p style="font-size:17px;text-decoration:underline;color:gray;"> Care </p>
+					 </select>
+					 <br/>
 
-				<p><%= @listing.care %></p>
-				<div class="line-separator"></div>
-
-				<p style="color:gray;text-decoration:underline;">Size</p>
-				<select id="size" name="size"><br>
-				<% @size = @listing.size.split(",") %>
-
-					<% @size.each do |s| %>
-						<option value="<%= s %>"><%= s %></option>
+					 <% if logged_in? %>
+					<%=link_to 'Edit', edit_listing_path(@listing) %>
+					<%= link_to "Delete", @listing, :method => :delete %>
 					<% end %>
 
-				 </select>
-				 <br/>
+					<br>
+					<input id="add-to-cart-btn" type="submit" value="Add To Bag">
 
-				 <% if logged_in? %>
-				<%=link_to 'Edit', edit_listing_path(@listing) %>
-				<%= link_to "Delete", @listing, :method => :delete %>
-				<% end %>
-
-				<br>
-				<input id="add-to-cart-btn" type="submit" value="Add to bag">
-
-				<br>
-				<br>
-								<div class="line-separator"></div>
+					<br>
+					<br>
+									<div class="line-separator"></div>
 
 
-	<% end %>
-</div>
-
-
+		<% end %>
+	</div>
 
 
 

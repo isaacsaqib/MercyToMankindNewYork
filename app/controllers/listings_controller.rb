@@ -74,7 +74,7 @@ end
 	  	@amount = @listing.price
 
 	  	@listing  = Listing.find(params[:id])
-    	@pictures = @listing.pictures
+    	@pictures = @listing.pictures.order(description: :asc)
 
 	end
 

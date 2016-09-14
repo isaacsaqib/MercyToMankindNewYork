@@ -38,15 +38,8 @@ $(document).ready(function(){
 
 
 
-
 	$("#nav-image").on("click", function(){
-		event.preventDefault();
-		$("#hidden-nav").slideDown();
-		$(this).attr("id", "nav-image-opened")
-			$("#nav-image-opened").on("click", function(){
-			event.preventDefault();
-			$("#hidden-nav").slideUp();
-		});
+		$("#hidden-nav").slideToggle("slow");
 
 	});
 

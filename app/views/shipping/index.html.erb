@@ -1,9 +1,16 @@
 
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
 
 <title>Shipping | MXMNY</title>
 
+
 <body style="background-image:none;">
+
+<ul class="checkout-nav">
+	<li><a href="/cart">CART</a> <span> > </span></li>
+	<li>SHIPPING INFORMATION<span> > </span></li>
+	<li>PAYMENT</li>
+</ul>
 
 <%
 @firstname = ''
@@ -45,7 +52,8 @@ end
 <%= javascript_include_tag "jquery", "data-turbolinks-track" => true  %>
 
 <h1 class="h1-headers"> SHIPPING INFORMATION</h1>
-<form method="get" id="form1">
+<div class="line-separator"></div>
+<form method="get" id="shipping-form">
 	<table id="shipping-table">
 		<input required class="shipping-input" type="email" name="email" value="<%= @email%>" placeholder="EMAIL ADDRESS"><br><br>
 		<input required class="shipping-input" type="text" name="firstname" onkeyup="saveData()" value="<%= @firstname%>" placeholder="FIRST NAME"><br><br>
@@ -363,11 +371,11 @@ end
 		<tr id="inter_ship"><td><input type="hidden" id="total" name="total" value="<%= session[:final_total]%>" /><input type="radio" name="shipping" value="International Shipping" <%=@premium_shipping%> />International Shipping </td><td>7-10 Business Days: $11.99</td></tr>
 		
 	</table>
-	<p style="font-family: 'Raleway', sans-serif; text-align:center;">Please fill out all fields completely and accurately before proceeding</p>
+	<p style="font-family: 'Helvetica', sans-serif;text-align: center;color: gray;font-size: 12px;">Please fill out all fields completely and accurately before proceeding</p>
 
 
 
-	<input id="checkout-btn" type="submit" value="Checkout">
+	<input id="checkout-btn" type="submit" value="Checkout ->">
 </form>
 	
 
@@ -378,14 +386,9 @@ end
 if(country.value=="" || country.value=="United States of America"){
 document.getElementById("free_ship").style.opacity="1";
 document.getElementById("inter_ship").style.opacity='0';
-document.getElementById("city").style.opacity="0";
-document.getElementById("city").value="";
-document.getElementById("select_state").style.opacity="1";
 }else{
 document.getElementById("free_ship").style.opacity="0";
 document.getElementById("inter_ship").style.opacity='1';
-document.getElementById("city").style.opacity="1";
-document.getElementById("select_state").style.opacity="0";
 }
 </script>
 <script type="text/javascript">
@@ -393,11 +396,9 @@ document.getElementById("select_state").style.opacity="0";
 if(country.value=="United States of America"){
 document.getElementById("free_ship").style.opacity="1";
 document.getElementById("inter_ship").style.opacity='0';
-document.getElementById("select_state").style.opacity="1";
 }else{
 document.getElementById("free_ship").style.opacity="0";
 document.getElementById("inter_ship").style.opacity='1';
-document.getElementById("select_state").style.display="none";
 }
 	}
 </script>

@@ -3,14 +3,23 @@
 
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <body style="background-image:none;" >
-<h1 class="h1-headers">REVIEW ORDER</h1>
+<ul class="checkout-nav" id="shipping-checkout-nav">
+	<li><a href="/cart">CART</a> <span> > </span></li>
+	<li><a href="/shipping">SHIPPING INFORMATION</a> <span> > </span></li>
+	<li>PAYMENT</li>
+</ul>
 
-<table>
+<h1 class="h1-headers">REVIEW ORDER</h1>
+<div class="line-separator"></div>
+
+
+<table id="checkout-table">
 <% if session[:cart].present? %>
 	<tr>
-		<th>Name</th>
-		<th>Price</th>
+		<th>NAME</th>
+		<th>PRICE</th>
 	</tr>
+
 	<% 
 		@products = @cart.map{ |key, count| { #iterate over @cart to pull out keys
 			:listing => Listing.find_by_id(key.split('-').first), #splitting the key to find the first text which is going to be the listing id
@@ -29,6 +38,7 @@
 
 	<% @products.each do |product| %>
 		<% next unless listing = product[:listing] %>
+		
 		<tr>
 			<td><%= listing.name %>(<%= product[:size] %>)</td>
 			<td><%= number_to_currency(listing.price) %></td>
@@ -83,34 +93,53 @@ session[:total] = sprintf("%.2f", @total)
 	<%= form_tag charges_path do %>
  
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Thanks For Your Purchase"
-          data-amount="<%=@stripe_amount%>"></script>
-          <input type="hidden" name="final_amount" value="<%=session[:total] %>"  />
-          <% end %>
 
-</td><td>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_xclick">
-<input type="hidden" name="business" value="n00747874@students.ncc.edu">
-<input type="hidden" name="lc" value="US">
-<input type="hidden" name="item_name" value="<%=@product_details%>">
-<input type="hidden" name="amount" id="paypal_amount" value="<%=session[:total]%>">
-<input type="hidden" name="currency_code" value="USD">
-<input type="hidden" name="button_subtype" value="services">
-<input type="hidden" name="no_note" value="0">
-<input type="hidden" name="return" value="http://127.0.0.1:3000/charges">
-    <input type="hidden" name="rm" value="2">
-    <input type="hidden" name="cbt" value="Return to The Store">
-    <input type="hidden" name="cancel_return" value="http://127.0.0.1:3000/checkout">
+	</td>
 
-    <!-- PayPal Checkotu -->
-<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest">
-<input type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_checkout_pp_142x27.png" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-</form>
-</td></tr>
+</tr>
+</table>
+
+
+<table>
+	<h1 class="h1-headers">PAYMENT METHOD</h1>
+	<div class="line-separator"></div>
+<tr>
+	<td style="padding-top:30px;">
+
+	  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+	          data-description="Thanks For Your Purchase"
+	          data-amount="<%=@stripe_amount%>"></script>
+	          <input type="hidden" name="final_amount" value="<%=session[:total] %>"  />
+	          <% end %>
+	</td>
+</tr>
+
+<tr>
+	<td>
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_xclick">
+			<input type="hidden" name="business" value="n00747874@students.ncc.edu">
+			<input type="hidden" name="lc" value="US">
+			<input type="hidden" name="item_name" value="<%=@product_details%>">
+			<input type="hidden" name="amount" id="paypal_amount" value="<%=session[:total]%>">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="button_subtype" value="services">
+			<input type="hidden" name="no_note" value="0">
+			<input type="hidden" name="return" value="http://127.0.0.1:3000/charges">
+			    <input type="hidden" name="rm" value="2">
+			    <input type="hidden" name="cbt" value="Return to The Store">
+			    <input type="hidden" name="cancel_return" value="http://127.0.0.1:3000/checkout">
+
+			    <!-- PayPal Checkout -->
+			<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest">
+			<input type="image" src="assets/paypal-button-00a838638405359daed55f4c472c1be232525463bb4bb141cfc2cd0c289d645b.png" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+		</form>
+	</td>
+</tr>
+</table>
+
 
 
 <% else %>
@@ -122,8 +151,5 @@ end
 
 </body>
 <br><br>
-			<td> 
-				<button id="edit-details-button">
-					<a style="color:white;font-family:'Helvetica';text-decoration:none;font-weight:500;" href="/shipping">Edit Shipping Details</a>
-				</button>
-			</td>
+
+
