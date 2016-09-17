@@ -20,14 +20,14 @@
 
 $(document).ready(function(){
 	$("#shop-sub-nav").hide();
-	$("#jackets").hide();
+	// $("#jackets").hide();
 	// $("#hoodies").hide();
 	// $("#long_sleeves").hide();
 	// $("#short_sleeves").hide();
 	// $("#tanks").hide();
-	$("#bottoms").hide();
-	$("#head").hide();
-	$("#ss16capsule").hide();
+	// $("#bottoms").hide();
+	// $("#head").hide();
+	// $("#ss16capsule").hide();
 	$(".headers-hide").hide();
 	$("#added").hide();
 	$("#contact-hide").hide();

@@ -30,8 +30,6 @@
 </div> -->
 
 
-		   <a class="listings-back-link" href="/listings"> MENS \ </a> 
-		   <a class="listings-back-link" href="/listings"> <%=@listing.section.upcase%>
 
 	<div id="listings-show-div">
 	   <ul id="listings-show-pictures">
@@ -65,6 +63,9 @@
 
 
 	<div id="listings-details">
+	
+		   <a class="listings-back-link" href="/listings"> MENS \ </a> 
+		   <a class="listings-back-link" href="/listings"> <%=@listing.section.upcase%>
 		<%= form_tag add_to_cart_listing_path(@listing) do %>
 					<a style="text-decoration:none;" href="<%=listing_path(@listing)%>"></a>
 					<p style="font-size:20px;"><%= @listing.name %></p><br>
