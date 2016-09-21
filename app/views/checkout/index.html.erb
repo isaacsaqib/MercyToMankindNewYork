@@ -15,10 +15,7 @@
 
 <table id="checkout-table">
 <% if session[:cart].present? %>
-	<tr>
-		<th>NAME</th>
-		<th>PRICE</th>
-	</tr>
+
 
 	<% 
 		@products = @cart.map{ |key, count| { #iterate over @cart to pull out keys

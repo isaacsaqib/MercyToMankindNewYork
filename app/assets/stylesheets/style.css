@@ -199,9 +199,11 @@ span {
 }
 
 #slides {
-	height: 952px;
+	height: 936px;
 	width: 98%;
 	margin: 0 auto;
+    box-shadow: 1px 1px 4px gray;
+
 }
 
 #slides > img {
@@ -943,11 +945,13 @@ th {
 #below-slideshow-ul li {
 	display: inline-block;
 	margin: 0px 5px 0px 5px;
+    box-shadow: 1px 1px 4px gray;
+
 }
 
 #below-slideshow-ul img {
 
-	height: 460px;
+	height: 461px;
 	display: inline-block;
 }
 
