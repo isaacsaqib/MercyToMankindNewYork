@@ -11662,6 +11662,7 @@ return jQuery;
 
 $(document).ready(function(){
 	$("#shop-sub-nav").hide();
+	$("#free-shipping-div").slideDown();
 	// $("#jackets").hide();
 	// $("#hoodies").hide();
 	// $("#long_sleeves").hide();
@@ -11679,6 +11680,10 @@ $(document).ready(function(){
 	$("#listings-accessories-nav-hidden").hide();
 
 
+
+	$("#free-shipping-x").on("click", function(){
+		$("#free-shipping-div").slideUp();
+	});
 
 	$("#nav-image").on("click", function(){
 		$("#hidden-nav").slideToggle("slow");

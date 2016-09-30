@@ -11,51 +11,60 @@
 
 
 <div class="wrapper">
-<body>
-	<ul id="top-nav">
-			
-		<li><a><%=image_tag 'nav-image.png', :id => "nav-image" %></a></li>
-			
-			<ul id="hidden-nav">
-				<li><a href="/index">HOME</a></li>
-				<li><a href="/listings">SHOP</a></li>
-				<li><a href="/media">MEDIA</a></li>
-				<li><a href="/customercare">CONTACT</a></li>
-				<li><a href="/cart">CART</a></li>
-			</ul>
+	<body>
 		
-
-	
-	</ul>
-
-
-
-
-<%= yield %>
-
-
-
-
-
-
-		<div class="push"></div>
-		<div id="bottom-nav-div">
-			<ul id="bottom-nav">
-
-
-				<li><a href="/collections">LOOKBOOKS</a></li>
-				<li><a href="http://www.instagram.com/mercytomankind.ny">INSTAGRAM</a></li>
-				<li><a href="http://www.facebook.com/mercytomankindclothing">FACEBOOK</a></li>
-				<li><a href="/media">MEDIA</a></li>
-				<li><a href="/customercare">CONTACT</a></li>
-				<li><a href="/cart">CART</a></li>
-
-			</ul>
+		<div id="free-shipping-div">
+			<p id="free-shipping-x" style="float:left;padding-left:5px;">X</p>
+			<p>
+				Free shipping and free returns on all orders (USA). 
+				<a href="/customercare">View our terms</a> 
+			</p>
 		</div>
 
-		<p style="padding-bottom: 40px;font-size: 8px;">MERCY X MANKIND NEW YORK ©. ALL RIGHTS RESERVED. EST 2014</p>
+
+		<ul id="top-nav">
+			<li><a><%=image_tag 'nav-image.png', :id => "nav-image" %></a></li>
+				
+				<ul id="hidden-nav">
+					<li><a href="/index">HOME</a></li>
+					<li><a href="/listings">SHOP</a></li>
+					<li><a href="/media">MEDIA</a></li>
+					<li><a href="/customercare">CONTACT</a></li>
+					<li><a href="/cart">CART</a></li>
+				</ul>
+			
+
 		
-</body>
+		</ul>
+
+
+
+
+	<%= yield %>
+
+
+
+
+
+
+			<div class="push"></div>
+			<div id="bottom-nav-div">
+				<ul id="bottom-nav">
+
+
+					<li><a href="/collections">LOOKBOOKS</a></li>
+					<li><a href="http://www.instagram.com/mercytomankind.ny">INSTAGRAM</a></li>
+					<li><a href="http://www.facebook.com/mercytomankindclothing">FACEBOOK</a></li>
+					<li><a href="/media">MEDIA</a></li>
+					<li><a href="/customercare">CONTACT</a></li>
+					<li><a href="/cart">CART</a></li>
+
+				</ul>
+			</div>
+
+			<p style="padding-bottom: 40px;font-size: 8px;">MERCY X MANKIND NEW YORK ©. ALL RIGHTS RESERVED. EST 2014</p>
+			
+	</body>
 </div>
 
 	<div class='footer'>

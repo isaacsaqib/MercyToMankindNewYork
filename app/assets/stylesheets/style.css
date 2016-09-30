@@ -30,6 +30,34 @@ span {
 	padding:0px 10px 0px 10px;
 }
 
+#free-shipping-div {
+	width: 100%;
+	background-color:black;
+	height: 40px;
+	display: none;
+}
+
+#free-shipping-div p {
+	color: white;
+	margin: 0px;
+	padding-top:10px;
+	font-family: 'Helvetica';
+	font-size:12px;
+}
+
+#free-shipping-div a {
+	color: white;
+	margin: 0px;
+	padding-top:10px;
+	font-family: 'Helvetica';
+	font-size:12px;
+	text-decoration: underline;
+}
+
+#free-shipping-x:hover {
+	cursor: pointer;
+}
+
 
 #checkout-table {
 	padding-top:100px;
