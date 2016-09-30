@@ -1126,7 +1126,7 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 	}
 
 	#below-slideshow-ul {
-		height: 330px;
+		height: 310px;
 	}
 	    
 	#below-slideshow-ul img {
@@ -1135,11 +1135,13 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 	}
 
 	.below-slideshow-ul-figure {
-		width: 460px;
+	    width: 440px;
+		height: 292px;
+
 	}
 
 	#slides {
-		height: 690px;
+		height: 640px;
 	}
 
 	body {
