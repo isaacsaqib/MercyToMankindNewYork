@@ -30,6 +30,12 @@ span {
 	padding:0px 10px 0px 10px;
 }
 
+.original_price {
+	color: black;
+	text-decoration: line-through;
+	padding:0px;
+}
+
 #free-shipping-div {
 	width: 100%;
 	background-color:black;

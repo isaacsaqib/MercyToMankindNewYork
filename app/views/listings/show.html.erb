@@ -69,7 +69,9 @@
 		<%= form_tag add_to_cart_listing_path(@listing) do %>
 					<a style="text-decoration:none;" href="<%=listing_path(@listing)%>"></a>
 					<p style="font-size:20px;"><%= @listing.name %></p><br>
-					<p style="color:gray; margin:0px;">$<%= @listing.price %></p> <br>
+					<p style="color:red; margin:0px;">$<%= @listing.price %></p>
+					<!-- Change color to gray when there is no sale -->
+					<p style="color:gray; margin:0px;text-decoration: line-through;">$<%= @listing.original_price %></p><br>
 					<p style="margin:0px 100px 0px 100px;"><%= @listing.description.upcase.html_safe %></p>
 					<p style="font-size:12px;text-decoration:underline;color:gray;"> Fabric/Material </p>
 					<p><%= @listing.fabric %></p>

@@ -74,7 +74,7 @@
 
 <table class="products" id="jackets">
 	<tr>
-		<td class="col">
+ 		<td class="col">
 			<ul>
 			<% @listings_jackets.each do |listing| %>
 
@@ -90,7 +90,17 @@
 		            		<p> 
 								<%= listing.name.upcase %><br><br><br> 
 		            			<%=	listing.description.upcase%> <br><br>
-		            			$<%= listing.price %>.00
+		            			<span style="padding:0px;color:red;">
+
+		            				$<%= listing.price %>.00
+
+		            			</span>
+
+								<span style="padding: 0px;text-decoration: line-through;">
+
+									$<%= listing.original_price %>.00
+
+								</span>
 		            		</p> 
 
 		            	</figcaption>
