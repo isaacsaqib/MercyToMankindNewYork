@@ -48,7 +48,7 @@
 
 <% if session[:firstname] %>
 	
-
+<% @code = "123" %>
 	
 	
 	<tr><td>First Name</td><td><%=session[:firstname]%></td><td></td></tr>
@@ -60,34 +60,73 @@
 	<tr><td>Zip</td><td><%=session[:zip]%></td><td></td><td></td></tr>
 	<tr><td>Country</td><td><%=session[:country]%></td><td></td><td></td></tr>
 	<tr><td>Shipping</td><td><%=session[:shipping]%></td><td></td><td></td></tr>
+	
+	<% if session[:code] == @code %>
+		<tr><td>Coupon Code</td><td><%=session[:code]%></td><td></td><td></td></tr>
+	<% else %>
+		<tr><td></td></tr>
+	<% end %>
+
 
 	<% if session[:state]=='NY' %>
 		<tr><td>Tax</td><td>8.75%</td><td></td><td></td></tr>
 	<% else %>
 		<tr><td>Tax</td><td>None</td><td></td><td></td></tr>
- 	<%end %>
+ 	<% end %>
 
 <%
+	# SHIPPING CALCULATION
 	if session[:shipping] == 'Free Shipping'
 		@shipping_charges = 0
 	end
 	if session[:shipping] == 'International Shipping'
 		@shipping_charges = 12
 	end
-@total = @total+@shipping_charges
-@stripe_amount = @total*100;
-if session[:tax]!='null'
-	@temp = @total*session[:tax]
-	@total = @total+@temp
-	@stripe_amount = (@total*100).to_i;
-# / @stripe_amount = @stripe_amount.to_s.gsub('.', '') /
+
+	@total = @total+@shipping_charges
+	@stripe_amount = @total*100;
 	
-end
-session[:total] = sprintf("%.2f", @total)
+	# ------------------------
+
+	# TAX ADD ON
+	if session[:tax]!='null'
+		@temp = @total*session[:tax]
+		@total = @total+@temp
+	end
+
+	# ------------------------
+
+	# COUPON CODE VERIFICATION
+		if session[:code] == @code # IF CODE ENTERED AT SHIPPING = FACEBOOK
+			@discount_percentage = 0.20
+			@discount = @total * @discount_percentage
+			@new_total = @total - @discount #APPLY 50% DISCOUNT
+			@stripe_amount = (@new_total*100).to_i; #SET STRIPE AMOUNT TO @NEW_TOTAL
+			@savings = sprintf("%.2f", @discount)
+		else
+			@stripe_amount = (@total*100).to_i; #OTHERWISE, STRIPE AMOUNT IS SET TO @TOTAL
+		end
+
+
+		if session[:code] == @code #IF CODE IS VERIFIED
+			session[:total] = sprintf("%.2f", @new_total)  #SET SESSION[:TOTAL] TO @NEW_TOTAL
+		else	#OTHERWISE
+			session[:total] = sprintf("%.2f", @total) #KEEP SESSION[:TOTAL] SET TO @TOTAL. SEE ABOVE
+		end
+
  %>
  
-	<tr><td>Total = $<%=session[:total]%></td><td>
-	<%= form_tag charges_path do %>
+	<tr><td>Total = $<%=session[:total]%></td><td> 
+
+	<!-- IF CODE IS PRESENT AND VALID, PRINT STATEMENT SHOWING SAVINGS  -->
+		<% if session[:code] == @code %> 
+			<tr><td style="color:red;">You saved $<%= @savings %> (<%= number_to_percentage(@discount_percentage * 100, precision: 0)%>)  by applying coupon code "<%=session[:code]%>" to your purchase !</td><td> 
+		<%	else %> 
+		<!-- ELSE PRINT NOTHING -->
+			<tr><td></td></tr> 
+		<% end %>
+
+
  
 
 
@@ -97,18 +136,21 @@ session[:total] = sprintf("%.2f", @total)
 </table>
 
 
+
+
 <table>
 	<h1 class="h1-headers">PAYMENT METHOD</h1>
 	<div class="line-separator"></div>
 <tr>
 	<td style="padding-top:30px;">
 
+	<%= form_tag charges_path do %>
 	  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 	          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 	          data-description="Thanks For Your Purchase"
 	          data-amount="<%=@stripe_amount%>"></script>
 	          <input type="hidden" name="final_amount" value="<%=session[:total] %>"  />
-	          <% end %>
+	<% end %>
 	</td>
 </tr>
 

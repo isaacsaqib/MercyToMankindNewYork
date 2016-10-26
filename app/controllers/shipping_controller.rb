@@ -12,6 +12,7 @@ if params[:firstname]
  	session[:zip] = params[:zip]
  	session[:country] = params[:country]
  	session[:shipping] = params[:shipping]
+ 	session[:code] = params[:code]
  	session[:tax] = 'null'
  	if params[:select_state]=='NY'
  		session[:tax] = 0.087

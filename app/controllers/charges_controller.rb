@@ -27,7 +27,8 @@ def create
     'State' => session[:state],
     'Zipcode' => session[:zip],
     'Country' => session[:country],
-    'Email' => session[:email]
+    'Email' => session[:email],
+    'Code_Used' => session[:code]
   }
     # :source => { :address_city => session[:city] }
   )

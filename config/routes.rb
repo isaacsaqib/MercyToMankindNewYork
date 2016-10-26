@@ -17,6 +17,7 @@ resources :admins
 resources :pictures
 resources :users
 resources :collections
+resources :coupons
 
 get  "/admin"  => "session#new"
 post "/session"      => "session#create"

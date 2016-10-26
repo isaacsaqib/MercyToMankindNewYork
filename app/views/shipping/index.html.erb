@@ -13,6 +13,7 @@
 </ul>
 
 <%
+@code = ''
 @firstname = ''
 @lastname = ''
 @email = ''
@@ -32,6 +33,7 @@ if session[:firstname]
 @city = session[:city]
 @state = session[:state]
 @zip = session[:zip]
+@code = session[:code]
 @country = session[:country]
 if session[:shipping] == 'Free Shipping'
 	@free_shipping = 'checked'
@@ -369,13 +371,18 @@ end
 	</select></td></tr><br><br>
 		<tr id="free_ship"><td><input required type="radio" name="shipping" value="Free Shipping" <%=@free_shipping%> />USPS (Priority Mail®)</td><td>3-6 Days Free</td></tr>
 		<tr id="inter_ship"><td><input type="hidden" id="total" name="total" value="<%= session[:final_total]%>" /><input type="radio" name="shipping" value="International Shipping" <%=@premium_shipping%> />USPS (First-Class International®	) </td><td>7-10 Business Days: $11.99</td></tr>
+		<input class="shipping-input" id="coupon_code" name="code" type=text value="<%=session[:code]%>" placeholder="APPLY COUPON CODE"><br><br>
 		
 	</table>
+
+
+	<input id="checkout-btn" type="submit" value="Checkout ->">
+
+
 	<p style="font-family: 'Helvetica', sans-serif;text-align: center;color: gray;font-size: 12px;">Please fill out all fields completely and accurately before proceeding</p>
 
 
 
-	<input id="checkout-btn" type="submit" value="Checkout ->">
 </form>
 	
 
