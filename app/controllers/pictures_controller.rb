@@ -7,7 +7,7 @@
 
     @listing = Listing.find(params[:id])
 
-    @pictures = @listing.pictures
+    @pictures = @listing.pictures.order(description: :desc)
 
     respond_to do |format|
       format.html # index.html.erb
