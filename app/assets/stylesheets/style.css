@@ -1248,11 +1248,6 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 		width: 100%;
 	}
 
-	.products li {
-	
-	width: 23%;
-
-	}
 
 	#collection > tbody > tr > td > ul > li > a > img {
 		width: 95%;
@@ -1277,6 +1272,20 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 		width:461px;
 	}
 
+	.listings-figure {
+	    height: 390px;
+	    width: 311px;
+	}
+
+	.products li {
+	
+		width: 31%;
+
+	}
+
+	table {
+		margin-left: 20px;
+	}
 
 
 }
