@@ -4,7 +4,8 @@ html, body {
 }
 
 body {
-	background-repeat: no-repeat;
+	background-repeat
+: no-repeat;
 	background-size: 100%;
 	background-color: #FCFCFC;
 }
@@ -1287,7 +1288,7 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 		margin-left: 20px;
 	}
 
-	form {
+	#index-form {
 		display: none;
 	}
 
