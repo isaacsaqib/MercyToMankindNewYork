@@ -26,7 +26,7 @@
       $('#make_default').click(function(event) {
         event.preventDefault();
         $.ajax({
-          url: '<%= make_default_listing_pictures_path %>',
+          url: "/make_default_listing_pictures_path",
           type: 'POST',
           data: {id : <%= @picture.id %>, listing_id : <%= @listing.id %>}
         });

@@ -32,8 +32,7 @@ get "/index" => "welcome#index"
 get "/springsummersixteen" => "welcome#springsummersixteen"
 get "/media" => "welcome#media"
 
-
-
+post "make_default" => "pictures#make_default"
 get "/orders/complete" => "orders#complete"
 get "/customercare" => "customers#index"
 

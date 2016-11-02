@@ -23,11 +23,12 @@
   <%= f.number_field :position %><br><br>
 
     <%=f.label :size %>
-    <input type="text" name="listing[size]" /><br><br>
-         <%=f.label :description %>
+    <%= f.text_field :size %>
+    <!-- <input type="text" name="listing[size]" /><br><br> -->
+    <%=f.label :description %>
    <%=f.text_area :description %><br><br>
   <%=f.label :section %>
-<%= f.select :section, options_for_select([["Select Type", ""],"Hoodies", "Long Sleeves", "Short Sleeves", "Tanks", "Bottoms", "Head", "Wristwear","Jackets", "Collection", "SS16 Capsule"]) %> <br><br>
+<%= f.text_field :section %> <br><br>
 
  <%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
 
