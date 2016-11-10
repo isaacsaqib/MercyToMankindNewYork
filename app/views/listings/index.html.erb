@@ -38,10 +38,10 @@
 			<ul>
 			<% @listings_new.each do |listing| %>
 
-				<% if listing.pictures.first %>
+				<% if listing.default_picture %>
             	<li>
             	<!-- listing image pictures -->
-            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
+            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
             	<% else %>
               		N/A
             	<% end %>
@@ -78,11 +78,11 @@
 			<ul>
 			<% @listings_jackets.each do |listing| %>
 
-				<% if listing.pictures.first %>
+				<% if listing.default_picture %>
             	<li>
             	<figure class="listings-figure"> 	
 		            	
-		        <%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
+		        <%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
 		            	
             	<a href="<%=listing_path(listing)%>">
 		            	<figcaption class="listings-figcaption"> 
@@ -145,11 +145,11 @@
 			<ul>
 			<% @listings_hoodies.each do |listing| %>
 
-				<% if listing.pictures.first %>
+				<% if listing.default_picture %>
             	<li>
             	<!-- listing image pictures -->
 		           <figure class="listings-figure"> 	
-		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
+		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
 		           <a href="<%=listing_path(listing)%>">
 		            	<figcaption class="listings-figcaption"> 
 
@@ -205,11 +205,11 @@
 			<ul>
 			<% @listings_long_sleeves.each do |listing| %>
 
-				<% if listing.pictures.first %>
+				<% if listing.default_picture %>
             	<li>
             	<!-- listing image pictures -->
 		           <figure class="listings-figure"> 	
-		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
+		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
 		           	<a href="<%=listing_path(listing)%>">
 		            	<figcaption class="listings-figcaption"> 
 
@@ -266,11 +266,11 @@
 			<ul>
 			<% @listings_short_sleeves.each do |listing| %>
 
-				<% if listing.pictures.first %>
+				<% if listing.default_picture %>
             	<li>
             	<!-- listing image pictures -->
 		           <figure class="listings-figure"> 	
-		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
+		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
 		           <a href="<%=listing_path(listing)%>">
 		            	<figcaption class="listings-figcaption"> 
 
@@ -330,10 +330,10 @@
 			<ul>
 			<% @listings_ss16capsule.each do |listing| %>
 
-				<% if listing.pictures.first %>
+				<% if listing.default_picture %>
             	<li>
 				<figure class="listings-figure"> 	
-		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
+		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
 		            <a href="<%=listing_path(listing)%>">
 		            	<figcaption class="listings-figcaption"> 
 
@@ -391,11 +391,11 @@
 			<ul>
 			<% @listings_tanks.each do |listing| %>
 
-				<% if listing.pictures.first %>
+				<% if listing.default_picture %>
             	<li>
             	<!-- listing image pictures -->
 		           <figure class="listings-figure"> 	
-		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
+		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
 		            <a href="<%=listing_path(listing)%>">
 		            	<figcaption class="listings-figcaption"> 
 
@@ -454,10 +454,10 @@
 			<ul>
 			<% @listings_bottoms.each do |listing| %>
 
-				<% if listing.pictures.first %>
+				<% if listing.default_picture %>
             	<li>
             	<figure class="listings-figure"> 	
-		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
+		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
 		            <a href="<%=listing_path(listing)%>">
 		            	<figcaption class="listings-figcaption"> 
 
@@ -513,10 +513,10 @@
 			<ul>
 			<% @listings_head.each do |listing| %>
 
-				<% if listing.pictures.first %>
+				<% if listing.default_picture %>
             	<li>
             	<figure class="listings-figure"> 	
-		            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
+		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
 		            <a href="<%=listing_path(listing)%>">
 		            	<figcaption class="listings-figcaption"> 
 
@@ -577,10 +577,10 @@
 			<ul>
 			<% @listings_wristwear.each do |listing| %>
 
-				<% if listing.pictures.first %>
+				<% if listing.default_picture %>
             	<li>
             	<!-- listing image pictures -->
-            	<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
+            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
             	<% else %>
               		N/A
             	<% end %>
@@ -617,7 +617,7 @@
 			<ul> -->
 			<%# @listings_collection.each do |listing| %>
 
-				<%# if listing.pictures.first %>
+				<%# if listing.default_picture %>
             	<!-- <li> -->
             	<!-- listing image pictures -->
             	<%#= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>

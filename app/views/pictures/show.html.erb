@@ -4,11 +4,15 @@
 
 <%= form_for @picture do |f| %>
 
-    <%= image_tag @picture.image.url, :class => "picture-edit" %><br>
+    <%= image_tag @picture.image.url, :class => "picture-edit", :id => "draggable"  %><br>
     
     <% if logged_in? %>
     <%= f.label :description %>
     <%= f.text_field :description%><br>
+    <%= f.label :default %>
+    <%= f.check_box :default %>
+
+
   	<%= link_to "Delete picture", @picture, :method => :delete,
                                       data: { confirm: "You sure?" } %>
 

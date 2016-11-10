@@ -39,15 +39,29 @@
 		      <li>
 			      <a href="/pictures/<%=pic.id%>">
 			      	<img class="" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'>
-			      	<%= pic.description %>
 			      </a>
+
+			      	<% if logged_in? %>
+			      	<%= pic.description %>
+
+			      <br>
+
+				 	<%= form_for pic, remote: true, :html => {:class => "edit-form"} do |f| %>
+				      	<%= f.text_field :description, :placeholder => "DESCRIPTION" %>
+				      	<%= f.label :default %><%= f.check_box :default %>
+				      	<%= f.submit "Update", :id => "update-button"  %><br><br>
+				    <% end %>
+
+				    <%= form_for pic, remote: true, method: :delete, :html => {:class => "delete-form"} do |f| %>
+				    	<% f.text_field :image %>
+				    	<%= f.submit "Delete Picture", :id => "delete-picture-submit" %>
+				    <% end %>
+
+				    <br><br>
+			     		<!-- <button id="picture-delete"> Delete Picture </button> -->
 		      </li>
 
-		      <% if logged_in? %>
-			      <br>
-			      	<%= link_to "Edit picture", picture_path(pic) %> <br>
-			     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %> <br>
-			  <% end %>
+			  		<% end %>
 
 			<% end %> 
 	    </ul>
@@ -94,13 +108,13 @@
 					 </select>
 					 <br/>
 
+
+					<br>
+					<input id="add-to-cart-btn" type="submit" value="Add To Bag"><br>
 					 <% if logged_in? %>
 					<%=link_to 'Edit', edit_listing_path(@listing) %>
 					<%= link_to "Delete", @listing, :method => :delete %>
 					<% end %>
-
-					<br>
-					<input id="add-to-cart-btn" type="submit" value="Add To Bag">
 
 					<br>
 					<br>

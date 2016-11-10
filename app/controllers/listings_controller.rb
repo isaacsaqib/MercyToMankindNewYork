@@ -74,7 +74,7 @@ end
 	  	@amount = @listing.price
 
 	  	@listing  = Listing.find(params[:id])
-    	@pictures = @listing.pictures.order(description: :asc)
+    	@pictures = @listing.pictures.order(:description)
 
 	end
 
@@ -108,6 +108,9 @@ end
 	def destroy
 		@listing = Listing.find(params[:id])
 		@listing.destroy
+			if @listing.destroy
+				redirect_to "/listings"
+			end
 
 	end
 

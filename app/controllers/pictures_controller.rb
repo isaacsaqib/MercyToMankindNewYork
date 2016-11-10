@@ -7,7 +7,7 @@
 
     @listing = Listing.find(params[:id])
 
-    @pictures = @listing.pictures.order(description: :desc)
+    @pictures = @listing.pictures.order(description: :desc) 
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,6 +44,11 @@
     #@gallery = Gallery.find(params[:gallery_id])
 
     @picture = Picture.find(params[:id])
+      if @picture.save 
+        redirect_to "/listings"
+      else
+        render :edit
+      end
 
     # @picture = Picture.find(params[:id])
   end
@@ -77,7 +82,7 @@
 
     @picture = Picture.find(params[:id])
     if @picture.update(picture_params)
-      redirect_to "/"
+      redirect_to "/listings"
     else
       render :edit
     end
@@ -91,11 +96,10 @@
     #@picture = @gallery.pictures.find(params[:id])
     @picture = Picture.find(params[:id])
     @picture.destroy
-
-    respond_to do |format|
-      format.html { redirect_to root_path }
-      format.js
-    end
+      if @picture.destroy
+        redirect_to @picture.listing
+      end
+      
   end
 
   def make_default
@@ -113,6 +117,6 @@
   private
 
   def picture_params
-    params.require(:picture).permit(:description, :listing_id, :image)
+    params.require(:picture).permit(:default, :description, :listing_id, :image)
   end
 end

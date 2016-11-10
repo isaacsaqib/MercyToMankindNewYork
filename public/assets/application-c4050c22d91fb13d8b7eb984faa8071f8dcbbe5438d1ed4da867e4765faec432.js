@@ -11681,6 +11681,7 @@ $(document).ready(function(){
 
 
 
+  	
 	$("#free-shipping-x").on("click", function(){
 		$("#free-shipping-div").slideUp();
 	});
@@ -11767,6 +11768,31 @@ $(document).ready(function(){
 		$("#Wristwear").fadeIn();
 		$(".headers-hide").hide();
 	});
+
+	$('.edit-form').on('ajax:success', function() {
+  		$(this).append("<p>Thank you</p>")
+
+	});
+
+	$('.delete-form').on('ajax:success', function() {
+  		$(this).closest("li").fadeOut();
+
+	});
+
+	// $("#picture-delete").on("click", function(event){ 
+	// 	var pictures_href = $("#listings-show-pictures > li > a").attr("href");
+	// 	var picture_id = pictures_href.substring(10, pictures_href.lenght);
+	//     $.ajax({
+	//         url: "/pictures/" + picture_id,
+	//         type: "POST",
+	//         dataType: "json",
+	//         data: {"_method":"delete"}
+	//     });
+
+	// 		$(this).closest("li").fadeOut();
+	//     	event.preventDefault();
+
+	// });
 
 
 	// START LISTINGS NAVIGATION TOGGLE FUNCTIONS
