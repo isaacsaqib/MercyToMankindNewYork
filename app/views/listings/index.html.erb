@@ -90,17 +90,26 @@
 		            		<p> 
 								<%= listing.name.upcase %><br><br><br> 
 		            			<%=	listing.description.upcase%> <br><br>
-		            			<span style="padding:0px;color:red;">
+		            			
+		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
+			            			<span style="padding:0px;color:red;">
 
-		            				$<%= listing.price %>.00
+			            				$<%= listing.price %>.00
 
-		            			</span>
+			            			</span>
+			            		<% else %>
+									<span style="padding:0px;color:red;">
 
-								<span style="padding: 0px;text-decoration: line-through;">
+			            				$<%= listing.price %>.00
 
-									$<%= listing.original_price %>.00
+			            			</span>
+									<span style="padding: 0px;text-decoration: line-through;">
 
-								</span>
+										$<%= listing.original_price %>.00
+
+									</span>
+								<% end %>
+
 		            		</p> 
 
 		            	</figcaption>
@@ -156,17 +165,24 @@
 		            		<p> 
 		            			<%= listing.name.upcase %><br><br><br> 
 		            			<%=	listing.description.upcase%> <br><br>
-		            			<span style="padding:0px;color:red;">
+		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
+			            			<span style="padding:0px;color:red;">
 
-		            				$<%= listing.price %>.00
+			            				$<%= listing.price %>.00
 
-		            			</span>
+			            			</span>
+			            		<% else %>
+									<span style="padding:0px;color:red;">
 
-								<span style="padding: 0px;text-decoration: line-through;">
+			            				$<%= listing.price %>.00
 
-									$<%= listing.original_price %>.00
+			            			</span>
+									<span style="padding: 0px;text-decoration: line-through;">
 
-								</span>
+										$<%= listing.original_price %>.00
+
+									</span>
+								<% end %>
 		            		</p> 
 
 		            	</figcaption>
@@ -216,17 +232,24 @@
 		            		<p> 
 							<%= listing.name.upcase %><br><br><br> 
 		            			<%=	listing.description.upcase%> <br><br>
-		            			<span style="padding:0px;color:red;">
+		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
+			            			<span style="padding:0px;color:red;">
 
-		            				$<%= listing.price %>.00
+			            				$<%= listing.price %>.00
 
-		            			</span>
+			            			</span>
+			            		<% else %>
+									<span style="padding:0px;color:red;">
 
-								<span style="padding: 0px;text-decoration: line-through;">
+			            				$<%= listing.price %>.00
 
-									$<%= listing.original_price %>.00
+			            			</span>
+									<span style="padding: 0px;text-decoration: line-through;">
 
-								</span>
+										$<%= listing.original_price %>.00
+
+									</span>
+								<% end %>
 		            		</p> 
 
 		            	</figcaption>
@@ -277,17 +300,24 @@
 		            		<p> 
 		            		<%= listing.name.upcase %> <br><br><br> 
 		            			<%=	listing.description.upcase%> <br><br>
-		            			<span style="padding:0px;color:red;">
+		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
+			            			<span style="padding:0px;color:red;">
 
-		            				$<%= listing.price %>.00
+			            				$<%= listing.price %>.00
 
-		            			</span>
+			            			</span>
+			            		<% else %>
+									<span style="padding:0px;color:red;">
 
-								<span style="padding: 0px;text-decoration: line-through;">
+			            				$<%= listing.price %>.00
 
-									$<%= listing.original_price %>.00
+			            			</span>
+									<span style="padding: 0px;text-decoration: line-through;">
 
-								</span>
+										$<%= listing.original_price %>.00
+
+									</span>
+								<% end %>
 		            		</p> 
 
 		            	</figcaption>
@@ -340,17 +370,24 @@
 		            		<p> 
 		            			<%= listing.name.upcase %> <br><br><br> 
 		            			<%=	listing.description.upcase.html_safe%> <br><br>
-		            			<span style="padding:0px;color:red;">
+		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
+			            			<span style="padding:0px;color:red;">
 
-		            				$<%= listing.price %>.00
+			            				$<%= listing.price %>.00
 
-		            			</span>
+			            			</span>
+			            		<% else %>
+									<span style="padding:0px;color:red;">
 
-								<span style="padding: 0px;text-decoration: line-through;">
+			            				$<%= listing.price %>.00
 
-									$<%= listing.original_price %>.00
+			            			</span>
+									<span style="padding: 0px;text-decoration: line-through;">
 
-								</span>
+										$<%= listing.original_price %>.00
+
+									</span>
+								<% end %>
 		            		</p> 
 
 		            	</figcaption>
@@ -402,17 +439,24 @@
 		            		<p> 
 		            			<%= listing.name.upcase %> <br><br><br> 
 		            			<%=	listing.description.upcase%> <br><br>
-		            			<span style="padding:0px;color:red;">
+		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
+			            			<span style="padding:0px;color:red;">
 
-		            				$<%= listing.price %>.00
+			            				$<%= listing.price %>.00
 
-		            			</span>
+			            			</span>
+			            		<% else %>
+									<span style="padding:0px;color:red;">
 
-								<span style="padding: 0px;text-decoration: line-through;">
+			            				$<%= listing.price %>.00
 
-									$<%= listing.original_price %>.00
+			            			</span>
+									<span style="padding: 0px;text-decoration: line-through;">
 
-								</span>
+										$<%= listing.original_price %>.00
+
+									</span>
+								<% end %>
 		            		</p> 
 
 		            	</figcaption>
@@ -464,17 +508,24 @@
 		            		<p> 
 		            			<%= listing.name.upcase %> <br><br><br> 
 		            			<%=	listing.description.upcase%> <br><br>
-		            			<span style="padding:0px;color:red;">
+		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
+			            			<span style="padding:0px;color:red;">
 
-		            				$<%= listing.price %>.00
+			            				$<%= listing.price %>.00
 
-		            			</span>
+			            			</span>
+			            		<% else %>
+									<span style="padding:0px;color:red;">
 
-								<span style="padding: 0px;text-decoration: line-through;">
+			            				$<%= listing.price %>.00
 
-									$<%= listing.original_price %>.00
+			            			</span>
+									<span style="padding: 0px;text-decoration: line-through;">
 
-								</span>
+										$<%= listing.original_price %>.00
+
+									</span>
+								<% end %>
 		            		</p> 
 
 		            	</figcaption>
@@ -523,17 +574,24 @@
 		            		<p> 
 		            			<%= listing.name.upcase %><br><br><br> 
 		            			<%=	listing.description.upcase%> <br><br>
-		            			<span style="padding:0px;color:red;">
+		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
+			            			<span style="padding:0px;color:red;">
 
-		            				$<%= listing.price %>.00
+			            				$<%= listing.price %>.00
 
-		            			</span>
+			            			</span>
+			            		<% else %>
+									<span style="padding:0px;color:red;">
 
-								<span style="padding: 0px;text-decoration: line-through;">
+			            				$<%= listing.price %>.00
 
-									$<%= listing.original_price %>.00
+			            			</span>
+									<span style="padding: 0px;text-decoration: line-through;">
 
-								</span>
+										$<%= listing.original_price %>.00
+
+									</span>
+								<% end %>
 		            		</p> 
 
 		            	</figcaption>

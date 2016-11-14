@@ -130,7 +130,7 @@ end
 	private
 
 	def listing_params
-		params.require(:listing).permit(:name, :price, :original_price, :images, :size, :pictures, :description, :section, :fabric, :fit, :care, :position)
+		params.require(:listing).permit(:name, :price, :original_price, :images, :size, :pictures, :description, :section, :fabric, :fit, :care, :position, :on_sale)
 
 	end
 	
