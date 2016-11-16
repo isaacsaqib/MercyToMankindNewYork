@@ -1326,6 +1326,8 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 	#listings-details {
 		width: 100%;
 		font-size: 23px;
+		margin-right: 0px;
+
 	}
 
 	#size {
