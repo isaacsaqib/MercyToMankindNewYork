@@ -102,28 +102,21 @@ $(document).ready(function(){
 		$(".headers-hide").hide();
 	});
 
-	$("#listings-apparel-nav-hidden > li:nth-child(3)").on("click", function(){ /* SS 16 CAPSULE */
-		$(".products").hide();
-		$("#ss16capsule").fadeIn();
-		$(".headers-hide").fadeIn();
-	});
-
-
 	$("#listings-apparel-nav-hidden > li:nth-child(2)").on("click", function(){ /* BOTTOMS */
 		$(".products").hide();
 		$("#bottoms").fadeIn();
 		$(".headers-hide").hide();
 	});
 
-	$("#listings-accessories-nav-hidden > li:nth-child(1)").on("click", function(){ /* HEADWEAR */
+	$("#listings-index-nav > li:nth-child(5)").on("click", function(){ /* HEADWEAR */
 		$(".products").hide();
 		$("#head").fadeIn();
 		$(".headers-hide").hide();
 	});
 
-	$("#listings-accessories-nav-hidden > li:nth-child(2)").on("click", function(){ /* ACCESSORIES */
+	$("#listings-index-nav > li:nth-child(6)").on("click", function(){ /* ACCESSORIES */
 		$(".products").hide();
-		$("#Wristwear").fadeIn();
+		$("#accessories").fadeIn();
 		$(".headers-hide").hide();
 	});
 

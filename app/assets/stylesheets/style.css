@@ -31,6 +31,81 @@ span {
 	padding:0px 10px 0px 10px;
 }
 
+.collection-figcaption:hover {
+	opacity: .8;
+	transition:1s;
+	cursor: pointer;
+}
+.collection-figure {
+    margin: 0px;
+    height: 620px;
+    overflow: hidden;
+    position: relative;
+    overflow: scroll;
+}
+
+
+
+.collection-figcaption {
+    background: #f5f5f7;
+    color: white;
+    display: table;
+    height: 97%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.collection-figcaption p {
+	color: black;
+	display: table-cell;
+	font-size: 10px;
+	position: relative;
+	top: 0px;
+	width: 289px;
+	vertical-align: middle;
+	padding:0px 10px 0px 10px;
+	font-weight: bold;
+}
+
+#collection-index-div {
+	overflow: auto;
+	width: 100%;
+	height: 600px;
+	white-space:nowrap;
+}
+#collection-index-div img {
+	height: 600px;
+	display: inline-block;
+}
+
+
+#collection-index-div li {
+	display: inline-block;
+}
+
+#collection-show-div {
+	overflow: auto;
+	width: 100%;
+	height: 600px;
+	white-space:nowrap;
+}
+#collection-show-div img {
+	height: 600px;
+	display: inline-block;
+}
+
+
+#collection-show-div li {
+	display: inline-block;
+}
+
+
+
 .edit-form {
 	font-family: 'Helvetica';
 }
@@ -121,6 +196,8 @@ span {
     width: 191px;
     overflow: scroll;
 }
+
+
 
 .listings-figcaption {
     background: #f5f5f7;
@@ -573,7 +650,7 @@ option {
 
 
 #listings-show-pictures li > a > img {
-	width: 100%;
+	width: 85%;
 }
 
 #listings-show-pictures li > a > img:hover {
@@ -661,6 +738,8 @@ table {
 
 }
 
+
+
 .products li {
 	display: inline-block;
 	width: 13.5%;
@@ -710,6 +789,7 @@ table {
 .wrapper p {
 	font-family: 'Helvetica';
 }
+
 
 body > div.wrapper > div.wrapper > p > a {
 	color: black;

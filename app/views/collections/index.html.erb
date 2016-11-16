@@ -3,40 +3,37 @@
 <body style="background-image:none;">
 
 
-<!-- 
-<h1 style="text-align:center;	font-family: 'Raleway', sans-serif;
-"> Please check back later. </h1> -->
-  
-<table class="products" id="collection">
-	<tr>
-		<td class="col">
-			<ul>
-			<% @listings_collection.each do |listing| %>
+	
 
-				<% if listing.pictures.first %>
-            	<li>
+<div id="collection-index-div">
+  <ul>
+		<% @listings_collection.each do |listing| %>
+					<% if listing.default_picture %>
 
-            	<%= link_to image_tag(listing.pictures.first.image.url), collection_path(listing) %>
-            	<% else %>
-              		N/A
-            	<% end %>
+			<li>
+				<figure class="collection-figure">
 				
+	            	<%= link_to image_tag(listing.default_picture.image.url), collection_path(listing) %>
+	            	<a href="/collections/<%= listing.id %>">
+	            		<figcaption class="collection-figcaption">
+	            			<p><%= listing.name %></p>
 
-				<form method="get">
+	            		</figcaption>
+	            	</a>
+	            	<% else %>
+	              		N/A
+	            	<% end %>
+	            </a>
+            	</figure>
 
-				<a style="font-family:'Helvetica';" href="<%=collection_path(listing)%>"><%=listing.name %></a><br> 
+			</li>
+			
+			<% end %>
 
-				<div class="line-separator"></div><br>
-				
-				 
-				</form>	
+  </ul>
 
-				</li>
-				<% end %>
-			</ul>
-		</td>
-	</tr>
-</table>
+</div>
+
 
 
 

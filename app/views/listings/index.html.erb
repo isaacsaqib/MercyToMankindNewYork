@@ -15,13 +15,9 @@
 				<ul class="hidden-nav" id="listings-apparel-nav-hidden">
 					<li>TOPS</li>
 					<li>BOTTOMS</li>
-					<li>"JUDGEMENT DAY" CAPSULE</li>
 				</ul>
+			<li>HEADWEAR</li>
 			<li>ACCESSORIES</li>
-				<ul class="hidden-nav" id="listings-accessories-nav-hidden">
-					<li>HEADWEAR</li>
-					<!-- <li>WRISTWEAR</li> -->
-				</ul>
 			<li><a href="/collections">LOOKBOOKS</a></li>
 			<br>
 
@@ -32,28 +28,62 @@
 
 <!-- <img id="intro-listings-picture" style="width:85%;margin:0 auto;display:block" src="assets/listings-intro-picture-e8b5d8bf3efde14e7514f9ff12a7aab24a75ed27c7be023380c887a663d415f9.png"> -->
 
-<table class="products hide" id="new">
+<table class="products" id="new">
 	<tr>
-		<td class="col">
+ 		<td class="col">
 			<ul>
-			<% @listings_new.each do |listing| %>
+			<h1>NEW</h1>
+			<% @listings.each do |listing| %>
 
-				<% if listing.default_picture %>
+				<% if listing.is_new %>
             	<li>
-            	<!-- listing image pictures -->
-            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
-            	<% else %>
-              		N/A
-            	<% end %>
-				
-				<!-- Name, price and buttons -->
+            	<figure class="listings-figure"> 	
+		            	
+		        <%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
+		            	
+            	<a href="<%=listing_path(listing)%>">
+		            	<figcaption class="listings-figcaption"> 
+
+		            		<p> 
+								<%= listing.name.upcase %><br><br><br> 
+		            			<%=	listing.description.upcase.html_safe%> <br><br>
+		            			
+		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
+			            			<span style="padding:0px;color:black;">
+
+			            				$<%= listing.price %>.00
+
+			            			</span>
+			            		<% else %>
+									<span style="padding:0px;color:red;">
+
+			            				$<%= listing.price %>.00
+
+			            			</span>
+									<span style="padding: 0px;text-decoration: line-through;">
+
+										$<%= listing.original_price %>.00
+
+									</span>
+								<% end %>
+
+		            		</p> 
+
+		            	</figcaption>
+				</a>
+
+		            	<% else %>
+
+		            	<% end %>
+		           </figure>
+
 				<form id="index-form" method="get">
 				<input type="hidden" name="id" value="<%=listing.id%>">
-				<a href="<%=listing_path(listing)%>"><%=listing.name %></a><br> 
-				<p>$<%=listing.price %>.00</p><br>
-				<div class="line-separator"></div>
+				<!-- <a href="<%=listing_path(listing)%>"><%=listing.name %></a><br>  -->
+				<!-- <p>$<%=listing.price %>.00</p><br> -->
+				<!-- <div class="line-separator"></div> -->
 				
-				 <br/>
+				 <!-- <br/> -->
 							 <% if logged_in? %>
 							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
 							<p><a href="?remove=<%=listing.id%>">Delete</a></p><br>
@@ -68,7 +98,6 @@
 		</td>
 	</tr>
 </table>
-
 <!-- <img style="width:60%;margin:0 auto;display:block;" src="assets/intro-tops.png"> -->
 
 
@@ -89,10 +118,10 @@
 
 		            		<p> 
 								<%= listing.name.upcase %><br><br><br> 
-		            			<%=	listing.description.upcase%> <br><br>
+		            			<%=	listing.description.upcase.html_safe%> <br><br>
 		            			
 		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
-			            			<span style="padding:0px;color:red;">
+			            			<span style="padding:0px;color:black;">
 
 			            				$<%= listing.price %>.00
 
@@ -164,9 +193,9 @@
 
 		            		<p> 
 		            			<%= listing.name.upcase %><br><br><br> 
-		            			<%=	listing.description.upcase%> <br><br>
+		            			<%=	listing.description.upcase.html_safe%> <br><br>
 		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
-			            			<span style="padding:0px;color:red;">
+			            			<span style="padding:0px;color:black;">
 
 			            				$<%= listing.price %>.00
 
@@ -231,9 +260,9 @@
 
 		            		<p> 
 							<%= listing.name.upcase %><br><br><br> 
-		            			<%=	listing.description.upcase%> <br><br>
+		            			<%=	listing.description.upcase.html_safe%> <br><br>
 		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
-			            			<span style="padding:0px;color:red;">
+			            			<span style="padding:0px;color:black;">
 
 			            				$<%= listing.price %>.00
 
@@ -299,9 +328,9 @@
 
 		            		<p> 
 		            		<%= listing.name.upcase %> <br><br><br> 
-		            			<%=	listing.description.upcase%> <br><br>
+		            			<%=	listing.description.upcase.html_safe%> <br><br>
 		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
-			            			<span style="padding:0px;color:red;">
+			            			<span style="padding:0px;color:black;">
 
 			            				$<%= listing.price %>.00
 
@@ -352,13 +381,11 @@
 </table>
 
 
-<table class="products hide" id="ss16capsule">
-	<h1 class="headers-hide">SPRING/SUMMER 16</h1>
-	<h3 class="headers-hide">'JUDGEMENT DAY' CAPSULE</h3>
+<table class="products hide" id="accessories">
 	<tr>
 		<td class="col">
 			<ul>
-			<% @listings_ss16capsule.each do |listing| %>
+			<% @listings_accessories.each do |listing| %>
 
 				<% if listing.default_picture %>
             	<li>
@@ -371,7 +398,7 @@
 		            			<%= listing.name.upcase %> <br><br><br> 
 		            			<%=	listing.description.upcase.html_safe%> <br><br>
 		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
-			            			<span style="padding:0px;color:red;">
+			            			<span style="padding:0px;color:black;">
 
 			            				$<%= listing.price %>.00
 
@@ -438,9 +465,9 @@
 
 		            		<p> 
 		            			<%= listing.name.upcase %> <br><br><br> 
-		            			<%=	listing.description.upcase%> <br><br>
+		            			<%=	listing.description.upcase.html_safe%> <br><br>
 		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
-			            			<span style="padding:0px;color:red;">
+			            			<span style="padding:0px;color:black;">
 
 			            				$<%= listing.price %>.00
 
@@ -507,9 +534,9 @@
 
 		            		<p> 
 		            			<%= listing.name.upcase %> <br><br><br> 
-		            			<%=	listing.description.upcase%> <br><br>
+		            			<%=	listing.description.upcase.html_safe%> <br><br>
 		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
-			            			<span style="padding:0px;color:red;">
+			            			<span style="padding:0px;color:black;">
 
 			            				$<%= listing.price %>.00
 
@@ -573,9 +600,9 @@
 
 		            		<p> 
 		            			<%= listing.name.upcase %><br><br><br> 
-		            			<%=	listing.description.upcase%> <br><br>
+		            			<%=	listing.description.upcase.html_safe%> <br><br>
 		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
-			            			<span style="padding:0px;color:red;">
+			            			<span style="padding:0px;color:black;">
 
 			            				$<%= listing.price %>.00
 

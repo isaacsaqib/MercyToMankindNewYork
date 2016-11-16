@@ -1,11 +1,11 @@
 class CollectionsController < ApplicationController 
 	def index
-		@listings_collection = Listing.where(:section => "Collection")
+		@listings_collection = Listing.where(:section => "Collection").order(price: :desc)
 	end
 
 	def show
 		
-	  	 @listing  = Listing.find(params[:id])
+	  	@listing  = Listing.find(params[:id])
     	@pictures = @listing.pictures
 	end
 

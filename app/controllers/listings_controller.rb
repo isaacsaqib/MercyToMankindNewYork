@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
 		if params[:remove]
 			Listing.delete(params[:remove])
 		end
-		@listings = Listing.all
+		@listings = Listing.all.order(price: :desc)
 
 		@listings_new = Listing.where(:section => "New")
 		@listings_hoodies= Listing.where(:section => "Hoodies").order(price: :desc)
@@ -18,7 +18,7 @@ class ListingsController < ApplicationController
 		@listings_bottoms = Listing.where(:section => "Bottoms").order(price: :desc)
 		@listings_head = Listing.where(:section => "Head").order(price: :desc)
 		@listings_wristwear = Listing.where(:section => "Wristwear").order(price: :desc)
-		@listings_ss16capsule = Listing.where(:section => "SS16 Capsule").order(price: :desc)
+		@listings_accessories = Listing.where(:section => "Accessories").order(price: :desc)
 		
 		@listings_collection = Listing.where(:section => "Collection")
 
@@ -130,7 +130,7 @@ end
 	private
 
 	def listing_params
-		params.require(:listing).permit(:name, :price, :original_price, :images, :size, :pictures, :description, :section, :fabric, :fit, :care, :position, :on_sale)
+		params.require(:listing).permit(:name, :price, :original_price, :images, :size, :pictures, :description, :section, :fabric, :fit, :care, :position, :on_sale, :is_new)
 
 	end
 	

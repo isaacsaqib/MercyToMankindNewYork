@@ -86,7 +86,7 @@
 
 
 					<% if @listing.on_sale == false %> <!-- if listing is NOT ON SALE  -->
-					<p style="color:gray; margin:0px;">$<%= @listing.original_price %></p><br>
+					<p style="color:gray; margin:0px;">$<%= @listing.price %></p><br>
 					<% else %>
 						<p style="color:red; margin:0px;">$<%= @listing.price %></p><p style="color:gray; margin:0px;text-decoration: line-through;">$<%= @listing.original_price %></p><br>
 
