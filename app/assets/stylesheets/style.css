@@ -72,6 +72,66 @@ span {
 	font-weight: bold;
 }
 
+.headwear-figcaption:hover {
+	opacity: .8;
+	transition:1s;
+	cursor: pointer;
+}
+.headwear-figure {
+    margin: 0px;
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+    overflow: scroll;
+}
+
+
+.headwear-figcaption {
+    background: #f5f5f7;
+    color: white;
+    display: table;
+    height: 97%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.headwear-figcaption p {
+	color: black;
+	display: table-cell;
+	font-size: 10px;
+	position: relative;
+	top: 0px;
+	width: 289px;
+	vertical-align: middle;
+	padding:0px 10px 0px 10px;
+	font-weight: bold;
+}
+#headwear-slide-div {
+	margin: 0 auto;
+	overflow: auto;
+	width: 92%;
+	height: 300px;
+	white-space:nowrap;
+}
+#headwear-slide-div img {
+	height: 270px;
+	display: inline-block;
+}
+
+
+#headwear-slide-div li {
+	display: inline-block;
+}
+
+#headwear-slide-div > ul {
+	/*background-color: #f5f5f7;*/
+}
+
 #collection-index-div {
 	overflow: auto;
 	width: 100%;
@@ -87,6 +147,7 @@ span {
 #collection-index-div li {
 	display: inline-block;
 }
+
 
 #collection-show-div {
 	overflow: auto;
