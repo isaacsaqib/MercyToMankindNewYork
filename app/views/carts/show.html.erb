@@ -26,7 +26,7 @@
 			next if listing.blank? #proceed if there is no listing present
 		%>
 		<tr>
-			<td><a href="/listings/<%= listing.id %>"><%= image_tag(listing.pictures.first.image.url) %></td>
+			<td><a href="/listings/<%= listing.id %>"><%= image_tag(listing.default_picture.image.url) %></td>
 			<td><%= listing.name %></td>
 			<td><%= number_to_currency(listing.price) %></td>
 			<td><%= size %></td>
