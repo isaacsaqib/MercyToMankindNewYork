@@ -1464,6 +1464,23 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 		display: none;
 	}
 
+	#collection-show-div {
+		width: 100%;
+		height: initial;
+	    overflow: initial;
+	    white-space: initial;
+	}
+
+	#collection-show-div > ul {
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	#collection-show-div  img {
+		width: 100%;
+		height: initial;
+	}
+
 
 }
 
