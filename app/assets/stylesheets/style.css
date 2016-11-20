@@ -31,6 +31,14 @@ span {
 	padding:0px 10px 0px 10px;
 }
 
+#contact-us {
+	padding:0px;
+}
+
+#contact-us:hover {
+	cursor: pointer;
+}
+
 .collection-figcaption:hover {
 	opacity: .8;
 	transition:1s;
