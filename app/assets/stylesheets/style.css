@@ -31,6 +31,31 @@ span {
 	padding:0px 10px 0px 10px;
 }
 
+/*Mailchimp*/
+
+#mc_embed_signup label {
+	padding-bottom: 0px!important;
+}
+#mc_embed_signup{
+
+	background:#fff; 
+	clear:left;
+	font:11px Helvetica!important;
+	width:100%;
+	padding-bottom: 50px;
+}
+
+#mc_embed_signup .button {
+	background-color: #F5F5F7!important;
+	color: black!important;
+}
+
+#mc_embed_signup .button:hover {
+	background-color: black!important;
+	color: white!important;
+}
+
+
 #contact-us {
 	padding:0px;
 }
@@ -1017,7 +1042,7 @@ header a {
 
 #bottom-nav {
 	margin-top:100px;
-	padding-bottom: 100px;
+	padding-bottom: 30px;
 	display: inline-block;
 }
 
