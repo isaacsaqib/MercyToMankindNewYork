@@ -1315,7 +1315,7 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 /*end*/
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1000px) {
 
 
 	.col ul {
@@ -1414,6 +1414,7 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 	#add-to-cart-btn {
 		height: 140px;
 		font-size: 50px;
+		margin-top:50px;
 
 	}
 
@@ -1425,7 +1426,7 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 	}
 
 	#size {
-		font-size: 45px;
+		font-size: 15px;
 		padding-left: 40px;
 	}
 
@@ -1517,5 +1518,12 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 }
 
+
+@media screen and (max-width: 1300px) {
+	#listings-show-div {
+		width: 500px;
+	}
+
+}
 
 
