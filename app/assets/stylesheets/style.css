@@ -836,7 +836,7 @@ table {
 
 .products li {
 	display: inline-block;
-	width: 13.5%;
+	/*width: 13.5%;*/
 }
 
 
@@ -855,7 +855,7 @@ table {
 
 .products li img {
 	
-	width: 95%;
+	width: 100%;
 	/*margin-bottom: 15px;*/
 
 }
@@ -1522,6 +1522,15 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 @media screen and (max-width: 1300px) {
 	#listings-show-div {
 		width: 500px;
+	}
+
+	.products li {
+		width: initial;
+	}
+
+	.col ul {
+  		text-align: center;
+
 	}
 
 }
