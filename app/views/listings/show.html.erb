@@ -133,7 +133,7 @@
 		<br>
 
 		<% if logged_in? %>
-						<%= form_for @listing, remote: true, :html => {:class => "edit-form"} do |f| %>
+						<%= form_for @listing, remote: true, :html => {:multipart => true, :class => "edit-form"} do |f| %>
 							<%= f.label(:name) %>
 						  	<%=f.text_field :name %><br><br>
 						  	<%= f.label :price %>

@@ -76,6 +76,10 @@ end
 	  	@listing  = Listing.find(params[:id])
     	@pictures = @listing.pictures.order(:description)
 
+
+
+    # LISTING UPDATE
+    
 	end
 
 	def edit 
@@ -102,7 +106,7 @@ end
         format.json { render json: @listing.errors, status: :unprocessable_entity }
       end
     end
-  end
+  	end
 
 
 	def destroy
