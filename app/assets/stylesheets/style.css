@@ -31,6 +31,18 @@ span {
 	padding:0px 10px 0px 10px;
 }
 
+
+/*
+#test-nav {
+	background-color: #F5F5F7;
+	width: 30%;
+	height: 100%;
+	position:fixed;
+	margin-top: 0px;
+	list-style: none;
+	/*overflow: scroll;*/
+/*}*/
+
 /*Mailchimp*/
 
 #mc_embed_signup label {
@@ -425,6 +437,7 @@ span {
 	width: 98%;
 	margin: 0 auto;
     box-shadow: 1px 1px 4px gray;
+    /*margin-left: 600px;*/
 
 }
 
@@ -478,14 +491,14 @@ span {
 
 .logo-text-h1 {
 	padding-top: 40px;	
-	font-family: 'Helvetica';
-	font-weight: 500;
-	letter-spacing: 7px;
+	font-family: "lmroman10-regular";
+	font-size: 35px;
+	/*letter-spacing: 7px;*/
 }
 
 .logo-text-h3 {
-	font-family: 'Helvetica';
-	font-weight: 500;
+	font-family: "lmroman10-regular";
+
 	margin-bottom: 50px;
 	padding-right: 25px;
 }

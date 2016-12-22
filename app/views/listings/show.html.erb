@@ -3,17 +3,12 @@
 <%= javascript_include_tag "application.js" %>
 <%= javascript_include_tag "sweet-alert.min.js" %>
 
-<!-- <script>
-
- if 
-	 	( $("img[alt*='M2mk']") )
-	 {
-
-	 	$( "img[alt*='M2mk']").css("width", "45%");
-
-	 };
-
-</script> -->
+<script>
+fbq('track', 'ViewContent', {
+value: 3.50,
+currency: 'USD'
+});
+</script>
 
 
 <title><%= @listing.name %> | MXMNY</title>

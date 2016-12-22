@@ -9,6 +9,23 @@
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= favicon_link_tag 'favicon.ico' %>
 
+	<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '1792295141019192', {
+	em: 'insert_email_variable,'
+	});
+	fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=1792295141019192&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- DO NOT MODIFY -->
+	<!-- End Facebook Pixel Code -->
 
 </head>
 
@@ -39,6 +56,17 @@
 
 		
 		</ul>
+
+
+<!-- 		<ul id="test-nav">
+			<li><a href="/index">HOME</a></li>
+			<li><a href="/listings">SHOP</a></li>
+			<li><a href="/media">MEDIA</a></li>
+			<li><a href="/collections">LOOKBOOKS</a></li>
+			<li><a href="/customercare">CONTACT</a></li>
+			<li><a href="/cart">CART</a></li>
+		</ul>
+ -->
 
 
 
