@@ -516,9 +516,9 @@ span {
 }
 
 .order-complete-text {
-	font-family: 'Helvetica';
-	font-weight: 500;
-	text-align: center;
+	font-family: "Helvetica";
+	font-size: 11px;
+	color: black;
 }
 
 .picture-edit {
@@ -882,8 +882,15 @@ table {
 	height: 18px;;
 	width: 18px;
 	padding-right: 5px;
+}
+
+.icons-complete {
+	height: 18px;;
+	width: 18px;
 
 }
+
+
 .wrapper {
     min-height: 100%;
     height: auto !important;

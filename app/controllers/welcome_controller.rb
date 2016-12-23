@@ -16,6 +16,10 @@ class WelcomeController < ApplicationController
 
   def springsummersixteen
   end
+
+  def complete
+  end
+  
   
   
 

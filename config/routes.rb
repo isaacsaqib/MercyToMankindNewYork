@@ -33,7 +33,7 @@ get "/springsummersixteen" => "welcome#springsummersixteen"
 get "/media" => "welcome#media"
 
 post "make_default" => "pictures#make_default"
-get "/orders/complete" => "orders#complete"
+get "/complete" => "welcome#complete"
 get "/customercare" => "customers#index"
 
 

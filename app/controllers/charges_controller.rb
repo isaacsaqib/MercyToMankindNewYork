@@ -36,7 +36,7 @@ def create
   
 
 
-  redirect_to "/orders/complete"
+  redirect_to "/complete"
 
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message

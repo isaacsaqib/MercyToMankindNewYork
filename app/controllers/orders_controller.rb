@@ -60,6 +60,12 @@ class OrdersController < ApplicationController
 		@users.destroy
 	end
 
+	def complete
+		
+	
+	end
+
+
 
 
 
