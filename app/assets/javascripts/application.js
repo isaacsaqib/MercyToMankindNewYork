@@ -21,7 +21,30 @@
 $(document).ready(function(){
 	$("#shop-sub-nav").hide();
 	$("#free-shipping-div").slideDown();
-	// $("#jackets").hide();
+	$("#jackets").hide();
+	$("#jackets").fadeIn(1500);	
+
+	$("#hoodies").hide();
+	$("#hoodies").fadeIn(1500);	
+
+	$("#long_sleeves").hide();
+	$("#long_sleeves").fadeIn(1500);
+
+	$("#short_sleeves").hide();
+	$("#short_sleeves").fadeIn(1500);
+
+	$("#tanks").hide();
+	$("#tanks").fadeIn(1500);	
+
+	$("#bottoms").hide();
+	$("#bottoms").fadeIn(1500);	
+
+	$("#head").hide();
+	$("#head").fadeIn(1500);
+	
+	$("#accessories").hide();
+	$("#accessories").fadeIn(1500);
+
 	// $("#hoodies").hide();
 	// $("#long_sleeves").hide();
 	// $("#short_sleeves").hide();
@@ -89,42 +112,41 @@ $(document).ready(function(){
 
 	// })
 
-	$("#listings-outerwear-nav-hidden > li").on("click", function(){  /* JACKETS */
-		$(".products").hide();
-		$("#jackets").fadeIn();
-		$(".headers-hide").hide();
+	// $("#listings-outerwear-nav-hidden > li").on("click", function(){  /* JACKETS */
+	// 	$(".products").hide();
+	// 	$(".headers-hide").hide();
 
 
-	});
+	// });
 
 
-	$("#listings-apparel-nav-hidden > li:nth-child(1)").on("click", function(){  /* APPAREL */
-		$(".products").hide();
-		$("#intro-listings-picture").fadeOut();
-		$("#hoodies").fadeIn();
-		$("#long_sleeves").fadeIn();
-		$("#short_sleeves").fadeIn();
-		$("#tanks").fadeIn();
-		$(".headers-hide").hide();
-	});
+	// $("#listings-apparel-nav-hidden > li:nth-child(1)").on("click", function(){  /* APPAREL */
+	// 	$(".products").hide();
+	// 	$("#intro-listings-picture").fadeOut();
+	// 	$("#hoodies").fadeIn();
+	// 	$("#long_sleeves").fadeIn();
+	// 	$("#short_sleeves").fadeIn();
+	// 	$("#tanks").fadeIn();
+	// 	$(".headers-hide").hide();
+	// });
 
-	$("#listings-apparel-nav-hidden > li:nth-child(2)").on("click", function(){ /* BOTTOMS */
-		$(".products").hide();
-		$("#bottoms").fadeIn();
-		$(".headers-hide").hide();
-	});
+	// $("#listings-apparel-nav-hidden > li:nth-child(2)").on("click", function(){ /* BOTTOMS */
+	// 	$(".products").hide();
+	// 	$("#bottoms").fadeIn();
+	// 	$(".headers-hide").hide();
+	// });
 
-	$("#listings-index-nav > li:nth-child(5)").on("click", function(){ /* HEADWEAR */
-		$(".products").hide();
-		$("#head").fadeIn();
-		$(".headers-hide").hide();
-	});
+	// $("#listings-index-nav > li:nth-child(5)").on("click", function(){ /* HEADWEAR */
+	// 	$(".products").hide();
+	// 	$("#head").fadeIn();
+	// 	$(".headers-hide").hide();
+	// });
 
-	$("#listings-index-nav > li:nth-child(6)").on("click", function(){ /* ACCESSORIES */
-		$(".products").hide();
-		$("#accessories").fadeIn();
-		$(".headers-hide").hide();
-	});
+	// $("#listings-index-nav > li:nth-child(6)").on("click", function(){ /* ACCESSORIES */
+	// 	$(".products").hide();
+	// 	$("#accessories").fadeIn();
+	// 	$(".headers-hide").hide();
+	// });
 
 	$('.edit-form').on('ajax:success', function() {
   		$(this).append("<p>Thank you</p>")
@@ -162,9 +184,9 @@ $(document).ready(function(){
 		});
 	};
 
-	HiddenListingNavSlideDown(1, "outerwear");
-	HiddenListingNavSlideDown(3, "apparel");
-	HiddenListingNavSlideDown(5, "accessories");
+	HiddenListingNavSlideDown(2, "outerwear");
+	HiddenListingNavSlideDown(4, "apparel");
+	HiddenListingNavSlideDown(6, "accessories");
 
 
 	/* Wristwear */

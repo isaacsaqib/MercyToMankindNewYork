@@ -2,22 +2,25 @@
 
 
 <title>Shop | MXMNY</title>
-			<h1 class="logo-text-h1">MERCY X MANKIND</h1>
-			<h3 class="logo-text-h3">NEW YORK</h3>
-			<hr>
+
+	<h1 class="logo-text-h1">MERCY X MANKIND</h1>
+	<h3 class="logo-text-h3">NEW YORK</h3>
+	<hr>
+
 	<div id="listings-index-div">
 		<ul id="listings-index-nav">
+			<li><a href="/listings">ALL</a></li>
 			<li>OUTERWEAR</li>
 				<ul class="hidden-nav" id="listings-outerwear-nav-hidden">
-					<li>JACKETS</li>
+					<li><a href="/listings-jackets">JACKETS</a></li>
 				</ul>
 			<li>APPAREL</li>
 				<ul class="hidden-nav" id="listings-apparel-nav-hidden">
-					<li>TOPS</li>
-					<li>BOTTOMS</li>
+					<li><a href="/listings-tops">TOPS</a></li>
+					<li><a href="/listings-bottoms">BOTTOMS</a></li>
 				</ul>
-			<li>HEADWEAR</li>
-			<li>ACCESSORIES</li>
+			<li><a href="listings-head">HEADWEAR</a></li>
+			<li><a href="listings-accessories">ACCESSORIES</a></li>
 			<li><a href="/collections">LOOKBOOKS</a></li>
 			<br>
 
@@ -98,6 +101,8 @@
 		</td>
 	</tr>
 </table>
+
+<hr>
 <!-- <img style="width:60%;margin:0 auto;display:block;" src="assets/intro-tops.png"> -->
 
 
@@ -105,7 +110,7 @@
 	<tr>
  		<td class="col">
 			<ul>
-			<h1>OUTERWEAR</h1>
+			<h1>OUTERWEAR \ JACKETS</h1>
 
 			<% @listings_jackets.each do |listing| %>
 
@@ -176,6 +181,7 @@
 	<li></li>
 	<li><img src="assets/striped.png"></li>
 </ul> -->
+<hr>
 
 
 
@@ -183,6 +189,7 @@
 	<tr>
 		<td class="col">
 			<ul>
+			<h1>TOPS \ SWEATSHIRTS</h1>
 
 
 			<% @listings_hoodies.each do |listing| %>
@@ -248,10 +255,16 @@
 	</tr>
 </table>
 
+
+<hr>
+
+
 <table class="products" id="long_sleeves">
 	<tr>
 		<td class="col">
 			<ul>
+			<h1>TOPS \ LONG SLEEVE</h1>
+
 			<% @listings_long_sleeves.each do |listing| %>
 
 				<% if listing.default_picture %>
@@ -316,10 +329,14 @@
 	</tr>
 </table>
 
+<hr>
+
+
 <table class="products" id="short_sleeves">
 	<tr>
 		<td class="col">
 			<ul>
+			<h1>TOPS \ SHIRTS</h1>
 			<% @listings_short_sleeves.each do |listing| %>
 
 				<% if listing.default_picture %>
@@ -384,22 +401,27 @@
 	</tr>
 </table>
 
+<hr>
 
-<table class="products hide" id="accessories">
+
+<table class="products" id="tees">
 	<tr>
 		<td class="col">
 			<ul>
-			<% @listings_accessories.each do |listing| %>
+			<h1>TOPS \ TEES</h1>
+
+			<% @listings_tees.each do |listing| %>
 
 				<% if listing.default_picture %>
             	<li>
-				<figure class="listings-figure"> 	
+            	<!-- listing image pictures -->
+		           <figure class="listings-figure"> 	
 		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
-		            <a href="<%=listing_path(listing)%>">
+		           <a href="<%=listing_path(listing)%>">
 		            	<figcaption class="listings-figcaption"> 
 
 		            		<p> 
-		            			<%= listing.name.upcase %> <br><br><br> 
+		            		<%= listing.name.upcase %> <br><br><br> 
 		            			<%=	listing.description.upcase.html_safe%> <br><br>
 		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
 			            			<span style="padding:0px;color:black;">
@@ -428,8 +450,8 @@
 		              		N/A
 		            	<% end %>
 		           </figure>
-				
-				<!-- Name, price and buttons -->
+						
+						<!-- Name, price and buttons -->
 				<form id="index-form" method="get">
 				<input type="hidden" name="id" value="<%=listing.id%>">
 				<!-- <a href="<%=listing_path(listing)%>"><%=listing.name %></a><br>  -->
@@ -441,8 +463,8 @@
 							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
 							<p><a href="?remove=<%=listing.id%>">Delete</a></p><br>
 							<% end %>
-							<br>
-							<br>
+							<!-- <br> -->
+							<!-- <br> -->
 				</form>	
 
 				</li>
@@ -452,11 +474,16 @@
 	</tr>
 </table>
 
+<hr>
+
+
 
 <table class="products" id="tanks">
 	<tr>
 		<td class="col">
 			<ul>
+			<h1>TOPS \ TANKS</h1>
+
 			<% @listings_tanks.each do |listing| %>
 
 				<% if listing.default_picture %>
@@ -521,12 +548,85 @@
 	</tr>
 </table>
 
+<hr>
+
+
+
+<table class="products" id="denim">
+	<tr>
+		<td class="col">
+			<ul>
+			<h1>DENIM</h1>
+			<% @listings_denim.each do |listing| %>
+
+				<% if listing.default_picture %>
+            	<li>
+            	<figure class="listings-figure"> 	
+		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
+		            <a href="<%=listing_path(listing)%>">
+		            	<figcaption class="listings-figcaption"> 
+
+		            		<p> 
+		            			<%= listing.name.upcase %> <br><br><br> 
+		            			<%=	listing.description.upcase.html_safe%> <br><br>
+		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
+			            			<span style="padding:0px;color:black;">
+
+			            				$<%= listing.price %>.00
+
+			            			</span>
+			            		<% else %>
+									<span style="padding:0px;color:red;">
+
+			            				$<%= listing.price %>.00
+
+			            			</span>
+									<span style="padding: 0px;text-decoration: line-through;">
+
+										$<%= listing.original_price %>.00
+
+									</span>
+								<% end %>
+		            		</p> 
+
+		            	</figcaption>
+		            </a>
+
+		            	<% else %>
+		              		N/A
+		            	<% end %>
+		           </figure>
+				<form id="index-form" method="get">
+				<input type="hidden" name="id" value="<%=listing.id%>">
+				<!-- <a href="<%=listing_path(listing)%>"><%=listing.name %></a><br>  -->
+				<!-- <p>$<%=listing.price %>.00</p><br> -->
+				<!-- <div class="line-separator"></div> -->
+				
+				 <!-- <br/> -->
+							 <% if logged_in? %>
+							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
+							<p><a href="?remove=<%=listing.id%>">Delete</a></p><br>
+							<% end %>
+							<br>
+							<br>
+				</form>	
+
+				</li>
+				<% end %>
+			</ul>
+		</td>
+	</tr>
+</table>
+
+
+<hr>
 
 
 <table class="products" id="bottoms">
 	<tr>
 		<td class="col">
 			<ul>
+			<h1>BOTTOMS</h1>
 			<% @listings_bottoms.each do |listing| %>
 
 				<% if listing.default_picture %>
@@ -589,10 +689,14 @@
 </table>
 
 
+<hr>
+
+
 <table class="products" id="head">
 	<tr>
 		<td class="col">
 			<ul>
+			<h1>HEADWEAR</h1>
 			<% @listings_head.each do |listing| %>
 
 				<% if listing.default_picture %>
@@ -632,6 +736,79 @@
 		              		N/A
 		            	<% end %>
 		           </figure>
+				<form id="index-form" method="get">
+				<input type="hidden" name="id" value="<%=listing.id%>">
+				<!-- <a href="<%=listing_path(listing)%>"><%=listing.name %></a><br>  -->
+				<!-- <p>$<%=listing.price %>.00</p><br> -->
+				<!-- <div class="line-separator"></div> -->
+				
+				 <!-- <br/> -->
+							 <% if logged_in? %>
+							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
+							<p><a href="?remove=<%=listing.id%>">Delete</a></p><br>
+							<% end %>
+							<br>
+							<br>
+				</form>	
+
+				</li>
+				<% end %>
+			</ul>
+		</td>
+	</tr>
+</table>
+
+<hr>
+
+
+
+<table class="products hide" id="accessories">
+	<tr>
+		<td class="col">
+			<ul>
+			<h1>ACCESSORIES</h1>
+
+			<% @listings_accessories.each do |listing| %>
+
+				<% if listing.default_picture %>
+            	<li>
+				<figure class="listings-figure"> 	
+		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
+		            <a href="<%=listing_path(listing)%>">
+		            	<figcaption class="listings-figcaption"> 
+
+		            		<p> 
+		            			<%= listing.name.upcase %> <br><br><br> 
+		            			<%=	listing.description.upcase.html_safe%> <br><br>
+		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
+			            			<span style="padding:0px;color:black;">
+
+			            				$<%= listing.price %>.00
+
+			            			</span>
+			            		<% else %>
+									<span style="padding:0px;color:red;">
+
+			            				$<%= listing.price %>.00
+
+			            			</span>
+									<span style="padding: 0px;text-decoration: line-through;">
+
+										$<%= listing.original_price %>.00
+
+									</span>
+								<% end %>
+		            		</p> 
+
+		            	</figcaption>
+		            </a>
+
+		            	<% else %>
+		              		N/A
+		            	<% end %>
+		           </figure>
+				
+				<!-- Name, price and buttons -->
 				<form id="index-form" method="get">
 				<input type="hidden" name="id" value="<%=listing.id%>">
 				<!-- <a href="<%=listing_path(listing)%>"><%=listing.name %></a><br>  -->

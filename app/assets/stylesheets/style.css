@@ -237,6 +237,7 @@ span {
 	background-color:black;
 	height: 40px;
 	display: none;
+	position: absolute;
 }
 
 #free-shipping-div p {
@@ -849,7 +850,7 @@ table {
 
 .products li {
 	display: inline-block;
-	/*width: 13.5%;*/
+
 }
 
 

@@ -13,9 +13,11 @@ class ListingsController < ApplicationController
 		@listings_hoodies= Listing.where(:section => "Hoodies").order(price: :desc)
 		@listings_long_sleeves= Listing.where(:section => "Long Sleeves").order(price: :desc)
 		@listings_short_sleeves= Listing.where(:section => "Short Sleeves").order(price: :desc)
+		@listings_tees= Listing.where(:section => "Tees").order(price: :desc)
 		@listings_tanks= Listing.where(:section => "Tanks").order(price: :desc)
 		@listings_jackets = Listing.where(:section => "Jackets").order(price: :desc)
 		@listings_bottoms = Listing.where(:section => "Bottoms").order(price: :desc)
+		@listings_denim = Listing.where(:section => "Denim").order(price: :desc)
 		@listings_head = Listing.where(:section => "Head").order(price: :desc)
 		@listings_wristwear = Listing.where(:section => "Wristwear").order(price: :desc)
 		@listings_accessories = Listing.where(:section => "Accessories").order(price: :desc)
@@ -129,6 +131,38 @@ end
 		session[:cart].delete(params[:id])
 		redirect_to :cart
 	end
+
+	def tops
+		@listings_hoodies= Listing.where(:section => "Hoodies").order(price: :desc)
+		@listings_long_sleeves= Listing.where(:section => "Long Sleeves").order(price: :desc)
+		@listings_short_sleeves= Listing.where(:section => "Short Sleeves").order(price: :desc)
+		@listings_tanks= Listing.where(:section => "Tanks").order(price: :desc)
+		@listings_tees= Listing.where(:section => "Tees").order(price: :desc)
+
+	end	
+
+	def jackets
+		@listings_jackets = Listing.where(:section => "Jackets").order(price: :desc)
+	end
+
+	def bottoms
+		@listings_bottoms = Listing.where(:section => "Bottoms").order(price: :desc)
+		@listings_denim = Listing.where(:section => "Denim").order(price: :desc)
+		
+	end
+
+	def accessories
+		@listings_accessories = Listing.where(:section => "Accessories").order(price: :desc)		
+	end
+
+	def head
+		@listings_head = Listing.where(:section => "Head").order(price: :desc)	
+	end
+
+
+
+
+
 
 
 	private

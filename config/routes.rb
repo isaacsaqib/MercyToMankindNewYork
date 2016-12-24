@@ -19,6 +19,15 @@ resources :users
 resources :collections
 resources :coupons
 
+get "/listings-new" => "listings#new"
+get "/listings-tops" => "listings#tops"
+get "/listings-jackets" => "listings#jackets"
+get "/listings-bottoms" => "listings#bottoms"
+get "/listings-head" => "listings#head"
+get "/listings-accessories" => "listings#accessories"
+
+
+
 get  "/admin"  => "session#new"
 post "/session"      => "session#create"
   #logout route
