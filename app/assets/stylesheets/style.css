@@ -31,6 +31,14 @@ span {
 	padding:0px 10px 0px 10px;
 }
 
+hr {
+
+    border-top: 1px solid #FCFCFC;
+    margin: 1em 0;
+    padding: 0; 
+
+}
+
 
 /*
 #test-nav {
