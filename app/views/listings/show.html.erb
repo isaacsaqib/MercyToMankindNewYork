@@ -33,11 +33,14 @@
 
 			      	<% if logged_in? %>
 			      	<%= pic.description %>
+			      	<%= pic.link %> 
+
 
 			      <br>
 
 				 	<%= form_for pic, remote: true, :html => {:class => "edit-form"} do |f| %>
 				      	<%= f.text_field :description, :placeholder => "DESCRIPTION" %>
+				      	<%= f.text_field :link, :placeholder => "LINK FOR SLIDESHOW" %>
 				      	<%= f.label :default %><%= f.check_box :default %>
 				      	<%= f.submit "Update", :id => "update-button"  %><br><br>
 				    <% end %>

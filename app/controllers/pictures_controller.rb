@@ -117,6 +117,6 @@
   private
 
   def picture_params
-    params.require(:picture).permit(:default, :description, :listing_id, :image)
+    params.require(:picture).permit(:default, :description, :listing_id, :image, :link)
   end
 end
