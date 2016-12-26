@@ -1413,7 +1413,11 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 	}
 
 	#slides {
-		height: 640px;
+		height: 480px;
+	}
+
+	#slides > div > div > a > img {
+		width: 100%;
 	}
 
 	body {
