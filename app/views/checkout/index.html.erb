@@ -59,7 +59,13 @@
 	<tr><td>State</td><td><%=session[:state]%></td><td></td><td></td></tr>
 	<tr><td>Zip</td><td><%=session[:zip]%></td><td></td><td></td></tr>
 	<tr><td>Country</td><td><%=session[:country]%></td><td></td><td></td></tr>
-	<tr><td>Shipping</td><td><%=session[:shipping]%></td><td></td><td></td></tr>
+	<% if session[:shipping] == 'Free Shipping' %>
+		<tr><td>Shipping</td><td><%=session[:shipping]%> - USPS (Priority Mail®)</td><td></td><td></td></tr>
+	<% else %>
+		<tr><td>Shipping</td><td><%=session[:shipping]%> - $11.99</td><td></td><td></td></tr>
+	<% end %>
+	
+	<!-- <tr><td>Shipping</td><td><%=session[:shipping]%></td><td></td><td></td></tr> -->
 	
 	<% if session[:code] == @code %>
 		<tr><td>Coupon Code</td><td><%=session[:code]%></td><td></td><td></td></tr>
