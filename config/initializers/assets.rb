@@ -6,11 +6,15 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( jquery.js )
 Rails.application.config.assets.precompile += %w( jquery.slides.js )
 Rails.application.config.assets.precompile += %w( jquery.slides.min.js )
+Rails.application.config.assets.precompile += %w( embed.js )
 Rails.application.config.assets.precompile += %w( event.js )
 Rails.application.config.assets.precompile += %w( jquery.elevatezoom.js )
 Rails.application.config.assets.precompile += %w( jquery.elevatezoom.js )
-Rails.application.config.assets.precompile += %w( sweetalert.css )
 Rails.application.config.assets.precompile += %w( sweetalert.min.js )
+Rails.application.config.assets.precompile += %w( slick.min.js )
+Rails.application.config.assets.precompile += %w( sweetalert.css )
+Rails.application.config.assets.precompile += %w( slick.css )
+Rails.application.config.assets.precompile += %w( slick-theme.css )
 
 
 # Add additional assets to the asset load path

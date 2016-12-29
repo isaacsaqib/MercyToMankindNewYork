@@ -19,6 +19,9 @@
 
 
 $(document).ready(function(){
+
+
+
 	$("#shop-sub-nav").hide();
 	$("#free-shipping-div").slideDown();
 	$("#jackets").hide();
@@ -78,13 +81,7 @@ $(document).ready(function(){
 
 	});
 
-
-	if (screen.width < 960) {
-   		$('img').removeClass("elevatezoom");
-	};
 	
-
-
 	$("#add-to-cart-btn").on("click", function(){
 		swal({
 			title: "Added to cart", 
@@ -191,7 +188,7 @@ $(document).ready(function(){
 
 	/* Wristwear */
 
-      $(".elevatezoom").elevateZoom();
+      // $(".elevatezoom").elevateZoom();
 
 	
 

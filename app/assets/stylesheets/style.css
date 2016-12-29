@@ -4,15 +4,9 @@ html, body {
 }
 
 body {
-	background-repeat
-: no-repeat;
+	background-repeat: no-repeat;
 	background-size: 100%;
 	background-color: #FCFCFC;
-}
-
-@font-face {
-    font-family: 'Helvetica';
-    src: url('/assets/Helvetica-c993eb9a2b56753cb35f253ebf53bb61e2abd6ef63a509611252ca934f83ab96.dfont');
 }
 
 h1 {
@@ -1376,7 +1370,47 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 /*end*/
 
 @media screen and (max-width: 1000px) {
+	
+	#checkout-btn {
+		height: 160px;
+		width: 90%;
+		font-size: 60px;
+	}
 
+	.checkout-nav {
+    
+    	font-size: 30px;
+    }
+
+	.shipping-input {
+	    width: 90%;
+	    height: 8%;
+	    font-size: 60px;
+	    text-align: center;
+	    font-family: 'Helvetica';
+	    font-weight: 500;
+	    background: #f8f8f8;
+	    border: none;
+		
+	}
+
+	.shipping-select {
+	width:90%;
+	font-size: 60px;
+    padding:20px;
+    margin: 0;
+    -webkit-border-radius:0px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    background: #f8f8f8;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
 
 	.col ul {
 	    text-align: left;

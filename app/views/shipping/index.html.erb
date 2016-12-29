@@ -65,7 +65,7 @@ end
 
 
 		<select required name="select_state" class="shipping-select" value="<%= @state %>">
-			<option value="">STATE</option>
+			<option value="">STATE ↓</option>
 			<option value="">NON-USA</option>
 			<option value="AK">AK</option>
 			<option value="AZ">AZ</option>
@@ -120,7 +120,7 @@ end
 
 		<input required class="shipping-input" type="number" name="zip" value="<%= @zip%>" placeholder="ZIP/POSTAL CODE"><br><br>
 		<select required class="shipping-select" name="country" id="country" onchange="checkCountry(this)">
-	<option value="">COUNTRY</option>
+	<option value="">COUNTRY ↓</option>
 	<option value="Afganistan">Afghanistan</option>
 	<option value="Albania">Albania</option>
 	<option value="Algeria">Algeria</option>
@@ -369,12 +369,21 @@ end
 	<option value="Zambia">Zambia</option>
 	<option value="Zimbabwe">Zimbabwe</option>
 	</select></td></tr><br><br>
-		<tr id="free_ship"><td><input required type="radio" name="shipping" value="Free Shipping" <%=@free_shipping%> />USPS (Priority Mail®)</td><td>3-6 Days Free</td></tr>
-		<tr id="inter_ship"><td><input type="hidden" id="total" name="total" value="<%= session[:final_total]%>" /><input type="radio" name="shipping" value="International Shipping" <%=@premium_shipping%> />USPS (First-Class International®	) </td><td>7-10 Business Days: $11.99</td></tr>
+
+	<select class="shipping-select" required name="shipping">
+		<option value="">SHIPPING METHOD ↓</option>
+		<option id="free_ship" name="shipping" value="Free Shipping" <%=@free_shipping%> />USPS (Priority Mail®) 3-6 Days Free</option>
+		<option id="inter_ship" name="shipping" value="International Shipping" <%=@premium_shipping%> />USPS (First-Class International® 7-10 Days $11.99</option>
+	</select>
+	<br>
+	<br>
+
+	<!-- 	<tr id="free_ship"><td><input required type="radio" name="shipping" value="Free Shipping" <%=@free_shipping%> />USPS (Priority Mail®)</td><td>3-6 Days Free</td></tr>
+		<tr id="inter_ship"><td><input type="hidden" id="total" name="total" value="<%= session[:final_total]%>" /><input type="radio" name="shipping" value="International Shipping" <%=@premium_shipping%> />USPS (First-Class International®	) </td><td>7-10 Business Days: $11.99</td></tr> -->
 		<input class="shipping-input" id="coupon_code" name="code" type=text value="<%=session[:code]%>" placeholder="APPLY COUPON CODE"><br><br>
 		
 	</table>
-
+	<br><br><br>
 
 	<input id="checkout-btn" type="submit" value="Checkout ->">
 
