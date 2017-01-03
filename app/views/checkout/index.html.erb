@@ -1,7 +1,8 @@
 
 <title>Checkout | MXMNY</title>
-
+<%= javascript_include_tag "application.js" %>
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
 <body style="background-image:none;" >
 <ul class="checkout-nav" id="shipping-checkout-nav">
 	<li><a href="/cart">CART</a> <span> > </span></li>
@@ -13,7 +14,7 @@
 <div class="line-separator"></div>
 
 
-<table id="checkout-table">
+
 <% if session[:cart].present? %>
 
 
@@ -33,52 +34,120 @@
 
 
 
-	<% @products.each do |product| %>
-		<% next unless listing = product[:listing] %>
-		
-		<tr>
-			<td><%= listing.name %>(<%= product[:size] %>)</td>
-			<td><%= number_to_currency(listing.price) %></td>
+
+		<ul class="checkout-listing-ul"> 
+		<% @products.each do |product| %>
+			<% next unless listing = product[:listing] %>
+			
+					<li>
+
+					<a href="/listings/<%=listing.id%>"><%= image_tag(listing.default_picture.image.url)%> </a>
+					<p style="font-weight: 700;"><%= listing.name %></p>
+					<p >(<%= product[:size]%>)</p>
+					<p ><%= number_to_currency(listing.price) %></p>
+
+					</li>
 
 
-		</tr>
-	<% end %>
-<% end %>
+			<% end %>
+		<% end %>
+		</ul>
+<div class="line-separator"></div>
+
 
 
 <% if session[:firstname] %>
 	
 <% @code = "123" %>
+	<div id="shipping-info-div" class="total-div">
+		<ul id="shipping-info-list">
+
+			<li><%=session[:firstname]%> <%=session[:lastname]%></li> 
+			<li><%=session[:address]%></li> 
+			<li><%=session[:city]%> <%=session[:state]%> <%=session[:zip]%></li> 
+			<li><%=session[:country]%></li> 
+			<li><%=session[:email]%></li><br><br>
+			<li> <a style="font-weight:700;color:black;" href="/shipping">EDIT SHIPPING DETAILS ></a> </li>
+		</ul>
+	</div>
+
+
+	<div class="total-div">
+		<ul id="total-list">
+			<li><p><span class="total-headings">PRODUCTS TOTAL:</span> <%= number_to_currency(@total) %> USD</p></li>
+			
+			<li>
+				<p>
+					<span class="total-headings">SHIPPING:</span>
+
+					<% 
+					if session[:shipping] == 'Free Shipping'
+						@shipping_charges = 0
+					end
+					%>
+
+					<%
+					if session[:shipping] == 'International Shipping'
+						@shipping_charges = 12
+					end
+					%>
+
+				 <%= session[:shipping] %> - <%= number_to_currency(@shipping_charges) %> USD
+				 </p>
+
+			</li>
+
+			<li>
+				<p>
+				<span class="total-headings">SUBTOTAL:</span> 
+				<% @subtotal = @total + @shipping_charges.to_i %> 
+				<!-- CALCULATION -->
+
+				<%= number_to_currency(@subtotal) %> USD
+				</p>
+
+			</li>
+
+			<li>
+				<p>
+				<span class="total-headings">TOTAL TAX: </span>
+				<% if session[:state]=='NY' %>
+					<% @total_tax = @subtotal * 0.0875 %> 
+					<!-- CALCULATION -->
+
+					<%= number_to_currency(@total_tax) %> USD
+				<% else %>
+						$0 USD
+				 <% end %>
+				</p>
+			</li>
+
+			<div class="line-separator"></div>
+
+			<li>
+			<h1 style="font-weight: 700;"><span class="total-headings">TOTAL:</span> 
+				<%= session[:total] %>
+			</h1> 
+			</li>
+			
+
+		</ul>
+		
+
+	</div>
+
 	
-	
-	<tr><td>First Name</td><td><%=session[:firstname]%></td><td></td></tr>
-	<tr><td>Last Name</td><td><%=session[:lastname]%></td><td></td><td></td></tr>
-	<tr><td>Email</td><td><%=session[:email]%></td><td></td><td></td></tr>
-	<tr><td>Address</td><td><%=session[:address]%></td><td></td><td></td></tr>
-	<tr><td>City</td><td><%=session[:city]%></td><td></td><td></td></tr>
-	<tr><td>State</td><td><%=session[:state]%></td><td></td><td></td></tr>
-	<tr><td>Zip</td><td><%=session[:zip]%></td><td></td><td></td></tr>
-	<tr><td>Country</td><td><%=session[:country]%></td><td></td><td></td></tr>
-	<% if session[:shipping] == 'Free Shipping' %>
-		<tr><td>Shipping</td><td><%=session[:shipping]%> - USPS (Priority Mail®)</td><td></td><td></td></tr>
-	<% else %>
-		<tr><td>Shipping</td><td><%=session[:shipping]%> - $11.99</td><td></td><td></td></tr>
-	<% end %>
-	
-	<!-- <tr><td>Shipping</td><td><%=session[:shipping]%></td><td></td><td></td></tr> -->
+	<!-- COUPON CODE -->
 	
 	<% if session[:code] == @code %>
-		<tr><td>Coupon Code</td><td><%=session[:code]%></td><td></td><td></td></tr>
+		Coupon Code<%=session[:code]%>
 	<% else %>
-		<tr><td></td></tr>
+
 	<% end %>
 
 
-	<% if session[:state]=='NY' %>
-		<tr><td>Tax</td><td>8.75%</td><td></td><td></td></tr>
-	<% else %>
-		<tr><td>Tax</td><td>None</td><td></td><td></td></tr>
- 	<% end %>
+
+
 
 <%
 	# SHIPPING CALCULATION
@@ -122,24 +191,21 @@
 
  %>
  
-	<tr><td>Total = $<%=session[:total]%></td><td> 
 
 	<!-- IF CODE IS PRESENT AND VALID, PRINT STATEMENT SHOWING SAVINGS  -->
 		<% if session[:code] == @code %> 
-			<tr><td style="color:red;">You saved $<%= @savings %> (<%= number_to_percentage(@discount_percentage * 100, precision: 0)%>)  by applying coupon code "<%=session[:code]%>" to your purchase !</td><td> 
+			<td style="color:red;">You saved $<%= @savings %> (<%= number_to_percentage(@discount_percentage * 100, precision: 0)%>)  by applying coupon code "<%=session[:code]%>" to your purchase !<td> 
 		<%	else %> 
 		<!-- ELSE PRINT NOTHING -->
-			<tr><td></td></tr> 
+			
 		<% end %>
 
 
  
 
 
-	</td>
+	
 
-</tr>
-</table>
 
 
 
@@ -174,7 +240,7 @@
 			<input type="hidden" name="return" value="http://127.0.0.1:3000/charges">
 			    <input type="hidden" name="rm" value="2">
 			    <input type="hidden" name="cbt" value="Return to The Store">
-			    <input type="hidden" name="cancel_return" value="http://127.0.0.1:3000/checkout">
+			    <input type="hidden" name="cancel_return" value="http://www.mercyxmankind.com/checkout">
 
 			    <!-- PayPal Checkout -->
 			<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest">

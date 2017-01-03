@@ -1,3 +1,4 @@
+	<%= javascript_include_tag "application.js" %>
 
 
 
@@ -8,7 +9,7 @@
 
 <ul class="checkout-nav">
 	<li><a href="/cart">CART</a> <span> > </span></li>
-	<li>SHIPPING INFORMATION<span> > </span></li>
+	<li>CUSTOMER INFORMATION<span> > </span></li>
 	<li>PAYMENT</li>
 </ul>
 
@@ -53,73 +54,19 @@ end
 
 <%= javascript_include_tag "jquery", "data-turbolinks-track" => true  %>
 
-<h1 class="h1-headers"> SHIPPING INFORMATION</h1>
+<h1 style="margin-top:70px;" class="h1-headers"> CUSTOMER INFORMATION</h1>
 <div class="line-separator"></div>
 <form method="get" id="shipping-form">
 	<table id="shipping-table">
 		<input required class="shipping-input" type="email" name="email" value="<%= @email%>" placeholder="EMAIL ADDRESS"><br><br>
 		<input required class="shipping-input" type="text" name="firstname" onkeyup="saveData()" value="<%= @firstname%>" placeholder="FIRST NAME"><br><br>
-		<input required class="shipping-input" type="text" name="lastname" value="<%= @lastname%>" placeholder="LAST NAME"><br><br>
-		<input required class="shipping-input" type="text" name="address" value="<%= @address%>" placeholder="STREET ADDRESS"><br><br>
+		<input required class="shipping-input" type="text" name="lastname" value="<%= @lastname%>" placeholder="LAST NAME"><br><br>		
+		<input class="shipping-input" type="text" name="company" value="<%= @company%>" placeholder="COMPANY (OPTIONAL)"><br><br>
+		<input required class="shipping-input" type="text" name="address" value="<%= @address%>" placeholder="ADDRESS"><br><br>
+		<input class="shipping-input" type="text" name="apt" value="<%= @apt%>" placeholder="APT, SUITE, ETC. (OPTIONAL)"><br><br>
 		<input required class="shipping-input" type="text" name="city" value="<%= @city%>" placeholder="CITY AND/OR PROVINCE"><br><br>
 
-
-		<select required name="select_state" class="shipping-select" value="<%= @state %>">
-			<option value="">STATE ↓</option>
-			<option value="">NON-USA</option>
-			<option value="AK">AK</option>
-			<option value="AZ">AZ</option>
-			<option value="AR">AR</option>
-			<option value="CA">CA</option>
-			<option value="CO">CO</option>
-			<option value="CT">CT</option>
-			<option value="DE">DE</option>
-			<option value="FL">FL</option>
-			<option value="GA">GA</option>
-			<option value="HI">HI</option>
-			<option value="ID">ID</option>
-			<option value="IL">IL</option>
-			<option value="IN">IN</option>
-			<option value="IA">IA</option>
-			<option value="KS">KS</option>
-			<option value="KY">KY</option>
-			<option value="LA">LA</option>
-			<option value="ME">ME</option>
-			<option value="MD">MD</option>
-			<option value="MA">MA</option>
-			<option value="MI">MI</option>
-			<option value="MN">MN</option>
-			<option value="MS">MS</option>
-			<option value="MO">MO</option>
-			<option value="MT">MT</option>
-			<option value="NE">NE</option>
-			<option value="NV">NV</option>
-			<option value="NH">NH</option>
-			<option value="NJ">NJ</option>
-			<option value="NM">NM</option>
-			<option value="NY">NY</option>
-			<option value="NC">NC</option>
-			<option value="ND">ND</option>
-			<option value="OH">OH</option>
-			<option value="OK">OK</option>
-			<option value="OR">OR</option>
-			<option value="PA">PA</option>
-			<option value="RI">RI</option>
-			<option value="SC">SC</option>
-			<option value="SD">SD</option>
-			<option value="TN">TN</option>
-			<option value="TX">TX</option>
-			<option value="UT">UT</option>
-			<option value="VT">VT</option>
-			<option value="VA">VA</option>
-			<option value="WA">WA</option>
-			<option value="WV">WV</option>
-			<option value="WI">WI</option>
-			<option value="WY">WY</option>
-	</select><br><br>
-
-		<input required class="shipping-input" type="number" name="zip" value="<%= @zip%>" placeholder="ZIP/POSTAL CODE"><br><br>
-		<select required class="shipping-select" name="country" id="country" onchange="checkCountry(this)">
+	<select required class="shipping-select" name="country" id="country" onchange="checkCountry(this)">
 	<option value="">COUNTRY ↓</option>
 	<option value="Afganistan">Afghanistan</option>
 	<option value="Albania">Albania</option>
@@ -370,11 +317,73 @@ end
 	<option value="Zimbabwe">Zimbabwe</option>
 	</select></td></tr><br><br>
 
+
+		<select required name="select_state" class="shipping-select" value="<%= @state %>">
+			<option value="">STATE ↓</option>
+			<option value="">NON-USA</option>
+			<option value="AK">AK</option>
+			<option value="AZ">AZ</option>
+			<option value="AR">AR</option>
+			<option value="CA">CA</option>
+			<option value="CO">CO</option>
+			<option value="CT">CT</option>
+			<option value="DE">DE</option>
+			<option value="FL">FL</option>
+			<option value="GA">GA</option>
+			<option value="HI">HI</option>
+			<option value="ID">ID</option>
+			<option value="IL">IL</option>
+			<option value="IN">IN</option>
+			<option value="IA">IA</option>
+			<option value="KS">KS</option>
+			<option value="KY">KY</option>
+			<option value="LA">LA</option>
+			<option value="ME">ME</option>
+			<option value="MD">MD</option>
+			<option value="MA">MA</option>
+			<option value="MI">MI</option>
+			<option value="MN">MN</option>
+			<option value="MS">MS</option>
+			<option value="MO">MO</option>
+			<option value="MT">MT</option>
+			<option value="NE">NE</option>
+			<option value="NV">NV</option>
+			<option value="NH">NH</option>
+			<option value="NJ">NJ</option>
+			<option value="NM">NM</option>
+			<option value="NY">NY</option>
+			<option value="NC">NC</option>
+			<option value="ND">ND</option>
+			<option value="OH">OH</option>
+			<option value="OK">OK</option>
+			<option value="OR">OR</option>
+			<option value="PA">PA</option>
+			<option value="RI">RI</option>
+			<option value="SC">SC</option>
+			<option value="SD">SD</option>
+			<option value="TN">TN</option>
+			<option value="TX">TX</option>
+			<option value="UT">UT</option>
+			<option value="VT">VT</option>
+			<option value="VA">VA</option>
+			<option value="WA">WA</option>
+			<option value="WV">WV</option>
+			<option value="WI">WI</option>
+			<option value="WY">WY</option>
+	</select><br><br>
+
+		<input required class="shipping-input" type="number" name="zip" value="<%= @zip%>" placeholder="ZIP/POSTAL CODE"><br><br>
+
+		<input class="shipping-input" type="text" name="phone" value="<%= @phone%>" placeholder="PHONE (OPTIONAL)"><br><br>
+	
+
 	<select required class="shipping-select" name="shipping">
 		<option value="">SHIPPING METHOD ↓</option>
 		<option id="free_ship" name="shipping" value="Free Shipping" <%=@free_shipping%> />USPS (Priority Mail®) | 3-6 Days | Free</option>
 		<option id="inter_ship" name="shipping" value="International Shipping" <%=@premium_shipping%> />USPS (First-Class International® | 7-10 Days | $11.99</option>
 	</select>
+
+
 	<br>
 	<br>
 
@@ -385,7 +394,7 @@ end
 	</table>
 	<br><br><br>
 
-	<input id="checkout-btn" type="submit" value="Checkout ->">
+	<input id="checkout-btn" type="submit" value="Review and Payment">
 
 
 	<p style="font-family: 'Helvetica', sans-serif;text-align: center;color: gray;font-size: 12px;">Please fill out all fields completely and accurately before proceeding</p>
