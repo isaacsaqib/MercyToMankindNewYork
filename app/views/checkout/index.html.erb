@@ -73,7 +73,16 @@
 		<ul id="shipping-info-list">
 			<li><%=session[:company]%></li>
 			<li><%=session[:firstname]%> <%=session[:lastname]%></li> 
-			<li><%=session[:address]%> APT./SUITE <%= session[:apt] %></li> 
+			<li>
+
+			<%=session[:address]%>
+			<!-- IF APT SESSION IS VALID, PRINT APT TEXT, ELSE NO. -->
+			<% if session[:apt] != "" %>
+			 	APT./SUITE <%= session[:apt] %> </li>
+			 <%else%>
+
+			 <% end %>
+
 			<li><%=session[:city]%> <%=session[:state]%> <%=session[:zip]%></li> 
 			<li><%=session[:country]%></li> 
 			<li><%=session[:phone]%></li><br><br>
