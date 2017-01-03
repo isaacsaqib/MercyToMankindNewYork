@@ -15,7 +15,7 @@ if params[:firstname]
  	session[:code] = params[:code]
  	session[:tax] = 'null'
  	if params[:select_state]=='NY'
- 		session[:tax] = 0.087
+ 		session[:tax] = 0.0875
  	end
  
  	

@@ -1,4 +1,4 @@
-
+	
 <title>Checkout | MXMNY</title>
 <%= javascript_include_tag "application.js" %>
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -126,7 +126,10 @@
 
 			<li>
 			<h1 style="font-weight: 700;"><span class="total-headings">TOTAL:</span> 
-				<%= session[:total] %>
+				<% @total1 = @subtotal+@total_tax %>
+
+				<%= number_to_currency(@total1) %>
+
 			</h1> 
 			</li>
 			
