@@ -16,7 +16,7 @@
 
 <!-- Start cart -->
 
-<ul id="cart-list" class="checkout-listing-ul">
+<ul id="cart-list">
 	<% if !@cart.blank? %> <!-- If the cart is NOT empty -->
 		<% @cart.each do |key, count| %> <!-- iterate over each key in the cart -->
 			<% 
