@@ -71,12 +71,12 @@
 	<div id="shipping-info-div">
 
 		<ul id="shipping-info-list">
-
+			<li><%=session[:company]%></li>
 			<li><%=session[:firstname]%> <%=session[:lastname]%></li> 
-			<li><%=session[:address]%></li> 
+			<li><%=session[:address]%> APT./SUITE <%= session[:apt] %></li> 
 			<li><%=session[:city]%> <%=session[:state]%> <%=session[:zip]%></li> 
 			<li><%=session[:country]%></li> 
-			<li><%=session[:email]%></li><br><br>
+			<li><%=session[:phone]%></li><br><br>
 			<li> <a style="font-weight:700;color:black;" href="/shipping">EDIT SHIPPING DETAILS ></a> </li>
 		</ul>
 

@@ -18,6 +18,9 @@
 @firstname = ''
 @lastname = ''
 @email = ''
+@phone = ''
+@company = ''
+@apt = ''
 @address = ''
 @city = ''
 @state = ''
@@ -35,7 +38,10 @@ if session[:firstname]
 @state = session[:state]
 @zip = session[:zip]
 @code = session[:code]
-@country = session[:country]
+@phone = session[:phone]
+@apt = session[:apt]
+@code = session[:code]
+@company = session[:company]
 if session[:shipping] == 'Free Shipping'
 	@free_shipping = 'checked'
 end
