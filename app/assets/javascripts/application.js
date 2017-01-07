@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require application.js
+//= require unslider-min.js
 //= require_tree .
 
 
@@ -184,6 +185,7 @@ $(document).ready(function(){
 	HiddenListingNavSlideDown(2, "outerwear");
 	HiddenListingNavSlideDown(4, "apparel");
 	HiddenListingNavSlideDown(6, "accessories");
+
 
 
 	/* Wristwear */

@@ -1,14 +1,33 @@
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-<%= stylesheet_link_tag    'sweetalert', media: 'all', 'data-turbolinks-track' => true %>
+	<script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
 <%= javascript_include_tag "application.js" %>
+<%= javascript_include_tag "jquery.event.move.js" %>
+<%= javascript_include_tag "jquery.event.swipe.js" %>
+<%= stylesheet_link_tag    'unslider', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag "unslider-min	.js" %>
+
+<%= stylesheet_link_tag    'sweetalert', media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag "sweet-alert.min.js" %>
 
+
+	<script>
+		jQuery(document).ready(function($) {
+			$('.my-slider').unslider({
+				speed: 700,
+				arrows: false
+
+			})
+		});
+	</script>
 
 
 
 <title><%= @listing.name %> | MXMNY</title>
 
 <body style="background-image:none;">
+
+
 
 
 
@@ -19,49 +38,17 @@
     <div class="magnifier-preview" id="preview" style="width: 400px; height: 333px">Starry Night Over The Rhone<br>by Vincent van Gogh</div>
 </div> -->
 
-
-
-	<div id="listings-show-div">
-	   <ul id="listings-show-pictures">
-		   
-		   <% @pictures.each do |pic| %>
-
-		      <li>
-			      <a href="/pictures/<%=pic.id%>">
-			      	<img class="" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'>
-			      </a>
-
-			      	<% if logged_in? %>
-			      	<%= pic.description %>
-			      	<%= pic.link %> 
-
-
-			      <br>
-
-				 	<%= form_for pic, remote: true, :html => {:class => "edit-form"} do |f| %>
-				      	<%= f.text_field :description, :placeholder => "DESCRIPTION" %>
-				      	<%= f.text_field :link, :placeholder => "LINK FOR SLIDESHOW" %>
-				      	<%= f.label :default %><%= f.check_box :default %>
-				      	<%= f.submit "Update", :id => "update-button"  %><br><br>
-				    <% end %>
-
-				    <%= form_for pic, remote: true, method: :delete, :html => {:class => "delete-form"} do |f| %>
-				    	<% f.text_field :image %>
-				    	<%= f.submit "Delete Picture", :id => "delete-picture-submit" %>
-				    <% end %>
-
-				    <br><br>
-			     		<!-- <button id="picture-delete"> Delete Picture </button> -->
-		      </li>
-
-			  		<% end %>
-
-			<% end %> 
-	    </ul>
-	</div>
-</li>
-
-
+<div class="my-slider">
+	<ul>
+	<% @pictures.each do |pic| %>
+		<li>
+			<a href="/pictures/<%=pic.id%>">
+				<img class="list-pic" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'>
+			</a>
+		</li>
+	<% end %>
+	</ul>
+</div>
 
 
 

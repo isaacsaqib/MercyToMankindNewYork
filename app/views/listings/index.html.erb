@@ -5,7 +5,7 @@
 
 	<h1 class="logo-text-h1">MERCY X MANKIND</h1>
 	<h3 class="logo-text-h3">NEW YORK</h3>
-	<hr>
+	<hr class="mobile-hr-hidden">
 
 	<div id="listings-index-div">
 		<ul id="listings-index-nav">
@@ -36,6 +36,8 @@
  		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">NEW</h1>
+
+			<div class="mobile-line-separator"></div>
 			<% @listings.each do |listing| %>
 
 				<% if listing.is_new %>
@@ -74,6 +76,8 @@
 
 		            	</figcaption>
 				</a>
+				<p class="mobile-figure-p"><%= listing.name %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p> 
 
 		            	<% else %>
 
@@ -102,7 +106,7 @@
 	</tr>
 </table>
 
-<hr>
+<hr class="mobile-hr-hidden">
 <!-- <img style="width:60%;margin:0 auto;display:block;" src="assets/intro-tops.png"> -->
 
 
@@ -111,6 +115,7 @@
  		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">OUTERWEAR \ JACKETS</h1>
+			<div class="mobile-line-separator"></div>
 
 			<% @listings_jackets.each do |listing| %>
 
@@ -150,6 +155,8 @@
 
 		            	</figcaption>
 				</a>
+				<p class="mobile-figure-p"><%= listing.name %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
 
 		            	<% else %>
 		              		N/A
@@ -181,7 +188,7 @@
 	<li></li>
 	<li><img src="assets/striped.png"></li>
 </ul> -->
-<hr>
+<hr class="mobile-hr-hidden">
 
 
 
@@ -190,6 +197,7 @@
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">TOPS \ SWEATSHIRTS</h1>
+			<div class="mobile-line-separator"></div>
 
 
 			<% @listings_hoodies.each do |listing| %>
@@ -227,6 +235,9 @@
 
 		            	</figcaption>
 		           </a>
+
+		           <p class="mobile-figure-p"><%= listing.name %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
 		            	<% else %>
 		              		N/A
 		            	<% end %>
@@ -256,7 +267,7 @@
 </table>
 
 
-<hr>
+<hr class="mobile-hr-hidden">
 
 
 <table class="products" id="long_sleeves">
@@ -264,6 +275,7 @@
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">TOPS \ LONG SLEEVE</h1>
+			<div class="mobile-line-separator"></div>
 
 			<% @listings_long_sleeves.each do |listing| %>
 
@@ -301,6 +313,9 @@
 		            	</figcaption>
 		            </a>
 
+		            <p class="mobile-figure-p"><%= listing.name %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
+
 		            	<% else %>
 		              		N/A
 		            	<% end %>
@@ -329,7 +344,7 @@
 	</tr>
 </table>
 
-<hr>
+<hr class="mobile-hr-hidden">
 
 
 <table class="products" id="short_sleeves">
@@ -337,6 +352,7 @@
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">TOPS \ SHIRTS</h1>
+			<div class="mobile-line-separator"></div>
 			<% @listings_short_sleeves.each do |listing| %>
 
 				<% if listing.default_picture %>
@@ -373,6 +389,9 @@
 		            	</figcaption>
 		            </a>
 
+		            <p class="mobile-figure-p"><%= listing.name %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
+
 		            	<% else %>
 		              		N/A
 		            	<% end %>
@@ -401,7 +420,7 @@
 	</tr>
 </table>
 
-<hr>
+<hr class="mobile-hr-hidden">
 
 
 <table class="products" id="tees">
@@ -409,6 +428,7 @@
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">TOPS \ TEES</h1>
+			<div class="mobile-line-separator"></div>
 
 			<% @listings_tees.each do |listing| %>
 
@@ -446,6 +466,9 @@
 		            	</figcaption>
 		            </a>
 
+		            <p class="mobile-figure-p"><%= listing.name %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
+
 		            	<% else %>
 		              		N/A
 		            	<% end %>
@@ -474,7 +497,7 @@
 	</tr>
 </table>
 
-<hr>
+<hr class="mobile-hr-hidden">
 
 
 
@@ -483,6 +506,7 @@
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">TOPS \ TANKS</h1>
+			<div class="mobile-line-separator"></div>
 
 			<% @listings_tanks.each do |listing| %>
 
@@ -520,6 +544,9 @@
 		            	</figcaption>
 		            </a>
 
+		            <p class="mobile-figure-p"><%= listing.name %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
+
 		            	<% else %>
 		              		N/A
 		            	<% end %>
@@ -548,7 +575,7 @@
 	</tr>
 </table>
 
-<hr>
+<hr class="mobile-hr-hidden">
 
 
 
@@ -557,6 +584,7 @@
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">DENIM</h1>
+			<div class="mobile-line-separator"></div>
 			<% @listings_denim.each do |listing| %>
 
 				<% if listing.default_picture %>
@@ -591,6 +619,8 @@
 
 		            	</figcaption>
 		            </a>
+		            <p class="mobile-figure-p"><%= listing.name %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
 
 		            	<% else %>
 		              		N/A
@@ -619,7 +649,7 @@
 </table>
 
 
-<hr>
+<hr class="mobile-hr-hidden">
 
 
 <table class="products" id="bottoms">
@@ -627,6 +657,7 @@
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">BOTTOMS</h1>
+			<div class="mobile-line-separator"></div>
 			<% @listings_bottoms.each do |listing| %>
 
 				<% if listing.default_picture %>
@@ -662,6 +693,9 @@
 		            	</figcaption>
 		            </a>
 
+		            <p class="mobile-figure-p"><%= listing.name %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
+
 		            	<% else %>
 		              		N/A
 		            	<% end %>
@@ -689,7 +723,7 @@
 </table>
 
 
-<hr>
+<hr class="mobile-hr-hidden">
 
 
 <table class="products" id="head">
@@ -697,6 +731,7 @@
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">HEADWEAR</h1>
+			<div class="mobile-line-separator"></div>
 			<% @listings_head.each do |listing| %>
 
 				<% if listing.default_picture %>
@@ -732,6 +767,9 @@
 		            	</figcaption>
 		            </a>
 
+		            <p class="mobile-figure-p"><%= listing.name %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
+
 		            	<% else %>
 		              		N/A
 		            	<% end %>
@@ -758,7 +796,7 @@
 	</tr>
 </table>
 
-<hr>
+<hr class="mobile-hr-hidden">
 
 
 
@@ -767,6 +805,7 @@
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">ACCESSORIES</h1>
+			<div class="mobile-line-separator"></div>
 
 			<% @listings_accessories.each do |listing| %>
 
@@ -802,6 +841,9 @@
 
 		            	</figcaption>
 		            </a>
+
+		            <p class="mobile-figure-p"><%= listing.name %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
 
 		            	<% else %>
 		              		N/A
