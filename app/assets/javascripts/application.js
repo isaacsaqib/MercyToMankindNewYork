@@ -193,7 +193,7 @@ $(document).ready(function(){
 
 	})
 
-	$('.sliderman').unslider('initSwipe');
+	$('.my-slider').unslider('initSwipe');
 
 	/* Wristwear */
 
