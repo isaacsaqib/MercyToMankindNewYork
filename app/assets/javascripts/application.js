@@ -188,7 +188,7 @@ $(document).ready(function(){
 
 
 	$('.my-slider').unslider({
-		speed: 700,
+		speed: 200,
 		arrows: false
 
 	})
