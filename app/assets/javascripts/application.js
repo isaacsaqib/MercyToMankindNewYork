@@ -187,6 +187,13 @@ $(document).ready(function(){
 	HiddenListingNavSlideDown(6, "accessories");
 
 
+	$('.my-slider').unslider({
+		speed: 700,
+		arrows: false
+
+	})
+
+	$('.sliderman').unslider('initSwipe');
 
 	/* Wristwear */
 

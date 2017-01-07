@@ -38,8 +38,12 @@ hr {
 }
 
 #my-slider {
+	display: none;
 
+}
 
+.unslider {
+	display: none;
 }
 
 
@@ -1928,6 +1932,20 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 	.mobile-hr-hidden {
 		display: none;
 	}
+
+	#my-slider {
+		display: block;
+
+	}
+
+	.unslider {
+		display: block;
+	}
+
+	#listings-show-div {
+		display: none;
+	}
+
 
 
 

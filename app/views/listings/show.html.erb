@@ -11,15 +11,9 @@
 <%= javascript_include_tag "sweet-alert.min.js" %>
 
 
-	<script>
-		jQuery(document).ready(function($) {
-			$('.my-slider').unslider({
-				speed: 700,
-				arrows: false
 
-			})
-		});
-	</script>
+
+
 
 
 
@@ -49,6 +43,55 @@
 	<% end %>
 	</ul>
 </div>
+
+<!-- mobile slider -->
+
+<div id="listings-show-div">
+	   <ul id="listings-show-pictures">
+		   
+		   <% @pictures.each do |pic| %>
+
+		      <li>
+			      <a href="/pictures/<%=pic.id%>">
+			      	<img class="" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'>
+			      </a>
+
+			      	<% if logged_in? %>
+			      	<%= pic.description %>
+			      	<%= pic.link %> 
+
+
+			      <br>
+
+				 	<%= form_for pic, remote: true, :html => {:class => "edit-form"} do |f| %>
+				      	<%= f.text_field :description, :placeholder => "DESCRIPTION" %>
+				      	<%= f.text_field :link, :placeholder => "LINK FOR SLIDESHOW" %>
+				      	<%= f.label :default %><%= f.check_box :default %>
+				      	<%= f.submit "Update", :id => "update-button"  %><br><br>
+				    <% end %>
+
+				    <%= form_for pic, remote: true, method: :delete, :html => {:class => "delete-form"} do |f| %>
+				    	<% f.text_field :image %>
+				    	<%= f.submit "Delete Picture", :id => "delete-picture-submit" %>
+				    <% end %>
+
+				    <br><br>
+			     		<!-- <button id="picture-delete"> Delete Picture </button> -->
+		      </li>
+
+			  		<% end %>
+
+			<% end %> 
+	    </ul>
+	</div>
+</li>
+
+
+
+
+
+
+
 
 
 

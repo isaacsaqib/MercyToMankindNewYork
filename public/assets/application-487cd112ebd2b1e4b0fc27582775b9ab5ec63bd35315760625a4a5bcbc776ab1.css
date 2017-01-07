@@ -10,18 +10,15 @@ body {
 }
 
 h1 {
-	font-family: 'Copperplate-Light';
+	font-family: 'Cinzel';
 	font-weight: 100;
 }
 
 h3 {
-	font-family: 'Copperplate-Light';
+	font-family: "Cinzel";
 	font-weight: 100;
 }
 
-a {
-	text-decoration: none;
-}
 
 span {
 	padding:0px 10px 0px 10px;
@@ -33,6 +30,154 @@ hr {
     margin: 1em 0;
     padding: 0; 
 
+
+}
+
+.list-pic {	
+	width: 95%;
+}
+
+#my-slider {
+	display: none;
+
+}
+
+.unslider {
+	display: none;
+}
+
+
+
+.mobile-line-separator {
+	background: #E8E8E8;
+    border-bottom: .5px solid #E8E8E8;
+    width: 96%;
+    text-align: center;
+    display: none;
+    margin-bottom: 30px
+}
+
+
+.mobile-figure-p {
+	text-align: left;
+	display: none;
+}
+
+/*MAKING PRODUCT NAME ON MOBILE BOLD*/
+
+.products > tbody > tr > td > ul > li > figure > p:nth-child(3) {
+	font-weight: 700;
+}
+
+#error-div {
+	margin-top: 250px;
+	text-align: center;
+}
+
+#error-div p {
+	margin: 0px;
+	font-family: "Cinzel";
+	font-size: 14px;
+
+}
+
+.total-headings {
+	font-weight: 400;
+}
+
+#shipping-info-div {
+    background-color: white;
+    height: 608px;
+    width: 42%;
+    margin-top:0px;
+    float: left;
+}
+
+#total-list {
+	list-style: none;
+	padding-top: 20px;
+
+
+}
+
+#total-list li {
+	font-size: 10px;
+	font-weight: 700;
+	color: black;
+	font-family: 'Cinzel';
+	text-align: center;
+}
+
+
+
+#shipping-info-list {
+	font-family: 'Cinzel';
+	font-size: 12px;
+	margin-top: 50px;
+	list-style: none;
+	margin-bottom: 50px;
+	padding-top: 30px;
+}
+
+
+#checkout-listing-table {
+    float: right;
+    width: 55%;
+    background-color: white;
+    margin-right: 40px;
+    border-left: 1px solid #E1E1E1;
+    margin-top:10px;
+    overflow: scroll;
+    height: 600px;
+}
+
+#checkout-listing-table > tbody > tr > td > a > img {
+	width: 100%;
+	padding-left: 140px;
+}
+
+.checkout-listing-ul {
+	margin-top: 100px;
+}
+
+.checkout-listing-ul > li {
+
+    width: 18%;
+    padding: 10px;
+
+    margin: 10px;
+
+}
+
+.checkout-listing-ul > li > p {
+	font-size: 10px;
+	font-family: "Cinzel";
+}
+
+
+.checkout-listing-ul > li > a > img {
+	width: 100%;
+}
+
+#checkout-listing-table > tbody > tr > td:nth-child(1) {
+	width: 17%;
+	padding: 10px;
+}
+
+#checkout-listing-table > tbody > tr > td > p {
+	width: 100%;
+	padding:0px;
+
+}
+
+
+.checkout-listing-div > ul > li > p {
+	font-family: 'Cinzel';
+	font-size: 10px;
+}
+
+#checkout-listing-table > tbody > tr > td > p {
+	font-size: 10px;
 }
 
 
@@ -273,7 +418,7 @@ hr {
 #checkout-table {
 	padding-top:100px;
 	color: gray;
-	font-family: 'Helvetica';
+	font-family: 'Cinzel', serif;
 }
 
 #shipping-form {
@@ -292,6 +437,7 @@ hr {
 .checkout-nav li {
 	display: inline-block;
 	padding:0px 5px 0px 5px;
+	font-family: 'Cinzel', serif;
 }
 
 .checkout-nav li a {
@@ -309,7 +455,7 @@ hr {
     overflow: hidden;
     position: relative;
     width: 191px;
-    overflow: scroll;
+    /*overflow: scroll;*/
 }
 
 
@@ -395,14 +541,30 @@ hr {
 }*/
 
 
-#cart-table > tbody > tr > td > a > img { /* PRODUCT IMAGE SIZE IN CART */
-	width: 80%;
+#cart-list {
+	margin-bottom: 100px;
+	margin-top: 100px;
 
 }
 
-#cart-table > tbody > tr > td {
-	width: 40%;
+#cart-list li {
+	display: inline-block;
+	margin-bottom: 30px;
+	width: 20%;
+
 }
+
+#cart-list a {
+	color: black;
+	font-size: 10px;
+}
+
+#cart-list > li > a > img {
+	width: 100%;
+}
+
+
+
 
 #edit-details-button {
 	background-color: black;
@@ -420,7 +582,7 @@ hr {
 .continue-button {
 	background-color: black;
 	color: white;
-	font-family: 'Helvetica';
+    font-family: 'Cinzel', serif;
 	font-weight: 500;
 	border-radius: 0px;
     width: 40%;
@@ -431,7 +593,7 @@ hr {
 }
 .continue-button a {
 	color: white;
-	font-family: 'Helvetica';
+    font-family: 'Cinzel', serif;
 	font-weight: 500;
 	text-decoration: none;
 }
@@ -465,11 +627,14 @@ hr {
 }
 
 .shipping-select {
-	width: 50%;
+	width: 52%;
+	    font-family: 'Cinzel', serif;
     padding:20px;
     margin: 0;
     -webkit-border-radius:0px;
     -moz-border-radius:4px;
+    	box-shadow: 0 0 0 1px #d9d9d9;
+
     border-radius:4px;
     background: #f8f8f8;
     color:#888;
@@ -480,27 +645,31 @@ hr {
     -moz-appearance:none;
     appearance:none;
     cursor:pointer;
+
 }
 
 .shipping-input {
 	width: 50%;
 	height: 8%;
-	font-size: 20px;
-	text-align: center;
-	font-family: 'Helvetica';
+	font-size: 13px;
+	text-align: left;
+font-family: 'Cinzel', serif;
 	font-weight: 500;
 	background: #f8f8f8;
 	border:none;
+	box-shadow: 0 0 0 1px #d9d9d9;
+	padding: 15px;
 
 }
 
 .shipping-input:hover {
 	border:2px solid black;
+	transition:.1s;
 }
 
 .logo-text-h1 {
 	padding-top: 40px;	
-	font-family: "Copperplate-Light";
+	    font-family: 'Cinzel', serif;
 	font-weight: 100;
 	font-size: 35px;
 	letter-spacing: 4px;
@@ -509,7 +678,7 @@ hr {
 }
 
 .logo-text-h3 {
-	font-family: "Copperplate-Light";
+	    font-family: 'Cinzel', serif;
 	font-weight: 100;
 	margin-bottom: 50px;
 	margin-top: 0px;
@@ -561,7 +730,7 @@ hr {
 	margin: 0 auto;
 	background-color: black;
 	color: white;
-	font-family: 'Helvetica';
+    font-family: 'Cinzel', serif;
 	font-weight: 500;
 	border-radius: 0px;
     width: 50%;
@@ -583,7 +752,7 @@ hr {
 
 #customer-care li > p {
 	font-size: 12px;
-	font-family: 'Helvetica';
+    font-family: 'Cinzel', serif;
 	font-weight: 500;
 	text-align: center;
 	margin-left: 30px;
@@ -593,10 +762,11 @@ hr {
 
 .h1-headers {
 	text-align: center;
-	font-family: 'Helvetica';
-	font-weight: 500;
-	color:gray;
+	font-family: 'Cinzel', serif;
+	font-weight: 400;
+	color:black;
 	font-size: 24px;
+
 }
 
 #shipping-table input {
@@ -631,6 +801,7 @@ option {
 
 .hidden-nav {
 	padding-left: 10px;
+
 }
 
 #listings-index-nav li {
@@ -826,7 +997,6 @@ option {
 }
 
 .line-separator {
-	padding: 1px;
     background: #E8E8E8;
     border-bottom: .5px solid #E8E8E8;
     width: 80%;
@@ -834,6 +1004,8 @@ option {
     margin: 0 auto;
     display: block;
 }
+
+
 
 ul {
 	padding: 0px;
@@ -915,7 +1087,7 @@ table {
 }
 
 .wrapper p {
-	font-family: 'Helvetica';
+	font-family: 'Cinzel';
 }
 
 
@@ -1053,7 +1225,7 @@ header a {
 	padding-bottom:0px;
 	margin-bottom: 15px;
 	font-size: 15px;
-	font-family: 'Helvetica';
+	    font-family: 'Cinzel', serif;
 	font-weight: 500;
 	margin-top:10px;
 	/*border-bottom: 2px solid black;*/
@@ -1065,7 +1237,7 @@ header a {
 	color: black;
 	padding: 0px;
 	text-decoration: none;
-	font-family: 'Helvetica';
+	    font-family: 'Cinzel', serif;
 	font-weight: 500;
 }
 
@@ -1190,18 +1362,16 @@ header a {
 
 }
 
-td {
+/*td {
 	text-align: center;
-	font-family: 'Helvetica';
-	font-weight: 500;
+	font-family: 'Cinzel', serif;
+	font-size: 10px;
 	/*padding:40px;*/
 
-}
+/*} */
 
 th {
- 	/*font-family: 'Helvetica';
-	font-weight: 500;*/
- 	/*font-weight: 600;*/
+    font-family: 'Cinzel', serif;
  	font-size: 12px;
 
 }
@@ -1303,7 +1473,7 @@ button.stripe-button-el {
 
 .stripe-button-el span {
 	visibility: hidden;
-	width: 200px;
+	width: 210px;
 	height: 60px;
 }
 
@@ -1314,7 +1484,7 @@ button.stripe-button-el {
 	background-image: none;
 	border-radius: 0px;
 	padding:10px 60px 10px 60px;
-	content: 'Credit Card';
+	content: 'Pay With Card';
 	visibility: visible;
 	position: absolute;
 	right: 16px;
@@ -1371,34 +1541,72 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 @media screen and (max-width: 1000px) {
 	
+	.total-div {
+		width: 70%;
+		height: 370px;
+	}
+
+	#shipping-info-list {
+		font-size: 25px;
+	}
+
+	#total-list li {
+		font-size: 20px;
+		padding-left: 15px;
+	}
+
+	#checkout-table > tbody > tr > td {
+		font-size: 20px;
+	}
+
+
+	#checkout-table > tbody > tr > td:nth-child(1) {
+		color: black;
+	}
+
+	#cart-table {
+		margin: 0 auto;
+		margin-top: 60px;
+    	margin-bottom: 50px;
+	}
 	#checkout-btn {
-		height: 160px;
-		width: 90%;
-		font-size: 60px;
+		width: 80%;
+    	height: 100px;
+    	font-size: 30px;
 	}
 
 	.checkout-nav {
     
-    	font-size: 30px;
+    	font-size: 12px;
     }
+
+    .continue-button {
+    	width: 80%;
+    	height: 100px;
+    	font-size: 30px;
+	}
 
 	.shipping-input {
 	    width: 90%;
 	    height: 8%;
-	    font-size: 60px;
-	    text-align: center;
-	    font-family: 'Helvetica';
-	    font-weight: 500;
+	    font-size: 30px;
+	    text-align: left;
+	    font-family: 'Cinzel', serif;
+	    /*font-weight: 500;*/
 	    background: #f8f8f8;
 	    border: none;
+	   	padding: 15px;
 		
 	}
 
 	.shipping-select {
-	width:90%;
-	font-size: 60px;
+	    font-family: 'Cinzel', serif;
+		    padding: 15px;
+	width:93%;
+	font-size: 30px;
     padding:20px;
     margin: 0;
+    box-shadow: 0 0 0 1px #d9d9d9;
     -webkit-border-radius:0px;
     -moz-border-radius:4px;
     border-radius:4px;
@@ -1413,10 +1621,16 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 }
 
 	.col ul {
-	    text-align: left;
+	    text-align: center;
 	    padding-left: 0px;
 	
 	}
+
+
+	.mobile-figure-p {
+		display: block;
+	}
+
 	#collections-show-pictures {
 		/*width: 43%;*/
 	}
@@ -1489,6 +1703,8 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 		position:static;
 
 	}
+
+
 
 	.hidden-nav {
 		padding: 0px;
@@ -1578,15 +1794,20 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 	}
 
 	.listings-figure {
-	    height: 370px;
-	    width: 280px;
+	   height: 691px;
+    	width: 464px;	
 	}
 
 	.products li {
 	
-		width: 28%;
+		width: 49%;
 
 	}
+
+	.product-heading-h1 {
+    font-size: 31px;
+    text-align: left;
+}
 
 	table {
 		margin-left: 20px;
@@ -1613,6 +1834,120 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 		height: initial;
 	}
 
+	.checkout-listing-ul > li {
+		width: 30%;
+	}
+
+	.checkout-listing-ul > li > p {
+		font-size:20px;
+	}
+
+	#cart-list a {
+		font-size:20px;
+	}
+
+	.stripe-button-el span {
+		visibility: hidden;
+	    width: 560px;
+	    height: 210px;
+	}
+
+
+	.stripe-button-el span:after {
+	    color: white;
+	    background-color: black;
+	    background-image: none;
+	    border-radius: 0px;
+	    padding: 60px 150px 70px 150px;
+	    content: 'Pay With Card';
+	    visibility: visible;
+
+	    font-size: 39px;
+	    right: 6px;
+	}
+
+	body > div.wrapper > table > tbody > tr:nth-child(2) > td > form > input[type="image"]:nth-child(14) {
+		height: 140px;
+	}
+
+	#shipping-info-div {
+		background-color: white;
+	    height: 608px;
+	    width: 42%;
+	    margin-top: 0px;
+	    float: initial;
+	    margin: 0 auto;
+	    margin-bottom: 120px;
+	}
+
+	#checkout-listing-table {
+	   	float: initial;
+	    width: 100%;
+	    background-color: white;
+	    margin-bottom: 40px;
+	    margin-top: 0px;
+	    margin: 0 auto;
+	    overflow: scroll;
+	    border-left: 0px;
+
+
+	}
+
+	/*IMG TD*/
+	#checkout-listing-table > tbody > tr > td:nth-child(1) { 
+		width: 64%;
+    	padding: 10px;
+
+	}
+	/*IMG*/
+	#checkout-listing-table > tbody > tr > td > a > img {
+		width: 100%;
+	    padding-left: 0px;
+	}
+
+	/*P TAG*/
+	#checkout-listing-table > tbody > tr > td > p {
+		width: 100%;
+    	padding: 0px;
+    	font-size: 20px;
+	}
+
+	#checkout-div-seperator {
+		margin-top:80px;
+	}
+
+	#cart-list li {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 100px;
+	}
+	
+
+		.mobile-line-separator {
+		display: block;
+	}
+
+
+	.mobile-hr-hidden {
+		display: none;
+	}
+
+	#my-slider {
+		display: block;
+
+	}
+
+	.unslider {
+		display: block;
+	}
+
+	#listings-show-div {
+		display: none;
+	}
+
+
+
 
 }
 
@@ -1626,7 +1961,18 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 		width: initial;
 	}
 
+	.shipping-select {
+		/*width: 5%;*/
+	}
 
+
+}
+
+
+@media screen and (max-width: 1350px) {
+	#checkout-listing-table {
+		width: 50%;
+	}
 
 }
 
@@ -2563,6 +2909,41 @@ body.stop-scrolling {
     -moz-transform: translateY(145%);
     -o-transform: translateY(145%);
     transform: translateY(145%); } }
+/**
+ *   Here's where everything gets included. You don't need
+ *   to change anything here, and doing so might break
+ *   stuff. Here be dragons and all that.
+ */
+/**
+ *   Default variables
+ *
+ *   While these can be set with JavaScript, it's probably
+ *   better and faster to just set them here, compile to
+ *   CSS and include that instead to use some of that
+ *   hardware-accelerated goodness.
+ */
+
+.unslider-nav ol {
+  list-style: none;
+  text-align: center;
+}
+.unslider-nav ol li {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 4px;
+  background: transparent;
+  border-radius: 5px;
+  overflow: hidden;
+  text-indent: -999em;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+.unslider-nav ol li.unslider-active {
+  background: #fff;
+  cursor: default;
+}
+.unslider{overflow:auto;margin:0;padding:0}.unslider-wrap{position:relative}.unslider-wrap.unslider-carousel>li{float:left}.unslider-vertical>ul{height:100%}.unslider-vertical li{float:none;width:100%}.unslider-fade{position:relative}.unslider-fade .unslider-wrap li{position:absolute;left:0;top:0;right:0;z-index:8}.unslider-fade .unslider-wrap li.unslider-active{z-index:10}.unslider li,.unslider ol,.unslider ul{list-style:none;margin:0;padding:0;border:none}.unslider-arrow{position:absolute;left:20px;z-index:2;cursor:pointer}.unslider-arrow.next{left:auto;right:20px}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -2575,6 +2956,9 @@ body.stop-scrolling {
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+
+
+
 
 
 
