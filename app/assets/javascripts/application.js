@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.event.move.js
+//= require jquery.event.swipe.js
 //= require turbolinks
 //= require application.js
 //= require unslider-min.js
