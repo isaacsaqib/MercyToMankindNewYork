@@ -12,11 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.event.move.js
-//= require jquery.event.swipe.js
-//= require turbolinks
+//= require swiper.jquery.js
+//= require swiper.jquery.min.js
 //= require application.js
-//= require unslider-min.js
+//= require swiper.js
+//= require swiper.min.js
+//= require turbolinks
 //= require_tree .
 
 
@@ -189,62 +190,35 @@ $(document).ready(function(){
 	HiddenListingNavSlideDown(6, "accessories");
 
 
-	$('.my-slider').unslider({
-		autoplay: true,
-	   speed: 1000,    //  The speed to animate each slide (in milliseconds)  [default: 750]
-		delay: 6000,
-		arrows: false,
-		swipe: true, 
-		swipeThreshold: 0.2			
+  //initialize swiper when document ready  
+    var mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+	  	direction: 'horizontal',
+		loop: true,
+      	effect: "fade",
+      	fade: {
+      		crossFade: true
+      	},
+       	pagination: '.swiper-pagination',
+       	paginationClickable: true,
+
+    });        
+
+	// $('.my-slider').unslider({
+	// 	autoplay: true,
+	//    	speed: 1000,    //  The speed to animate each slide (in milliseconds)  [default: 750]
+	// 	delay: 6000,
+	// 	arrows: false,
+	// 	swipe: true
 
 
-	})
+	// })
 
-	$('.my-slider').unslider('initSwipe');
-self.initSwipe = function() {
-			var width = self.$slides.width();
 
-			//  We don't want to have a tactile swipe in the slider
-			//  in the fade animation, as it can cause some problems
-			//  with layout, so we'll just disable it.
-			if(self.options.animation !== 'fade') {
 
-				self.$container.on({
 
-					movestart: function(e) {
-						//  If the movestart heads off in a upwards or downwards
-						//  direction, prevent it so that the browser scrolls normally.
-						if((e.distX > e.distY && e.distX < -e.distY) || (e.distX < e.distY && e.distX > -e.distY)) {
-							return !!e.preventDefault();
-						}
+	// $('.my-slider').unslider('initSwipe');
 
-						self.$container.css('position', 'relative');
-					},
-
-					move: function(e) {
-						self.$container.css('left', -(100 * self.current) + (100 * e.distX / width) + '%');
-					},
-
-					moveend: function(e) {
-						// Check if swiped distance is greater than threshold.
-						// If yes slide to next/prev slide. If not animate to
-						// starting point.
-
-						if((Math.abs(e.distX) / width) > self.options.swipeThreshold) {
-
-							self[e.distX < 0 ? 'next' : 'prev']();
-						}
-						else {
-
-							self.$container.animate({left: -(100 * self.current) + '%' }, self.options.speed / 2 );
-						}
-					}
-				});
-			}
-		};
-	/* Wristwear */
-
-      // $(".elevatezoom").elevateZoom();
 
 	
 

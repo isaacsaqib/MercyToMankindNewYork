@@ -13,9 +13,8 @@
  *= require_tree .
  *= require_self
  *= require 'style.css'
- *= require 'unslider-dots.css'
- *= require 'unslider.css'
-
+ *= require 'swiper.css'
+ *= require 'swiper.min.css'
  */
 
  

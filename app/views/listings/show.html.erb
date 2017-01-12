@@ -1,14 +1,15 @@
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	<script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
 
 <%= javascript_include_tag "application.js" %>
 <%= javascript_include_tag "jquery.event.move.js" %>
 <%= javascript_include_tag "jquery.event.swipe.js" %>
-<%= stylesheet_link_tag    'unslider', media: 'all', 'data-turbolinks-track' => true %>
-<%= javascript_include_tag "unslider-min	.js" %>
-
-<%= stylesheet_link_tag    'sweetalert', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag "unslider.js" %>
+<%= javascript_include_tag "unslider-min.js" %>
 <%= javascript_include_tag "sweet-alert.min.js" %>
+
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag    'unslider', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag    'sweetalert', media: 'all', 'data-turbolinks-track' => true %>
 
 
 
@@ -34,17 +35,24 @@
     <div class="magnifier-preview" id="preview" style="width: 400px; height: 333px">Starry Night Over The Rhone<br>by Vincent van Gogh</div>
 </div> -->
 
-<div class="my-slider">
-	<ul>
-	<% @pictures.each do |pic| %>
-		<li>
-			<a href="/pictures/<%=pic.id%>">
-				<img class="list-pic" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'>
-			</a>
-		</li>
-	<% end %>
-	</ul>
+<div class="swiper-container">
+
+	<div class="swiper-wrapper">
+		<% @pictures.each do |pic| %>
+
+			<div class="swiper-slide">
+				<img class="list-pic" src='<%= pic.image.url %>'>
+			</div>
+
+		<% end %>
+	</div>
+
+    <div class="swiper-pagination"></div>
 </div>
+
+
+ 
+
 
 <!-- mobile slider -->
 

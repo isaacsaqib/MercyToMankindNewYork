@@ -10,11 +10,13 @@ Rails.application.config.assets.precompile += %w( jquery.elevatezoom.js )
 Rails.application.config.assets.precompile += %w( jquery.elevatezoom.js )
 Rails.application.config.assets.precompile += %w( sweetalert.min.js )
 Rails.application.config.assets.precompile += %w( sweetalert.css )
-Rails.application.config.assets.precompile += %w( unslider.css )
-Rails.application.config.assets.precompile += %w( unslider-dots.css )
-Rails.application.config.assets.precompile += %w( unslider-min.js )
-Rails.application.config.assets.precompile += %w( jquery.event.move.js )
-Rails.application.config.assets.precompile += %w( jquery.event.swipe.js )
+Rails.application.config.assets.precompile += %w( swiper.js )
+Rails.application.config.assets.precompile += %w( swiper.min.js )
+Rails.application.config.assets.precompile += %w( swiper.jquery.js )
+Rails.application.config.assets.precompile += %w( swiper.jquery.min.js )
+Rails.application.config.assets.precompile += %w( swiper.css )
+Rails.application.config.assets.precompile += %w( swiper.min.css )
+
 
 
 
