@@ -50,10 +50,7 @@ color:#fff;
 background: #007aff;
 }
 
-	#listings-show-div {
-		display: none;
 
-	}
 
 .list-pic {	
 	width: 95%;
@@ -61,6 +58,8 @@ background: #007aff;
 
 .swiper-container {
     width: 100%;
+    display: none;
+
 }      
 
 
@@ -1959,6 +1958,14 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 	#ig-img {
 		margin-top: 70px;
+	}
+
+	#listings-show-div {
+		display: none;
+	}
+
+	.swiper-container {
+		display: block;
 	}
 
 
