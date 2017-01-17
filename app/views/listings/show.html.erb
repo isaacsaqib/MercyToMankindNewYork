@@ -16,8 +16,11 @@
 
 
 
+
+<div class="logo-div">
 	<h1 class="logo-text-h1">MERCY X MANKIND</h1>
-			<h3 class="logo-text-h3">NEW YORK</h3>
+	<h3 class="logo-text-h3">NEW YORK</h3>
+</div>
 		
 
 <title><%= @listing.name %> | MXMNY</title>
@@ -112,50 +115,53 @@
 	<div id="listings-details">
 	
 		   <a class="listings-back-link" href="/listings"> MENS \ </a> 
-		   <a class="listings-back-link" href="/listings"> <%=@listing.section.upcase%>
+		   <a class="listings-back-link" href="/listings"> <%=@listing.section.upcase%> </a>
 		<%= form_tag add_to_cart_listing_path(@listing) do %>
 					<a style="text-decoration:none;" href="<%=listing_path(@listing)%>"></a>
-					<p style="font-size:20px;"><%= @listing.name %></p><br>
-
+					<p style="margin-top:30px;margin-bottom: 10px;" class="listings-details-header-text"><%= @listing.name %></p>
 
 					<% if @listing.on_sale == false %> <!-- if listing is NOT ON SALE  -->
-					<p style="color:gray; margin:0px;">$<%= @listing.price %></p><br>
+						<p style="margin:0px 100px -10px 30px;" class="listings-details-subtext">$<%= @listing.price %></p> <br>
+
 					<% else %>
-						<p style="color:red; margin:0px;">$<%= @listing.price %></p><p style="color:gray; margin:0px;text-decoration: line-through;">$<%= @listing.original_price %></p><br>
-
+						<p class="listings-details-subtext" style="color:red; margin:0px 100px -10px 30px;">$<%= @listing.price %></p>
+						<p class="listings-details-subtext" style="color:gray; margin:0px 100px -10px 30px;text-decoration: line-through;">$<%= @listing.original_price %></p><br>
 					<% end %>
+
+					<div style="margin-bottom: 30px;width:90%;" class="line-separator"></div>
 					<!-- Change color to gray when there is no sale -->
-					<p style="margin:0px 100px 0px 100px;"><%= @listing.description.upcase.html_safe %></p>
-					<p style="font-size:12px;text-decoration:underline;color:gray;"> Fabric/Material </p>
-					<p><%= @listing.fabric %></p>
-					<p style="font-size:12px;text-decoration:underline;color:gray;"> Fit </p>
 
-					<p><%= @listing.fit.html_safe %></p>
-					<p style="font-size:12px;text-decoration:underline;color:gray;"> Care </p>
-
-					<p><%= @listing.care %></p>
-
-					<div class="line-separator"></div>
-
-					<p>Questions regarding fit, details, care etc.? <span id="contact-us">Contact us here.</span><a id="contact-email" style="color:black;display:none;" href="mailto:info@mercytomankindco.com">info@mercytomankindco.com</a></p>
-
-					<div class="line-separator"></div>
-
-
-					<p style="color:gray;text-decoration:underline;">Size</p>
 					<select id="size" name="size"><br>
-					<% @size = @listing.size.split(",") %>
+						<% @size = @listing.size.split(",") %>
 							<option>CHOOSE SIZE ↓</option>
 						<% @size.each do |s| %>
 							<option value="<%= s %>"><%= s %></option>
 						<% end %>
+				 	</select>
 
-					 </select>
+				 	<input id="add-to-cart-btn" type="submit" value="ADD TO CART +"><br>
+					<div style="width:95%;margin-bottom:60px;" class="line-separator"></div>
+
+					<p class="listings-details-header-text">DETAILS / STORY</p>
+					<p class="listings-details-subtext"><%= @listing.description.upcase.html_safe %></p>
+					<p class="listings-details-header-text"> FABRIC / MATERIAL </p>
+					<p class="listings-details-subtext"><%= @listing.fabric %></p>
+					<p class="listings-details-header-text"> FIT </p>
+					<p class="listings-details-subtext"><%= @listing.fit.html_safe %></p>
+					<p class="listings-details-header-text"> CARE </p>
+					<p class="listings-details-subtext"><%= @listing.care %></p>
+
+					<div style="margin-bottom: 140px;" class="line-separator"></div>
+
+					<p style="text-align: center;" class="listings-details-header-text">Questions regarding fit, details, care etc.? <span id="contact-us">Contact us here.</span><a id="contact-email" style="color:black;display:none;" href="mailto:info@mercytomankindco.com">info@mercytomankindco.com</a></p>
+
+
+				
 					 <br/>
 
 
 					<br>
-					<input id="add-to-cart-btn" type="submit" value="Add To Bag"><br>
+					
 
 					<br>
 					<br>

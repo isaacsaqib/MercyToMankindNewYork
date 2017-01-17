@@ -33,6 +33,25 @@ hr {
 
 }
 
+	.listings-details-header-text {
+	    margin: 0px;
+	    margin-bottom: 20px;
+    	font-size: 10px;
+	    font-weight: bold;
+	    text-align: left;
+	    padding-left: 30px;
+	    font-family: 'helvetica';
+	}
+
+	.listings-details-subtext {
+	    margin: 0px 100px 20px 30px;
+	    text-align: left;
+	    font-size: 10px;
+	    font-family: 'helvetica';
+	    line-height: 30px;		
+
+	}
+
 .swiper-pagination-bullet {
 width: 0px;
 height: 40px;
@@ -685,13 +704,15 @@ font-family: 'Cinzel', serif;
 
 .logo-text-h1 {
 	padding-top: 40px;	
-	    font-family: 'Cinzel', serif;
+	font-family: 'Cinzel', serif;
 	font-weight: 100;
 	font-size: 35px;
 	letter-spacing: 4px;
 	margin-bottom: 5px;
 	/*letter-spacing: 7px;*/
 }
+
+
 
 .logo-text-h3 {
 	    font-family: 'Cinzel', serif;
@@ -706,6 +727,7 @@ font-family: 'Cinzel', serif;
 
 #nav-image {
 	height: 30px;
+	padding-top:20px;
 }
 
 
@@ -793,16 +815,20 @@ font-family: 'Cinzel', serif;
 
 
 #size {
-	padding-left: 20px;
-	border: black;
-	font-family: 'Helvetica';
-	font-weight: 500;
-	font-size: 10px;
+    background-color: white;
+    font-size: 15px;
+    padding-left: 20px;
+    border: 1px solid black;
+    font-family: 'Helvetica';
+    font-weight: 500;
+    font-size: 11px;
     width: 80%;
-    height: 61px;
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   	appearance: none; 
+    border-radius: 0px;
+    margin-bottom: 16px;
+    height: 49px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 option {
@@ -857,17 +883,18 @@ option {
 }
 
 #add-to-cart-btn {
-	background-color: black;
-	color: white;
-	font-family: 'Helvetica';
-	font-weight: 500;
-	font-size: 8px;
-	border-radius: 0px;
+    background-color: black;
+    color: white;
+    font-family: 'Helvetica';
+    font-weight: 500;
+    font-size: 8px;
+    border-radius: 0px;
     width: 80%;
     height: 40px;
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   	appearance: none; 
+    margin-bottom: 40px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 #add-to-cart-btn:hover {
@@ -940,7 +967,7 @@ option {
 
 #listings-show-div {
 	overflow: scroll;
-	height: 717px;
+	height: 1158px;
 	width: 700px;
 	float: left;
 	padding-left: 20px;
@@ -1003,12 +1030,12 @@ option {
 }
 
 #listings-details {
-    margin-right: 60px;
+ 	margin-right: 60px;
     width: 40%;
     font-family: 'Helvetica';
     font-weight: 500;
     font-size: 10px;
-    padding-top: 110px;
+    padding-top: 0px;
     float: right;
 }
 
@@ -1103,7 +1130,7 @@ table {
 }
 
 .wrapper p {
-	font-family: 'Cinzel';
+	/*font-family: 'Cinzel';*/
 }
 
 
@@ -1249,6 +1276,20 @@ header a {
 
 }
 
+
+#top-nav {
+    margin-bottom: 20px;
+    margin: 0px;
+    list-style: none;
+    background-color: rgba(255, 255, 255, .9);
+    text-align: center;
+    padding-bottom: 0px;
+    font-size: 15px;
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    /*MOBILE*/
+}
+
 #top-nav a {
 	color: black;
 	padding: 0px;
@@ -1260,6 +1301,11 @@ header a {
 #top-nav li {
 	padding-bottom: 12px;
 	padding-right: 38px
+}
+
+#top-nav li {
+	padding-bottom: 8px;
+	/*MOBILE*/
 }
 
 #bottom-nav {
@@ -1698,7 +1744,11 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 	}
 
 	#nav-image {
-		height: 70px;
+		padding-top: 40px;
+	    height: 56px;
+    	float: right;
+    	position: absolute;
+    	right: 18px;
 	}
 
 	#listings-index-nav li {
@@ -1742,22 +1792,66 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 	}
 
 	#add-to-cart-btn {
-		height: 140px;
-		font-size: 50px;
-		margin-top:50px;
+	    height: 61px;
+	    font-size: 20px;
+	    margin-top: 20px;
+	    margin-bottom: 36px;
+		background-color: black;
+	    color: white;
+	    font-family: 'Helvetica';
+	    font-weight: 500;
+	    font-size: 20px;
+	    border-radius: 0px;
+	    width: 95%;
+	    -webkit-appearance: none;
+	    -moz-appearance: none;
+	    appearance: none;
 
 	}
 
 	#listings-details {
+		padding-top:40px; 
+		/*MOBILE*/
 		width: 100%;
 		font-size: 23px;
 		margin-right: 0px;
 
 	}
 
+	.listings-details-header-text {
+	    margin: 0px;
+	    margin-bottom: 20px;
+    	font-size: 10px;
+	    font-weight: bold;
+	    text-align: left;
+	    padding-left: 30px;
+	    font-family: 'helvetica';
+	}
+
+	.listings-details-subtext {
+	    margin: 0px 100px 70px 30px;
+	    text-align: left;
+	    font-size: 10px;
+	    font-family: 'helvetica';
+	    line-height: 30px;		
+
+	}
+
 	#size {
-		font-size: 15px;
-		padding-left: 40px;
+    background-color: white;
+    font-size: 15px;
+    padding-left: 20px;
+    border: 1px solid black;
+    font-family: 'Helvetica';
+    font-weight: 500;
+    font-size: 16px;
+    width: 95%;
+    height: 61px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	    /*MOBILE*/
+
 	}
 
 	#listings-show-pictures li > a > img {
@@ -1966,6 +2060,49 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 	.swiper-container {
 		display: block;
+	}
+
+	div.swiper-wrapper {
+
+	    transition-duration: 0ms;
+    	height: 1300px;
+    	/*MOBILE*/
+	}
+
+	.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+	    bottom: 0px;
+	    height: 20px;
+	    left: 0;
+	    width: 100%;
+    /*MOBILE*/
+	}
+
+	.logo-text-h1 {
+    margin-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 30px;
+    font-family: 'Cinzel', serif;
+    font-weight: 100;
+    font-size: 37px;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+	/*MOBILE*/
+	}
+
+	.logo-text-h3 {
+		float: initial;
+	}
+
+	.logo-div {
+		float: left;
+	}
+
+	#hidden-nav {
+		border-bottom: 2px solid #F8F8F8;
+	}
+
+	#top-nav li {
+		padding-bottom: 20px;
 	}
 
 
