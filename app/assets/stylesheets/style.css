@@ -35,6 +35,8 @@ hr {
 
 #mobile-store-list {
 	text-align: left;
+	margin-left: 460px;
+	list-style: none;
 
 }
 
@@ -2253,6 +2255,11 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 		font-size: 50px;
 	    margin: 30px 0px;
 
+	}
+
+
+	#mobile-store-list {
+		margin-left: 0px;
 	}
 
 
