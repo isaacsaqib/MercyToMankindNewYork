@@ -145,11 +145,11 @@
 					<p class="listings-details-header-text">DETAILS / STORY</p>
 					<p class="listings-details-subtext"><%= @listing.description.upcase.html_safe %></p>
 					<p class="listings-details-header-text"> FABRIC / MATERIAL </p>
-					<p class="listings-details-subtext"><%= @listing.fabric %></p>
+					<p class="listings-details-subtext"><%= @listing.fabric.upcase %></p>
 					<p class="listings-details-header-text"> FIT </p>
-					<p class="listings-details-subtext"><%= @listing.fit.html_safe %></p>
+					<p class="listings-details-subtext"><%= @listing.fit.upcase.html_safe %></p>
 					<p class="listings-details-header-text"> CARE </p>
-					<p class="listings-details-subtext"><%= @listing.care %></p>
+					<p class="listings-details-subtext"><%= @listing.care.upcase %></p>
 
 					<div style="margin-bottom: 140px;" class="line-separator"></div>
 
@@ -196,6 +196,9 @@
 						   	<%=f.text_area :description %><br><br>
 						  	<%=f.label :section %>
 							<%= f.text_field :section %> <br><br>
+							<%=f.label :collection %>
+							<%= f.select :collection, options_for_select([["Select Collection", ""],"FALL/WINTER2016","SPRING/SUMMER2016","FALL/WINTER2015","JUDGEMENTDAYCAPSULE"]) %>	<br><br>
+
 							<%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
 					      	<%= f.submit "Update", :id => "update-button"  %><br><br>
 					    <% end %>

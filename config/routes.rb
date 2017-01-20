@@ -32,8 +32,11 @@ get "/listings-jackets" => "listings#jackets"
 get "/listings-bottoms" => "listings#bottoms"
 get "/listings-head" => "listings#head"
 get "/listings-accessories" => "listings#accessories"
-
-
+get "/listings-sale" => "listings#sale"
+get "/fall_winter_2016" => "listings#fall_winter_2016"
+get "/spring_summer_2016" => "listings#spring_summer_2016"
+get "/fall_winter_2015" => "listings#fall_winter_2015"
+get "/judgement_day_capsule" => "listings#judgement_day_capsule"
 
 get  "/admin"  => "session#new"
 post "/session"      => "session#create"
@@ -47,6 +50,7 @@ root "welcome#index"
 get "/index" => "welcome#index"
 get "/springsummersixteen" => "welcome#springsummersixteen"
 get "/media" => "welcome#media"
+get "/brand" => "welcome#brand"
 
 post "make_default" => "pictures#make_default"
 get "/complete" => "welcome#complete"

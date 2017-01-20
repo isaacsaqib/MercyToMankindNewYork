@@ -1,7 +1,6 @@
 <%= javascript_include_tag "application.js" %>
 
-<title>Accessories</title>
-
+<title>Tops</title>
 	<h1 class="logo-text-h1">MERCY X MANKIND</h1>
 	<h3 class="logo-text-h3">NEW YORK</h3>
 	<hr>
@@ -22,30 +21,35 @@
 			<li><a href="listings-accessories">ACCESSORIES</a></li>
 			<li><a href="/collections">LOOKBOOKS</a></li>
 			<li><a style="color: red;" href="/listings-sale">SALE</a></li>
-
+			
 			<br>
 
 		</ul>
 
 	</div>
 
-<table class="products hide" id="accessories">
+
+
+
+<table class="products" id="fall_winter_2015">
 	<tr>
 		<td class="col">
 			<ul>
-			<h1 class="product-heading-h1">ACCESSORIES</h1>
+			<h1 class="product-heading-h1">FALL \ WINTER 2015</h1>
 
-			<% @listings_accessories.each do |listing| %>
+
+			<% @listings_fall_winter_2015.each do |listing| %>
 
 				<% if listing.default_picture %>
             	<li>
-				<figure class="listings-figure"> 	
+            	<!-- listing image pictures -->
+		           <figure class="listings-figure"> 	
 		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
-		            <a href="<%=listing_path(listing)%>">
+		           <a href="<%=listing_path(listing)%>">
 		            	<figcaption class="listings-figcaption"> 
 
 		            		<p> 
-		            			<%= listing.name.upcase %> <br><br><br> 
+		            			<%= listing.name.upcase %><br><br><br> 
 		            			<%=	listing.description.upcase.html_safe%> <br><br>
 		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
 			            			<span style="padding:0px;color:black;">
@@ -68,14 +72,13 @@
 		            		</p> 
 
 		            	</figcaption>
-		            </a>
-
+		           </a>
 		            	<% else %>
 		              		N/A
 		            	<% end %>
 		           </figure>
-				
-				<!-- Name, price and buttons -->
+						
+						<!-- Name, price and buttons -->
 				<form id="index-form" method="get">
 				<input type="hidden" name="id" value="<%=listing.id%>">
 				<!-- <a href="<%=listing_path(listing)%>"><%=listing.name %></a><br>  -->
@@ -87,8 +90,8 @@
 							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
 							<p><a href="?remove=<%=listing.id%>">Delete</a></p><br>
 							<% end %>
-							<br>
-							<br>
+							<!-- <br> -->
+							<!-- <br> -->
 				</form>	
 
 				</li>
@@ -97,3 +100,4 @@
 		</td>
 	</tr>
 </table>
+

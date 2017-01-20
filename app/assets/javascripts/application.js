@@ -26,6 +26,14 @@ $(document).ready(function(){
 
 
 
+	$("#mobile-store-div").hide();
+	$("#mobile-store-list").hide();
+	$("#collection-div").hide();
+	$("#collection-list").hide();
+	$("#lookbooks-div").hide();
+	$("#lookbooks-list").hide();
+	$("#shop-div").hide();
+	$("#shop-list").hide();
 	$("#shop-sub-nav").hide();
 	$("#free-shipping-div").slideDown();
 	$("#jackets").hide();
@@ -106,6 +114,41 @@ $(document).ready(function(){
 
 	});
 
+	$("#store-nav > li:nth-child(2)").on("mouseover", function(){
+		$(".store-nav-hidden-div").hide();
+		$(".store-nav-hidden-list").hide();	
+		$("#collection-div").toggle();
+		$("#collection-list").toggle();
+
+	})
+
+	$("#store-nav > li:nth-child(4)").on("mouseover", function(){
+		$(".store-nav-hidden-div").hide();
+		$(".store-nav-hidden-list").hide();
+		$("#shop-div").toggle();
+		$("#shop-list").toggle();
+
+	})
+
+	$("#store-nav > li:nth-child(6)").on("mouseover", function(){
+		$(".store-nav-hidden-div").hide();
+		$(".store-nav-hidden-list").hide();
+		$("#lookbooks-div").toggle();
+		$("#lookbooks-list").toggle();
+
+	})
+
+	
+
+	$("#hidden-nav > li:nth-child(2) > a").on("click", function(){
+		event.preventDefault();
+		// $("#mobile-store-div").slideToggle();
+		$("#mobile-store-list").slideToggle();
+		
+
+	})
+
+	
 
 	// $("#listings-index-nav li:nth-child(1)").on("click", function(){  /* New */
 	// 	$(".products").hide();

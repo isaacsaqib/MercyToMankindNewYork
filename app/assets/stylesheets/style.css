@@ -33,24 +33,143 @@ hr {
 
 }
 
-	.listings-details-header-text {
-	    margin: 0px;
-	    margin-bottom: 20px;
-    	font-size: 10px;
-	    font-weight: bold;
-	    text-align: left;
-	    padding-left: 30px;
-	    font-family: 'helvetica';
-	}
+#mobile-store-list {
+	text-align: left;
 
-	.listings-details-subtext {
-	    margin: 0px 100px 20px 30px;
-	    text-align: left;
-	    font-size: 10px;
-	    font-family: 'helvetica';
-	    line-height: 30px;		
+}
 
-	}
+#mobile-store-list > li > p > a {
+	margin: 30px 0px;
+	font-weight: 500;
+	font-family: "Cinzel";
+	font-size: 10px;
+
+} 
+
+#mobile-store-list > li > p {
+    margin: 30px 0px;
+    padding-left: 50px;
+}
+
+#brand-div {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'Cinzel';
+
+}
+
+
+#brand-div img {
+	display: block;
+	margin: 0 auto;
+	width: 85%;
+}
+
+#brand-div p {
+	font-size: 10px;
+	margin-bottom: 30px;
+	font-family: "Helvetica";
+	text-align: center;
+	padding: 0px 120px 0px 120px;
+
+}
+
+#brand-div h1 {
+	padding-left: 40px;
+}
+
+#shop-list > li:nth-child(6) > p > a {
+	color: red;
+}
+
+#collection-div {
+	margin-left: 100px;
+	height: 200px;
+}
+
+#lookbooks-div {
+	margin-left: 290px;
+	background-color: white;
+}
+
+#shop-div {
+	height: 240px;
+}
+
+
+.store-nav-hidden-div {
+	width: 10%;
+	height: 160px;
+	background-color: white;
+	color: black;
+	margin-left: 210px;
+	z-index: 100;
+	position: absolute;
+}
+
+.store-nav-hidden-list > li > p > a {
+	text-decoration: none;
+	color: black;
+	font-size: 10px;
+}
+
+.store-nav-hidden-list > li > p > a:hover {
+	text-decoration: underline;
+}
+
+
+.store-nav-hidden-list li:nth-child(1) {
+	margin-top: 20px;
+}
+
+#store-nav {
+	text-align: left;
+}
+
+#store-nav li > p > a {
+	text-decoration: none;
+	color: black;
+}
+
+#store-nav li > p > a:hover {
+	cursor: pointer;
+
+}
+
+
+#store-nav li {
+	display: inline-block;
+	font-family: 'Cinzel';
+	/*font-weight: 700;*/
+	font-size: 11px;
+	padding:0px 20px 0px 20px;
+
+}
+
+#store-nav li:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.listings-details-header-text {
+    margin: 0px;
+    margin-bottom: 20px;
+	font-size: 10px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 30px;
+    font-family: 'helvetica';
+}
+
+.listings-details-subtext {
+    margin: 0px 100px 20px 30px;
+    text-align: left;
+    font-size: 10px;
+    font-family: 'helvetica';
+    line-height: 30px;		
+
+}
 
 .swiper-pagination-bullet {
 width: 0px;
@@ -510,9 +629,10 @@ background: #007aff;
 }
 
 .listings-figcaption p {
+	font-family: "Helvetica";
 	color: black;
 	display: table-cell;
-	font-size: 10px;
+	font-size: 8px;
 	position: relative;
 	top: 0px;
 	width: 289px;
@@ -2114,7 +2234,22 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 		margin-top: 130px;
 	}
 
+	.listings-figcaption p {
+		font-size: 20px;
+	}
 
+	.listings-figcaption {
+		height: 83%;
+		width: 100%;
+	}
+
+	#store-nav {
+		display: none;
+	}
+
+	#mobile-store-list > li > p > a {
+		font-size: 50px;
+	}
 
 
 }

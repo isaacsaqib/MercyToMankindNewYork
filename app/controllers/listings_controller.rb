@@ -159,6 +159,27 @@ end
 		@listings_head = Listing.where(:section => "Head").order(price: :desc)	
 	end
 
+	def sale
+		@listings_sale = Listing.where(:on_sale => "true").order(price: :desc)	
+	end
+
+	def fall_winter_2016
+		@listings_fall_winter_2016 = Listing.where(:collection => "FALL/WINTER2016").order(price: :desc)	
+	end	
+
+	def spring_summer_2016
+		@listings_spring_summer_2016 = Listing.where(:collection => "SPRING/SUMMER2016").order(price: :desc)	
+	end	
+
+	def fall_winter_2015
+		@listings_fall_winter_2015 = Listing.where(:collection => "FALL/WINTER2015").order(price: :desc)	
+	end
+
+	def judgement_day_capsule
+		@listings_judgement_day_capsule = Listing.where(:collection => "JUDGEMENTDAYCAPSULE").order(price: :desc)	
+	end
+
+
 
 
 
@@ -168,7 +189,7 @@ end
 	private
 
 	def listing_params
-		params.require(:listing).permit(:name, :price, :original_price, :images, :size, :pictures, :description, :section, :fabric, :fit, :care, :position, :on_sale, :is_new)
+		params.require(:listing).permit(:name, :price, :original_price, :images, :size, :pictures, :description, :section, :collection, :fabric, :fit, :care, :position, :on_sale, :is_new)
 
 	end
 	

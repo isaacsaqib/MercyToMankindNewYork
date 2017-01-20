@@ -22,9 +22,10 @@
   	   	<%=f.label :description %>
 	 <%=f.text_area :description %><br><br>
 	<%=f.label :section %>
-<%= f.select :section, options_for_select([["Select Type", ""], "Hoodies", "Long Sleeves", "Short Sleeves", "Tees", "Tanks",  "Bottoms", "Denim", "Head", "Wristwear","Jackets", "Collection", "Accessories", "Slideshow"]) %>	<br><br>
-
- <%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+	<%= f.select :section, options_for_select([["Select Type", ""], "Hoodies", "Long Sleeves", "Short Sleeves", "Tees", "Tanks",  "Bottoms", "Denim", "Head", "Wristwear","Jackets", "Collection", "Accessories", "Slideshow"]) %>	<br><br>
+	<%=f.label :collection %>
+	<%= f.select :collection, options_for_select([["Select Collection", ""],"FALL/WINTER2016", "SPRING/SUMMER2016","FALLWINTER2015","JUDGEMENTDAYCAPSULE"]) %>	<br><br>
+ 	<%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
 
 	<%=f.submit %>
 

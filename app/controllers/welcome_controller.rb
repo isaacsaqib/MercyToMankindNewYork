@@ -20,6 +20,9 @@ class WelcomeController < ApplicationController
   def complete
   end
   
+  def brand
+  end
+  
   
   
 

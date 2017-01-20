@@ -6,7 +6,7 @@
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
 	<!-- MAILCHIMP FORM -->
-	<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us13.list-manage.com","uuid":"5194035157454408880655014","lid":"3460c40b66"}) })</script>
+	<!-- <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us13.list-manage.com","uuid":"5194035157454408880655014","lid":"3460c40b66"}) })</script> -->
 	<!-- END FORM  -->
 
 
@@ -27,6 +27,42 @@
 	
 			<h1 class="logo-text-h1">MERCY X MANKIND</h1>
 			<h3 class="logo-text-h3">NEW YORK</h3>
+
+			<ul id="store-nav">
+				<li><p><a href="/brand">BRAND</a></p></li>
+				<li>COLLECTIONS</li>
+					<div id="collection-div" class="store-nav-hidden-div">
+						<ul id="collection-list" class="store-nav-hidden-list">
+							<li><p><a href="/fall_winter_2016">FALL/WINTER 2016 </a></p>
+							<li><p><a href="/spring_summer_2016">SPRING/SUMMER 2016 </a></p>
+							<li><p><a href="/fall_winter_2015">FALL/WINTER 2015 </a></p>
+							<li><p><a href="/judgement_day_capsule">JUDGEMENT DAY CAPSULE </a></p>
+						</ul>
+
+					</div>
+				<li>SHOP</li>
+					<div id="shop-div" class="store-nav-hidden-div">
+						<ul id="shop-list" class="store-nav-hidden-list">
+							<li><p><a href="/listings">ALL</a></p></li>
+							<li><p><a href="/listings-jackets">OUTERWEAR</a></p></li>
+							<li><p><a href="/listings-tops">TOPS</a></p></li>
+							<li><p><a href="/listings-bottoms">BOTTOMS</a></p></li>
+							<li><p><a href="/listings-head">HEADWEAR</a></p></li>
+							<li><p><a href="/listings-sale">SALE</a></p></li>
+						</ul>
+					</div>
+				<li>LOOKBOOKS</li>
+					<div class="store-nav-hidden-div" id="lookbooks-div">
+						<ul class="store-nav-hidden-list" id="lookbooks-list">
+							<li><p><a href="/collections/202">FALL/WINTER 2016</a></p></li>
+							<li><p><a href="/collections/130">SPRING/SUMMER 2016</a></p></li>
+							<li><p><a href="/collections/144">JUDGEMENT DAY CAPSULE</a></p></li>
+						</ul>
+					</div>
+				<li><p><a href="/customercare">CONTACT</a></p></li>
+				
+
+			</ul>
 		
    <!-- SS 16 SLIDESHOW -->
    <div id="slides">

@@ -5,6 +5,8 @@
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Cinzel:400,700" rel="stylesheet">
 	<meta name="description" content="MERCY X MANKIND NEW YORK | Contemporary Urbanwear For The Modern Being | FALL/WINTER 2016 Available Now."/>
+<!-- 
+	<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us13.list-manage.com","uuid":"5194035157454408880655014","lid":"3460c40b66"}) })</script> -->
 
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= favicon_link_tag 'favicon.ico' %>
@@ -24,6 +26,16 @@
 				<ul id="hidden-nav">
 					<li><a href="/index">HOME</a></li>
 					<li><a href="/listings">SHOP</a></li>
+
+							<ul id="mobile-store-list">
+								<li><p><a href="/listings">-ALL</a></p></li>
+								<li><p><a href="/listings-jackets">-OUTERWEAR</a></p></li>
+								<li><p><a href="/listings-tops">-TOPS</a></p></li>
+								<li><p><a href="/listings-bottoms">-BOTTOMS</a></p></li>
+								<li><p><a href="/listings-head">-HEADWEAR</a></p></li>
+								<li><p><a href="/listings-sale">-SALE</a></p></li>
+							</ul>
+
 					<li><a href="/media">MEDIA</a></li>
 					<li><a href="/collections">LOOKBOOKS</a></li>
 					<li><a href="/customercare">CONTACT</a></li>
@@ -38,7 +50,23 @@
 
 	<%= yield %>
 
-
+	<div id="mc_embed_signup">
+			<form action="//mercytomankindco.us13.list-manage.com/subscribe/post?u=5194035157454408880655014&amp;id=5b29eda186" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+			    <div id="mc_embed_signup_scroll">
+					<label for="mce-EMAIL">Join Our Newsletter!</label>
+					<p>Join our newsletter today for exclusive promotions, offers and insider details on your favorite products.</p>
+						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="EMAIL ADDRESS" required>
+			   
+				    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+					    <input type="text" name="b_5194035157454408880655014_5b29eda186" tabindex="-1" value="">
+				    </div>
+					    
+					<div class="clear">
+					    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+				    </div>
+				</div>
+			</form>
+		</div>
 
 
 
@@ -61,23 +89,9 @@
 			<!-- Begin MailChimp Signup Form -->
 		<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
 
-		<div id="mc_embed_signup">
-			<form action="//mercytomankindco.us13.list-manage.com/subscribe/post?u=5194035157454408880655014&amp;id=5b29eda186" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-			    <div id="mc_embed_signup_scroll">
-					<label for="mce-EMAIL">Join Our Newsletter!</label>
-					<p>Join our newsletter today for exclusive promotions, offers and insider details on your favorite products.</p>
-						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="EMAIL ADDRESS" required>
-			    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-				    <div style="position: absolute; left: -5000px;" aria-hidden="true">
-					    <input type="text" name="b_5194035157454408880655014_5b29eda186" tabindex="-1" value="">
-				    </div>
-					    
-					<div class="clear">
-					    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-				    </div>
-				</div>
-			</form>
-		</div>
+	
+
+
 
 <!--End mc_embed_signup-->
 
