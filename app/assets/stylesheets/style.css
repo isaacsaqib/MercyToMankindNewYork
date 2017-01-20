@@ -47,7 +47,9 @@ hr {
 } 
 
 #mobile-store-list > li > p {
-    margin: 30px 0px;
+    margin: 6px 0px;
+
+
     padding-left: 50px;
 }
 
@@ -2249,6 +2251,8 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 	#mobile-store-list > li > p > a {
 		font-size: 50px;
+	    margin: 30px 0px;
+
 	}
 
 
