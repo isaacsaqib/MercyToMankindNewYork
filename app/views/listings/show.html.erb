@@ -1,4 +1,4 @@
-
+	
 
 <%= javascript_include_tag "application.js" %>
 <%= javascript_include_tag "jquery.event.move.js" %>
@@ -122,6 +122,13 @@
 
 					<% if @listing.on_sale == false %> <!-- if listing is NOT ON SALE  -->
 						<p style="margin:0px 100px -10px 30px;" class="listings-details-subtext">$<%= @listing.price %></p> <br>
+							<script>
+								fbq('track', 'ViewContent', {
+								value: <%= @listing.price %>,
+								currency: 'USD'
+								});
+							</script>
+
 
 					<% else %>
 						<p class="listings-details-subtext" style="color:red; margin:0px 100px -10px 30px;">$<%= @listing.price %></p>
