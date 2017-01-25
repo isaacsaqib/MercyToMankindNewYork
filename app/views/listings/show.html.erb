@@ -120,19 +120,30 @@
 					<a style="text-decoration:none;" href="<%=listing_path(@listing)%>"></a>
 					<p style="margin-top:30px;margin-bottom: 10px;" class="listings-details-header-text"><%= @listing.name %></p>
 
+
 					<% if @listing.on_sale == false %> <!-- if listing is NOT ON SALE  -->
 						<p style="margin:0px 100px -10px 30px;" class="listings-details-subtext">$<%= @listing.price %></p> <br>
+						
 							<script>
 								fbq('track', 'ViewContent', {
 								value: <%= @listing.price %>,
+								content_name: "<%= @listing.name %>",
 								currency: 'USD'
 								});
 							</script>
 
-
 					<% else %>
 						<p class="listings-details-subtext" style="color:red; margin:0px 100px -10px 30px;">$<%= @listing.price %></p>
 						<p class="listings-details-subtext" style="color:gray; margin:0px 100px -10px 30px;text-decoration: line-through;">$<%= @listing.original_price %></p><br>
+
+							<script>
+								fbq('track', 'ViewContent', {
+								value: <%= @listing.price %>,
+								content_name: "<%= @listing.name %>",
+								currency: 'USD'
+								});
+							</script>
+
 					<% end %>
 
 					<div style="margin-bottom: 30px;width:90%;" class="line-separator"></div>
@@ -147,6 +158,8 @@
 				 	</select>
 
 				 	<input id="add-to-cart-btn" type="submit" value="ADD TO CART +"><br>
+
+	
 					<div style="width:95%;margin-bottom:60px;" class="line-separator"></div>
 
 					<p class="listings-details-header-text">DETAILS / STORY</p>
