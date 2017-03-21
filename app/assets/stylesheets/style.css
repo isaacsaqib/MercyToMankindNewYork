@@ -42,8 +42,8 @@ hr {
 
 #mobile-store-list > li > p > a {
 	margin: 30px 0px;
-	font-weight: 500;
-	font-family: "Cinzel";
+	font-weight: bold;
+	font-family: "Helvetica";
 	font-size: 10px;
 
 } 
@@ -219,6 +219,13 @@ background: #007aff;
 .mobile-figure-p {
 	text-align: left;
 	display: none;
+	/*font-weight: 700;*/
+    display: block;
+    font-size: 22px;
+    font-family: "Helvetica";
+    /* margin: 10px; */
+    margin: 10px;
+
 }
 
 /*MAKING PRODUCT NAME ON MOBILE BOLD*/
@@ -1418,7 +1425,7 @@ header a {
 	color: black;
 	padding: 0px;
 	text-decoration: none;
-	    font-family: 'Cinzel', serif;
+	font-family: 'Helvetica', serif;
 	font-weight: 500;
 }
 
@@ -1727,6 +1734,24 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 @media screen and (max-width: 1000px) {
 	
+	#below-slideshow-ul h1 {
+	    color: black;
+	    font-family: "Helvetica";
+	    font-weight: bold;
+	    font-size: 16px;
+	    margin: 8px;
+
+	}
+
+	#below-slideshow-ul p {
+	  
+	    font-size: 16px;
+	    margin: 0px;
+
+	}
+
+
+
 	.total-div {
 		width: 70%;
 		height: 370px;
@@ -2028,8 +2053,8 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 	}
 
 	.listings-figure {
-	   height: 691px;
-    	width: 464px;	
+	   height: 721px;
+    	width: 480px;	
 	}
 
 	.products li {
@@ -2041,12 +2066,13 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 	.product-heading-h1 {
     font-size: 31px;
     text-align: left;
-}
-
-	table {
-		margin-left: 20px;
+    padding-left: 10px;
 	}
 
+/*	table {
+		margin-left: 20px;
+	}
+*/
 	#index-form {
 		display: none;
 	}
@@ -2252,7 +2278,7 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 	}
 
 	#mobile-store-list > li > p > a {
-		font-size: 50px;
+	    font-size: 20px;
 	    margin: 30px 0px;
 
 	}

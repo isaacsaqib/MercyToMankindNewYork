@@ -33,13 +33,14 @@
 	<tr>
 		<td class="col">
 			<ul>
-			<h1 class="product-heading-h1">SALE</h1>
+			<h1 class="product-heading-h1" style="color:red;">SALE</h1>
 
 			<% @listings_sale.each do |listing| %>
 
 				<% if listing.default_picture %>
             	<li>
-            	<figure class="listings-figure"> 	
+            	<!-- ADDED HEIGHT TO ADJUST FOR SALE PRICING -->
+            	<figure class="listings-figure" style="height: 751px;">  	
 		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
 		            <a href="<%=listing_path(listing)%>">
 		            	<figcaption class="listings-figcaption"> 
@@ -69,6 +70,10 @@
 
 		            	</figcaption>
 		            </a>
+
+		            <p class="mobile-figure-p"><%= listing.name.upcase %></p>
+					<p class="mobile-figure-p" style="text-decoration: line-through;"><%= listing.original_price %> USD </p> 
+					<p class="mobile-figure-p" style="color:red"><%= listing.price %> USD</p> 
 
 		            	<% else %>
 		              		N/A
