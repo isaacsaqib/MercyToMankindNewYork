@@ -619,9 +619,13 @@ background: #007aff;
     height: 230px;
     overflow: hidden;
     position: relative;
-    width: 191px;
+    width: 186px;
     /*overflow: scroll;*/
 }
+
+
+
+
 
 
 
@@ -2286,6 +2290,10 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 	#mobile-store-list {
 		margin-left: 0px;
+	}
+
+	#listings-figure-sale {
+		height: 755px; 
 	}
 
 
