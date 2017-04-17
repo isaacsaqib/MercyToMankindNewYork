@@ -1,5 +1,5 @@
 <% if logged_in? %>
-<div style="background-color:white; width:100%;text-align:center;height:400px;padding-top:50px;">
+<div style="padding-bottom:180px;background-color:white; width:100%;text-align:center;height:400px;padding-top:50px;">
 
 <h1>Editing article</h1>
  
@@ -30,7 +30,7 @@
   <%=f.label :section %>
   <%= f.text_field :section %> <br><br>
  <%=f.label :collection %>
-  <%= f.select :collection, options_for_select([["Select Collection", ""],"FALL/WINTER2016", "SPRING/SUMMER2016","FALL/WINTER2015","JUDGEMENTDAYCAPSULE"]) %>  <br><br>
+  <%= f.select :collection, options_for_select([["Select Collection", ""],"PRE-SPRING 17","FALL/WINTER2016", "SPRING/SUMMER2016","FALL/WINTER2015","JUDGEMENTDAYCAPSULE"]) %>  <br><br>
 
 
  <%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
@@ -40,7 +40,7 @@
 
   <% end %>
 
-<% end %>
+
 </div>
  
 <%else%>
