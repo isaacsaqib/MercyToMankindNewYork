@@ -6,7 +6,7 @@ class CollectionsController < ApplicationController
 	def show
 		
 	  	@listing  = Listing.find(params[:id])
-    	@pictures = @listing.pictures
+    	@pictures = @listing.pictures.order(:description)
 	end
 
 	def destroy
