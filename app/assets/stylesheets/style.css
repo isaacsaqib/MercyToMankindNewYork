@@ -33,6 +33,24 @@ hr {
 
 }
 
+#listings-index-h1 {
+	text-decoration:underline;padding-top:20px;font-family:'Cinzel';font-size: 60px;text-align: center;
+	margin-top: 0px;
+}
+
+#listings-index-pic {
+	width: 30%;
+	text-align: center;
+
+
+}
+
+#new-caption {
+	font-family: "Helvetica-Bold";
+	font-size: 12px;
+	padding: 0px 400px 30px 400px;
+}
+
 #mobile-store-list {
 	text-align: left;
 	margin-left: 460px;
@@ -1737,6 +1755,19 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 /*end*/
 
 @media screen and (max-width: 1000px) {
+
+	#listings-index-h1 {
+		padding-top: 0px;
+
+	}
+
+	#listings-index-pic {
+		width:90%;
+	}
+
+	#new-caption {
+		padding:0px 170px 30px 170px;
+	}
 	
 	#free-shipping-div {
 		height: 40px;
