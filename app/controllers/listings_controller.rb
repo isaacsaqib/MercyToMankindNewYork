@@ -171,6 +171,10 @@ end
 		@listings_fall_winter_2016 = Listing.where(:collection => "FALL/WINTER2016").order(price: :desc)	
 	end	
 
+	def pre_spring_2017
+		@listings_pre_spring_2017 = Listing.where(:collection => "PRE-SPRING 17").order(price: :desc)	
+	end	
+
 	def spring_summer_2016
 		@listings_spring_summer_2016 = Listing.where(:collection => "SPRING/SUMMER2016").order(price: :desc)	
 	end	
