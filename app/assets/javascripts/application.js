@@ -202,6 +202,17 @@ $(document).ready(function(){
 
 	});
 
+	 // var picid = $('#listings-show-pictures > li > a > img').attr("id")
+	 // // var picidtext = $("#" + picid)
+	 // var picid_text = ("#" + picid);
+	 // console.log(picid_text)
+	 // $("picid_text").elevateZoom()
+
+	 $("a.zoom").zoom({
+	 	magnify: .8
+	 });
+
+
 	// $("#picture-delete").on("click", function(event){ 
 	// 	var pictures_href = $("#listings-show-pictures > li > a").attr("href");
 	// 	var picture_id = pictures_href.substring(10, pictures_href.lenght);
@@ -243,24 +254,11 @@ $(document).ready(function(){
       		crossFade: true
       	},
        	pagination: '.swiper-pagination',
-       	paginationClickable: true,
+       	paginationClickable: true
 
     });        
 
-	// $('.my-slider').unslider({
-	// 	autoplay: true,
-	//    	speed: 1000,    //  The speed to animate each slide (in milliseconds)  [default: 750]
-	// 	delay: 6000,
-	// 	arrows: false,
-	// 	swipe: true
 
-
-	// })
-
-
-
-
-	// $('.my-slider').unslider('initSwipe');
 
 
 	

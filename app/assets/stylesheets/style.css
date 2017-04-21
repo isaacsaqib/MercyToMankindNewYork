@@ -33,6 +33,7 @@ hr {
 
 }
 
+
 #listings-index-h1 {
 	text-decoration:underline;padding-top:20px;font-family:'Cinzel';font-size: 60px;text-align: center;
 	margin-top: 0px;
@@ -1132,39 +1133,16 @@ option {
 	margin: 0 auto;
 	display: block;
 	text-align: center;
+	list-style: none;
 }
 
 
 
 
 #listings-show-pictures li > a > img {
-	width: 85%;
-}
-
-#listings-show-pictures li > a > img:hover {
-	cursor: pointer;
-
-}
-
-#listings-show-pictures > li { /* PICTURES BELOW FIRST IMAGE */
-	display: inline-block;
-	width: 100%;
-}
-
-#listings-show-pictures > li:nth-child(4) > a > img {
 	width: 95%;
 }
 
-#listings-show-pictures > li:nth-child(2) > a > img { /* FIRST PICTURE IMG ELEMENT */
-	width: 100%;
-}
-
-#listings-show-pictures li:nth-child(2) {  /* FIRST PICTURE IN LISTINGS SHOW li element */
-	display: block;
-	width: 85%;
-	text-align: center;
-	margin: 0 auto;
-}
 
 
 .listings-back-link {
@@ -2052,30 +2030,6 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 	}
 
-	#listings-show-pictures li > a > img {
-
-	width: 100%;
-	/*margin-left: 10px;*/
-
-	}
-
-	#listings-show-pictures > li { /* PICTURES BELOW FIRST IMAGE */
-
-		width: 100%;
-	}
-
-	#listings-show-pictures > li:nth-child(4) > a > img {
-		width: 100%;
-	}
-
-	#listings-show-pictures > li:nth-child(2) > a > img { /* FIRST PICTURE IMG ELEMENT */
-		width: 100%;
-	}
-
-	#listings-show-pictures li:nth-child(2) {  /* FIRST PICTURE IN LISTINGS SHOW li element */
-
-		width: 100%;
-	}
 
 
 	#collection > tbody > tr > td > ul > li > a > img {
@@ -2368,5 +2322,30 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 	}
 
 }
+
+
+/* these styles are for the demo, but are not required for the plugin */
+.zoom {
+	display:inline-block;
+	position: relative;
+}
+
+/* magnifying glass icon */
+.zoom:after {
+	content:'';
+	display:block; 
+	width:33px; 
+	height:33px; 
+	position:absolute; 
+	top:0;
+	right:0;
+	background:url(icon.png);
+}
+
+.zoom img {
+	display: block;
+}
+
+.zoom img::selection { background-color: transparent; }
 
 
