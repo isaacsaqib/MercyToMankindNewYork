@@ -60,7 +60,7 @@
 	   <% @pictures.each do |pic| %>
 
 	      <li>
-		      <a href="/pictures/<%=pic.id%>" class="zoom" >
+		      <a href="/pictures/<%=pic.id%>" class="" >
 		      	<img src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'>
 		      	<!-- <img id="a<%= pic.id %>" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'> -->
 		      </a>
