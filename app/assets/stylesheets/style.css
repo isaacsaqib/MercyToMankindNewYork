@@ -33,6 +33,26 @@ hr {
 
 }
 
+#upsell_listings_pics {
+	padding:0px;
+}
+
+#upsell_listings_pics > li {
+	display: inline-block;
+	padding:10px;
+}
+
+#upsell_listings_pics > li > p {
+	font-size: 10px;
+}
+
+
+#upsell_listings_pics > li > a > img {
+	display: inline-block;
+	height: 250px;
+
+}
+
 
 #listings-index-h1 {
 	text-decoration:underline;padding-top:20px;font-family:'Cinzel';font-size: 60px;text-align: center;
@@ -1733,6 +1753,18 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 /*end*/
 
 @media screen and (max-width: 1000px) {
+
+
+	#upsell_listings_pics > li > a > img {
+		display: inline-block;
+		height: 480px;
+	}
+
+	#upsell_listings_pics > li > p {
+		font-size: 16px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
 
 	#listings-index-h1 {
 		padding-top: 0px;

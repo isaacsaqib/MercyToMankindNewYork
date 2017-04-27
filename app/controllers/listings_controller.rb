@@ -78,6 +78,7 @@ end
 	  # Amount in cents
 	  	
 	  	@amount = @listing.price
+	  	@listings = Listing.all
 
 	  	@listing  = Listing.find(params[:id])
     	@pictures = @listing.pictures.order(:description)

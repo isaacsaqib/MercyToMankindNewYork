@@ -186,6 +186,55 @@
 		<% end %>
 		<br>
 
+
+		 <% @upsell_listings_arr = @listings.sample(2) %> 
+		<!-- Randomly selecting two listings and creating a new array containing them-->
+		
+		<!-- Finding and Removing any collection ids -->
+		<% @listing_222 = Listing.find(222) %>
+		<% @listing_202 = Listing.find(202) %>
+		<% @listing_130 = Listing.find(130) %>
+		<% @listing_144 = Listing.find(144) %>
+		<% @listing_199 = Listing.find(199) %>
+		<!-- Removal -->
+		<% if @upsell_listings_arr.include?  @listing_222 %>
+				<% @upsell_listings_arr.delete(@listing_222) %>
+		<% end %>
+		<% if @upsell_listings_arr.include?  @listing_202 %>
+				<% @upsell_listings_arr.delete(@listing_202) %>
+		<% end %>
+		<% if @upsell_listings_arr.include?  @listing_130 %>
+			<% @upsell_listings_arr.delete(@listing_130) %>
+		<% end %>
+		<% if @upsell_listings_arr.include?  @listing_144 %>
+				<% @upsell_listings_arr.delete(@listing_144) %>
+		<% end %>
+		<% if @upsell_listings_arr.include?  @listing_199 %>
+			<% @upsell_listings_arr.delete(@listing_199) %>
+		<% end %>	
+		<!-- End collection id removal -->
+
+		<!-- Start upsell pic list -->
+		<ul id="upsell_listings_pics">
+			<p style="text-decoration: underline;">STYLE WITH:</p>
+			<% @upsell_listings_arr.each do |listing| %>
+
+		
+
+			<!-- Creating li tag -->
+		  	<li>
+		  		<a href="/listings/<%=listing.id%>"><%= image_tag(listing.default_picture.image.url) %></a>
+	      		<!-- Using the default picture for the listings contained and displaying it in a list -->
+		  		<p><%= listing.name %></p>
+		  		<p>$<%= listing.price %></p>
+				<!-- Displaying name and price -->
+	  		</li>
+			<% end %>
+      	</ul>
+      	<!-- End upsell pic list -->
+
+
+
 		<% if logged_in? %>
 						<%= form_for @listing, remote: true, :html => {:multipart => true, :class => "edit-form"} do |f| %>
 							<%= f.label(:name) %>
