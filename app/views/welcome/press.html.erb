@@ -9,7 +9,7 @@
 			<h1 style="text-decoration: underline;"><%=listing.name%></h1>
 			<p><%=listing.description.html_safe%></p>
 
-			<% @pictures = listing.pictures %>
+			<% @pictures = listing.pictures.order(description: :asc) %>
 
 			<% @pictures.each do |pic| %>
 				<% if logged_in? %>
