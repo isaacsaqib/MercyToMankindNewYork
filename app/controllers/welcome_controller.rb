@@ -25,7 +25,7 @@ class WelcomeController < ApplicationController
     
 
   def press
-    @listings_press = Listing.where(:section => "Press")
+    @listings_press = Listing.where(:section => "Press").order(description: :desc) 
   end
   
   
