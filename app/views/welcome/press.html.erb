@@ -1,0 +1,25 @@
+<%= javascript_include_tag "application.js" %>
+
+
+
+
+  <ul class="press-list">
+	<% @listings_press.each do |listing| %>
+		<li>
+			<h1 style="text-decoration: underline;"><%=listing.name%></h1>
+			<p><%=listing.description.html_safe%></p>
+
+			<% @pictures = listing.pictures %>
+
+			<% @pictures.each do |pic| %>
+				<% if logged_in? %>
+					<a href="/listings/<%=listing.id%>"><img src="<%=pic.image.url%>"></a>
+				<%else%>
+					<img src="<%=pic.image.url%>">
+				<% end %>
+			<% end %>
+			
+		</li>
+	<% end %>
+  </ul>
+

@@ -22,6 +22,11 @@ class WelcomeController < ApplicationController
   
   def brand
   end
+    
+
+  def press
+    @listings_press = Listing.where(:section => "Press")
+  end
   
   
   

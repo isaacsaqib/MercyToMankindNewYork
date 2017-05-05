@@ -33,6 +33,17 @@ hr {
 
 }
 
+body > div.wrapper > ul.press-list > li > img {
+	display: inline-block;
+	height: 400px;
+}
+
+.press-list > li > p {
+	font: 10px Helvetica;
+	padding: 10px 400px 10px 400px;
+
+}
+
 #upsell_listings_pics {
 	padding:0px;
 }
@@ -1754,6 +1765,19 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 @media screen and (max-width: 1000px) {
 
+
+	body > div.wrapper > ul.press-list > li > img {
+		height: initial;
+		width: 100%;
+	}
+
+	.press-list > li > p {
+		padding:10px 200px 10px 200px;
+	}
+
+	#plus-symbol {
+		display: none;
+	}
 
 	#upsell_listings_pics > li > a > img {
 		display: inline-block;

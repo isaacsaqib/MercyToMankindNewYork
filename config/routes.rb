@@ -52,6 +52,7 @@ get "/index" => "welcome#index"
 get "/springsummersixteen" => "welcome#springsummersixteen"
 get "/media" => "welcome#media"
 get "/brand" => "welcome#brand"
+get "/press" => "welcome#press"
 
 post "make_default" => "pictures#make_default"
 get "/complete" => "welcome#complete"
