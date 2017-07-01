@@ -30,7 +30,7 @@
   <%=f.label :section %>
   <%= f.text_field :section %> <br><br>
  <%=f.label :collection %>
-  <%= f.select :collection, options_for_select([["Select Collection", ""],"PRE-SPRING 17","FALL/WINTER2016", "SPRING/SUMMER2016","FALL/WINTER2015","JUDGEMENTDAYCAPSULE"]) %>  <br><br>
+  <%= f.text_field :collection %>  <br><br>
 
 
  <%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
