@@ -33,15 +33,40 @@ hr {
 
 }
 
+#listings-show-pictures li:last-child {
+	width: 50%;
+	margin:0 auto;
+}
+/*
 body > div.wrapper > ul.press-list > li > img {
 	display: inline-block;
 	height: 400px;
-}
-
+}*/
+/*
 .press-list > li > p {
 	font: 10px Helvetica;
 	padding: 10px 400px 10px 400px;
 
+}
+
+*/
+
+.press-index-list img {
+	height: 350px;
+}
+
+.press-index-list img:hover {
+	cursor: pointer;
+}
+.press-index-list li {
+	display: inline-block;
+	font-family: 'Helvetica';
+	font-weight: bold;
+	font-size: 10px;
+}
+
+.press-index-list li:hover {
+	cursor: pointer;
 }
 
 #upsell_listings_pics {
@@ -570,7 +595,7 @@ background: #007aff;
     white-space: nowrap;
 }
 #collection-show-div img {
-	height: 800px;
+	height: 550px;
 	display: inline-block;
 }
 
@@ -1766,9 +1791,9 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 @media screen and (max-width: 1000px) {
 
 
-	body > div.wrapper > ul.press-list > li > img {
+	.press-index-list img {
+		width: 90%;
 		height: initial;
-		width: 100%;
 	}
 
 	.press-list > li > p {
