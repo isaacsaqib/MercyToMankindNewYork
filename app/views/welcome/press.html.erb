@@ -3,7 +3,13 @@
 
 <title>Press</title>
 
-  <ul class="press-list">
+
+
+			<h1 class="logo-text-h1">MERCY X MANKIND</h1>
+			<h3 class="logo-text-h3">NEW YORK</h3>
+				<hr class="mobile-hr-hidden">
+
+<!--   <ul class="press-list">
 	<% @listings_press.each do |listing| %>
 		<li>
 			<h1 style="text-decoration: underline;"><%=listing.name%></h1>
@@ -22,4 +28,27 @@
 		</li>
 	<% end %>
   </ul>
+ -->
+
+
+	
+
+
+  <ul class="press-index-list">
+		<% @listings_press.each do |listing| %>
+					<% if listing.default_picture %>
+
+			<li>
+	            	<%= link_to image_tag(listing.default_picture.image.url), collection_path(listing) %>
+	            			<p><%= listing.name %></p>
+	            	<% else %>
+	              		N/A
+	            	<% end %>
+			</li>
+			
+		<% end %>
+
+  </ul>
+
+
 

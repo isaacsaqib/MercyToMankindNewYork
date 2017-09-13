@@ -415,21 +415,21 @@ end
 	var country = document.getElementById('country');
 	country.value="<%=@country%>";
 if(country.value=="" || country.value=="United States of America"){
-document.getElementById("free_ship").style.opacity="1";
-document.getElementById("inter_ship").style.opacity='0';
+document.getElementById("free_ship").style.display="initial";
+document.getElementById("inter_ship").style.display='none';
 }else{
-document.getElementById("free_ship").style.opacity="0";
-document.getElementById("inter_ship").style.opacity='1';
+document.getElementById("free_ship").style.display="none";
+document.getElementById("inter_ship").style.display='initial';
 }
 </script>
 <script type="text/javascript">
 	function checkCountry(country){
 if(country.value=="United States of America"){
-document.getElementById("free_ship").style.opacity="1";
-document.getElementById("inter_ship").style.opacity='0';
+document.getElementById("free_ship").style.display="initial";
+document.getElementById("inter_ship").style.display='none';
 }else{
-document.getElementById("free_ship").style.opacity="0";
-document.getElementById("inter_ship").style.opacity='1';
+document.getElementById("free_ship").style.display="none";
+document.getElementById("inter_ship").style.display='initial';
 }
 	}
 </script>
