@@ -8,8 +8,9 @@ class WelcomeController < ApplicationController
 
       @pictures = @listings_slideshow[0].pictures.order(description: :asc) 
       @listing = @listings_slideshow[0]
-      @listings = Listing.first(6)
-
+      @listings = Listing.all.order(price: :desc)
+      @limited = @listings.first(25).shuffle
+      @limited_final = @limited.first(6)
 
 
   end

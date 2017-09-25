@@ -33,6 +33,20 @@ hr {
 
 }
 
+#welcome-video {
+	width: 45%;
+	margin-top: 40px;
+}
+
+
+
+
+#listings_on_welcome_index {
+	padding:0px;
+	text-align: center;
+	margin: 0px 80px 100px 80px;
+}
+
 #listings-show-pictures li:last-child {
 	width: 50%;
 	margin:0 auto;
@@ -1632,6 +1646,7 @@ th {
 #below-slideshow-ul {
 	margin-bottom: 50px
 	width:100%;
+	margin-top: 0px;
 
 }
 
@@ -1790,6 +1805,9 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 @media screen and (max-width: 1000px) {
 
+	#welcome-video {
+		width: 65%;
+	}
 
 	.press-index-list img {
 		width: 90%;
