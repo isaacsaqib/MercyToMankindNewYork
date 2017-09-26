@@ -171,9 +171,68 @@
 
 
 
-	<a href="http://www.instagram.com/mercytomankind.ny"><img id="ig-img" src="assets/ig-pic-no-text-c3845c312113e47b73115c94d32e094ba2a42854a78b55682b1fd53753e017e7.jpg" style="width:90%;margin-bottom: 30px;padding-bottom: 100px;"></a>
+	<a href="http://www.instagram.com/mercytomankind.ny"><img id="ig-img" src="assets/ig-pic-no-text-c3845c312113e47b73115c94d32e094ba2a42854a78b55682b1fd53753e017e7.jpg" style="width:90%;margin-bottom: 30px;padding-bottom: 10px;"></a>
 		
 </body>
+
+	
+<table class="products" id="new">
+	<tr>
+ 		<td class="col">
+			<ul id="listings_on_welcome_index">
+			<h1 class="product-heading-h1" style="text-decoration: underline;">POPULAR CHOICES</h1>
+
+			<div class="mobile-line-separator"></div>
+			<% @limited_final.each do |listing| %> <!-- ARRAY FULL OF SECTIONED ARRAYS  -->
+            	<li>
+            	<figure class="listings-figure"> 	
+		            	
+		        <%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
+		            	
+            	<a href="<%=listing_path(listing)%>">
+		            	<figcaption class="listings-figcaption"> 
+
+		            		<p> 
+								<%= listing.name.upcase %><br><br><br> 
+		            			<%=	listing.description.upcase.html_safe%> <br><br>
+		            			
+		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
+			            			<span style="padding:0px;color:black;">
+
+			            				$<%= listing.price %>.00
+
+			            			</span>
+			            		<% else %>
+									<span style="padding:0px;color:red;">
+
+			            				$<%= listing.price %>.00
+
+			            			</span>
+									<span style="padding: 0px;text-decoration: line-through;">
+
+										$<%= listing.original_price %>.00
+
+									</span>
+								<% end %>
+
+		            		</p> 
+
+		            	</figcaption>
+				</a>
+				<p class="mobile-figure-p"><%= listing.name.upcase %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p> 
+
+		           </figure>
+
+			
+				</li>
+				<% end %>
+			</ul>
+		</td>
+	</tr>
+</table>
+
+
 
 	<!-- End Wrapper -->
 

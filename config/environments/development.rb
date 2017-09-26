@@ -11,6 +11,16 @@ config.paperclip_defaults = {
   }
 }
 
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :authentication => :plain,
+  :address => "smtp.mailgun.org",
+  :port => 587,
+  :domain => "mg.mercyxmankind.mailgun.org",
+  :user_name => "postmaster@mg.mercyxmankind.mailgun.org",
+  :password => "canarsie0988"
+}
+
 #  config.paperclip_defaults = {
 #   :storage => :s3,
 #   :s3_region => 'us-east-1',
