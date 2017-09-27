@@ -180,10 +180,12 @@
 	<tr>
  		<td class="col">
 			<ul id="listings_on_welcome_index">
-			<h1 class="product-heading-h1" style="text-decoration: underline;">POPULAR CHOICES</h1>
 
 			<div class="mobile-line-separator"></div>
 			<% @limited_final.each do |listing| %> <!-- ARRAY FULL OF SECTIONED ARRAYS  -->
+            	<% if listing.price == 1  %>
+            		<% @limited_final.delete(listing) %>
+	    		<% end %>
             	<li>
             	<figure class="listings-figure"> 	
 		            	
@@ -225,6 +227,7 @@
 		           </figure>
 
 			
+
 				</li>
 				<% end %>
 			</ul>

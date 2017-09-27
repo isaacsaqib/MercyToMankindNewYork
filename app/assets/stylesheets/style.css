@@ -44,9 +44,14 @@ hr {
 #listings_on_welcome_index {
 	padding:0px;
 	text-align: center;
-	margin: 0px 80px 100px 80px;
 }
 
+
+#listings_on_welcome_index > li > figure {
+/*	height:265px;
+	width: 210px;*/
+
+}
 #listings-show-pictures li:last-child {
 	width: 50%;
 	margin:0 auto;

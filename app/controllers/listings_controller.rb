@@ -27,7 +27,7 @@ class ListingsController < ApplicationController
 		@listings_accessories = Listing.where(:section => "Accessories").order(price: :desc)
 		
 		@listings_press = Listing.where(:section => "Press")
-		@listings_collection = Listing.where(:section => "Collection")
+		@listings_collection = Listing.where(:section => "Collection").order(:fabric)
 		
     respond_to do |format|
       format.html # index.html.erb

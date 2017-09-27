@@ -1,6 +1,6 @@
 class CollectionsController < ApplicationController 
 	def index
-		@listings_collection = Listing.where(:section => "Collection").order(price: :desc)
+		@listings_collection = Listing.where(:section => "Collection").order(:fabric)
 	end
 
 	def show
