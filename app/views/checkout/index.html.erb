@@ -14,8 +14,8 @@
 
 
 
-
 <% if session[:cart].present? %>
+
 
 
 	<% 
@@ -149,7 +149,7 @@
 						<% @discount_percentage = 0.20 %>
 						<% @discount = @subtotal * @discount_percentage %>
 						<% @savings_discount = @subtotal - @discount %>
-						<%= number_to_currency(@discount) %> USD
+						<%= number_to_currency(@discount) %> USD  ("<%= session[:code] %>")
 					<% else %>
 						 0 USD 
 					<% end %>
