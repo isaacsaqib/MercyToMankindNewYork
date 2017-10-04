@@ -1060,11 +1060,11 @@ font-family: 'Cinzel', serif;
     appearance: none;
 }
 
-option {
+/*option {
 	-webkit-appearance: none;
    -moz-appearance: none;
    appearance: none;
-}
+}*/
 
 #shop-sub-nav li a {
 	font-size: 14px;

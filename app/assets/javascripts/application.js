@@ -26,6 +26,8 @@ $(document).ready(function(){
 
 
 
+
+
 	$("#mobile-store-div").hide();
 	$("#mobile-store-list").hide();
 	$("#collection-div").hide();
@@ -202,15 +204,23 @@ $(document).ready(function(){
 
 	});
 
+
+
+
 	 // var picid = $('#listings-show-pictures > li > a > img').attr("id")
 	 // // var picidtext = $("#" + picid)
 	 // var picid_text = ("#" + picid);
 	 // console.log(picid_text)
 	 // $("picid_text").elevateZoom()
 
-	 $("a.zoom").zoom({
-	 	magnify: .8
-	 });
+	 // $("a.zoom").zoom({
+	 // 	magnify: .8
+	 // });
+
+
+
+
+
 
 
 	// $("#picture-delete").on("click", function(event){ 
