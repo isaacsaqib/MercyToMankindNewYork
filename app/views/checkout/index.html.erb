@@ -67,7 +67,7 @@
 
 <% if session[:firstname] %>
 	
-<% @code = "MERCY" %>
+<% @code = "MERCY10" %>
 	<div id="shipping-info-div">
 
 		<ul id="shipping-info-list">
@@ -146,7 +146,7 @@
 				<p>
 				<span class="total-headings">DISCOUNT </span>
 					<% if session[:code] == @code %> <!--  IF CODE ENTERED AT SHIPPING = @code -->
-						<% @discount_percentage = 0.15 %>
+						<% @discount_percentage = 0.10 %>
 						<% @discount = @subtotal * @discount_percentage %>
 						<% @savings_discount = @subtotal - @discount %>
 						<%= number_to_currency(@discount) %> USD  ("<%= session[:code] %>")
