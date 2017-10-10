@@ -196,6 +196,13 @@
 		<% @listing_130 = Listing.find(130) %>
 		<% @listing_144 = Listing.find(144) %>
 		<% @listing_199 = Listing.find(199) %>
+		<% @listing_225 = Listing.find(225) %>
+		<% @listing_226 = Listing.find(226) %>
+		<% @listing_227 = Listing.find(227) %>
+		<% @listing_228 = Listing.find(228) %>
+		<% @listing_229 = Listing.find(229) %>
+		<!-- FINDING AND REMOVING PRESS IDS-->
+
 		<!-- Removal -->
 		<% if @upsell_listings_arr.include?  @listing_222 %>
 				<% @upsell_listings_arr.delete(@listing_222) %>
@@ -211,6 +218,21 @@
 		<% end %>
 		<% if @upsell_listings_arr.include?  @listing_199 %>
 			<% @upsell_listings_arr.delete(@listing_199) %>
+		<% end %>		
+		<% if @upsell_listings_arr.include?  @listing_225 %>
+			<% @upsell_listings_arr.delete(@listing_225) %>
+		<% end %>		
+		<% if @upsell_listings_arr.include?  @listing_226 %>
+			<% @upsell_listings_arr.delete(@listing_226) %>
+		<% end %>		
+		<% if @upsell_listings_arr.include?  @listing_227 %>
+			<% @upsell_listings_arr.delete(@listing_227) %>
+		<% end %>		
+		<% if @upsell_listings_arr.include?  @listing_228 %>
+			<% @upsell_listings_arr.delete(@listing_228) %>
+		<% end %>		
+		<% if @upsell_listings_arr.include?  @listing_229 %>
+			<% @upsell_listings_arr.delete(@listing_229) %>
 		<% end %>	
 		<!-- End collection id removal -->
 
@@ -218,9 +240,6 @@
 		<ul id="upsell_listings_pics">
 			<p style="text-decoration: underline;">STYLE WITH:</p>
 			<% @upsell_listings_arr.each do |listing| %>
-
-		
-
 			<!-- Creating li tag -->
 		  	<li>
 		  		<a href="/listings/<%=listing.id%>"><%= image_tag(listing.default_picture.image.url) %></a>

@@ -28,6 +28,8 @@ class ListingsController < ApplicationController
 		
 		@listings_press = Listing.where(:section => "Press")
 		@listings_collection = Listing.where(:section => "Collection").order(:fabric)
+
+
 		
     respond_to do |format|
       format.html # index.html.erb
