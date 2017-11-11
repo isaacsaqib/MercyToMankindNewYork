@@ -144,13 +144,16 @@
 					<div style="margin-bottom: 30px;width:90%;" class="line-separator"></div>
 					<!-- Change color to gray when there is no sale -->
 
-					<select id="size" name="size"><br>
-						<% @size = @listing.size.split(",") %>
-							<option>CHOOSE SIZE ↓</option>
-						<% @size.each do |s| %>
-							<option value="<%= s %>"><%= s %></option>
-						<% end %>
-				 	</select>
+				
+
+					<div id="dd" class="wrapper-dropdown-4">SIZE
+						<ul class="dropdown">
+							<% @size = @listing.size.split(",") %>
+							<% @size.each do |s| %>
+							<li><input type="checkbox" value="<%= s %>"><label for="el-1"><%= s %></label></li>
+							<% end %>
+						</ul>
+					</div>
 
 				 	<input id="add-to-cart-btn" type="submit" value="ADD TO CART +"><br>
 
@@ -201,6 +204,7 @@
 		<% @listing_227 = Listing.find(227) %>
 		<% @listing_228 = Listing.find(228) %>
 		<% @listing_229 = Listing.find(229) %>
+		<% @listing_229 = Listing.find(231) %>
 		<!-- FINDING AND REMOVING PRESS IDS-->
 
 		<!-- Removal -->
@@ -233,6 +237,9 @@
 		<% end %>		
 		<% if @upsell_listings_arr.include?  @listing_229 %>
 			<% @upsell_listings_arr.delete(@listing_229) %>
+		<% end %>		
+		<% if @upsell_listings_arr.include?  @listing_231 %>
+			<% @upsell_listings_arr.delete(@listing_231) %>
 		<% end %>	
 		<!-- End collection id removal -->
 

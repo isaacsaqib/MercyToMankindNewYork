@@ -3,11 +3,12 @@ class WelcomeController < ApplicationController
   def index
   	session[:cart] ||= {}
 	session[:cart][params[:id]] = [params[:id], params[:name], params[:desc],params[:price]]
-			@listings_slideshow = Listing.where(:section => "Slideshow")
+			
       @listings_head = Listing.where(:section => "Head")
 
-      @pictures = @listings_slideshow[0].pictures.order(description: :asc) 
-      @listing = @listings_slideshow[0]
+      @listings_slideshow = Listing.where(:section => "Slideshow")
+      @listing = @listings_slideshow[2]
+      @pictures = @listings_slideshow[2].pictures.order(description: :asc) 
 
       @listings = Listing.all.order(price: :desc)
       

@@ -75,24 +75,45 @@
 				
 
 			</ul>
+
+
+
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div style="height:1300px;margin-bottom: 15px;" id="index-swiper-wrapper" class="swiper-wrapper">
+    	<% @pictures.each do |pic| %>
+			<% if logged_in? %>
+		      
+		      <div class="swiper-slide">
+				<a href="listings/<%= @listing.id %>">
+					<img class="list-pic" src='<%= pic.image.url %>'>
+		      	</a>
+		      </div>
+
+		    <%else%>
+
+		      <div class="swiper-slide">
+	   		 	<a href="/<%=pic.link%>">
+					<img class="list-pic" src='<%= pic.image.url %>'>
+		      	</a>
+		      </div>
+
+			<% end %>
+      	<% end %>
+    </div>
+    <!-- Add Pagination -->
+    <div id="index-swiper-pagination" class="swiper-pagination"></div>
+
+  </div> 
+  <!-- END SWIPER  -->
+
+  <hr>
+
 		
+
+
    <!-- SS 16 SLIDESHOW -->
-   <div id="slides">
-   		 <% @pictures.each do |pic| %>
-	   		 <% if logged_in? %>
-
-	   		 <a href="listings/<%= @listing.id %>">
-				<img src="<%= pic.image.url %>">
-	   		 </a>
-
-	   		 <%else%>
-
-
-	   		 <a href="/<%=pic.link%>">	 <img src="<%= pic.image.url %>"> </a>
-
-	   		 <% end %>
-   		 <% end %>
-  	<!-- <img src="assets/sale-banner-c165bd9f5d0503c205e4a61209d6207708a83333223d93a27bb52055e1d80e4e.jpg">
+   	<!-- <img src="assets/sale-banner-c165bd9f5d0503c205e4a61209d6207708a83333223d93a27bb52055e1d80e4e.jpg">
   	<img src="assets/list4-aa64e272778149a396a0dd04c3cf2576a29c16adeff3c83c7ac2bf24063f80fb.jpg">
   	<img src="assets/IMG_1647-ebe460600789fd951e97fb802bd18fe553a010df7214fbbcbb85d99b4abe74de.jpg">
   	<img src="assets/slide3-1c31d6addcd1676aa85a4ca0c586234a4f28b7f1a641f2acfc40712f6071d3f1.jpg">
@@ -100,7 +121,6 @@
   	<img src="assets/IMG_3968-a8bb0ffd3b718664cab3a9cce28dc6367af7ccf7b40f37e128eb757dae687e9d.jpg">
   	<img src="assets/IMG_162-9ba52f25f0af83f100a5b206f31838d5aadfff77b36a5c1b56eab66fb43e5c77.jpg">
   	<img src="assets/list5-754075c5fc1978c167a4e97ad8325cc161f13c7d062fab0ffd21660e95354d4b.jpg"> -->
-  </div>
 
 	<!-- SS 16 CAPSULE SLIDESHOW -->
  <!--  <div id="slides">
@@ -121,71 +141,35 @@
 
 
  -->
+   <h3 style="margin-bottom: 64px;" class="index-section-titles">MEDIA</h3>
 
-<ul>
-	 <li>
-	 	<iframe id="welcome-video" src="https://player.vimeo.com/video/216327730" width="1240" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-	 </li>
-</ul>
+  	<ul id="media-list">
+   		<li>
+		  	<a href="/collections/222"><img src="assets/media-list-1.jpg"></a>  	
+  		</li>   		   		
+  		<li>
+		  	<a href="/brand"><img src="assets/media-list-2.jpg"></a>  	
+  		</li>   		
+  		<li>
+		  	<a href="http://www.instagram.com/mercytomankind.ny"><img src="assets/media-list-3.jpg"></a>  	
+  		</li>
 
+  	</ul>
 
+	
+	<h3 style="margin-bottom: 58px;" class="index-section-titles">GODSEND CAMPAIGN FILM</h3>
+	 <iframe src="https://player.vimeo.com/video/216327730" width="940" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-  <ul id="below-slideshow-ul">
-
-  	<!-- <li><p>JUDGEMENT DAY<br><br>Welcome To Judgement Day. Highlighting the terrors of the past and present, this capsule looks to push the modern day being to ponder over historic events through a series of controversial images. Events ranging from WWII to the Rothschild Surrealist Ball, the array of photographs reminds us of the horrors of the past and how they relate to our present day life. The capsule was created as a reminder for society to never forget that we as indivduals must strive to prevent the loss of human conscience when being sorrounded by the distractions of dubious news and events.   </p></li><br><br> -->
-  	<!-- <li><a href="listings/135"><img src="assets/list1-ss16cap-59d9cb3820001f92e59dbce3b1657cd4752edd3fdc2a0db4293f4a662a599893.jpg"></a></li> -->
-  	<!-- <li><a href="listings/137"><img src="assets/list2-ss16cap-1159f02e9564afa493b30f7b39d588b61869c243ff6d833ceb586d59321bd94a.jpg"></a></li> -->
- 
-<!--   	<li>
-  		<figure class="below-slideshow-ul-figure">
-
-			  	<img class="below-slideshow-ul-image" src="assets/jeans-below-ul.JPG">
-		  	
-		  		<a href="/listings">
-				  	<figcaption class="below-slideshow-ul-figcaption">
-				  		<p>SHOP</p>
-				  	</figcaption>
-			  	</a>
-
-	  	</figure>
-  	</li>
- -->
-   	<li>
-			  	<a href="/collections/222"><img class="below-slideshow-ul-image" src="assets/pre-spring-1a-723737edf546c42fadef47efbd1ed7f4c7f6bf75b01b33032beb673ca79ec153.jpg"></a>
-			  	<h1>Lookbook</h1>
-			  	<p>Introducing Pre-Spring: "GODSEND"</p>
-			  	
-  	</li>
-
-  	<li>
-			  	<a href="/listings"><img class="below-slideshow-ul-image" src="assets/pre-spring-2a-4fd665f32042d45dedc0c1da55e6080765709bbfaf2f9680634379b6f5c2e1b7.jpg"></a>
-			  	<h1>Quilted Silver Bomber | Parisian Striped Trousers</h1>
-			  	<p>Completed with RiRi Hardware And Essential Detailing</p>
-  	</li>
+	 <hr>
 
 
-
- 	<li>
-			  	<a href="/listings/218"><img class="below-slideshow-ul-image" src="assets/pre-spring-3a-458cc7b2724fbbf0539c5428a7b8ad10fe3d9af4faee5f93f2575622780fe527.jpg"></a>
-			  	<h1>'NO MERCY' Turtleneck</h1>
-			  	<p>Embroidered Fine Jersey Rayon </p>
-		  	
-		  		
-  	</li>
-
-  </ul>
-
-
-
-	<a href="http://www.instagram.com/mercytomankind.ny"><img id="ig-img" src="assets/ig-pic-no-text-c3845c312113e47b73115c94d32e094ba2a42854a78b55682b1fd53753e017e7.jpg" style="width:90%;margin-bottom: 30px;padding-bottom: 10px;"></a>
+<h3 style="margin-bottom: 20px;" class="index-section-titles">POPULAR</h3>
 
 	
 <table class="products" id="new">
 	<tr>
  		<td class="col">
 			<ul id="listings_on_welcome_index">
-			<h1 style="text-decoration: underline; font-size:20px;">Popular</h1>
-
 
 			<div class="mobile-line-separator"></div>
 			<% @limited_final.each do |listing| %>
@@ -252,48 +236,3 @@
 
 
 </html>
-
-  <script>
-	    $(function(){
-	      $("#slides").slidesjs({
-	        width: 940,
-	        height: 1000,
-	        navigation: {
-		      active: false,
-		        // [boolean] Generates next and previous buttons.
-		        // You can set to false and use your own buttons.
-		        // User defined buttons must have the following:
-		        // previous button: class="slidesjs-previous slidesjs-navigation"
-		        // next button: class="slidesjs-next slidesjs-navigation"
-		      effect: "fade"
-		        // [string] Can be either "slide" or "fade".
-		    },
-		   play: {
-		      active: false,
-		        // [boolean] Generate the play and stop buttons.
-		        // You cannot use your own buttons. Sorry.
-		      effect: "fade",
-		        // [string] Can be either "slide" or "fade".
-		      interval: 3000,
-		        // [number] Time spent on each slide in milliseconds.
-		      auto: true,
-		        // [boolean] Start playing the slideshow on load.
-		      swap: true,
-		        // [boolean] show/hide stop and play buttons
-		      pauseOnHover: false,
-		        // [boolean] pause a playing slideshow on hover
-		      restartDelay: 2500
-		        // [number] restart delay on inactive slideshow
-		    },
-		   pagination: {
-		      active: false,
-		        // [boolean] Create pagination items.
-		        // You cannot use your own pagination. Sorry.
-		      effect: "slide"
-		        // [string] Can be either "slide" or "fade".
-		    }
-
-	      });
-	    });
-	  </script>
-		
