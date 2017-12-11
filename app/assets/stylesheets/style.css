@@ -2357,14 +2357,13 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 	.selectric .button {
 		display: block;
-    position: absolute;
-    right: 0px;
-    top: 35px;
-    width: 60px;
-    height: 20px;
-    background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgOCA1IiBzdHlsZT0iYmFja2dyb…AxLjA4NyAwIC4zMDEuMzI4LjI4Mi44ODEgMCAxLjE4N3oiIGZpbGw9IiNiYmIiLz48L3N2Zz4K) no-repeat 50%;
-    font: 0/0 a;
-    font-size: 50px;
+	    position: absolute;
+	    right: 0px;
+	    top: 35px;
+	    width: 60px;
+	    height: 20px;
+	    /*background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgOCA1IiBzdHlsZT0iYmFja2dyb…AxLjA4NyAwIC4zMDEuMzI4LjI4Mi44ODEgMCAxLjE4N3oiIGZpbGw9IiNiYmIiLz48L3N2Zz4K) no-repeat 50%;*/
+	    font-size: 50px;
 	}
 
 	.selectric-wrapper {
