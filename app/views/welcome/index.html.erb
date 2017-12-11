@@ -101,15 +101,15 @@
 
   	<ul id="media-list"> 
    		<li>
-		  	<a href="/collections/253"><img src="/assets/media-list-4.jpg"></a>  	
+		  	<a href="/collections/253"><img src="/assets/media-list-4-b6e84e4b0896bc9a096c11d377bb630028181303d0b3f6b3ca9133cca8fc568a.jpg"></a>  	
   		</li>   		   		
 
   		<li>
-		  	<a href="/brand"><img src="/assets/media-list-2.jpg"></a>  	
+		  	<a href="/brand"><img src="/assets/media-list-2-5a975cbb8ce3c6f908965716806bb34d58be872ea00383809c69ffb81d9fd2d4.jpg"></a>  	
   		</li>   		
 
   		<li>
-		  	<a href="http://www.instagram.com/mercytomankind.ny"><img src="assets/media-list-3.jpg"></a>  	
+		  	<a href="http://www.instagram.com/mercytomankind.ny"><img src="assets/media-list-3-26d7383df1fdf380c0fea646c512239ec11b21cc0044774b4ae604ce7156f937.jpg"></a>  	
   		</li>
   	</ul>
 
@@ -137,7 +137,32 @@
 
   	</ul>
 
-<hr>
+<hr>	
+
+	<%
+	@listings = Listing.all.order(price: :desc)
+	  @limited_shuffle_mobile = @listings.first(25).shuffle
+      @limited_final_mobile = @limited_shuffle_mobile.first(6)
+      %>
+			<% @listings_press = Listing.where(:section => "Press") %>
+			<% @listings_press.each do |listing| %>
+				<% if @limited_final_mobile.include? listing %>
+					<% @limited_final_mobile.delete(listing) %>
+				<% end %>
+			<% end %>
+
+		<% @listings_slideshow = Listing.where(:section => "Slideshow") %>
+			<% @listings_slideshow.each do |listing| %>
+				<% if @limited_final_mobile.include? listing %>
+					<% @limited_final_mobile.delete(listing) %>
+				<% end %>
+			<% end %>	
+		<% @listings_collection = Listing.where(:section => "Collection") %>
+			<% @listings_collection.each do |listing| %>
+				<% if @limited_final_mobile.include? listing %>
+					<% @limited_final_mobile.delete(listing) %>
+				<% end %>
+			<% end %>	
 
 
 	<h3 style="margin-bottom: 20px;" class="index-section-titles">POPULAR</h3>
@@ -148,11 +173,7 @@
 			<ul id="listings_on_welcome_index">
 
 			<div class="mobile-line-separator"></div>
-			<% @limited_final.each do |listing| %>
-
-            	<% if listing.price == 1  %>
-            		<% @limited_final.delete(listing) %>
-	    		<% end %>
+			<% @limited_final_mobile.each do |listing| %>
             	<li>
 	            	<figure class="listings-figure"> 	
 			            	
@@ -203,13 +224,41 @@
 	</table>
 <!-- END MOBILE PRODUCT TABLE  -->
 
+
+		 <% @upsell_listings_arr = @listings.sample(2) %> 
+
+	<%
+	@listings = Listing.all.order(price: :desc)
+	  @limited_shuffle = @listings.first(25).shuffle
+      @limited_final_desktop = @limited_shuffle.first(4)
+    %>
+		<!-- Randomly selecting two listings and creating a new array containing them-->
+			
+		<!-- REMOVING ANY LISTINGS FROM SECTIONS PRESS, SLIDESHOW AND COLLECTION  -->
+
+		<% @listings_press = Listing.where(:section => "Press") %>
+			<% @listings_press.each do |listing| %>
+				<% if @limited_final_desktop.include? listing %>
+					<% @limited_final_desktop.delete(listing) %>
+				<% end %>
+			<% end %>
+
+		<% @listings_slideshow = Listing.where(:section => "Slideshow") %>
+			<% @listings_slideshow.each do |listing| %>
+				<% if @limited_final_desktop.include? listing %>
+					<% @limited_final_desktop.delete(listing) %>
+				<% end %>
+			<% end %>	
+		<% @listings_collection = Listing.where(:section => "Collection") %>
+			<% @listings_collection.each do |listing| %>
+				<% if @limited_final_desktop.include? listing %>
+					<% @limited_final_desktop.delete(listing) %>
+				<% end %>
+			<% end %>	
+
 <!-- DESKTOP PRODUCT LIST -->
 	<ul id="desktop-products-list">
 		<% @limited_final_desktop.each do |listing| %>
-	    	
-	    	<% if listing.price == 1  %>
-	    		<% @limited_final.delete(listing) %>
-			<% end %>
 	    	
 	    	<li>    	
 		        <%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>

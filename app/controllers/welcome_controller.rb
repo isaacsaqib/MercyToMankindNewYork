@@ -12,9 +12,7 @@ class WelcomeController < ApplicationController
 
       @listings = Listing.all.order(price: :desc)
       
-      @limited = @listings.first(25).shuffle
-      @limited_final = @limited.first(6)
-      @limited_final_desktop = @limited.first(4)
+ 
 
 
 
