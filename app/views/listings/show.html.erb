@@ -1,15 +1,6 @@
 	
 
 <%= javascript_include_tag "application.js" %>
-<%= javascript_include_tag "jquery.event.move.js" %>
-<%= javascript_include_tag "jquery.event.swipe.js" %>
-<%= javascript_include_tag "unslider.js" %>
-<%= javascript_include_tag "unslider-min.js" %>
-<%= javascript_include_tag "sweet-alert.min.js" %>
-
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-<%= stylesheet_link_tag    'unslider', media: 'all', 'data-turbolinks-track' => true %>
-<%= stylesheet_link_tag    'sweetalert', media: 'all', 'data-turbolinks-track' => true %>
 
 
 
@@ -17,11 +8,7 @@
 
 
 
-<div class="logo-div">
-	<h1 class="logo-text-h1">MERCY X MANKIND</h1>
-	<h3 class="logo-text-h3">NEW YORK</h3>
-</div>
-		
+
 
 <title><%= @listing.name %> | MXMNY</title>
 
@@ -33,7 +20,7 @@
 <!-- MOBILE SLIDER -->
 
 
-<div class="swiper-container">
+<div style="height:1300px" class="swiper-container3">
 
 	<div class="swiper-wrapper">
 		<% @pictures.each do |pic| %>
@@ -45,7 +32,10 @@
 		<% end %>
 	</div>
 
-    <div class="swiper-pagination"></div>
+	    <div style="left:35px;" class="swiper-button-prev swiper-button-white"></div>
+    <div style="right:35px;" class="swiper-button-next swiper-button-white"></div>
+    
+
 </div>
 
 <!-- END MOBILE SLIDER -->
@@ -54,22 +44,18 @@
 
 
 
-<div id="listings-show-div">
+<div id="listings-show-div" class="zoomGalleryActive">
 	<ul id="listings-show-pictures">
 	   
 	   <% @pictures.each do |pic| %>
-
+      	<% if logged_in? %> 
 	      <li>
 		      <a href="/pictures/<%=pic.id%>" class="" >
-		      	<img src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'>
+		      	<img class="zoom1" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'>
 		      	<!-- <img id="a<%= pic.id %>" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'> -->
 		      </a>
-
-		      	<% if logged_in? %> 
 		      	<%= pic.description %>
 		      	<%= pic.link %> 
-
-
 		      <br>
 
 			 	<%= form_for pic, remote: true, :html => {:class => "edit-form"} do |f| %>
@@ -85,10 +71,17 @@
 			    <% end %>
 
 			    <br><br>
-		     		<!-- <button id="picture-delete"> Delete Picture </button> -->
 	      </li>
 
-		  		<% end %>
+	      <% else %> 
+		
+		<li>
+	      <a href="" class="" >
+		      	<img class="zoom1" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'>
+		      </a>
+	     </li>
+
+		<% end %>
 
 		<% end %> 
 	</ul>
@@ -113,54 +106,38 @@
 		   <a class="listings-back-link" href="/listings"> <%=@listing.section.upcase%> </a>
 		<%= form_tag add_to_cart_listing_path(@listing) do %>
 					<a style="text-decoration:none;" href="<%=listing_path(@listing)%>"></a>
-					<p style="margin-top:30px;margin-bottom: 10px;" class="listings-details-header-text"><%= @listing.name %></p>
+					<p class="listing-name" style="" class="listings-details-header-text"><%= @listing.name %></p>
 
 
 					<% if @listing.on_sale == false %> <!-- if listing is NOT ON SALE  -->
-						<p style="margin:0px 100px -10px 30px;" class="listings-details-subtext">$<%= @listing.price %></p> <br>
-						
-							<script>
-								fbq('track', 'ViewContent', {
-								value: <%= @listing.price %>,
-								content_name: "<%= @listing.name %>",
-								currency: 'USD'
-								});
-							</script>
+						<p id="price-text" class="listings-details-subtext"><%= number_to_currency(@listing.price) %>
 
 					<% else %>
 						<p class="listings-details-subtext" style="color:red; margin:0px 100px -10px 30px;">$<%= @listing.price %></p>
 						<p class="listings-details-subtext" style="color:gray; margin:0px 100px -10px 30px;text-decoration: line-through;">$<%= @listing.original_price %></p><br>
 
-							<script>
-								fbq('track', 'ViewContent', {
-								value: <%= @listing.price %>,
-								content_name: "<%= @listing.name %>",
-								currency: 'USD'
-								});
-							</script>
+							
 
 					<% end %>
 
 					<div style="margin-bottom: 30px;width:90%;" class="line-separator"></div>
 					<!-- Change color to gray when there is no sale -->
 
-				
 
-					<div id="dd" class="wrapper-dropdown-4">SIZE
-						<ul class="dropdown">
-							<% @size = @listing.size.split(",") %>
-							<% @size.each do |s| %>
-							<li><input type="checkbox" value="<%= s %>"><label for="el-1"><%= s %></label></li>
-							<% end %>
-						</ul>
-					</div>
+					<select id="size" name="size"><br>
+						<% @size = @listing.size.split(",") %>
+						<% @size.each do |s| %>
+							<option value="<%= s %>"><%= s %></option>
+						<% end %>
+				 	</select>
 
-				 	<input id="add-to-cart-btn" type="submit" value="ADD TO CART +"><br>
+					<input id="add-to-cart-btn" type="submit" value="ADD TO CART +"><br>
+
+<hr>
 
 	
-					<div style="width:95%;margin-bottom:60px;" class="line-separator"></div>
 
-					<p class="listings-details-header-text">DETAILS / STORY</p>
+					<p id="details-text-mobile" class="listings-details-header-text">DETAILS / STORY</p>
 					<p class="listings-details-subtext"><%= @listing.description.upcase.html_safe %></p>
 					<p class="listings-details-header-text"> FABRIC / MATERIAL </p>
 					<p class="listings-details-subtext"><%= @listing.fabric.upcase %></p>
@@ -171,7 +148,7 @@
 
 					<div style="margin-bottom: 140px;" class="line-separator"></div>
 
-					<p style="text-align: center;" class="listings-details-header-text">Questions regarding fit, details, care etc.? <span id="contact-us">Contact us here.</span><a id="contact-email" style="color:black;display:none;" href="mailto:info@mercytomankindco.com">info@mercytomankindco.com</a></p>
+					<p style="color:black;text-align: center;" id="contact-text" class="listings-details-header-text">Questions regarding fit, details, care etc.? <span id="contact-us">Contact us here.</span><a id="contact-email" style="color:black;display:none;" href="mailto:info@mercytomankindco.com">info@mercytomankindco.com</a></p>
 
 
 				
@@ -192,59 +169,35 @@
 
 		 <% @upsell_listings_arr = @listings.sample(2) %> 
 		<!-- Randomly selecting two listings and creating a new array containing them-->
-		
-		<!-- Finding and Removing any collection ids -->
-		<% @listing_222 = Listing.find(222) %>
-		<% @listing_202 = Listing.find(202) %>
-		<% @listing_130 = Listing.find(130) %>
-		<% @listing_144 = Listing.find(144) %>
-		<% @listing_199 = Listing.find(199) %>
-		<% @listing_225 = Listing.find(225) %>
-		<% @listing_226 = Listing.find(226) %>
-		<% @listing_227 = Listing.find(227) %>
-		<% @listing_228 = Listing.find(228) %>
-		<% @listing_229 = Listing.find(229) %>
-		<% @listing_229 = Listing.find(231) %>
-		<!-- FINDING AND REMOVING PRESS IDS-->
+			
+		<!-- REMOVING ANY LISTINGS FROM SECTIONS PRESS, SLIDESHOW AND COLLECTION  -->
 
-		<!-- Removal -->
-		<% if @upsell_listings_arr.include?  @listing_222 %>
-				<% @upsell_listings_arr.delete(@listing_222) %>
-		<% end %>
-		<% if @upsell_listings_arr.include?  @listing_202 %>
-				<% @upsell_listings_arr.delete(@listing_202) %>
-		<% end %>
-		<% if @upsell_listings_arr.include?  @listing_130 %>
-			<% @upsell_listings_arr.delete(@listing_130) %>
-		<% end %>
-		<% if @upsell_listings_arr.include?  @listing_144 %>
-				<% @upsell_listings_arr.delete(@listing_144) %>
-		<% end %>
-		<% if @upsell_listings_arr.include?  @listing_199 %>
-			<% @upsell_listings_arr.delete(@listing_199) %>
-		<% end %>		
-		<% if @upsell_listings_arr.include?  @listing_225 %>
-			<% @upsell_listings_arr.delete(@listing_225) %>
-		<% end %>		
-		<% if @upsell_listings_arr.include?  @listing_226 %>
-			<% @upsell_listings_arr.delete(@listing_226) %>
-		<% end %>		
-		<% if @upsell_listings_arr.include?  @listing_227 %>
-			<% @upsell_listings_arr.delete(@listing_227) %>
-		<% end %>		
-		<% if @upsell_listings_arr.include?  @listing_228 %>
-			<% @upsell_listings_arr.delete(@listing_228) %>
-		<% end %>		
-		<% if @upsell_listings_arr.include?  @listing_229 %>
-			<% @upsell_listings_arr.delete(@listing_229) %>
-		<% end %>		
-		<% if @upsell_listings_arr.include?  @listing_231 %>
-			<% @upsell_listings_arr.delete(@listing_231) %>
-		<% end %>	
-		<!-- End collection id removal -->
+		<% @listings_press = Listing.where(:section => "Press") %>
+			<% @listings_press.each do |listing| %>
+				<% if @upsell_listings_arr.include? listing %>
+					<% @upsell_listings_arr.delete(listing) %>
+				<% end %>
+			<% end %>
+
+		<% @listings_slideshow = Listing.where(:section => "Slideshow") %>
+			<% @listings_slideshow.each do |listing| %>
+				<% if @upsell_listings_arr.include? listing %>
+					<% @upsell_listings_arr.delete(listing) %>
+				<% end %>
+			<% end %>	
+		<% @listings_collection = Listing.where(:section => "Collection") %>
+			<% @listings_collection.each do |listing| %>
+				<% if @upsell_listings_arr.include? listing %>
+					<% @upsell_listings_arr.delete(listing) %>
+				<% end %>
+			<% end %>	
+		<!-- END  -->
+
+
 
 		<!-- Start upsell pic list -->
 		<ul id="upsell_listings_pics">
+	
 			<p style="text-decoration: underline;">STYLE WITH:</p>
 			<% @upsell_listings_arr.each do |listing| %>
 			<!-- Creating li tag -->
@@ -264,7 +217,7 @@
 		<% if logged_in? %>
 						<%= form_for @listing, remote: true, :html => {:multipart => true, :class => "edit-form"} do |f| %>
 							<%= f.label(:name) %>
-						  	<%=f.text_field :name %><br><br>
+						  	<%=f.text_field :name, :maxlength => 29 %><br><br>
 						  	<%= f.label :price %>
 						  	<%= f.number_field :price %><br><br>
 						  	<%= f.label "New?" %>

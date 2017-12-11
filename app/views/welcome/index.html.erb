@@ -1,218 +1,195 @@
-	<html>
+<html>
 	<head>
-
+		<title> MERCY X MANKIND NEW YORK </title>
+		<%= javascript_include_tag "application.js" %>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<!-- BEGIN PRIVY WIDGET CODE -->
 		<script type='text/javascript'> var _d_site = _d_site || '39F45F7BD0352326343B684B'; </script>
 		<script src='//widget.privy.com/assets/widget.js'></script>
 		<!-- END PRIVY WIDGET CODE -->
 		<meta name="description" content="MERCY X MANKIND NEW YORK | Contemporary Urbanwear For The Modern Being | SPRING/SUMMER 2016 Available Now."/>
-
-	<%= javascript_include_tag "application.js" %>
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-
-<!-- BEGIN PRIVY WIDGET CODE -->
-<!-- <script type='text/javascript'> var _d_site = _d_site || '39F45F7BD0352326343B684B'; </script>
-<script src='//widget.privy.com/assets/widget.js'></script> -->
-<!-- END PRIVY WIDGET CODE -->
-	<!-- MAILCHIMP FORM -->
-	<!-- <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us13.list-manage.com","uuid":"5194035157454408880655014","lid":"3460c40b66"}) })</script> -->
-	<!-- END FORM  -->
-
-
-	
-
-	<title> MERCY X MANKIND NEW YORK </title>
-
 	</head>
 
 
-	<div class="wrapper">
+<div class="wrapper">
 
-		<body>
-		
+<body>
 
-	
+<!-- DESKTOP SWIPER  -->
+  <div class="swiper-container1">
+    <div style="height:650px;margin-bottom: 15px;" id="#index-swiper-wrapper" class="swiper-wrapper">
+		    <% @listing_desktop_index_slide = Listing.find_by_id(247) %>
+			<% @pictures = @listing_desktop_index_slide.pictures.order(description: :asc)  %>
+			<% @pictures.each do |pic| %>
+			<% if logged_in? %>
 
-	
-			<h1 class="logo-text-h1">MERCY X MANKIND</h1>
-			<h3 class="logo-text-h3">NEW YORK</h3>
+			      <div class="swiper-slide">
+			      	<a href="/listings/<%=@listing_desktop_index_slide.id%>">
+						<img style="width: 98%" class="list-pic-index" src="<%=pic.image.url%>">
+					</a>
+			      </div>
 
-			<ul id="store-nav">
-				<li><p><a href="/brand">BRAND</a></p></li>
-				<li>COLLECTIONS +</li>
-					<div id="collection-div" class="store-nav-hidden-div">
-						<ul id="collection-list" class="store-nav-hidden-list">
-							<li><p><a href="/pre_spring_2017">PRE-SPRING 17': "GODSEND" </a></p>
-							<li><p><a href="/fall_winter_2016">FALL/WINTER 2016 </a></p>
-							<li><p><a href="/spring_summer_2016">SPRING/SUMMER 2016 </a></p>
-							<li><p><a href="/fall_winter_2015">FALL/WINTER 2015 </a></p>
-							<li><p><a href="/judgement_day_capsule">JUDGEMENT DAY CAPSULE </a></p>
-						</ul>
+			    <% else %>
 
-					</div>
-				<li>SHOP +</li>
-					<div id="shop-div" class="store-nav-hidden-div">
-						<ul id="shop-list" class="store-nav-hidden-list">
-							<li><p><a href="/listings">ALL</a></p></li>
-							<li><p><a href="/listings-jackets">OUTERWEAR</a></p></li>
-							<li><p><a href="/listings-tops">TOPS</a></p></li>
-							<li><p><a href="/listings-bottoms">BOTTOMS</a></p></li>
-							<li><p><a href="/listings-head">HEADWEAR</a></p></li>
-							<li><p><a href="/listings-sale">SALE</a></p></li>
-						</ul>
-					</div>
-				<li>LOOKBOOKS +</li>
-					<div class="store-nav-hidden-div" id="lookbooks-div">
-						<ul class="store-nav-hidden-list" id="lookbooks-list">
-							<li><p><a href="/collections/222">PRE-SPRING 17': "GODSEND"</a></p></li>
-							<li><p><a href="/collections/202">FALL/WINTER 2016</a></p></li>
-							<li><p><a href="/collections/130">SPRING/SUMMER 2016</a></p></li>
-							<li><p><a href="/collections/144">JUDGEMENT DAY CAPSULE</a></p></li>
-						</ul>
-					</div>
-				<li><p><a href="/press">PRESS</a></p></li>
-				<li><p><a href="/customercare">CONTACT</a></p></li>
-				
+			      <div class="swiper-slide">
+		   		 	<a href="/<%=pic.link%>">
+						<img class="list-pic-index" src='<%= pic.image.url %>'>
+			      	</a> 
+			      </div>
+				<% end %>
+      		<% end %>
 
-			</ul>
+
+    </div>
+
+    <div style="left:35px;" class="swiper-button-prev swiper-button-white"></div>
+    <div style="right:35px;" class="swiper-button-next swiper-button-white"></div>
+    
+    <!-- Add Pagination -->
+    <div style="height: 60px;padding-left:1000px" class="swiper-pagination"></div>
+
+  </div> 
+
+<!-- END DESKTOP SWIPER-->
 
 
 
-  <!-- Swiper -->
-  <div class="swiper-container">
-    <div style="height:1300px;margin-bottom: 15px;" id="index-swiper-wrapper" class="swiper-wrapper">
-    	<% @pictures.each do |pic| %>
+ <!-- MOBILE SWIPER -->
+  <div class="swiper-container2">
+    <div style="height:1300px; margin-bottom: 15px;" id="#index-swiper-wrapper" class="swiper-wrapper">
+		    <% @listings_mobile_index_slide = Listing.find_by_id(248) %>
+			<% @pictures = @listings_mobile_index_slide.pictures.order(description: :asc)  %>
+			<% @pictures.each do |pic| %>
 			<% if logged_in? %>
 		      
 		      <div class="swiper-slide">
-				<a href="listings/<%= @listing.id %>">
-					<img class="list-pic" src='<%= pic.image.url %>'>
-		      	</a>
+		      	<a href="/listings/<%=@listings_mobile_index_slide.id%>">
+					<img class="list-pic" src="<%=pic.image.url%>">
+				</a>
 		      </div>
-
 		    <%else%>
 
 		      <div class="swiper-slide">
 	   		 	<a href="/<%=pic.link%>">
-					<img class="list-pic" src='<%= pic.image.url %>'>
+					<img class="list-pic" src="<%=pic.image.url%>" %>
 		      	</a>
 		      </div>
+		      <% end %>
 
-			<% end %>
       	<% end %>
     </div>
     <!-- Add Pagination -->
-    <div id="index-swiper-pagination" class="swiper-pagination"></div>
+        <div style="left:35px;" class="swiper-button-prev swiper-button-white"></div>
+    <div style="right:35px;" class="swiper-button-next swiper-button-white"></div>
+    
+    <div style="height:150px;z-index: 100;" class="swiper-pagination"></div>
 
   </div> 
-  <!-- END SWIPER  -->
+  <!-- END MOBILE SWIPER  -->
 
-  <hr>
+
+<!--
+<div id="shipping-box">
+	<p>FREE SHIPPING + FREE RETURNS ( USA ONLY ) </p>
+</div>  
+-->
+
+<hr>
 
 		
+   <h3 class="index-section-titles">MEDIA</h3>
 
-
-   <!-- SS 16 SLIDESHOW -->
-   	<!-- <img src="assets/sale-banner-c165bd9f5d0503c205e4a61209d6207708a83333223d93a27bb52055e1d80e4e.jpg">
-  	<img src="assets/list4-aa64e272778149a396a0dd04c3cf2576a29c16adeff3c83c7ac2bf24063f80fb.jpg">
-  	<img src="assets/IMG_1647-ebe460600789fd951e97fb802bd18fe553a010df7214fbbcbb85d99b4abe74de.jpg">
-  	<img src="assets/slide3-1c31d6addcd1676aa85a4ca0c586234a4f28b7f1a641f2acfc40712f6071d3f1.jpg">
-  	<img src="assets/IMG_1866-dfd8fccd16a6a5b7dc1e2e5215b8a4124452bfd3206c68731ce1252b05e65c05.jpg">
-  	<img src="assets/IMG_3968-a8bb0ffd3b718664cab3a9cce28dc6367af7ccf7b40f37e128eb757dae687e9d.jpg">
-  	<img src="assets/IMG_162-9ba52f25f0af83f100a5b206f31838d5aadfff77b36a5c1b56eab66fb43e5c77.jpg">
-  	<img src="assets/list5-754075c5fc1978c167a4e97ad8325cc161f13c7d062fab0ffd21660e95354d4b.jpg"> -->
-
-	<!-- SS 16 CAPSULE SLIDESHOW -->
- <!--  <div id="slides">
-  	<img src="assets/slide2-d698a16c71f4c98733b92c2381833d586795e61a46ed5a547ad45349ff520135.jpg">
-  	<img src="assets/slide1-d76815e7ad49658a0e2bc5557334732d18e0d813d217dc6073a006e95ff172b8.jpg">
-  	<img src="assets/slide4-b5d1dc1bb4d4dc1e03230a3fcf318d9b9c66d110eb5e2672e1a9b4aa37fcc26c.jpg">
-  	<img src="assets/slide5-5bcb217dc31d5cf9bd24cc150f6ad4653ced643dc48de9fdbfe2a7afd3b4b4ec.jpg">
-  	<img src="assets/slide6-6b80d80ea1f04d21937333d06d361c16fad9351949e6b2561a12a683f77c55cf.jpg">
-
-  </div> -->
-
-<!--   <ul id="below-slideshow-ul">
-  	<li><a href="listings/58"><img src="assets/list1-8a38b82bd412b362850cee49361600397de10f91e931f09ad5372fd6689ce8e6.JPG"></a></li>
-  	<li><a href="listings/59"><img src="assets/list2-ae2f0ac0e9ede7a0b338f6af0b7d565f6566870f5b85d57fad318605888ea9ee.JPG"></a></li>
-  	<li><a href="listings/57"><img src="assets/list3-096647577f71ca2eac331a19f9e5b7f897f4a05a5499805d4e07f13ada409771.JPG"></a></li>
-
-  </ul>
-
-
- -->
-   <h3 style="margin-bottom: 64px;" class="index-section-titles">MEDIA</h3>
-
-  	<ul id="media-list">
+  	<ul id="media-list"> 
    		<li>
-		  	<a href="/collections/222"><img src="assets/media-list-1.jpg"></a>  	
+		  	<a href="/collections/253"><img src="/assets/media-list-4.jpg"></a>  	
   		</li>   		   		
+
   		<li>
-		  	<a href="/brand"><img src="assets/media-list-2.jpg"></a>  	
+		  	<a href="/brand"><img src="/assets/media-list-2.jpg"></a>  	
   		</li>   		
+
   		<li>
 		  	<a href="http://www.instagram.com/mercytomankind.ny"><img src="assets/media-list-3.jpg"></a>  	
   		</li>
+  	</ul>
+
+<hr>
+
+	<h3 id="film-heading" class="index-section-titles">FILM</h3>
+	<!-- MOBILE INDEX VIEO - HIDDEN ON DESKTOP-->
+	 <iframe id="index-film" src="https://player.vimeo.com/video/216327730" width="920" height="680" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<!-- END MOBILE INDEX VIDEO  -->
+
+	<!-- DESKTOP FILM LSIT -->
+  	<ul id="film-list">
+
+   		<li>
+		  	<a href="/media"><img class="film-list-img" src="assets/film-list-1.jpg"></a><br>
+		  	<p style="font-size: 10px;margin:10px 0px;font-family: 'Helvetica';font-weight: bold;">
+		  		PRE-SPRING 17: GODSEND
+		  	</p>
+  		</li>   		
+
+  		<li>
+		  	<a href="/media"><img class="film-list-img" src="assets/film-list-2.jpg"></a><br>
+		  	<p style="font-size: 10px;margin: 10px 0px;font-family: 'Helvetica';font-weight: bold;">WHERE DOES YOUR CONFIDENCE COME FROM?</p>	
+  		</li>   		
 
   	</ul>
 
-	
-	<h3 style="margin-bottom: 58px;" class="index-section-titles">GODSEND CAMPAIGN FILM</h3>
-	 <iframe src="https://player.vimeo.com/video/216327730" width="940" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-	 <hr>
+<hr>
 
 
-<h3 style="margin-bottom: 20px;" class="index-section-titles">POPULAR</h3>
-
-	
-<table class="products" id="new">
+	<h3 style="margin-bottom: 20px;" class="index-section-titles">POPULAR</h3>
+	<!-- MOBILE PRODUCT TABLE - HIDDEN ON DESKTOP -->
+	<table class="products" id="mobile-product-table">
 	<tr>
  		<td class="col">
 			<ul id="listings_on_welcome_index">
 
 			<div class="mobile-line-separator"></div>
 			<% @limited_final.each do |listing| %>
+
             	<% if listing.price == 1  %>
             		<% @limited_final.delete(listing) %>
 	    		<% end %>
             	<li>
-            	<figure class="listings-figure"> 	
-		            	
-		        <%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
-		            	
-            	<a href="<%=listing_path(listing)%>">
-		            	<figcaption class="listings-figcaption"> 
+	            	<figure class="listings-figure"> 	
+			            	
+			        <%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
+			            	
+	            	<a href="<%=listing_path(listing)%>">
+			            	<figcaption class="listings-figcaption"> 
 
-		            		<p> 
-								<%= listing.name.upcase %><br><br><br> 
-		            			<%=	listing.description.upcase.html_safe%> <br><br>
-		            			
-		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
-			            			<span style="padding:0px;color:black;">
+			            		<p> 
+									<%= listing.name.upcase %><br><br><br> 
+			            			<%=	listing.description.upcase.html_safe%> <br><br>
+			            			
+			            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
+				            			<span style="padding:0px;color:black;">
 
-			            				$<%= listing.price %>.00
+				            				$<%= listing.price %>.00
 
-			            			</span>
-			            		<% else %>
-									<span style="padding:0px;color:red;">
+				            			</span>
+				            		<% else %>
+										<span style="padding:0px;color:red;">
 
-			            				$<%= listing.price %>.00
+				            				$<%= listing.price %>.00
 
-			            			</span>
-									<span style="padding: 0px;text-decoration: line-through;">
+				            			</span>
+										<span style="padding: 0px;text-decoration: line-through;">
 
-										$<%= listing.original_price %>.00
+											$<%= listing.original_price %>.00
 
-									</span>
-								<% end %>
+										</span>
+									<% end %>
 
-		            		</p> 
+			            		</p> 
 
-		            	</figcaption>
-				</a>
-				<p class="mobile-figure-p"><%= listing.name.upcase %></p>
-				<p class="mobile-figure-p"><%= listing.price %> USD</p> 
+			            	</figcaption>
+					</a>
+					<p class="mobile-figure-p"><%= listing.name.upcase %></p>
+					<p class="mobile-figure-p"><%= listing.price %> USD</p> 
 
 		           </figure>
 
@@ -220,19 +197,33 @@
 
 				</li>
 				<% end %>
-			</ul>
-		</td>
-	</tr>
-</table>
+				</ul>
+			</td>
+		</tr>
+	</table>
+<!-- END MOBILE PRODUCT TABLE  -->
+
+<!-- DESKTOP PRODUCT LIST -->
+	<ul id="desktop-products-list">
+		<% @limited_final_desktop.each do |listing| %>
+	    	
+	    	<% if listing.price == 1  %>
+	    		<% @limited_final.delete(listing) %>
+			<% end %>
+	    	
+	    	<li>    	
+		        <%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
+ 				<p class="desktop-products-list-text"><%= listing.name.upcase %></p>
+				<p class="desktop-products-list-text"><%= listing.price %> USD</p>  
+			</li>
+		<% end %>
+	</ul>
+<!-- END DESKTOP PRODUCT LIST -->
 
 
-
-	<!-- End Wrapper -->
+<!-- End Wrapper -->
+</div>
 
 </body>
-
-
-
-
 
 </html>

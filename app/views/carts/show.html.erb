@@ -29,17 +29,11 @@
 			
 				<li>
 					<a href="/listings/<%= listing.id %>"><%= image_tag(listing.default_picture.image.url) %></a>
-					<p style="font-weight: 700;"><%= listing.name %></p>
-					<p><%= size %></p>
-					<p><%= number_to_currency(listing.price) %> USD</p>
+					<p class="listing-name"><%= listing.name %></p>
+					<p style="font-family: 'Helvetica'; font-weight: lighter;font-size: 10px"><%= size %></p>
+					<p style="font-family: 'Helvetica'; font-weight: lighter;font-size: 10px"><%= number_to_currency(listing.price) %> USD</p>
 					<%= link_to "REMOVE", remove_from_cart_listing_path(key), :method => :delete %>
-					<script>
-						fbq('track', 'AddToCart', {
-						value: <%= listing.price %>,
-						content_name: "<%= listing.name %>",
-						currency: 'USD'
-						});
-					</script>
+
 				</li>
 
 		<% end %>

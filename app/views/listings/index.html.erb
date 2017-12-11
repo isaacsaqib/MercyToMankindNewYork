@@ -3,31 +3,8 @@
 
 <title>Shop | MXMNY</title>
 
-	<h1 class="logo-text-h1">MERCY X MANKIND</h1>
-	<h3 class="logo-text-h3">NEW YORK</h3>
-	<hr class="mobile-hr-hidden">
 
-	<div id="listings-index-div">
-		<ul id="listings-index-nav">
-			<li><a href="/listings">ALL</a></li>
-			<li>OUTERWEAR</li>
-				<ul class="hidden-nav" id="listings-outerwear-nav-hidden">
-					<li><a href="/listings-jackets">JACKETS</a></li>
-				</ul>
-			<li>APPAREL</li>
-				<ul class="hidden-nav" id="listings-apparel-nav-hidden">
-					<li><a href="/listings-tops">TOPS</a></li>
-					<li><a href="/listings-bottoms">BOTTOMS</a></li>
-				</ul>
-			<li><a href="listings-head">HEADWEAR</a></li>
-			<li><a href="listings-accessories">ACCESSORIES</a></li>
-			<li><a href="/collections">LOOKBOOKS</a></li>
-			<li><a style="color: red;" href="/listings-sale">SALE</a></li>
-			<br>
-
-		</ul>
-
-	</div>
+	<hr style="width:100%;" class="mobile-hr-hidden">
 
 
 <!-- <img id="intro-listings-picture" style="width:85%;margin:0 auto;display:block" src="assets/listings-intro-picture-e8b5d8bf3efde14e7514f9ff12a7aab24a75ed27c7be023380c887a663d415f9.png"> -->
@@ -41,13 +18,33 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 
 <img id="listings-index-pic" src="assets/listings-index-pic-9fbb9fd6e86dbf46f94eb3e6d853c1e01d6fe600501e0c3c332c9f3bb32a8609.png">
  -->
+
+<div id="listings-sidebar">
+	<ul id="listings-sidebar-list">
+		<li><a href="/listings">ALL</a></li>
+
+<li><a href="/listings-jackets">JACKETS</a></li>
+		<li><a href="/listings-tops">TOPS</a></li>
+		<li><a href="/listings-hoodies">HOODIES</a></li>
+		<li><a href="/listings-long_sleeves">LONG SLEEVES</a></li>
+		<li><a href="/listings-short_sleeves">SHORT SLEEVES</a></li>
+		<li><a href="/listings-tees">T-SHIRTS</a></li>
+		<li><a href="/listings-bottoms">BOTTOMS</a></li>
+		<li><a href="/listings-denim">DENIM</a></li>
+		<li><a href="/listings-trousers">TROUSERS</a></li>
+		<li><a href="/listings-shorts">SHORTS</a></li>
+		<li><a href="/listings-head">HEADWEAR</a></li>
+		<li><a href="/listings-accessories">ACCESSORIES</a></li>
+	</ul>
+
+</div>
 <table class="products" id="new">
 	<tr>
  		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">NEW</h1>
 
-			<div class="mobile-line-separator"></div>
+
 			<% @listings.each do |listing| %>
 
 				<% if listing.is_new %>
@@ -116,7 +113,9 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 	</tr>
 </table>
 
-<hr class="mobile-hr-hidden">
+
+
+<hr>
 <!-- <img style="width:60%;margin:0 auto;display:block;" src="assets/intro-tops.png"> -->
 
 
@@ -125,7 +124,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
  		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">OUTERWEAR \ JACKETS</h1>
-			<div class="mobile-line-separator"></div>
+
 
 			<% @listings_jackets.each do |listing| %>
 
@@ -198,7 +197,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 	<li></li>
 	<li><img src="assets/striped.png"></li>
 </ul> -->
-<hr class="mobile-hr-hidden">
+<hr>
 
 
 
@@ -207,7 +206,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">TOPS \ SWEATSHIRTS</h1>
-			<div class="mobile-line-separator"></div>
+
 
 
 			<% @listings_hoodies.each do |listing| %>
@@ -277,7 +276,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 </table>
 
 
-<hr class="mobile-hr-hidden">
+<hr>
 
 
 <table class="products" id="long_sleeves">
@@ -285,7 +284,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">TOPS \ LONG SLEEVE</h1>
-			<div class="mobile-line-separator"></div>
+
 
 			<% @listings_long_sleeves.each do |listing| %>
 
@@ -354,7 +353,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 	</tr>
 </table>
 
-<hr class="mobile-hr-hidden">
+<hr>
 
 
 <table class="products" id="short_sleeves">
@@ -362,7 +361,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">TOPS \ SHIRTS</h1>
-			<div class="mobile-line-separator"></div>
+
 			<% @listings_short_sleeves.each do |listing| %>
 
 				<% if listing.default_picture %>
@@ -430,7 +429,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 	</tr>
 </table>
 
-<hr class="mobile-hr-hidden">
+<hr>
 
 
 <table class="products" id="tees">
@@ -438,7 +437,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">TOPS \ TEES</h1>
-			<div class="mobile-line-separator"></div>
+
 
 			<% @listings_tees.each do |listing| %>
 
@@ -507,85 +506,10 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 	</tr>
 </table>
 
-<hr class="mobile-hr-hidden">
+<hr>
 
 
 
-<table class="products" id="tanks">
-	<tr>
-		<td class="col">
-			<ul>
-			<h1 class="product-heading-h1">TOPS \ TANKS</h1>
-			<div class="mobile-line-separator"></div>
-
-			<% @listings_tanks.each do |listing| %>
-
-				<% if listing.default_picture %>
-            	<li>
-            	<!-- listing image pictures -->
-		           <figure class="listings-figure"> 	
-		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
-		            <a href="<%=listing_path(listing)%>">
-		            	<figcaption class="listings-figcaption"> 
-
-		            		<p> 
-		            			<%= listing.name.upcase %> <br><br><br> 
-		            			<%=	listing.description.upcase.html_safe%> <br><br>
-		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
-			            			<span style="padding:0px;color:black;">
-
-			            				$<%= listing.price %>.00
-
-			            			</span>
-			            		<% else %>
-									<span style="padding:0px;color:red;">
-
-			            				$<%= listing.price %>.00
-
-			            			</span>
-									<span style="padding: 0px;text-decoration: line-through;">
-
-										$<%= listing.original_price %>.00
-
-									</span>
-								<% end %>
-		            		</p> 
-
-		            	</figcaption>
-		            </a>
-
-		            <p class="mobile-figure-p"><%= listing.name.upcase %></p>
-				<p class="mobile-figure-p"><%= listing.price %> USD</p>
-
-		            	<% else %>
-		              		N/A
-		            	<% end %>
-		           </figure>
-						
-						<!-- Name, price and buttons -->
-				<form id="index-form" method="get">
-				<input type="hidden" name="id" value="<%=listing.id%>">
-				<!-- <a href="<%=listing_path(listing)%>"><%=listing.name %></a><br>  -->
-				<!-- <p>$<%=listing.price %>.00</p><br> -->
-				<!-- <div class="line-separator"></div> -->
-				
-				 <!-- <br/> -->
-							 <% if logged_in? %>
-							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
-							<p><a href="?remove=<%=listing.id%>">Delete</a></p><br>
-							<% end %>
-							<!-- <br> -->
-							<!-- <br> -->
-				</form>	
-
-				</li>
-				<% end %>
-			</ul>
-		</td>
-	</tr>
-</table>
-
-<hr class="mobile-hr-hidden">
 
 
 
@@ -594,7 +518,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">DENIM</h1>
-			<div class="mobile-line-separator"></div>
+
 			<% @listings_denim.each do |listing| %>
 
 				<% if listing.default_picture %>
@@ -659,7 +583,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 </table>
 
 
-<hr class="mobile-hr-hidden">
+<hr>
 
 
 <table class="products" id="bottoms">
@@ -667,7 +591,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">BOTTOMS</h1>
-			<div class="mobile-line-separator"></div>
+
 			<% @listings_bottoms.each do |listing| %>
 
 				<% if listing.default_picture %>
@@ -733,7 +657,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 </table>
 
 
-<hr class="mobile-hr-hidden">
+<hr>
 
 
 <table class="products" id="head">
@@ -741,7 +665,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">HEADWEAR</h1>
-			<div class="mobile-line-separator"></div>
+
 			<% @listings_head.each do |listing| %>
 
 				<% if listing.default_picture %>
@@ -806,7 +730,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 	</tr>
 </table>
 
-<hr class="mobile-hr-hidden">
+<hr>
 
 
 
@@ -815,7 +739,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 		<td class="col">
 			<ul>
 			<h1 class="product-heading-h1">ACCESSORIES</h1>
-			<div class="mobile-line-separator"></div>
+
 
 			<% @listings_accessories.each do |listing| %>
 
@@ -927,46 +851,23 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 </table>
 
 
-<!-- use this table to delete collections -->
 
-<!-- <table class="products" id="wristwear">
-	<tr>
-		<td class="col">
-			<ul> -->
-			<%# @listings_collection.each do |listing| %>
-
-				<%# if listing.default_picture %>
-            	<!-- <li> -->
-            	<!-- listing image pictures -->
-            	<%#= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>
-            	<%# else %>
-              		<!-- N/A -->
-            	<%# end %>
-				
-				<!-- Name, price and buttons -->
-				<!-- <form id="index-form" method="get"> -->
-				<!-- <input type="hidden" name="id" value="<%#=listing.id%>"> -->
-				<!-- <a href="<%#=listing_path(listing)%>"><%#=listing.name %></a><br>  -->
-				<!-- <p>$<%#=listing.price %>.00</p><br> -->
-				<!-- <div class="line-separator"></div> -->
-				
-				 <!-- <br/> -->
-							 <%# if logged_in? %>
-							<!-- <p><%#=link_to 'Edit', edit_listing_path(listing) %></p> -->
-							<!-- <p><a href="?remove=<%#=listing.id%>">Delete</a></p><br> -->
-							<%# end %>
-				<!-- 			<br>
-							<br>
-				</form>	
-
-				</li> -->
-				<%# end %>
-	<!-- 		</ul>
-		</td>
-	</tr>
-</table>
+<!-- 	<div id="mc_embed_signup">
+			<form action="//mercytomankindco.us13.list-manage.com/subscribe/post?u=5194035157454408880655014&amp;id=5b29eda186" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+			    <div id="mc_embed_signup_scroll">
+					<label for="mce-EMAIL">Join Our Newsletter!</label>
+					<p>Join our newsletter today for exclusive promotions, offers and insider details on your favorite products.</p>
+						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="EMAIL ADDRESS" required>
+			   
+				    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+					    <input type="text" name="b_5194035157454408880655014_5b29eda186" tabindex="-1" value="">
+				    </div>
+					    
+					<div class="clear">
+					    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+				    </div>
+				</div>
+			</form>
+		</div>
  -->
-
-
-
 

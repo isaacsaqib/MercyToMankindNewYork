@@ -1,5 +1,4 @@
-	
-
+<link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,25 +35,90 @@
   ga('send', 'pageview');
 
 </script>
-	<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '366528177052151'); // Insert your pixel ID here.
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=366528177052151&ev=PageView&noscript=1"
-/></noscript>
-<!-- DO NOT MODIFY -->
-<!-- End Facebook Pixel Code -->
 
 </head>
 
-<div class="wrapper">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="/listings">ALL</a>
+		<a href="/listings-jackets">JACKETS</a>
+		<a href="/listings-tops">TOPS</a>
+		<a href="/listings-hoodies">HOODIES</a>
+		<a href="/listings-long_sleeves">LONG SLEEVES</a>
+		<a href="/listings-short_sleeves">SHORT SLEEVES</a>
+		<a href="/listings-tees">T-SHIRTS</a>
+		<a href="/listings-bottoms">BOTTOMS</a>
+		<a href="/listings-denim">DENIM</a>
+		<a href="/listings-trousers">TROUSERS</a>
+		<a href="/listings-shorts">SHORTS</a>
+		<a href="/listings-head">HEADWEAR</a>
+		<a href="/listings-accessories">ACCESSORIES + BAGS</a>
+  
+  <hr>
+
+  <a href="/brand">BRAND</a>	
+  <a href="/media">FILMS</a>
+  <a href="/collections">LOOKBOOKS</a>
+  <a href="/press">PRESS</a>
+  <a href="/customercare">CUSTOMER CARE</a>
+
+
+</div>
+
+<!-- Use any element to open the sidenav -->
+<ul id="page_header">
+	<li><span style="" onclick="openNav()"><img src="/assets/icon.png"></span></li>
+	<li><a style="text-decoration: none;color: black;" href="/"><h1 class="logo-text-h1">MERCY X MANKIND</h1><h3 class="logo-text-h3">NEW YORK</h3></a></li>
+	<li><a href="/cart"><img src="/assets/shopping-bag.png"></a></li>
+	<li>
+		<ul id="store-nav">
+				<li>SHOP +</li>
+					<div id="shop-div" class="store-nav-hidden-div">
+						<ul class="submenu" id="submenu-1">
+							<li><p><a href="/listings">ALL</p></a></li>
+							<li><p><a href="/listings-tops">TOPS</p></a></li>
+							<li><p><a href="/listings-bottoms">BOTTOMS</p></a></li>
+							<li><p><a href="/listings">OUTERWEAR</p></a></li>
+						</ul>
+					<div class="vl"></div>
+
+						<ul class="submenu" id="submenu-2">
+							<li><p><a href="/listings-jackets">JACKETS</p></a></li>
+							<li><p><a href="/listings-hoodies">HOODIES</p></a></li>
+							<li><p><a href="/listings-long_sleeves">LONG SLEEVES</p></a></li>
+							<li><p><a href="/listings-short_sleeves">SHORT SLEEVES</p></a></li>
+							<li><p><a href="/listings-tees">T-SHIRTS</p></a></li>
+							<li><p><a href="/listings-denim">DENIM</p></a></li>
+						</ul>
+						<ul class="submenu" id="submenu-3">
+							<li><p><a href="/listings-trousers">TROUSERS</p></a></li>
+							<li><p><a href="/listings-shorts">SHORTS</p></a></li>
+							<li><p><a href="/listings-head">HEADWEAR</p></a></li>
+							<li><p><a href="/listings-accessories">ACCESSORIES</p></a></li>
+						</ul>
+
+						<ul class="submenu" id="submenu-4">
+							<li>
+								<img style="height: 170px" src="assets/nav-image.jpg">
+								<p style="float:right;padding-left:10px;"><em>EXPLORE</em><br><br> "THE RECKONING" CAMPAIGN</p>
+							</li>
+						</ul>
+					</div>
+				<li><p><a href="/brand">BRAND</a></p></li>
+				<li><a style="color: black;text-decoration: none;" href="/collections">LOOKBOOKS</a></li>
+				<li><p><a href="/press">PRESS</a></p></li>
+				<li><p><a href="/media">FILMS</a></p></li>
+				<li><p><a href="/customercare">CONTACT</a></p></li>
+		</ul>
+	</li>
+	<li style="padding-left:150px;padding-right:5px;" class="page_header-right-align">FREE SHIPPING + FREE RETURNS</li>
+	<li style="padding:0px 5px;" class="page_header-right-align"><a style="text-decoration:none;color:black;" href="http://www.instagram.com/mercytomankind.ny">SOCIAL</a></li>
+	<li style="padding:0px 5px;" class="page_header-right-align"><a style="text-decoration:none;color:black;" href="/cart">CART</a></li>
+</ul>
+
+
+
+<div id="main">
 	<body>
 		
 <!-- 		<div id="free-shipping-div">
@@ -64,7 +128,7 @@ src="https://www.facebook.com/tr?id=366528177052151&ev=PageView&noscript=1"
 			</p>
 		</div>
  -->
-
+<!-- 
 		<ul id="top-nav">
 			<li><a><%=image_tag 'nav-image.png', :id => "nav-image" %></a></li>
 				
@@ -90,29 +154,12 @@ src="https://www.facebook.com/tr?id=366528177052151&ev=PageView&noscript=1"
 			
 
 		
-		</ul>
+		</ul> -->
 
 
 
 	<%= yield %>
 
-	<div id="mc_embed_signup">
-			<form action="//mercytomankindco.us13.list-manage.com/subscribe/post?u=5194035157454408880655014&amp;id=5b29eda186" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-			    <div id="mc_embed_signup_scroll">
-					<label for="mce-EMAIL">Join Our Newsletter!</label>
-					<p>Join our newsletter today for exclusive promotions, offers and insider details on your favorite products.</p>
-						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="EMAIL ADDRESS" required>
-			   
-				    <div style="position: absolute; left: -5000px;" aria-hidden="true">
-					    <input type="text" name="b_5194035157454408880655014_5b29eda186" tabindex="-1" value="">
-				    </div>
-					    
-					<div class="clear">
-					    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-				    </div>
-				</div>
-			</form>
-		</div>
 
 
 
@@ -136,27 +183,26 @@ src="https://www.facebook.com/tr?id=366528177052151&ev=PageView&noscript=1"
 		<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
 
 	
+<script>
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "800px";
+}
 
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 
 
 <!--End mc_embed_signup-->
 
-			<p style="padding-bottom: 40px;font-size: 8px;">MERCY X MANKIND NEW YORK ©. ALL RIGHTS RESERVED. EST 2014</p>
+			<p style="text-align:center;padding-bottom: 40px;font-size: 8px;">MERCY X MANKIND NEW YORK ©. ALL RIGHTS RESERVED. EST 2014</p>
 	</body>
 </div>
 
-	<div class='footer'>
-			<ul>
-				<!-- <li><a href="/contact"><p>CONTACT</p></a></li> -->
-				<li><a href="/customercare"><p>CUSTOMER CARE</p></a></li>
-				<span>
-				<li><a href="http://www.facebook.com/mercytomankindclothing"><%=image_tag 'fb.png', :class => 'icons' %></a></li>	
-				<li><a href="http://www.instagram.com/mercytomankind.ny"><%=image_tag 'ig.png', :class => 'icons' %></a></li>	
-				<!-- <li><a href="http://www.twitter.com/mercy2mankindco"><%=image_tag 'twitter.png', :class => 'icons' %></a></li>	 -->
 
-				</span>
-			</ul>
-	
-		</div>
+
 
 </html>

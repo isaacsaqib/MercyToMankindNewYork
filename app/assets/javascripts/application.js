@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require swiper.jquery.js
-//= require swiper.jquery.min.js
 //= require application.js
 //= require swiper.js
-//= require swiper.min.js
+//= require jquery.selectric.js
+//= require elevatezoomplus.js
 //= require turbolinks
 //= require_tree .
 
@@ -24,43 +24,8 @@
 
 $(document).ready(function(){
 
-
-
-
-
-	$("#mobile-store-div").hide();
-	$("#mobile-store-list").hide();
-	$("#collection-div").hide();
-	$("#collection-list").hide();
-	$("#lookbooks-div").hide();
-	$("#lookbooks-list").hide();
 	$("#shop-div").hide();
-	$("#shop-list").hide();
-	$("#shop-sub-nav").hide();
-	$("#free-shipping-div").slideDown();
-	$("#jackets").hide();
-	$("#jackets").fadeIn(1500);	
-
-	$("#hoodies").hide();
-	$("#hoodies").fadeIn(1500);	
-
-	$("#long_sleeves").hide();
-	$("#long_sleeves").fadeIn(1500);
-
-	$("#short_sleeves").hide();
-	$("#short_sleeves").fadeIn(1500);
-
-	$("#tanks").hide();
-	$("#tanks").fadeIn(1500);	
-
-	$("#bottoms").hide();
-	$("#bottoms").fadeIn(1500);	
-
-	$("#head").hide();
-	$("#head").fadeIn(1500);
-	
-	$("#accessories").hide();
-	$("#accessories").fadeIn(1500);
+	$("#free-shipping-div").slideDown();	
 
 	// $("#hoodies").hide();
 	// $("#long_sleeves").hide();
@@ -90,10 +55,7 @@ $(document).ready(function(){
 		$("#free-shipping-div").slideUp();
 	});
 
-	$("#nav-image").on("click", function(){
-		$("#hidden-nav").slideToggle("slow");
 
-	});
 
 	
 	$("#add-to-cart-btn").on("click", function(){
@@ -116,28 +78,30 @@ $(document).ready(function(){
 
 	});
 
-	$("#store-nav > li:nth-child(2)").on("mouseover", function(){
+	$("#store-nav > li:nth-child(1)").on("mouseover", function(){
 		$(".store-nav-hidden-div").hide();
-		$(".store-nav-hidden-list").hide();	
-		$("#collection-div").toggle();
-		$("#collection-list").toggle();
+		$(".store-nav-hidden-list").hide();
+		$("#shop-div").fadeIn();
+		$("#shop-list").fadeIn();
 
 	})
 
-	$("#store-nav > li:nth-child(4)").on("mouseover", function(){
-		$(".store-nav-hidden-div").hide();
-		$(".store-nav-hidden-list").hide();
-		$("#shop-div").toggle();
-		$("#shop-list").toggle();
-
+	$("#shop-div").on("mouseleave", function(){ 		
+		$("#shop-div").fadeOut();
+		$("#shop-list").fadeOut();	
 	})
 
-	$("#store-nav > li:nth-child(6)").on("mouseover", function(){
-		$(".store-nav-hidden-div").hide();
-		$(".store-nav-hidden-list").hide();
-		$("#lookbooks-div").toggle();
-		$("#lookbooks-list").toggle();
+	// $("#store-nav > li:nth-child(6)").on("mouseover", function(){
+	// 	$(".store-nav-hidden-div").hide();
+	// 	$(".store-nav-hidden-list").hide();
+	// 	$("#lookbooks-div").fadeIn();
+	// 	$("#lookbooks-list").fadeIn();
 
+	// })
+
+	$("#store-nav > li:nth-child(6)").on("mouseleave", function(){ 
+		$("#lookbooks-div").fadeOut();
+		$("#lookbooks-list").fadeOut();
 	})
 
 	
@@ -151,49 +115,6 @@ $(document).ready(function(){
 	})
 
 	
-
-	// $("#listings-index-nav li:nth-child(1)").on("click", function(){  /* New */
-	// 	$(".products").hide();
-	// 	$("#new").show();
-
-	// })
-
-	// $("#listings-outerwear-nav-hidden > li").on("click", function(){  /* JACKETS */
-	// 	$(".products").hide();
-	// 	$(".headers-hide").hide();
-
-
-	// });
-
-
-	// $("#listings-apparel-nav-hidden > li:nth-child(1)").on("click", function(){  /* APPAREL */
-	// 	$(".products").hide();
-	// 	$("#intro-listings-picture").fadeOut();
-	// 	$("#hoodies").fadeIn();
-	// 	$("#long_sleeves").fadeIn();
-	// 	$("#short_sleeves").fadeIn();
-	// 	$("#tanks").fadeIn();
-	// 	$(".headers-hide").hide();
-	// });
-
-	// $("#listings-apparel-nav-hidden > li:nth-child(2)").on("click", function(){ /* BOTTOMS */
-	// 	$(".products").hide();
-	// 	$("#bottoms").fadeIn();
-	// 	$(".headers-hide").hide();
-	// });
-
-	// $("#listings-index-nav > li:nth-child(5)").on("click", function(){ /* HEADWEAR */
-	// 	$(".products").hide();
-	// 	$("#head").fadeIn();
-	// 	$(".headers-hide").hide();
-	// });
-
-	// $("#listings-index-nav > li:nth-child(6)").on("click", function(){ /* ACCESSORIES */
-	// 	$(".products").hide();
-	// 	$("#accessories").fadeIn();
-	// 	$(".headers-hide").hide();
-	// });
-
 	$('.edit-form').on('ajax:success', function() {
   		$(this).append("<p>Thank you</p>")
 
@@ -204,108 +125,25 @@ $(document).ready(function(){
 
 	});
 
-		//... CUSTOM CSS DROPDOWN
-
-
-	$(function() {
-
-		var dd = new DropDown( $('#dd') );
-
-		$(document).click(function() {
-			// all dropdowns
-			$('.wrapper-dropdown-4').removeClass('active');
-		});
-
-	});
-
-	function DropDown(el) {
-    this.dd = el;
-    this.opts = this.dd.find('ul.dropdown > li');
-    this.val = [];
-    this.index = [];
-    this.initEvents();
-}
-DropDown.prototype = {
-    initEvents : function() {
-        var obj = this;
-
-        obj.dd.on('click', function(event){
-            $(this).toggleClass('active');
-            event.stopPropagation();
-        });
-
-        obj.opts.children('label').on('click',function(event){
-            var opt = $(this).parent(),
-                chbox = opt.children('input'),
-                val = chbox.val(),
-                idx = opt.index();
-
-            ($.inArray(val, obj.val) !== -1) ? obj.val.splice( $.inArray(val, obj.val), 1 ) : obj.val.push( val );
-            ($.inArray(idx, obj.index) !== -1) ? obj.index.splice( $.inArray(idx, obj.index), 1 ) : obj.index.push( idx );
-        });
-    },
-    getValue : function() {
-        return this.val;
-    },
-    getIndex : function() {
-        return this.index;
-    }
-}
-
-	// END CUSTOM CSS DROPDOWN 
-
-
-
-
-	 // var picid = $('#listings-show-pictures > li > a > img').attr("id")
-	 // // var picidtext = $("#" + picid)
-	 // var picid_text = ("#" + picid);
-	 // console.log(picid_text)
-	 // $("picid_text").elevateZoom()
-
-	 // $("a.zoom").zoom({
-	 // 	magnify: .8
-	 // });
-
-
-
-
-
-
-
-	// $("#picture-delete").on("click", function(event){ 
-	// 	var pictures_href = $("#listings-show-pictures > li > a").attr("href");
-	// 	var picture_id = pictures_href.substring(10, pictures_href.lenght);
-	//     $.ajax({
-	//         url: "/pictures/" + picture_id,
-	//         type: "POST",
-	//         dataType: "json",
-	//         data: {"_method":"delete"}
-	//     });
-
-	// 		$(this).closest("li").fadeOut();
-	//     	event.preventDefault();
-
-	// });
-
-
-	// START LISTINGS NAVIGATION TOGGLE FUNCTIONS
-
-	function HiddenListingNavSlideDown(li_id, hidden_list) { 
-		$("#listings-index-nav > li:nth-child(" + li_id + ")").on("click", function(){
-			$("#listings-" + hidden_list + "-nav-hidden").slideToggle("slow");
-			$("#intro-listings-picture").hide();
-
-		});
-	};
-
-	HiddenListingNavSlideDown(2, "outerwear");
-	HiddenListingNavSlideDown(4, "apparel");
-	HiddenListingNavSlideDown(6, "accessories");
-
 
   //initialize swiper when document ready  
-    var mySwiper = new Swiper ('.swiper-container', {
+    var mySwiper1 = new Swiper ('.swiper-container1', {
+      // Optional parameters
+	  	direction: 'horizontal',
+		loop: true,
+      	effect: "fade",
+      	fade: {
+      		crossFade: true
+      	},
+       	pagination: '.swiper-pagination',
+       	paginationClickable: true,
+       	nextButton: ".swiper-button-next",
+       	prevButton: ".swiper-button-prev"
+
+    });      
+
+
+    var mySwiper2 = new Swiper ('.swiper-container2', {
       // Optional parameters
 	  	direction: 'horizontal',
 		loop: true,
@@ -316,13 +154,29 @@ DropDown.prototype = {
        	pagination: '.swiper-pagination',
        	paginationClickable: true
 
+    });   
+
+    var mySwiper3 = new Swiper ('.swiper-container3', {
+      // Optional parameters
+      	navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+		loop: true,
+      	effect: "fade",
+      	fade: {
+      		crossFade: true
+      	}
+
     });    
 
+    $("#listings-show-pictures > li > a > img")
 
+    // INITIALIZE SELECTRIC
+		$('#size').selectric();
 
+		$('.zoom1').ezPlus({
+		});
 
+});
 
-
-	
-
-})

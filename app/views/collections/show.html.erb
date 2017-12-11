@@ -1,15 +1,15 @@
 
 
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <script type="text/javascript" src="/assets/application.js"></script>
+<title><%=@listing.name%> | MXMNY</title>
 
 <body style="background-image:none;">
 
-<title><%=@listing.name%> | MXMNY</title>
 
 
  <div id="collection-show-div">
-  <ul>
+  <ul style="margin: 0px;">
     <% @pictures.each do |pic| %>
       <li><%= image_tag pic.image.url %></li>
     <% end %>

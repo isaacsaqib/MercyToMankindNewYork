@@ -81,7 +81,7 @@ end
 <form method="get" id="shipping-form">
 	<table id="shipping-table">
 		<input required class="shipping-input" type="email" name="email" value="<%= @email%>" placeholder="EMAIL ADDRESS"><br><br>
-		<input required class="shipping-input" type="text" name="firstname" onkeyup="saveData()" value="<%= @firstname%>" placeholder="FIRST NAME"><br><br>
+		<input required class="shipping-input" type="text" name="firstname" value="<%= @firstname%>" placeholder="FIRST NAME"><br><br>
 		<input required class="shipping-input" type="text" name="lastname" value="<%= @lastname%>" placeholder="LAST NAME"><br><br>		
 		<input class="shipping-input" type="text" name="company" value="<%= @company%>" placeholder="COMPANY (OPTIONAL)"><br><br>
 		<input required class="shipping-input" id="address1" type="text" name="address" value="<%= @address%>" placeholder="ADDRESS"><br><br>

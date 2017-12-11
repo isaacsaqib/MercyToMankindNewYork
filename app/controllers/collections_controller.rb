@@ -7,6 +7,7 @@ class CollectionsController < ApplicationController
 		
 	  	@listing  = Listing.find(params[:id])
     	@pictures = @listing.pictures.order(:description)
+		render :layout => "show_layout"
 	end
 
 	def destroy

@@ -13,18 +13,20 @@ class ListingsController < ApplicationController
 		end
 		@listings = Listing.all.order(price: :desc)
 
-		@listings_new = Listing.where(:section => "New")
-		@listings_hoodies= Listing.where(:section => "Hoodies").order(price: :desc)
-		@listings_long_sleeves= Listing.where(:section => "Long Sleeves").order(price: :desc)
-		@listings_short_sleeves= Listing.where(:section => "Short Sleeves").order(price: :desc)
-		@listings_tees= Listing.where(:section => "Tees").order(price: :desc)
-		@listings_tanks= Listing.where(:section => "Tanks").order(price: :desc)
-		@listings_jackets = Listing.where(:section => "Jackets").order(price: :desc)
-		@listings_bottoms = Listing.where(:section => "Bottoms").order(price: :desc)
-		@listings_denim = Listing.where(:section => "Denim").order(price: :desc)
-		@listings_head = Listing.where(:section => "Head").order(price: :desc)
-		@listings_wristwear = Listing.where(:section => "Wristwear").order(price: :desc)
-		@listings_accessories = Listing.where(:section => "Accessories").order(price: :desc)
+		@listings_new = Listing.where(:section => "New").order(id: :desc)
+		@listings_hoodies= Listing.where(:section => "Hoodies").order(id: :desc)
+		@listings_long_sleeves= Listing.where(:section => "Long Sleeves").order(id: :desc)
+		@listings_short_sleeves= Listing.where(:section => "Short Sleeves").order(id: :desc)
+		@listings_tees= Listing.where(:section => "Tees").order(id: :desc)
+		@listings_tanks= Listing.where(:section => "Tanks").order(id: :desc)
+		@listings_jackets = Listing.where(:section => "Jackets").order(id: :desc)
+		@listings_bottoms = Listing.where(:section => "Bottoms").order(id: :desc)
+		@listings_denim = Listing.where(:section => "Denim").order(id: :desc)
+		@listings_trousers = Listing.where(:section => "Trousers").order(id: :desc)
+		@listings_shorts = Listing.where(:section => "Shorts").order(id: :desc)
+		@listings_head = Listing.where(:section => "Head").order(id: :desc)
+		@listings_wristwear = Listing.where(:section => "Wristwear").order(id: :desc)
+		@listings_accessories = Listing.where(:section => "Accessories").order(id: :desc)
 		
 		@listings_press = Listing.where(:section => "Press")
 		@listings_collection = Listing.where(:section => "Collection").order(:fabric)
@@ -41,6 +43,7 @@ class ListingsController < ApplicationController
 
 	def new
 		@listing = Listing.new
+	 	render :layout => false 
 
 	end
 
@@ -140,54 +143,90 @@ end
 	end
 
 	def tops
-		@listings_hoodies= Listing.where(:section => "Hoodies").order(price: :desc)
-		@listings_long_sleeves= Listing.where(:section => "Long Sleeves").order(price: :desc)
-		@listings_short_sleeves= Listing.where(:section => "Short Sleeves").order(price: :desc)
-		@listings_tanks= Listing.where(:section => "Tanks").order(price: :desc)
-		@listings_tees= Listing.where(:section => "Tees").order(price: :desc)
+		@listings_hoodies= Listing.where(:section => "Hoodies").order(id: :desc)
+		@listings_long_sleeves= Listing.where(:section => "Long Sleeves").order(id: :desc)
+		@listings_short_sleeves= Listing.where(:section => "Short Sleeves").order(id: :desc)
+		@listings_tanks= Listing.where(:section => "Tanks").order(id: :desc)
+		@listings_tees= Listing.where(:section => "Tees").order(id: :desc)
 
 	end	
 
+	def tees
+		@listings_tees= Listing.where(:section => "Tees").order(id: :desc)
+
+	end
+
+
 	def jackets
-		@listings_jackets = Listing.where(:section => "Jackets").order(price: :desc)
+		@listings_jackets = Listing.where(:section => "Jackets").order(id: :desc)
+	end
+
+	def hoodies
+		@listings_hoodies= Listing.where(:section => "Hoodies").order(id: :desc)
 	end
 
 	def bottoms
-		@listings_bottoms = Listing.where(:section => "Bottoms").order(price: :desc)
-		@listings_denim = Listing.where(:section => "Denim").order(price: :desc)
+		@listings_denim = Listing.where(:section => "Denim").order(id: :desc)
+		@listings_trousers = Listing.where(:section => "Trousers").order(id: :desc)
+		@listings_shorts = Listing.where(:section => "Shorts").order(id: :desc)
 		
 	end
 
+	def denim
+		@listings_denim = Listing.where(:section => "Denim").order(id: :desc)
+	end	
+
+	def trousers
+		@listings_trousers = Listing.where(:section => "Trousers").order(id: :desc)
+	end
+
+	def shorts
+		@listings_shorts = Listing.where(:section => "Shorts").order(id: :desc)
+	end
+
+
+
+	def long_sleeves
+		@listings_long_sleeves = Listing.where(:section => "Long Sleeves").order(id: :desc)
+	end	
+
+	def short_sleeves
+		@listings_short_sleeves = Listing.where(:section => "Short Sleeves").order(id: :desc)
+		@listings_tees= Listing.where(:section => "Tees").order(id: :desc)
+
+	end
+
+
 	def accessories
-		@listings_accessories = Listing.where(:section => "Accessories").order(price: :desc)		
+		@listings_accessories = Listing.where(:section => "Accessories").order(id: :desc)		
 	end
 
 	def head
-		@listings_head = Listing.where(:section => "Head").order(price: :desc)	
+		@listings_head = Listing.where(:section => "Head").order(id: :desc)	
 	end
 
 	def sale
-		@listings_sale = Listing.where(:on_sale => "true").order(price: :desc)	
+		@listings_sale = Listing.where(:on_sale => "true").order(id: :desc)	
 	end
 
 	def fall_winter_2016
-		@listings_fall_winter_2016 = Listing.where(:collection => "FALL/WINTER2016").order(price: :desc)	
+		@listings_fall_winter_2016 = Listing.where(:collection => "FALL/WINTER2016").order(id: :desc)	
 	end	
 
 	def pre_spring_2017
-		@listings_pre_spring_2017 = Listing.where(:collection => "PRE-SPRING 17").order(price: :desc)	
+		@listings_pre_spring_2017 = Listing.where(:collection => "PRE-SPRING 17").order(id: :desc)	
 	end	
 
 	def spring_summer_2016
-		@listings_spring_summer_2016 = Listing.where(:collection => "SPRING/SUMMER2016").order(price: :desc)	
+		@listings_spring_summer_2016 = Listing.where(:collection => "SPRING/SUMMER2016").order(id: :desc)	
 	end	
 
 	def fall_winter_2015
-		@listings_fall_winter_2015 = Listing.where(:collection => "FALL/WINTER2015").order(price: :desc)	
+		@listings_fall_winter_2015 = Listing.where(:collection => "FALL/WINTER2015").order(id: :desc)	
 	end
 
 	def judgement_day_capsule
-		@listings_judgement_day_capsule = Listing.where(:collection => "JUDGEMENTDAYCAPSULE").order(price: :desc)	
+		@listings_judgement_day_capsule = Listing.where(:collection => "JUDGEMENTDAYCAPSULE").order(id: :desc)	
 	end
 
 

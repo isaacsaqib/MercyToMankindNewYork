@@ -14,6 +14,8 @@ class WelcomeController < ApplicationController
       
       @limited = @listings.first(25).shuffle
       @limited_final = @limited.first(6)
+      @limited_final_desktop = @limited.first(4)
+
 
 
     @listings_new = Listing.where(:section => "New")

@@ -5,17 +5,19 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w( jquery.js )
 Rails.application.config.assets.precompile += %w( jquery.slides.js )
-Rails.application.config.assets.precompile += %w( jquery.slides.min.js )
+
+Rails.application.config.assets.precompile += %w( jquery.selectric.js )
+Rails.application.config.assets.precompile += %w( selectric.css )
+
 Rails.application.config.assets.precompile += %w( jquery.elevatezoom.js )
-Rails.application.config.assets.precompile += %w( jquery.elevateZoom-3.0.8.min.js )
-Rails.application.config.assets.precompile += %w( sweetalert.min.js )
+
 Rails.application.config.assets.precompile += %w( sweetalert.css )
+
 Rails.application.config.assets.precompile += %w( swiper.js )
-Rails.application.config.assets.precompile += %w( swiper.min.js )
 Rails.application.config.assets.precompile += %w( swiper.jquery.js )
-Rails.application.config.assets.precompile += %w( swiper.jquery.min.js )
 Rails.application.config.assets.precompile += %w( swiper.css )
-Rails.application.config.assets.precompile += %w( swiper.min.css )
+
+Rails.application.config.assets.precompile += %w( elevatezoomplus.js )
 
 
 

@@ -215,7 +215,7 @@ button.swiper-pagination-bullet {
 }
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: black;
+  background: white;
 }
 .swiper-pagination-white .swiper-pagination-bullet-active {
   background: #fff;
@@ -571,4 +571,13 @@ button.swiper-pagination-bullet {
   100% {
     transform: rotate(360deg);
   }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+  }
+
 }
