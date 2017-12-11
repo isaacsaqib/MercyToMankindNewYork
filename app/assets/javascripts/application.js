@@ -173,7 +173,10 @@ $(document).ready(function(){
     $("#listings-show-pictures > li > a > img")
 
     // INITIALIZE SELECTRIC
-		$('#size').selectric();
+		$('#size').selectric({
+	 	disableOnMobile: false,	
+  		nativeOnMobile: false
+		});
 
 		$('.zoom1').ezPlus({
 		});
