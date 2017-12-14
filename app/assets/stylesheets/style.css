@@ -6,6 +6,16 @@
     box-sizing: border-box;
 }
 
+#swiper1-pag {
+	height: 60px;padding-left:1000px;
+
+}
+
+#free-shipping-text {
+	padding-left:150px;
+	padding-right:5px;
+}
+
 .listing-name {
 	color:black;
 	margin-top:30px;
@@ -3048,10 +3058,33 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 }
 
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
+
 	#listings-show-div {
-		width: 500px;
+		width: 550px;
 	}
+
+	#swiper1-pag {
+		height: 90px;
+	}
+
+	#desktop-products-list img {
+		height: 390px;
+	}
+
+	.film-list-img {
+		height: 410px;
+	}
+
+	#media-list img {
+		height: 600px;
+	}
+
+	#free-shipping-text {
+		padding-left: 60px;
+	    padding-right: 10px;
+	}
+
 
 	.products li {
 		width: initial;
@@ -3068,6 +3101,10 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 @media screen and (max-width: 1350px) {
 	#checkout-listing-table {
 		width: 50%;
+	}
+
+	#listings-show-div {
+		width: 450px;
 	}
 
 }
