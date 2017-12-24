@@ -6,6 +6,19 @@
     box-sizing: border-box;
 }
 
+
+
+#checkout-buttons-list li {
+	display: inline-block;
+
+}
+
+
+
+#checkout-buttons-list img {
+height: 100px;
+}
+
 #swiper1-pag {
 	height: 60px;padding-left:1000px;
 
@@ -2189,7 +2202,7 @@ th {
 }
 
 button.stripe-button-el {
-	background: none;
+	background: black;
 	box-shadow: none;
 	margin: 0 auto;
 	display: block;
@@ -2198,9 +2211,11 @@ button.stripe-button-el {
 
 
 .stripe-button-el span {
-	visibility: hidden;
-	width: 210px;
-	height: 90px;
+visibility: hidden;
+    width: 240px;
+    height: 50px;
+    font-family: Serif;
+    border-radius: 0px;
 }
 
 
@@ -2270,7 +2285,7 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 }
 /*end*/
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px)  {
 
 	.selectric .label {
 		height: 67px;
@@ -2340,8 +2355,7 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 
 	#media-list img {
-		height: initial;
-		width: 96%;
+		height: 1320px;
 		padding-bottom: 20px;
 	}
 
@@ -3058,7 +3072,7 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 }
 
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1400px) and (min-width: 1000px) {
 
 	#listings-show-div {
 		width: 550px;
