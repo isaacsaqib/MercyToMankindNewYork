@@ -8,6 +8,7 @@
 
 
 
+
 #checkout-buttons-list li {
 	display: inline-block;
 
@@ -1639,10 +1640,11 @@ background: #007aff;
 }
 */
 
-.zoomContainer {
+.ZoomContainer {
 	pointer-events: none;
-
+	display: none;
 }
+
 
 #listings-show-page-list {
 	width: 100%;
