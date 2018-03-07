@@ -6,7 +6,7 @@ class CollectionsController < ApplicationController
 	def show
 		
 	  	@listing  = Listing.find(params[:id])
-    	@pictures = @listing.pictures.order(:description)
+    	@pictures = @listing.pictures.shuffle
 		render :layout => "show_layout"
 	end
 
