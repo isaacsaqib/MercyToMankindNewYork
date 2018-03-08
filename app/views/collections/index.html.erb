@@ -19,8 +19,12 @@
 	            	<%= link_to image_tag(listing.default_picture.image.url), collection_path(listing) %>
 	            	<a href="/collections/<%= listing.id %>">
 	            		<figcaption class="collection-figcaption">
-	            			<p><%= listing.name %></p>
-
+		            		<p>
+		            			<span class="collection_name"><%= listing.name %>
+		            			</span>
+		            			<br>
+		            			<span class="collection_description"><%= listing.description %></span>
+		            		</p>
 	            		</figcaption>
 	            	</a>
 	            	<% else %>

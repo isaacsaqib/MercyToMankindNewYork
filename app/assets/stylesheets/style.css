@@ -54,6 +54,16 @@ table {
 	width: 100%;
 }
 
+.collection_name {
+	font-size:16px;
+	font-family: "Helvetica-Bold";
+}
+
+.collection_description {
+	font-size:10px;
+	font-family: "Helvetica-Bold";
+}
+
 .col ul {
   text-align: left;
 }
