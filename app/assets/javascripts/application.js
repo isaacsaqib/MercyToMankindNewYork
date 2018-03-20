@@ -44,6 +44,22 @@ $(document).ready(function(){
 
 
 
+// SIZE GUIDE POP UP 
+$(".open").on("click", function(){
+	event.preventDefault();
+	$(".popup, .popup-content").addClass("active");
+	$(".popup-overlay").show();
+});
+
+$(".close, .popup").on("click", function(){
+		event.preventDefault();
+
+	$(".popup, .popup-content").removeClass("active");
+});
+
+// END
+
+
 
 
 	$("#contact-us").on("click", function(){

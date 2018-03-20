@@ -54,6 +54,106 @@ table {
 	width: 100%;
 }
 
+/*SIZE GUIDE POPUP*/
+
+.popup-overlay {
+display: none;
+}
+
+.popup-content {
+display: none;
+}
+
+
+.popup-overlay.active{
+display:initial;
+}
+
+.popup-content.active {
+
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 135px;
+    display: block;
+}
+
+#size_guide_close_btn {
+	background-color: black;
+	color: white;
+	font-family: 'Helvetica';
+	font-weight: 500;
+	font-size: 8px;
+	border-radius: 0px;
+	width: 20%;
+	height: 40px;
+	-webkit-appearance: none;
+	display: block;
+	color: white;
+	margin: 0 auto;
+}
+
+#size_guide_close_btn:hover {
+	background-color: white;
+	color: black;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+   	appearance: none; 
+}
+
+#size_guide_open_btn {
+	background-color: black;
+	color: white;
+	font-family: 'Helvetica';
+	font-weight: 500;
+	font-size: 8px;
+	border-radius: 0px;
+	width: 20%;
+	height: 40px;
+	-webkit-appearance: none;
+	display: block;
+	color: white;
+	margin-left: 30px;
+}
+
+#size_guide_open_btn:hover {
+	background-color: white;
+	color: black;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+   	appearance: none; 
+}
+
+#size_guide_img {
+	width: 33%;
+	display: block;
+	margin: 0 auto;
+	border: 5px solid black;
+}
+
+#size_guide_notavailable_text {
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+    font-family: 'Helvetica-Bold';
+    width: 25%;
+    text-align: center;
+    top: 100px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 100px;
+}
+}
+
+/*END*/
+
+
 .collection_name {
 	font-size:16px;
 	font-family: "Helvetica-Bold";
@@ -2183,6 +2283,38 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 /*MEDIA 1000PX*/
 
 @media screen and (max-width: 1000px)  {
+
+	.popup-content.active {
+		z-index: 1000;
+		top:255px;
+	}
+
+
+	#size_guide_img {
+		width:80%;
+	}
+
+	#size_guide_close_btn {
+		width: 80%;
+		height: 100px;
+		font-size:20px;
+
+	}
+
+	#size_guide_open_btn {
+		height: 90px;
+		width: 40%;
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+
+	#size_guide_notavailable_text {
+		height: 90px;
+		font-size: 30px;
+		width: 80%;
+		line-height: 90px;
+	}
+
 
 	.selectric .label {
 		height: 67px;

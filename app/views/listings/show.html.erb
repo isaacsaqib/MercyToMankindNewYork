@@ -135,7 +135,7 @@
 
 <hr>
 
-	
+
 
 					<p id="details-text-mobile" class="listings-details-header-text">DETAILS / STORY</p>
 					<p class="listings-details-subtext"><%= @listing.description.upcase.html_safe %></p>
@@ -145,6 +145,8 @@
 					<p class="listings-details-subtext"><%= @listing.fit.upcase.html_safe %></p>
 					<p class="listings-details-header-text"> CARE </p>
 					<p class="listings-details-subtext"><%= @listing.care.upcase %></p>
+
+					<button id="size_guide_open_btn" class="open">SIZE GUIDE</button>
 
 					<div style="margin-bottom: 140px;" class="line-separator"></div>
 
@@ -164,7 +166,24 @@
 
 
 		<% end %>
+
+		<!-- SIZE GUIDE POPUP -->
+
+		<div class="popup-overlay">
+					<!--Creates the popup content-->
+						 <div class="popup-content">
+						 	<% if @listing.size_guide.present? %>
+							<img id="size_guide_img"  src="/assets/<%=@listing.size_guide%>"><br>
+							<%else%>
+
+							<h1 id="size_guide_notavailable_text">SIZE GUIDE NOT AVAILABLE AT THIS TIME.</h1>
+							<% end %>
+						   <!--popup's close button-->
+						    <button id="size_guide_close_btn" class="close">CLOSE</button>    
+						</div>
+					</div>
 		<br>
+		<!-- END -->
 
 
 		 <% @upsell_listings_arr = @listings.sample(2) %> 
@@ -229,7 +248,9 @@
 						  	<%= f.label("Fabric/Material") %>
 							<%= f.text_field :fabric %><br><br>
 						  	<%= f.label :fit %>
-						  	<%= f.text_field :fit %><br><br>
+						  	<%= f.text_field :fit %><br><br>						  	
+						  	<%= f.label :size_guide %>
+						  	<%= f.text_field :size_guide %><br><br>
 						  	<%= f.label :care %>
 						  	<%= f.text_field :care %><br><br>
 					    	<%=f.label :size %>
