@@ -5,40 +5,41 @@
  
 
 
-<%= form_for :listing, url: listing_path(@listing),:html => {:multipart => true}, method: :patch do |f| %>
-  <%= f.label(:name) %>
-  <%=f.text_field :name, :input_html => {:maxlength => 28 } %><br><br>
-  <%= f.label :price %>
-  <%= f.number_field :price %><br><br>
-  <%= f.label "New?" %>
-  <%= f.check_box :is_new %> 
-  <%= f.label "On Sale?" %>
-  <%= f.check_box :on_sale %><br><br>
-  <%= f.label "Sale Price" %>
-  <%= f.text_field :original_price %><br><br>
-  <%= f.label("Fabric/Material") %>
-  <%= f.text_field :fabric %><br><br>
-  <%= f.label :fit %>
-  <%= f.text_field :fit %><br><br>
-  <%= f.label :care %>
-  <%= f.text_field :care %><br><br>
-  <%=f.label :size %>
-  <%= f.text_field :size %><br><br>
-    <!-- <input type="text" name="listing[size]" /><br><br> -->
-  <%=f.label :description %>
-  <%=f.text_area :description %><br><br>
-  <%=f.label :section %>
-  <%= f.text_field :section %> <br><br>
- <%=f.label :collection %>
-  <%= f.text_field :collection %>  <br><br>
+<%= form_for @listing, remote: true, :html => {:multipart => true, :class => "edit-form"} do |f| %>
+              <%= f.label(:name) %>
+                <%=f.text_field :name, :maxlength => 29 %><br><br>
+                <%= f.label :price %>
+                <%= f.number_field :price %><br><br>
+                <%= f.label "New?" %>
+                <%= f.check_box :is_new %> 
+                <%= f.label "On Sale?" %>
+                <%= f.check_box :on_sale %><br><br>
+                <%= f.label "Sale Price" %>
+                <%= f.text_field :original_price %><br><br>
+                <%= f.label("Fabric/Material") %>
+              <%= f.text_field :fabric %><br><br>
+                <%= f.label :fit %>
+                <%= f.text_field :fit %><br><br>                
+                <%= f.label :size_guide %>
+                <%= f.text_field :size_guide %><br><br>
+                <%= f.label :care %>
+                <%= f.text_field :care %><br><br>
+                <%=f.label :size %>
+                <%= f.text_field :size %><br><br>
+                <!-- <input type="text" name="listing[size]" /><br><br> -->
+                <%=f.label :description %>
+                <%=f.text_area :description %><br><br>
+                <%=f.label :section %>
+              <%= f.text_field :section %> <br><br>
+              <%=f.label :collection %>
+              <%= f.text_field :collection %> <br><br>
 
+              <%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+                  <%= f.submit "Update", :id => "update-button"  %><br><br>
+              <% end %>
 
- <%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
-
-
-  <%=f.submit %>
-
-  <% end %>
+          <%= link_to "Delete", @listing, :method => :delete %>
+          
 
 
 </div>
