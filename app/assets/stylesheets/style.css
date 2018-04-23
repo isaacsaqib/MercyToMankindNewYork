@@ -2284,6 +2284,11 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 @media screen and (max-width: 1000px)  {
 
+	.collection-figure {
+		margin-bottom: 15px;
+
+	}
+
 	.popup-content.active {
 		z-index: 1000;
 		top:255px;
@@ -2404,6 +2409,7 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 	.swiper-container2 {
 		display: block;
+		margin-top:60px;
 	}
 
 
