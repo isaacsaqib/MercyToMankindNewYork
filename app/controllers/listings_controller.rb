@@ -239,7 +239,7 @@ end
 	private
 
 	def listing_params
-		params.require(:listing).permit(:name, :price, :original_price, :images, :size, :pictures, :description, :section, :collection, :fabric, :fit, :care, :position, :on_sale, :is_new, :size_guide)
+		params.require(:listing).permit(:name, :price, :original_price, :images, :size, :pictures, :description, :section, :collection, :fabric, :fit, :care, :position, :on_sale, :is_new, :is_hidden, :size_guide)
 
 	end
 	

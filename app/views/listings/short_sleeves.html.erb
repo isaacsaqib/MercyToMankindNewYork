@@ -31,19 +31,22 @@
 
 			<% @listings_short_sleeves.each do |listing| %>
 
+			<% if listing.is_hidden %> 
+				<li style="display:none;"></li>
+
+			<%else%>
+
 				<% if listing.default_picture %>
             	<li>
-            	<figure class="listings-figure"> 	
-		            	
-		        <%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
-		            	
-            	<a href="<%=listing_path(listing)%>">
+            	<!-- listing image pictures -->
+		           <figure class="listings-figure"> 	
+		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
+		           <a href="<%=listing_path(listing)%>">
 		            	<figcaption class="listings-figcaption"> 
 
 		            		<p> 
-								<%= listing.name.upcase %><br><br><br> 
+		            			<%= listing.name.upcase %><br><br><br> 
 		            			<%=	listing.description.upcase.html_safe%> <br><br>
-		            			
 		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
 			            			<span style="padding:0px;color:black;">
 
@@ -62,20 +65,19 @@
 
 									</span>
 								<% end %>
-
 		            		</p> 
 
 		            	</figcaption>
-				</a>
+		           </a>
 
-				<p class="mobile-figure-p"><%= listing.name.upcase %></p>
-				<p class="mobile-figure-p"><%= listing.price %> USD</p> 
-
+		           <p class="mobile-figure-p"><%= listing.name.upcase %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
 		            	<% else %>
 		              		N/A
 		            	<% end %>
 		           </figure>
-
+						
+						<!-- Name, price and buttons -->
 				<form id="index-form" method="get">
 				<input type="hidden" name="id" value="<%=listing.id%>">
 				<!-- <a href="<%=listing_path(listing)%>"><%=listing.name %></a><br>  -->
@@ -87,16 +89,18 @@
 							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
 							<p><a href="?remove=<%=listing.id%>">Delete</a></p><br>
 							<% end %>
-							<br>
-							<br>
+							<!-- <br> -->
+							<!-- <br> -->
 				</form>	
 
 				</li>
+			<% end %>
 				<% end %>
 			</ul>
 		</td>
 	</tr>
 </table>
+
 
 <hr>
 
@@ -109,15 +113,21 @@
 
 			<% @listings_tees.each do |listing| %>
 
+				<% if listing.is_hidden %> 
+				<li style="display:none;"></li>
+
+			<%else%>
+
 				<% if listing.default_picture %>
             	<li>
-            	<figure class="listings-figure"> 	
+            	<!-- listing image pictures -->
+		           <figure class="listings-figure"> 	
 		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
-		            <a href="<%=listing_path(listing)%>">
+		           <a href="<%=listing_path(listing)%>">
 		            	<figcaption class="listings-figcaption"> 
 
 		            		<p> 
-		            			<%= listing.name.upcase %> <br><br><br> 
+		            			<%= listing.name.upcase %><br><br><br> 
 		            			<%=	listing.description.upcase.html_safe%> <br><br>
 		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
 			            			<span style="padding:0px;color:black;">
@@ -140,15 +150,16 @@
 		            		</p> 
 
 		            	</figcaption>
-		            </a>
+		           </a>
 
-		            <p class="mobile-figure-p"><%= listing.name.upcase %></p>
-					<p class="mobile-figure-p"><%= listing.price %> USD</p> 
-
+		           <p class="mobile-figure-p"><%= listing.name.upcase %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
 		            	<% else %>
 		              		N/A
 		            	<% end %>
 		           </figure>
+						
+						<!-- Name, price and buttons -->
 				<form id="index-form" method="get">
 				<input type="hidden" name="id" value="<%=listing.id%>">
 				<!-- <a href="<%=listing_path(listing)%>"><%=listing.name %></a><br>  -->
@@ -160,13 +171,15 @@
 							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
 							<p><a href="?remove=<%=listing.id%>">Delete</a></p><br>
 							<% end %>
-							<br>
-							<br>
+							<!-- <br> -->
+							<!-- <br> -->
 				</form>	
 
 				</li>
+			<% end %>
 				<% end %>
 			</ul>
 		</td>
 	</tr>
 </table>
+

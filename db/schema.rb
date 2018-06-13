@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309013915) do
+ActiveRecord::Schema.define(version: 20180613042126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180309013915) do
     t.boolean "is_new",         default: false, null: false
     t.string  "collection"
     t.string  "size_guide"
+    t.boolean "is_hidden",      default: false, null: false
   end
 
   create_table "orders", force: :cascade do |t|
@@ -78,10 +78,9 @@ ActiveRecord::Schema.define(version: 20180309013915) do
     t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+    t.index ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
   end
-
-  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
-  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "todos", force: :cascade do |t|
     t.string   "todo_item"

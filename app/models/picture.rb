@@ -1,4 +1,4 @@
-class Picture < ActiveRecord::Base
+class Picture < ApplicationRecord
  has_attached_file :image
 
   belongs_to :listing

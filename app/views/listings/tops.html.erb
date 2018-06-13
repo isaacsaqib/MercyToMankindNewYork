@@ -30,8 +30,10 @@
 			<ul>
 			<h1 class="product-heading-h1">TOPS \ SWEATSHIRTS</h1>
 
+<% if listing.is_hidden %> 
+				<li style="display:none;"></li>
 
-			<% @listings_hoodies.each do |listing| %>
+			<%else%>
 
 				<% if listing.default_picture %>
             	<li>
@@ -66,10 +68,9 @@
 
 		            	</figcaption>
 		           </a>
-		           	
-		           	<p class="mobile-figure-p"><%= listing.name.upcase %></p>
-					<p class="mobile-figure-p"><%= listing.price %> USD</p> 
 
+		           <p class="mobile-figure-p"><%= listing.name.upcase %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
 		            	<% else %>
 		              		N/A
 		            	<% end %>
@@ -92,11 +93,13 @@
 				</form>	
 
 				</li>
+			<% end %>
 				<% end %>
 			</ul>
 		</td>
 	</tr>
 </table>
+
 
 <hr>
 
@@ -184,6 +187,11 @@
 
 			<% @listings_short_sleeves.each do |listing| %>
 
+			<% if listing.is_hidden %> 
+				<li style="display:none;"></li>
+
+			<%else%>
+
 				<% if listing.default_picture %>
             	<li>
             	<!-- listing image pictures -->
@@ -193,7 +201,7 @@
 		            	<figcaption class="listings-figcaption"> 
 
 		            		<p> 
-		            		<%= listing.name.upcase %> <br><br><br> 
+		            			<%= listing.name.upcase %><br><br><br> 
 		            			<%=	listing.description.upcase.html_safe%> <br><br>
 		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
 			            			<span style="padding:0px;color:black;">
@@ -216,11 +224,10 @@
 		            		</p> 
 
 		            	</figcaption>
-		            </a>
+		           </a>
 
-		            <p class="mobile-figure-p"><%= listing.name.upcase %></p>
-					<p class="mobile-figure-p"><%= listing.price %> USD</p> 
-
+		           <p class="mobile-figure-p"><%= listing.name.upcase %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
 		            	<% else %>
 		              		N/A
 		            	<% end %>
@@ -243,11 +250,13 @@
 				</form>	
 
 				</li>
+			<% end %>
 				<% end %>
 			</ul>
 		</td>
 	</tr>
 </table>
+
 
 <hr>
 
@@ -258,7 +267,10 @@
 			<ul>
 			<h1 class="product-heading-h1">TOPS \ T-SHIRTS</h1>
 
-			<% @listings_tees.each do |listing| %>
+			<% if listing.is_hidden %> 
+				<li style="display:none;"></li>
+
+			<%else%>
 
 				<% if listing.default_picture %>
             	<li>
@@ -269,7 +281,7 @@
 		            	<figcaption class="listings-figcaption"> 
 
 		            		<p> 
-		            		<%= listing.name.upcase %> <br><br><br> 
+		            			<%= listing.name.upcase %><br><br><br> 
 		            			<%=	listing.description.upcase.html_safe%> <br><br>
 		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
 			            			<span style="padding:0px;color:black;">
@@ -292,11 +304,10 @@
 		            		</p> 
 
 		            	</figcaption>
-		            </a>
+		           </a>
 
-		            <p class="mobile-figure-p"><%= listing.name.upcase %></p>
-					<p class="mobile-figure-p"><%= listing.price %> USD</p> 
-
+		           <p class="mobile-figure-p"><%= listing.name.upcase %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
 		            	<% else %>
 		              		N/A
 		            	<% end %>
@@ -319,11 +330,13 @@
 				</form>	
 
 				</li>
+			<% end %>
 				<% end %>
 			</ul>
 		</td>
 	</tr>
 </table>
+
 
 <hr>
 

@@ -33,10 +33,15 @@
 
 			<% @listings_sale.each do |listing| %>
 
+				<% if listing.is_hidden %> 
+				<li style="display:none;"></li>
+
+			<%else%>
+
 				<% if listing.default_picture %>
             	<li>
             	<!-- listing image pictures -->
-		           <figure class="listings-figure" id="listings-figure-sale"> 	
+		           <figure class="listings-figure"> 	
 		            	<%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
 		           <a href="<%=listing_path(listing)%>">
 		            	<figcaption class="listings-figcaption"> 
@@ -66,11 +71,9 @@
 
 		            	</figcaption>
 		           </a>
-		           	
-		           	<p class="mobile-figure-p"><%= listing.name.upcase %></p>
-					<p class="mobile-figure-p" style="text-decoration: line-through;"><%= listing.original_price %> USD </p> 
-					<p class="mobile-figure-p"><%= listing.price %> USD</p> 
 
+		           <p class="mobile-figure-p"><%= listing.name.upcase %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p>
 		            	<% else %>
 		              		N/A
 		            	<% end %>
@@ -93,6 +96,7 @@
 				</form>	
 
 				</li>
+			<% end %>
 				<% end %>
 			</ul>
 		</td>

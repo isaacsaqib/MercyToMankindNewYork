@@ -1,2 +1,2 @@
-class Charge < ActiveRecord::Base
+class Charge < ApplicationRecord
 end

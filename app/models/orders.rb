@@ -1,4 +1,4 @@
-class Orders < ActiveRecord::Base
+class Orders < ApplicationRecord
 	validates :email, presence: true
 	validates :country, presence: true
 
