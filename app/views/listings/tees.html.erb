@@ -17,18 +17,18 @@
 		<li><a href="/listings-trousers">TROUSERS</a></li>
 		<li><a href="/listings-shorts">SHORTS</a></li>
 		<li><a href="/listings-head">HEADWEAR</a></li>
-		<li><a href="/listings-accessories">ACCESSORIES</a></li>
+		<li><a href="/listings-accessories">BAGS</a></li>
 	</ul>
 
 </div>
 
-
 <table class="products" id="tees">
 	<tr>
-		<td class="col">
+ 		<td class="col">
 			<ul>
+			<h1 class="product-heading-h1">TEES</h1>
 
-			<h1 class="product-heading-h1">T-SHIRTS</h1>
+			<% @listings_tees.each do |listing| %>
 
 			<% if listing.is_hidden %> 
 				<li style="display:none;"></li>
@@ -99,6 +99,4 @@
 		</td>
 	</tr>
 </table>
-
-<hr>
 

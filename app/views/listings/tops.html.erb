@@ -17,10 +17,11 @@
 		<li><a href="/listings-trousers">TROUSERS</a></li>
 		<li><a href="/listings-shorts">SHORTS</a></li>
 		<li><a href="/listings-head">HEADWEAR</a></li>
-		<li><a href="/listings-accessories">ACCESSORIES</a></li>
+		<li><a href="/listings-accessories">BAGS</a></li>
 	</ul>
 
 </div>
+
 
 
 
@@ -28,9 +29,12 @@
 	<tr>
 		<td class="col">
 			<ul>
-			<h1 class="product-heading-h1">TOPS \ SWEATSHIRTS</h1>
 
-<% if listing.is_hidden %> 
+			<h1 class="product-heading-h1">TOPS / HOODIES</h1>
+
+			<% @listings_hoodies.each do |listing| %>
+
+				<% if listing.is_hidden %> 
 				<li style="display:none;"></li>
 
 			<%else%>
@@ -100,7 +104,6 @@
 	</tr>
 </table>
 
-
 <hr>
 
 
@@ -108,7 +111,7 @@
 	<tr>
 		<td class="col">
 			<ul>
-			<h1 class="product-heading-h1">TOPS \ LONG SLEEVE</h1>
+			<h1 class="product-heading-h1">TOPS / LONG SLEEVE</h1>
 			<% @listings_long_sleeves.each do |listing| %>
 
 				<% if listing.default_picture %>
@@ -183,7 +186,7 @@
 	<tr>
 		<td class="col">
 			<ul>
-			<h1 class="product-heading-h1">TOPS \ SHIRTS</h1>
+			<h1 class="product-heading-h1">TOPS / SHORT SLEEVE</h1>
 
 			<% @listings_short_sleeves.each do |listing| %>
 
@@ -263,9 +266,11 @@
 
 <table class="products" id="tees">
 	<tr>
-		<td class="col">
+ 		<td class="col">
 			<ul>
-			<h1 class="product-heading-h1">TOPS \ T-SHIRTS</h1>
+			<h1 class="product-heading-h1">TOPS / TEES</h1>
+
+			<% @listings_tees.each do |listing| %>
 
 			<% if listing.is_hidden %> 
 				<li style="display:none;"></li>
