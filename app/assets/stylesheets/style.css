@@ -182,8 +182,8 @@ display:initial;
 
 }
 
-#free-shipping-text {
-	padding-left:150px;
+#social-text {
+	padding-left:350px;
 	padding-right:5px;
 }
 
@@ -3120,8 +3120,8 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 		height: 600px;
 	}
 
-	#free-shipping-text {
-		padding-left: 60px;
+	#social-text {
+		padding-left: 160px;
 	    padding-right: 10px;
 	}
 

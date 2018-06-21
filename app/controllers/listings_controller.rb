@@ -32,6 +32,7 @@ class ListingsController < ApplicationController
 		@listings_collection = Listing.where(:section => "Collection").order(:fabric)
 
 
+
 		
     respond_to do |format|
       format.html # index.html.erb
@@ -208,6 +209,12 @@ end
 	def sale
 		@listings_sale = Listing.where(:on_sale => "true").order(id: :desc)	
 	end
+
+	def hidden
+		@listings_hidden = Listing.where(:is_hidden => "true")
+
+	end
+
 
 	def fall_winter_2016
 		@listings_fall_winter_2016 = Listing.where(:collection => "FALL/WINTER2016").order(id: :desc)	
