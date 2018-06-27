@@ -2,13 +2,7 @@
 
 
 
-<script>
-	fbq('track', 'Purchase', {
-	value: <%=session[:total] %>,
-	content_name: "<%=session[:product_details]%>",
-	currency: 'USD'
-	});
-</script>
+
 
 
 <div style="text-align: center;">
@@ -22,7 +16,8 @@
 
 <h3>Follow us!</h3>
 
-<a href="http://www.facebook.com/mercytomankindclothing"><%=image_tag 'fb.png', :class => 'icons-complete' %></a>
-<a href="http://www.instagram.com/mercytomankind.ny"><%=image_tag 'ig.png', :class => 'icons-complete' %></a>
+<a href="http://www.facebook.com/mercytomankindclothing"><%= image_tag "/assets/fb-58ff3d888e5c394dfdd6d78aa5b52c7e1c94d670bd56748a3fbeccbaaccb217b.png" , :class => 'icons-complete' %></a>
+
+<a href="http://www.instagram.com/mercytomankind.ny"><%=image_tag '/assets/ig-037022b92da8534b4952f8b40e0171749e0334ac41d2cfdfd774a0ef52443819.png', :class => 'icons-complete' %></a>
 
 </div>
