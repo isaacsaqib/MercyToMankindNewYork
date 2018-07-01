@@ -194,7 +194,9 @@ $(".close, .popup").on("click", function(){
 		$('#size').selectric({
 	 	disableOnMobile: false,	
   		nativeOnMobile: false
-		});
+		});	
+
+
 
 		$('.zoom1').ezPlus({
 		});

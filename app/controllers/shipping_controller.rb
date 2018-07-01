@@ -20,6 +20,8 @@ if params[:firstname]
  	if params[:select_state]=='NY'
  		session[:tax] = 0.0875
  	end
+
+ 
  
  	
  	redirect_to "/checkout"
