@@ -69,7 +69,7 @@
 	
 <% @code = "MERCY10" %>
 	<div id="shipping-info-div">
-
+		<h1 class="shipping-info-h1">Address:</h1>
 		<ul id="shipping-info-list">
 			<li><%=session[:company]%></li>
 			<li><%=session[:firstname]%> <%=session[:lastname]%></li> 
@@ -92,6 +92,7 @@
 		<div class="line-separator"></div>
 
 		<ul id="total-list">
+			<h1 class="shipping-info-h1">Order:</h1>
 			<li><p><span class="total-headings">PRODUCTS TOTAL:</span> <%= number_to_currency(@total) %> USD</p></li> <!--SUM OF THE PRODUCTS -->
 			
 			<li>
@@ -168,31 +169,8 @@
 			
 
 		</ul>
-		</div>
-
-
-	
-
-
-<% @stripe_amount = (@final_total*100).to_i; %> 
-<!-- #SET STRIPE AMOUNT TO @NEW_TOTAL -->
-<% session[:total] = sprintf("%.2f", @final_total) %>
-
-
-
-
-
-
-
-			<%= form_tag charges_path do %>
-			  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-			          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-			          data-description="Thanks For Your Purchase"
-			          data-amount="<%=@stripe_amount%>"></script>
-			          <input type="hidden" name="final_amount" value="<%=session[:total] %>"  />
-			<% end %>
-
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<hr>
+			<form style="text-align: center;" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 				<input type="hidden" name="cmd" value="_xclick">
 				<input type="hidden" name="business" value="n00747874@students.ncc.edu">
 				<input type="hidden" name="lc" value="US">
@@ -208,9 +186,22 @@
 
 				    <!-- PayPal Checkout -->
 				<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest">
-				<input type="image" src="assets/paypal-button-00a838638405359daed55f4c472c1be232525463bb4bb141cfc2cd0c289d645b.png" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+				<h1 class="shipping-info-h1">Payment Method:</h1>
+				<input style="width:90%" type="image" src="assets/paypal.png" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
 				<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
 			</form>
+		</div>
+
+
+	
+
+
+<% @stripe_amount = (@final_total*100).to_i; %> 
+<!-- #SET STRIPE AMOUNT TO @NEW_TOTAL -->
+<% session[:total] = sprintf("%.2f", @final_total) %>
+
+
+
 
 	<% else %>
 

@@ -874,7 +874,7 @@ background: #007aff;
 
 #shipping-info-div {
     background-color: white;
-    height: 608px;
+    height: 700px;
     width: 42%;
     margin-top:0px;
     float: left;
@@ -883,7 +883,7 @@ background: #007aff;
 
 #total-list {
 	list-style: none;
-	padding-top: 20px;
+	/*padding-top: 20px;*/
 }
 
 #total-list li {
@@ -899,10 +899,16 @@ background: #007aff;
 #shipping-info-list {
 	font-family: 'Bagnard';
 	font-size: 12px;
-	margin-top: 50px;
+	/*margin-top: 50px;*/
 	list-style: none;
 	margin-bottom: 50px;
-	padding-top: 30px;
+	/*padding-top: 30px;*/
+}
+
+.shipping-info-h1 {
+	font-family: 'Bagnard';
+	font-size: 14px;
+	text-decoration: underline;
 }
 
 
@@ -2321,11 +2327,12 @@ body > div.wrapper > table:nth-child(12) > tbody > tr:nth-child(2) > td > form >
 
 @media screen and (max-width: 1000px)  {
 
-select,
-  textarea,
-  input {
-    font-size: 16px;
-  }
+	.shipping-info-h1 {
+
+		font-size: 40px;
+
+	}
+
 
 	#shipping-form-desktop {
 		display: none;
@@ -2975,12 +2982,12 @@ select,
 
 	#shipping-info-div {
 		background-color: white;
-	    height: 608px;
+	    height: 1000px;
 	    width: 42%;
 	    margin-top: 0px;
 	    float: initial;
 	    margin: 0 auto;
-	    margin-bottom: 120px;
+
 	}
 
 	#checkout-listing-table {
@@ -3016,7 +3023,7 @@ select,
 	}
 
 	#checkout-div-seperator {
-		margin-top:80px;
+		/*margin-top:80px;*/
 	}
 
 	#cart-list li {
