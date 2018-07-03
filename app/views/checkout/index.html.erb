@@ -1,4 +1,3 @@
-	
 <title>Checkout | MXMNY</title>
 <%= javascript_include_tag "application.js" %>
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -169,6 +168,11 @@
 			
 
 		</ul>
+
+<% @stripe_amount = (@final_total*100).to_i; %> 
+<!-- #SET STRIPE AMOUNT TO @NEW_TOTAL -->
+<% session[:total] = sprintf("%.2f", @final_total) %>
+
 <hr>
 			<form style="text-align: center;" action="https://www.paypal.com/cgi-bin/webscr" method="post">
   				<!-- Identify your business so that you can collect the payments. -->
@@ -183,7 +187,7 @@
 				<input type="hidden" name="currency_code" value="USD">
 
 				<!-- Display the payment button. -->
-				<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest">
+				<!-- <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest"> -->
 
 				<h1 class="shipping-info-h1">Payment Method:</h1>
 				
@@ -200,10 +204,6 @@
 	
 
 
-<% @stripe_amount = (@final_total*100).to_i; %> 
-<!-- #SET STRIPE AMOUNT TO @NEW_TOTAL -->
-<% session[:total] = sprintf("%.2f", @final_total) %>
-
 
 
 
@@ -214,5 +214,3 @@
 	<%end%>
 </body>
 <br><br>
-
-
