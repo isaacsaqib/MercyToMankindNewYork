@@ -40,6 +40,89 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 </div> -->
 
 <!-- <img style="width:60%;margin:0 auto;display:block;" src="assets/intro-tops.png"> -->
+<table class="products" id="new">
+	<tr>
+ 		<td class="col">
+			<ul>
+			<h1 class="product-heading-h1">NEW</h1>
+
+
+			<% @listings.each do |listing| %>
+
+			
+			<% if listing.is_new %>
+
+
+				<% if listing.default_picture %>
+            	
+            	<li>
+            	<figure class="listings-figure"> 	
+		        <%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
+		            	
+            	<a href="<%=listing_path(listing)%>">
+		            	<figcaption class="listings-figcaption"> 
+
+		            		<p> 
+								<%= listing.name.upcase %><br><br><br> 
+		            			<%=	listing.description.upcase.html_safe%> <br><br>
+		            			
+		            			<% if listing.on_sale == false %> <!-- IF LISTING IS NOT ON SALE -->
+			            			<span style="padding:0px;color:black;">
+
+			            				$<%= listing.price %>.00
+
+			            			</span>
+			            		<% else %>
+									<span style="padding:0px;color:red;">
+
+			            				$<%= listing.price %>.00
+
+			            			</span>
+									<span style="padding: 0px;text-decoration: line-through;">
+
+										$<%= listing.original_price %>.00
+
+									</span>
+								<% end %>
+
+		            		</p> 
+
+		            	</figcaption>
+				</a>
+				<p class="mobile-figure-p"><%= listing.name.upcase %></p>
+				<p class="mobile-figure-p"><%= listing.price %> USD</p> 
+
+		            	<% else %>
+
+		            	<% end %>
+		           </figure>
+
+				<form id="index-form" method="get">
+				<input type="hidden" name="id" value="<%=listing.id%>">
+				<!-- <a href="<%=listing_path(listing)%>"><%=listing.name %></a><br>  -->
+				<!-- <p>$<%=listing.price %>.00</p><br> -->
+				<!-- <div class="line-separator"></div> -->
+				
+				 <!-- <br/> -->
+							 <% if logged_in? %>
+							<p><%=link_to 'Edit', edit_listing_path(listing) %></p>
+							<p><a href="?remove=<%=listing.id%>">Delete</a></p><br>
+							<% end %>
+							<br>
+							<br>
+				</form>	
+
+				</li>
+			<% end %>
+				<% end %>
+			</ul>
+		</td>
+	</tr>
+</table>
+<hr>
+
+
+
 
 
 <table class="products" id="jackets">
