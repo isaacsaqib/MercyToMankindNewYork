@@ -12,7 +12,7 @@ class ListingsController < ApplicationController
 			Listing.delete(params[:remove])
 		end
 		
-		@listings = Listing.all.order(price: :desc)
+		@listings = Listing.all
 
 		@listings_new = Listing.where(:section => "New").order(id: :desc)
 		@listings_hoodies= Listing.where(:section => "Hoodies").order(id: :desc)
