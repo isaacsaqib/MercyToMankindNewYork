@@ -45,7 +45,7 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 			<h1 class="product-heading-h1">NEW</h1>
 
 
-			<% @listings.each do |listing| %>
+			<% @listings_new.each do |listing| %>
 			
 			<% if listing.is_hidden %> 
 				<li style="display:none;"></li>
@@ -57,7 +57,6 @@ The breakthrough collection from Mercy X Mankind has descended upon us. We besto
 
             	<li>
             	<figure class="listings-figure"> 	
-		            	
 		        <%= link_to image_tag(listing.default_picture.image.url), listing_path(listing) %>
 		            	
             	<a href="<%=listing_path(listing)%>">

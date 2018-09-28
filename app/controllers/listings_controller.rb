@@ -11,6 +11,7 @@ class ListingsController < ApplicationController
 		if params[:remove]
 			Listing.delete(params[:remove])
 		end
+		
 		@listings = Listing.all.order(price: :desc)
 
 		@listings_new = Listing.where(:section => "New").order(id: :desc)
